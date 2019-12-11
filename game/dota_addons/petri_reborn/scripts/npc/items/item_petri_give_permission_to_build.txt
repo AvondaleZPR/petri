@@ -1,0 +1,213 @@
+"item_petri_give_permission_to_build"
+{
+  "ID"              "1504"
+  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+  "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+  "AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
+
+  "BaseClass"           "item_datadriven"
+  "AbilityTextureName"            "custom/flag"
+
+  "AbilityCastRange" "150"
+
+  "ItemPermanent"         "0"
+  "ItemSellable"                  "0"
+  "ItemDroppable"         "0"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "max"    "2"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_FLOAT"
+      "damage_reducer"    "-50"
+    }
+  }
+
+  "OnSpellStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"  "units/kvn_fan.lua"
+      "Function"    "GivePermissionToBuild"
+    }
+  }
+
+  "Modifiers"
+  {
+    "modifier_flag_aura"
+    {
+      "Passive"      "1"
+      "IsHidden"      "1"
+      "IsDebuff"      "0"
+    
+      "ThinkInterval"  "1.0"
+      "OnIntervalThink"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/lab.lua"
+          "Function"    "ApplyDecreaseDamageAura"
+        }
+      }
+    }
+    "modifier_decrease_damage"
+    {
+      "Passive"      "0"
+      "IsHidden"      "0"
+      "IsDebuff"      "1"
+    
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%damage_reducer"
+      }
+    }
+  }
+}
+
+"item_petri_give_permission_to_build2"
+{
+  "ID"              "1601"
+  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+  "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+  "AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
+
+  "BaseClass"           "item_datadriven"
+  "AbilityTextureName"            "custom/flag2"
+
+  "AbilityCastRange" "150"
+
+  "ItemPermanent"         "0"
+  "ItemSellable"                  "0"
+  "ItemDroppable"         "0"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "max"    "3"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_FLOAT"
+      "damage_reducer"    "-66.7"
+    }
+  }
+
+  "OnSpellStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"  "units/kvn_fan.lua"
+      "Function"    "GivePermissionToBuild"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_flag_aura"
+    {
+      "Passive"      "1"
+      "IsHidden"      "1"
+      "IsDebuff"      "0"
+    
+      "ThinkInterval"  "1.0"
+      "OnIntervalThink"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/lab.lua"
+          "Function"    "ApplyDecreaseDamageAura"
+        }
+      }
+    }
+    "modifier_decrease_damage"
+    {
+      "Passive"      "0"
+      "IsHidden"      "0"
+      "IsDebuff"      "1"
+    
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%damage_reducer"
+      }
+    }
+  }
+}
+
+
+"item_petri_give_permission_to_build3"
+{
+  "ID"              "1602"
+  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+  "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+  "AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
+
+  "BaseClass"           "item_datadriven"
+  "AbilityTextureName"            "custom/flag3"
+
+  "AbilityCastRange" "150"
+
+  "ItemPermanent"         "0"
+  "ItemSellable"                  "0"
+  "ItemDroppable"         "0"
+  
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "max"    "4"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_FLOAT"
+      "damage_reducer"    "-75"
+    }
+  }
+
+  "OnSpellStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"  "units/kvn_fan.lua"
+      "Function"    "GivePermissionToBuild"
+    }
+  }
+
+  "Modifiers"
+  {
+    "modifier_flag_aura"
+    {
+      "Passive"      "1"
+      "IsHidden"      "1"
+      "IsDebuff"      "0"
+    
+      "ThinkInterval"  "1.0"
+      "OnIntervalThink"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/lab.lua"
+          "Function"    "ApplyDecreaseDamageAura"
+        }
+      }
+    }
+    "modifier_decrease_damage"
+    {
+      "Passive"      "0"
+      "IsHidden"      "0"
+      "IsDebuff"      "1"
+    
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%damage_reducer"
+      }
+    }
+  }
+}

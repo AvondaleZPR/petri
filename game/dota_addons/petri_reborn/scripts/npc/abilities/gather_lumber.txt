@@ -1,0 +1,118 @@
+"gather_lumber"
+{
+  "BaseClass"                 "ability_datadriven"
+  "AbilityTextureName"      "custom/gather_lumber"
+  "MaxLevel"            "1"
+
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_BUILDING"
+
+  "AbilityMultiOrder" "1"
+
+  "AbilityCastPoint"        "0.1"
+
+  "OnAbilityPhaseStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"  "units/peasant.lua"
+      "Function"    "Gather"
+    }
+    "ApplyModifier"
+    {
+      "Target"      "CASTER"
+      "ModifierName"    "modifier_ability_gather_lumber_no_col"
+    }
+  }
+
+  "Modifiers"
+  {
+    "modifier_ability_gather_lumber_no_col"
+    {
+      "Passive"         "1"
+      "IsHidden"          "1"
+      "IsBuff"          "1"
+      "IsDebuff"          "0"
+      
+      "States"
+      {
+        "MODIFIER_STATE_NO_UNIT_COLLISION"    "MODIFIER_STATE_VALUE_ENABLED"
+      }
+    }
+
+    "modifier_gathering_lumber"
+    {
+      "IsHidden"        "1"
+        
+      "ThinkInterval"  "0.03"
+      "OnIntervalThink"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "CheckTreePosition"
+        }
+      }
+
+      "OnOrder"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "ToggleOffGather"
+          "arg" "modifier_gathering_lumber"
+        }
+      }
+      
+    }
+
+    "modifier_chopping_wood"
+    {
+      "IsHidden"        "1"
+
+      "OnOrder"
+      { 
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "ToggleOffGather"
+          "arg" "modifier_chopping_wood"
+        }
+      }
+
+      "OnCreated"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "PlayAttackAnimation"
+        }
+      }
+
+      "OnDestroy"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "StopAnimation"
+        }
+      }
+
+      "ThinkInterval"  "1.0"
+      "OnIntervalThink"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "PlayAttackAnimation"
+        }
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "GatherLumber"
+        }
+      }   
+    }
+  }
+}

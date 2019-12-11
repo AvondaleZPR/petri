@@ -1,0 +1,33 @@
+<root>
+    <styles>
+ 		<include src="file://{resources}/styles/custom_game/material_design.css" />
+        <include src="file://{resources}/styles/custom_game/end_screen.css" />
+    </styles>
+	<Panel class="PlayerRow DarkTheme Cards z-index1">
+		<Panel id="PlayerRowContainer">
+			<Panel hittest="false" id="PlayerColor" />
+			<Panel id="Hero" class="ScoreCol_Hero">
+				<Image id="HeroIcon" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+			<Panel id="PlayerDetailsContainer" class="ScoreCol_PlayerDetails">
+				<Panel id="PlayerAndHeroName">
+					<Label class="DarkTheme PrimaryText" id="PlayerName" text="AAAAA" />
+					<Label class="DarkTheme SecondaryText" id="HeroNameAndDescription" text="#custom_scoreboard_hero_name_and_desc" />
+				</Panel>
+			</Panel>
+			<Panel id="KillsContainer" class="ScoreCol_Kills">
+				<Label class="DarkTheme SecondaryText" id="Kills" text="999" />
+			</Panel>
+			<Panel id="DeathsContainer" class="ScoreCol_Deaths">
+				<Label class="DarkTheme SecondaryText" id="Deaths" text="999" />
+			</Panel>
+			<Panel id="AssistsContainer" class="ScoreCol_Assists">
+				<Label class="DarkTheme SecondaryText" id="Assists" text="999" />
+			</Panel>
+			<Panel id="PlayerItemsContainer" class="ScoreCol_Items" />
+			<Panel id="GoldContainer" class="ScoreCol_Gold">
+				<Label class="DarkTheme SecondaryText" id="PlayerGoldAmount" text="999" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

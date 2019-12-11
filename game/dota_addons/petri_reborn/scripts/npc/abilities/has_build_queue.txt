@@ -1,0 +1,22 @@
+"has_build_queue"
+{
+  "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+  "BaseClass" "ability_datadriven"
+
+  "Modifiers"
+  {
+    "modifier_has_build_queue"
+    {
+      "Passive" "1"
+      "IsHidden"  "1"
+      "OnOrder"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "buildings/bh_abilities.lua"
+          "Function"    "builder_queue"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+"npc_petri_exploration_tower"
+{
+  "BaseClass"         "npc_dota_creature"
+  "Model"           "models/props_structures/tower_dragon_white.vmdl"
+  "ModelScale"                "1.1"
+  "Level"           "1"
+
+  "HealthBarOffset"    "290"
+
+  "AbilityLayout"    "6"
+  "Ability1"          "petri_exploration_tower_explore_world"
+  
+  "ArmorPhysical"       "25000000"     
+  "MagicalResistance"       "0"     
+  
+  "AttackCapabilities"    "DOTA_UNIT_CAP_NO_ATTACK"    
+
+  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"      
+
+  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     
+  "MovementSpeed"       "0"   
+  "MovementTurnRate"      "0.0"   
+  "FollowRange"       "0"   
+  
+  "StatusHealth"        "1000"     
+  "StatusHealthRegen"     "0"     
+  
+  "TeamName"          "DOTA_TEAM_BADGUYS"      
+  "UnitRelationshipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+  
+  "VisionDaytimeRange"    "400"   
+  "VisionNighttimeRange"    "400"   
+}

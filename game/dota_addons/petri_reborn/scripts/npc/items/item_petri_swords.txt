@@ -1,0 +1,570 @@
+"item_petri_simple_sword"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1513"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_simple_sword"
+
+  "ItemCost"            "10"
+  "ItemShopTags"          "damage"
+  "ItemQuality"         "component"
+  "ItemAliases"         "simple sword"
+
+  "ItemSellFullPrice" "1"
+
+  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_damage"      "6"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "full_price"      "10"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_item_petri_simple_sword_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_damage"
+      }
+    }
+  }
+}
+
+"item_recipe_petri_simple_sword"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1519"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "9"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_simple_sword"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_megahammer"
+  }
+}
+
+
+"item_petri_hyperubersword"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1506"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_hyperubersword"
+
+  "ItemCost"            "50"
+  "ItemShopTags"          "damage"
+  "ItemQuality"         "common"
+  "ItemAliases"         "hyperubersword"
+
+  "ItemSellFullPrice" "1"
+
+  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_damage"      "25"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "full_price"      "50"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_item_petri_hyperubersword_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_damage"
+      }
+    }
+  }
+}
+
+"item_recipe_petri_hyperubersword"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1511"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "40"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_hyperubersword"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_simple_sword;"
+  }
+}
+
+"item_petri_kladenets_sword"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1533"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_kladenets_sword"
+
+  "ItemCost"            "250"
+  "ItemShopTags"          "damage"
+  "ItemQuality"         "component"
+  "ItemAliases"         "kladenets sword"
+
+  "ItemSellFullPrice" "1"
+
+  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_damage"      "100"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "full_price"      "250"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_item_petri_kladenets_sword_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_damage"
+      }
+    }
+  }
+}
+
+
+"item_recipe_petri_kladenets_sword"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1534"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "200"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_kladenets_sword"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_hyperubersword"
+  }
+}
+
+"item_petri_perfect_sword"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1537"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_perfect_sword"
+
+  "ItemCost"            "2000"
+  "ItemShopTags"          "damage"
+  "ItemQuality"         "unique"
+  "ItemAliases"         "perfect sword"
+
+  "ItemSellFullPrice" "1"
+
+  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_damage"      "500"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "full_price"      "1250"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_petri_perfect_sword_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_damage"
+      }
+    }
+  }
+}
+
+
+"item_recipe_petri_perfect_sword"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1538"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "1750"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_perfect_sword"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_kladenets_sword"
+  }
+}
+
+"item_petri_titan_sword"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1539"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_titan_sword"
+
+  "ItemCost"            "5000"
+  "ItemShopTags"          "damage"
+  "ItemQuality"         "unique"
+  "ItemAliases"         "titan sword"
+
+  "ItemSellFullPrice" "1"
+  
+  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_damage"      "2000"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "full_price"      "5000"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_item_petri_titan_sword_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_damage"
+      }
+    }
+  }
+}
+
+
+"item_recipe_petri_titan_sword"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1540"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "3000"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_titan_sword"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_perfect_sword;"
+  }
+}
+
+"item_petri_magic_axe"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1541"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_magic_axe"
+
+  "ItemCost"            "12500"
+  "ItemShopTags"          "damage"
+  "ItemQuality"         "unique"
+  "ItemAliases"         "magic axe"
+
+  "ItemSellFullPrice" "1"
+  
+  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_damage"      "5000"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "full_price"      "12500"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_petri_magic_axe_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_damage"
+      }
+    }
+  }
+}
+
+
+"item_recipe_petri_magic_axe"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1542"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "7500"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_magic_axe"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_titan_sword"
+  }
+}
+
+"item_petri_grond"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1543"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_grond"
+
+  "ItemCost"            "50000"
+  "ItemShopTags"          "damage"
+  "ItemQuality"         "unique"
+  "ItemAliases"         "grond"
+
+  "ItemSellFullPrice" "1"
+  
+  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_damage"      "20000"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "full_price"      "50000"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_petri_grond_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_damage"
+      }
+    }
+  }
+}
+
+
+"item_recipe_petri_grond"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1544"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "37500"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_grond"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_magic_axe"
+  }
+}
+
+"item_petri_thunder"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1545"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_thunder"
+
+  "ItemCost"            "200000"
+  "ItemShopTags"          "damage"
+  "ItemQuality"         "unique"
+  "ItemAliases"         "thunder"
+
+  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_damage"      "80000"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_petri_thunder_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_damage"
+      }
+    }
+  }
+}
+
+
+
+"item_petri_trident"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1547"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_trident"
+
+  "ItemCost"            "1000000"
+  "ItemShopTags"          "damage"
+  "ItemQuality"         "unique"
+  "ItemAliases"         "trident"
+  
+  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
+  
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_damage"      "500000"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_petri_trident_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_damage"
+      }
+    }
+  }
+}
+
+
+"item_recipe_petri_trident"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1548"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "800000"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_trident"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_thunder"
+  }
+}

@@ -1,0 +1,45 @@
+.ContextButton
+{
+	width: 100%;
+	height: 36px;
+}
+
+.MenuLabel
+{
+	padding: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    
+    text-align: center;
+    vertical-align: middle;
+}
+
+.Container
+{
+	padding: 5px;
+}
+
+#NamePanel
+{
+	width: 100%;
+	height: 25px;
+}
+
+#PlayerName
+{
+	width: 100%;
+
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    
+    text-align: center;
+    vertical-align: middle;
+}
+
+#Contents
+{
+	width: 175px;
+	flow-children: down;
+}

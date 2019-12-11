@@ -1,0 +1,143 @@
+"petri_creep_swipes"
+{
+  "BaseClass"             "ability_datadriven"
+  "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+  "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+  "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+
+  "precache"
+  {
+    "particle"          "particles/units/heroes/hero_necrolyte/necrolyte_pulse_enemy.vpcf"
+  }
+          
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"                      "FIELD_INTEGER"
+      "reset_time"                    "10"
+    }
+    "02"
+    {
+      "var_type"                      "FIELD_INTEGER"
+      "max_stacks"                    "45"
+    }
+    "03"
+    {
+      "var_type"                      "FIELD_INTEGER"
+      "max_bounce_targets"                    "1"
+    }
+    "04"
+    {
+      "var_type"                      "FIELD_INTEGER"
+      "bounce_range"                    "425"
+    }
+    "05"
+    {
+      "var_type"                      "FIELD_INTEGER"
+      "bonus_damage_percent"                    "100"
+    }
+  }
+
+  "precache"
+  {
+      "particle"                          "particles/units/heroes/hero_ursa/ursa_fury_swipes.vpcf"
+      "particle"                          "particles/units/heroes/hero_ursa/ursa_fury_swipes_debuff.vpcf"
+  }
+  
+  "Modifiers"
+  {
+    "modifier_creep_agression"
+    {
+      "Passive"                       "1"
+      "IsHidden"                      "1"
+      "IsPurgable"                    "0"
+    
+      "ThinkInterval"  "1.0"
+      "OnIntervalThink"
+      {
+        "ActOnTargets"
+        {
+          "Target"
+          {
+            "Center"    "TARGET"
+            "Radius"   "1200"
+            "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+            "Types"   "DOTA_UNIT_TARGET_HERO"
+          }
+        
+          "Action"    
+          {
+            "RunScript"
+            {
+              "ScriptFile"  "units/creep.lua"
+              "Function"    "Aggression"
+            }
+          }
+        }
+      }
+    }
+
+    "modifier_creep_swipes_caster"
+    {
+      "Passive"                       "1"
+      "IsHidden"                      "1"
+      "IsPurgable"                    "0"
+    
+      "OnAttackLanded"
+      {
+        //"RunScript"
+        //{
+        //  "ScriptFile"            "units/creep.lua"
+        //  "Function"              "Attack"
+        //}
+        "RunScript"
+        {
+          "ScriptFile"            "units/creep.lua"
+          "Function"              "CreepSplashDamage"
+        }
+      }
+
+      "OnCreated"
+      {
+        //"RunScript"
+        //{
+        //  "ScriptFile"            "units/creep.lua"
+        //  "Function"              "ApplyDamageReduction"
+        //}
+      }
+    }
+
+    "modifier_damage_reduction"
+    {
+      "Passive"      "0"
+      "IsHidden"      "1"
+      "IsDebuff"      "0"
+    
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" "-1"
+      }
+    }
+    
+    "modifier_creep_swipes_target"
+    {
+      "IsHidden"                  "1"
+      "IsPurgable"                "0"
+      "IsDebuff"                  "1"
+
+      "EffectName"                "particles/units/heroes/hero_ursa/ursa_fury_swipes_debuff.vpcf"
+      "EffectAttachType"          "follow_overhead"
+      
+      "OnCreated"
+      {
+        "AttachEffect"
+        {
+          "Target"                "TARGET"
+          "EffectName"            "particles/units/heroes/hero_ursa/ursa_fury_swipes.vpcf"
+          "EffectAttachType"      "follow_overhead"
+        }
+      }
+    }
+  }
+}

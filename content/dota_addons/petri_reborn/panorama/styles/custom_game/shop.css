@@ -1,0 +1,501 @@
+.stash{
+    vertical-align: bottom;
+}
+
+.ShopRoot {
+	width: 100%;
+	height: 100%;
+}
+
+#ShopWindow {
+	width: 420px;
+	height: 675px;
+
+	background-color: #0F0F0FEB;
+
+	align: right center;
+
+	margin-bottom: 235px;
+
+	flow-children: down;
+
+	transition-property: blur, transform, opacity, width, height, wash-color, pre-transform-scale2d;
+	transition-duration: 0.3s, 0.3s, 0.3s;
+	transition-timing-function: ease-in;
+}
+
+.Hide {
+	transform: translate3d( 75px, 0px, 0px );
+	blur: gaussian( 15.0 );
+	opacity: 0.0;
+
+	sound-out: "General.SelectAction";
+	sound: "General.SelectAction";
+}
+
+#ShopTabs {
+	width: 100%;
+	height: 50px;
+}
+
+#Petri, #KVN {
+	width: 100%;
+	height: 100%;
+
+	flow-children: right;
+}
+
+.ShopTab {
+	width: 140px;
+	height: 50px;
+
+	background-color: #08080826;
+
+	/*border-right: 1px solid #bbbbbb2A;*/
+	border-bottom: 3px solid #bbbbbb;
+}
+
+.ShopTab:selected {
+	border-bottom: 3px solid #0000FF;
+}
+
+.ShopTabText {
+	align: center center;
+	font-size: 22px;
+	font-family: Goudy Trajan Medium,FZKai-Z03,TH Sarabun New,YDYGO 540;
+	color: #bbbbbb;
+}
+
+.ShopTab:hover .ShopTabText,
+.ShopTabHighlight .ShopTabText,
+ {
+	color: white;
+}
+
+.ShopTabHighlight {
+	border-bottom: 3px solid white;
+}
+
+.Item {
+	width: 88px;
+	height: 64px;
+}
+
+.OutOfStock {
+	wash-color: #bbbbbb;
+}
+
+.Selected #ItemImage {
+	border: 1px solid white;
+}
+
+#ItemImage {
+	width: 100%;
+	height: 100%;
+}
+
+.ShopColumn {
+	width: 88px;
+	height: 100%;
+
+	flow-children: down;
+}
+
+.ShopColumn .Item {
+	width: 64px;
+	height: 58px;
+
+	padding-bottom: 12px;
+}
+
+.ShopContents {
+	align: center top;
+
+	width: fit-children;
+	height: 100%;
+
+	flow-children: right;
+}
+
+#ShopColumns {
+	width: 100%;
+	height: 80%;
+
+	flow-children: none;
+
+	margin-top: 20px;
+}
+
+.AdvancedShopContents {
+	position: 0px 0px 0px;
+}
+
+#ShopRecipe {
+	width: 100%;
+	height: 100%;
+
+	background-color: #080808F2;
+}
+
+#ShopRecipeContainer {
+	align: center center;
+
+	width: fit-children;
+	height: fit-children;
+
+	flow-children: right;
+}
+
+#ShopRecipeContainer .Item {
+	width: 75px;
+	height: 51px;
+
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+#ShopButton {
+	align: right bottom;
+
+	width: 100px;
+	height: 40px;
+
+	margin-right: 15px;
+	margin-bottom: 225px;
+
+	background-color: #E6E600A2;
+
+	border-radius: 2px;	
+	border: 4px solid #b4b400A2;
+}
+
+#ShopButton Label {
+	color: white;
+}
+
+#ShopButton:hover {
+	wash-color: #bbbbbb;
+}
+
+#ShopGuide {
+	width: 207px;
+	height: 850px;
+
+	background-color: #0F0F0FF2;
+	border-radius: 7px;
+
+	align: right center;
+
+	margin-bottom: 145px;
+	margin-right: 419px;
+
+	flow-children: down;
+
+	transition-property: blur, transform, opacity, width, height, wash-color, pre-transform-scale2d;
+	transition-duration: 0.3s, 0.3s, 0.3s;
+	transition-timing-function: ease-in;
+}
+
+.ShopGuideBlock {
+	width: fit-children;
+	height: fit-children;
+
+	margin-top: 15px;
+
+	margin-left: 15px;
+
+	flow-children: down;
+}
+
+.ShopGuideBlockItems .Item {
+	width: 56px;
+	height: 41px;
+
+	margin-top: 8px;
+}
+
+.ShopGuideBlock Label {
+	horizontal-align: left;
+	font-size: 20px;
+}
+
+#StockLabel {
+	align: left center;
+
+	margin-left: 7px;
+
+	font-size: 22px;
+	font-family: RadianceM;
+	color: white;
+}
+
+#ShopQuickbuy {
+	width: 204px;
+	height: 66px;
+
+	align: right bottom;
+
+	margin-right: 50px;
+	
+	margin-bottom: 9px;
+
+	flow-children: right;
+
+	background-color: #353A3EAA;
+}
+
+#ShopQuickbuy .Item {
+	width: 43px;
+	height: 31px;
+
+	margin: 4px;
+}
+
+#ReApplySkin {
+	width: 24px;
+	height: 24px;
+
+	align: right bottom;
+
+	margin: 9px;
+
+	background-color: #353A3EAA;
+}
+
+#ReApplySkin:hover {
+	brightness: 2.0;
+}
+
+#SpectateBtn
+{
+	width: 100px;
+	height: 50px;
+	margin-top: 200px;
+	margin-left: 5px;
+	background-color: #353A3EAA;
+}
+
+#SpectateBtn:hover {
+	brightness: 2.0;
+}
+
+#ChBtn
+{
+	width: 50px;
+	height: 50px;
+	vertical-align: bottom;
+	margin-bottom: 240px;
+	margin-left: 0px;
+	background-image: url( "file://{images}/custom_game/comp.png");
+}
+
+#ChBtn:hover
+{
+	brightness: 2.0;
+}
+
+#ChPanel
+{
+	width: 1000px;
+	height: 500px;
+	vertical-align: center;
+	horizontal-align: middle;
+	background-color: #353A3EAA;
+	
+}
+
+.ChLabel
+{
+	color: white;
+	font-size: 30px;
+	font-family: RadianceM;
+	margin-left: 5px;
+}
+
+.ChLabelPr
+{
+	color: white;
+	font-size: 25px;
+	font-family: RadianceM;
+	margin-left: 360px;
+}
+
+#CH1
+{
+	margin-top: 10px;	
+}
+
+#CH2
+{
+	margin-top: 100px;
+}
+
+#CH3
+{
+	margin-top: 200px;
+}
+
+#CH1Pr
+{
+	margin-top: 10px;	
+}
+
+#CH2Pr
+{
+	margin-top: 100px;
+}
+
+#CH3Pr
+{
+	margin-top: 200px;
+}
+
+#CHinfo
+{
+	margin-top: 240px;
+	margin-left: 5px;
+	width: 25px;
+	height: 25px;
+    background-image: url( "file://{images}/custom_game/info.png");
+}
+
+#CHlvl
+{
+	color: white;
+	font-size: 100px;
+	font-family: RadianceM;
+	margin-left: 700px;
+	margin-top: 75px;
+	color: #0388F6;
+}
+
+.reward
+{
+	width: 120px;
+	height: 120px;
+	vertical-align: bottom;
+	margin-bottom: 50px;
+}
+
+.rewardLabel
+{
+	vertical-align: center;
+	horizontal-align: middle;
+	color: black;
+	font-size: 50px;
+}
+
+.locked
+{
+	brightness: 0.2;
+}	
+
+#rew1
+{
+	margin-left: 45px;
+}
+
+#rew2
+{
+	margin-left: 175px;
+}
+#rew3
+{
+	margin-left: 305px;
+}
+#rew4
+{
+	margin-left: 435px;
+}
+#rew5
+{
+	margin-left: 565px;
+}
+#rew6
+{
+	margin-left: 695px;
+}
+#rew7
+{
+	margin-left: 825px;
+}
+
+.REWLVL10
+{
+	background-image: url( "file://{images}/custom_game/comp/rewards/10.png");
+}
+.REWLVL20
+{
+	background-image: url( "file://{images}/custom_game/comp/rewards/20.png");
+}
+.REWLVL30
+{
+	background-image: url( "file://{images}/custom_game/comp/rewards/30.png");
+}
+.REWLVL40
+{
+	background-image: url( "file://{images}/custom_game/comp/rewards/40.png");
+}
+.REWLVL50
+{
+	background-image: url( "file://{images}/custom_game/comp/rewards/50.png");
+}
+.REWLVL60
+{
+	background-image: url( "file://{images}/custom_game/comp/rewards/60.png");
+}
+.REWLVL70
+{
+	background-image: url( "file://{images}/custom_game/comp/rewards/70.png");
+}
+
+.rotate0
+{
+	transform: rotateZ(0deg) rotateX(0deg) translateY(0px);
+}
+
+.rotate90
+{
+	transform: rotateZ(90deg) rotateX(0deg) translateY(0px);
+}
+
+.rotate180
+{
+	transform: rotateZ(180deg) rotateX(0deg) translateY(0px);
+}
+
+.rotate270
+{
+	transform: rotateZ(270deg) rotateX(0deg) translateY(0px);
+}
+
+#CourierPanel
+{
+	width: 125px;
+	height: 44px;
+	horizontal-align: right;
+	vertical-align: bottom;
+	margin-bottom: 10px;
+	margin-right:  390px;
+	background-color: #353A3EAA;
+}
+
+#CourierBtn
+{
+	width: 44px;
+	height: 32px;
+	margin-left: 10px;
+	vertical-align: middle;
+	horizontal-align: left;
+	background-image: url( "file://{images}/custom_game/courier.png");
+}
+
+#DeliverBtn
+{
+	width: 44px;
+	height: 32px;
+	vertical-align: middle;
+	margin-right: 10px;
+	horizontal-align: right;
+	background-image: url( "file://{images}/custom_game/deliver.png");
+}

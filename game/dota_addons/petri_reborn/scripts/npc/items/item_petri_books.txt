@@ -1,0 +1,390 @@
+"item_petri_book_of_laugh"
+{
+  "BaseClass"                 "item_datadriven"
+  "ID"              "1903"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_book_of_laugh"
+
+  "ItemCost"            "225"
+  "ItemShopTags"          "consumable"
+  "ItemQuality"           "consumable"
+  "ItemAliases"         "book"
+  "ItemInitialCharges" "1"
+
+  "ItemStockMax" "10" 
+  "ItemStockTime" "45"
+  "ItemStockInitial" "5"
+
+  "ItemStackable"         "1"
+  "ItemPermanent"         "0"
+
+  "OnSpellStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"  "units/petrosyan.lua"
+      "Function"    "ReadBookOfLaugh"
+    }
+    "SpendCharge"
+    {}
+  }
+}
+
+"item_petri_comedy_story"
+{
+  "BaseClass"                 "item_datadriven"
+  "ID"              "1904"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_comedy_story"
+
+  "ItemCost"            "200000"
+  "ItemShopTags"          "consumable"
+  "ItemQuality"           "consumable"
+  "ItemAliases"         "book"
+  "ItemInitialCharges" "1"
+
+  "ItemStackable"         "1"
+  "ItemPermanent"         "0"
+
+  "ItemStockMax" "999" 
+  "ItemStockTime" "3000"
+  "ItemStockInitial" "0"
+
+  "OnSpellStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"  "units/petrosyan.lua"
+      "Function"    "ReadComedyStory"
+    }
+    "SpendCharge"
+    {}
+  }
+}
+
+"item_petri_comedy_book"
+{
+  "BaseClass"                 "item_datadriven"
+  "ID"              "1905"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_comedy_book"
+
+  "ItemCost"            "2500"
+  "ItemShopTags"          "consumable"
+  "ItemQuality"           "consumable"
+  "ItemAliases"         "book"
+  "ItemInitialCharges" "1"
+
+  "ItemStackable"         "1"
+  "ItemPermanent"         "0"
+
+  "OnSpellStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"  "units/petrosyan.lua"
+      "Function"    "ReadComedyBook"
+    }
+    "SpendCharge"
+    {}
+  }
+}
+
+"item_petri_agility_book"
+{
+  "BaseClass"                 "item_datadriven"
+  "ID"              "1968"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_comedy_book"
+
+  "ItemPurchasable"         "0"
+  "ItemSellable"          "0"
+
+  "ItemCost"            "2300"
+  "ItemShopTags"          "consumable"
+  "ItemQuality"           "consumable"
+  "ItemAliases"         "book"
+  "ItemInitialCharges" "1"
+
+  "ItemStackable"         "1"
+  "ItemPermanent"         "0"
+
+  "OnSpellStart"
+  {
+    "ApplyModifier"
+    {
+      "ModifierName"  "modifier_bonus_agility"
+      "Target"     "CASTER"
+    }
+    "SpendCharge"
+    {}
+  }
+
+  "Modifiers"
+  {
+    "modifier_bonus_agility"
+    {
+      "Passive"      "0"
+      "IsHidden"      "1"
+      "IsDebuff"      "0"
+
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+  
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "1"
+      }
+    }
+  }
+}
+
+"item_petri_health_book"
+{
+  "BaseClass"                 "item_datadriven"
+  "ID"              "1967"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_comedy_story"
+
+  "ItemPurchasable"         "0"
+  "ItemSellable"          "0"
+
+  "ItemCost"            "30000"
+  "ItemShopTags"          "consumable"
+  "ItemQuality"           "consumable"
+  "ItemAliases"         "book"
+  "ItemInitialCharges" "1"
+
+  "ItemStackable"         "1"
+  "ItemPermanent"         "0"
+
+  "ItemStockMax" "999" 
+  "ItemStockTime" "3000"
+  "ItemStockInitial" "0"
+
+  "OnSpellStart"
+  {
+    "ApplyModifier"
+    {
+      "ModifierName"  "modifier_bonus_health"
+      "Target"     "CASTER"
+    }
+    "SpendCharge"
+    {}
+  }
+
+  "Modifiers"
+  {
+    "modifier_bonus_health"
+    {
+      "Passive"      "0"
+      "IsHidden"      "1"
+      "IsDebuff"      "0"
+
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+  
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_HEALTH_BONUS" "50000"
+      }
+    }
+  }
+}
+
+"item_petri_book_of_experience1"
+{
+  "BaseClass"                 "item_datadriven"
+  "ID"              "1131"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_book_of_laugh"
+
+  "ItemCost"            "1"
+  "ItemShopTags"          "consumable"
+  "ItemQuality"           "consumable"
+  "ItemAliases"         "book"
+  "ItemInitialCharges" "1"
+
+  "ItemStockMax" "10" 
+  "ItemStockTime" "720"
+  "ItemStockInitial" "0"
+
+  "ItemStackable"         "1"
+  "ItemPermanent"         "0"
+
+  "OnSpellStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"  "units/petrosyan.lua"
+      "Function"    "ReadBookOfExperience1"
+    }
+    "SpendCharge"
+    {}
+  }
+}
+
+"item_petri_book_of_experience2"
+{
+  "BaseClass"                 "item_datadriven"
+  "ID"              "1132"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_book_of_laugh"
+
+  "ItemCost"            "10"
+  "ItemShopTags"          "consumable"
+  "ItemQuality"           "consumable"
+  "ItemAliases"         "book"
+  "ItemInitialCharges" "1"
+
+  "ItemStockMax" "10" 
+  "ItemStockTime" "1680"
+  "ItemStockInitial" "0"
+
+  "ItemStackable"         "1"
+  "ItemPermanent"         "0"
+
+  "OnSpellStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"  "units/petrosyan.lua"
+      "Function"    "ReadBookOfExperience2"
+    }
+    "SpendCharge"
+    {}
+  }
+}
+
+"item_petri_book_of_experience3"
+{
+  "BaseClass"                 "item_datadriven"
+  "ID"              "1133"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_book_of_laugh"
+
+  "ItemCost"            "225"
+  "ItemShopTags"          "consumable"
+  "ItemQuality"           "consumable"
+  "ItemAliases"         "book"
+  "ItemInitialCharges" "1"
+
+  "ItemStockMax" "10" 
+  "ItemStockTime" "45"
+  "ItemStockInitial" "5"
+
+  "ItemStackable"         "1"
+  "ItemPermanent"         "0"
+
+  "OnSpellStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"  "units/petrosyan.lua"
+      "Function"    "ReadBookOfExperience3"
+    }
+    "SpendCharge"
+    {}
+  }
+}
+
+"item_petri_snares_1"
+{
+  "BaseClass"                 "item_datadriven"
+  "ID"              "1976"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_snares_1"
+
+  "AbilityCastPoint"      "0"
+  "AbilityCooldown"       "0"
+  "AbilityManaCost"       "0"
+
+  "ItemCost"            "500"
+
+  "ItemShopTags"        "consumable"
+  "ItemQuality"         "consumable"
+  "ItemPermanent"         "0"
+  "ItemSellable"          "0"
+  "ItemKillable"          "1"
+  "ItemPurchasable"                "1"
+
+  "ItemStackable" "0"
+  "ItemPermanent" "0"
+  "ItemInitialCharges" "1"
+  "ItemDisplayCharges" "1"
+  "ItemRequiresCharges" "1"
+  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
+  "ItemCastOnPickup"    "1"
+
+  "OnSpellStart"
+  {
+    "SpendCharge"
+    {}
+    "RunScript"
+    {
+      "ScriptFile"  "units/petrosyan.lua"
+      "Function"    "BuySnares"
+      "ItemCost"  "500"
+    }
+  }
+}
+
+"item_petri_snares_2"
+{
+  "BaseClass"                 "item_datadriven"
+  "ID"              "1975"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_snares_2"
+
+  "AbilityCastPoint"      "0"
+  "AbilityCooldown"       "0"
+  "AbilityManaCost"       "0"
+
+  "ItemCost"            "3100"
+
+  "ItemShopTags"        "consumable"
+  "ItemQuality"         "consumable"
+  "ItemPermanent"         "0"
+  "ItemSellable"          "0"
+  "ItemKillable"          "1"
+  "ItemPurchasable"                "1"
+
+  "ItemStackable" "0"
+  "ItemPermanent" "0"
+  "ItemInitialCharges" "1"
+  "ItemDisplayCharges" "1"
+  "ItemRequiresCharges" "1"
+  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
+  "ItemCastOnPickup"    "1"
+
+  "OnSpellStart"
+  {
+    "SpendCharge"
+    {}
+    "RunScript"
+    {
+      "ScriptFile"  "units/petrosyan.lua"
+      "Function"    "BuyUpgradedSnares"
+      "ItemCost"  "3100"
+    }
+  }
+}
+

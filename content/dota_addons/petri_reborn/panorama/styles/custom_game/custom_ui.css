@@ -1,0 +1,19 @@
+.rotate0
+{
+	transform: rotateZ(0deg) rotateX(0deg) translateY(0px);
+}
+
+.rotate90
+{
+	transform: rotateZ(90deg) rotateX(0deg) translateY(0px);
+}
+
+.rotate180
+{
+	transform: rotateZ(180deg) rotateX(0deg) translateY(0px);
+}
+
+.rotate270
+{
+	transform: rotateZ(270deg) rotateX(0deg) translateY(0px);
+}

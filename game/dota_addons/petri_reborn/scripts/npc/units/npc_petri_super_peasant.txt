@@ -1,0 +1,54 @@
+"npc_petri_super_peasant"
+{
+  "BaseClass"     "npc_dota_creature"
+  "Model"      "models/items/warlock/golem/the_torchbearer/the_torchbearer.vmdl"
+  "ModelScale"    "0.8"
+  "Level"      "1"
+  "HealthBarOffset"    "210"
+
+  "vscripts"     "units/peasant.lua"
+
+  "AbilityLayout"    "5"
+  "Ability1"     "gather_lumber"
+  "Ability2"     "petri_repair"
+  "Ability3"     "petri_gold_bag_blink"
+  "Ability4"     "petri_suicide"
+  "Ability5"     "build_petri_tower_of_evil"
+  "Ability6"     ""
+  "Ability7"     "petri_upgrade_to_cop"
+  "Ability8"     "return_resources"
+  "Ability9"     "petri_magic_immunity"
+
+  "ArmorPhysical"    "0"
+  "MagicalResistance"   "0"
+
+  "AttackCapabilities"  "DOTA_UNIT_CAP_NO_ATTACK"
+
+  "BountyGoldMin"    "13.0"
+  "BountyGoldMax"    "25.0"
+
+  "BoundsHullName"   "DOTA_HULL_SIZE_REGULAR"
+  "RingRadius"    "40"
+
+  "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+  "MovementSpeed"    "522"
+  "MovementTurnRate"   "0.6"
+
+  "StatusHealth"    "5"
+  "StatusHealthRegen"   "0.25"
+  "StatusMana"    "5"
+  "StatusManaRegen"    "0"
+
+  "VisionDaytimeRange"  "800"
+  "VisionNighttimeRange"  "600"
+
+  "TeamName"     "DOTA_TEAM_GOODGUYS"
+  "CombatClassAttack"   "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+  "CombatClassDefend"   "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+  "UnitRelationShipClass"  "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+  "Creature"
+  {
+    "DisableClumpingBehavior"  "1"
+  }
+}

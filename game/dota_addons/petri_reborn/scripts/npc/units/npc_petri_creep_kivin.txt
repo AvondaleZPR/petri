@@ -1,0 +1,51 @@
+	"npc_petri_creep_kivin"
+	{
+	  "BaseClass"         "npc_dota_creature"
+	  "Model"           "models/props_structures/tower_dragon_white.vmdl"
+	  "ModelScale"        "1.0"
+	  "SoundSet"          "Creep_Good_Range"
+	  "Level"           "7"
+	  "HealthBarOffset"     "290"
+	
+	  //"Ability1"  "petri_creep_pendant"
+	  "Ability1"  "petri_gold_tick"
+	
+	  "ArmorPhysical"       "1000"
+	  "MagicalResistance"     "0"
+	
+	  "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	  "AttackDamageMin"            "57077003.0"
+	  "AttackDamageMax"            "57077003.0"
+	  "AttackRate"                 "0.3"
+	  "AttackAnimationPoint"       "0.39"
+	  "AttackAcquisitionRange"     "200"
+	  "AttackRange"                "200"
+	  "AttackRangeBuffer"          "200"
+	
+	  "ProjectileModel"            "particles/units/heroes/hero_razor/razor_base_attack.vpcf"
+	  "ProjectileSpeed"            "1400"
+	
+	  "BountyGoldMin"       "99999.0"
+	  "BountyGoldMax"       "99999.0"
+	  "BountyXP"          "475"  
+	
+	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
+	  "RingRadius"        "50"
+	  
+	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+	  "MovementSpeed"       "310"
+	  "MovementTurnRate"      "0.5"
+	
+	  "StatusHealth"        "100000000"
+	  "StatusHealthRegen"     "99999"
+	  "StatusMana"        "0"
+	  "StatusManaRegen"     "0"
+	
+	  "VisionDaytimeRange"    "200"
+	  "VisionNighttimeRange"    "200"
+	
+	  "TeamName"          "DOTA_TEAM_NEUTRALS"
+	  "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	  "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	  "UnitRelationShipClass"   "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}

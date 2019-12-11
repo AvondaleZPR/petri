@@ -1,0 +1,55 @@
+"item_petri_megahammer"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1510"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_megahammer"
+
+  "ItemCost"            "1"
+  "ItemShopTags"          "damage"
+  "ItemQuality"         "component"
+  "ItemAliases"         "megahammer"
+
+  "ItemSellFullPrice" "1"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_damage"      "1"
+    }   
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "full_price"      "1"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_petri_sword_bonus"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"    "0"
+      }
+    }
+    "modifier_item_petri_megahammer_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_damage"
+      }
+    }
+  }
+}

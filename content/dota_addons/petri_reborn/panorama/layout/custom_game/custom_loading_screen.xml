@@ -1,0 +1,82 @@
+<root>
+  <styles>
+    <include src="file://{resources}/styles/custom_game/material_design.css" />
+    <include src="file://{resources}/styles/custom_game/loading_screen/custom_loading_screen.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/loading_screen/developers.js" />
+    <include src="file://{resources}/scripts/custom_game/loading_screen/Background.js" />
+    <include src="file://{resources}/scripts/custom_game/loading_screen/additional_info.js" />
+  </scripts>
+  <Panel class="AddonLoadingRoot">
+    <Panel id="CustomBackground" />
+
+    <Panel id="PlaceholdersRoot" >
+      <Panel id="Placeholders" >
+        <!-- <Image class="Placeholder" src="file://{images}/custom_game/loading_screen/ads/cc.jpg" /> -->
+      </Panel>
+    </Panel>
+	
+	<Panel id="DiscordServer">
+	    <Button id="DiscordButton" onactivate="DOTADisplayURL('https://discord.gg/RYa27fn');">
+		    <Image src="file://{images}/custom_game/loading_screen/discord_server.png" />
+        </Button>		
+	</Panel>
+    
+	<Label id="version" text="111"/>
+	
+	<!--
+    <Panel id="Developers">
+	  <Label class="devlabel" text="Developers:"/>
+      <DOTAUserName class="devname" steamid="76561198251859572" />
+      <Panel id="11" class="column">
+        <DOTAAvatarImage class="avatar" steamid="76561198251859572" />
+      </Panel>
+       <DOTAUserName class="devname" steamid="76561198108088470" />
+      <Panel id="22" class="column">
+        <DOTAAvatarImage class="avatar" steamid="76561198108088470" />
+      </Panel>
+       <DOTAUserName class="devname" steamid="76561198056299804" />
+      <Panel id="33" class="column">
+        <DOTAAvatarImage class="avatar" steamid="76561198056299804" />
+      </Panel>
+    </Panel>
+	-->
+	
+	<Panel id="TopPlayer">
+	    <Label class="toplabel" text="№1"/>
+		<!--<DOTAUserName id="top_Name" class="topname" steamid="local"/>-->
+		<DOTAAvatarImage id="top_Avatar" class="avatar" steamid="local" />
+		<Label id="top_Rating" class="toplabel" text="1000"/>
+	</Panel>
+	
+	<Panel id="TopPlayerLvl">
+	    <Label class="lvllabel" text="№1"/>
+		<!--<DOTAUserName id="topLvl_Name" class="topname" steamid="local"/>-->
+		<DOTAAvatarImage id="topLvl_Avatar" class="avatar" steamid="local" />
+		<Label id="topLvl_Rating" class="lvllabel" text="10"/>
+	</Panel>
+
+    <Panel id="Statistics">
+      <Panel id="StatButtons">
+        <Button class="statButton" id="HideStat" onactivate="OnHideStat()"/> 
+      </Panel>
+      <Panel id="MMR" class="DarkTheme Cards rounded z-index1" />
+    </Panel>
+
+	<!--
+	
+    <Panel id="SocialNetworks" >
+      <Label text="#get_models" class="Headline1" id="GetModels" />
+      <Label text="TheProma#8032" class="Headline1" id="AlikVirg">
+      </Label>
+
+      <Label text="vk.com/dota2petri" class="SN Headline1" id="VK" />
+    </Panel>
+	-->
+	
+<!--     <Panel id="TitlePanel">
+      <Label id="AddonTitle" text="#addon_game_name" style="" />
+    </Panel> -->
+  </Panel>
+</root>

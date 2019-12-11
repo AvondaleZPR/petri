@@ -1,0 +1,127 @@
+"dota_shops"
+{
+  "consumables"
+  {
+    "item1"        "item_petri_ward"
+    "item2"        "item_petri_cola"
+  }
+
+  "attributes"
+  {
+    "item1"        "item_petri_butt"
+    "item2"        "item_petri_stone_of_power"
+    "item3"        "item_petri_book_of_experience1"
+    "item4"        "item_petri_book_of_experience2"
+    "item5"        "item_petri_health_book"
+    "item6"        "item_petri_comedy_story"
+  }
+
+  "weapons_armor"
+  {
+    "item1"        "item_petri_mask_of_laugh"
+    "item2"        "item_petri_snares_1"
+    "item3"        "item_petri_snares_2"
+  }
+
+  "misc"
+  {
+    
+    "item1"        "item_petri_kvn_medal"
+    "item2"        "item_petri_grease"
+    "item3"        "item_petri_mega_sith"
+  }   
+
+  "basics"
+  {
+    "item1"    "item_petri_tourmaline_patch"
+    "item2"    "item_petri_jade_amulet"
+    "item3"    "item_petri_bracer"
+    "item4"    "item_petri_zirconia_armor"
+    "item5"    "item_petri_uber_mask_of_laugh"
+    "item6"    "item_petri_uber_mask_of_laugh_level2"
+    "item7"    "item_petri_uber_mask_of_laugh_level3"
+    "item8"    "item_petri_uber_mask_of_laugh_level4"
+    "item9"    "item_petri_jedi"
+  }
+
+  "support"
+  {
+    "item1"    "item_petri_butt"
+    "item2"    "item_petri_butt2"
+    "item3"    "item_petri_butt3"
+    "item4"    "item_petri_chicken"
+    "item5"    "item_petri_cow"
+    "item6"    "item_petri_dragon"
+    "item7"    "item_petri_kvn_heart"
+  }
+
+  "magics"
+  {
+    "item1"    "item_petri_simple_sword"
+    "item2"    "item_petri_hyperubersword"
+    "item3"    "item_petri_kladenets_sword"
+    "item4"    "item_petri_perfect_sword"
+    "item5"    "item_petri_titan_sword"
+    "item6"    "item_petri_magic_axe"
+    "item7"    "item_petri_grond"
+    "item8"    "item_petri_thunder"
+    "item9"    "item_petri_trident"
+  }
+
+  "defense"
+  {
+
+  }
+
+  "weapons"
+  {
+    "item1"    "item_petri_helmet"
+    "item2"    "item_petri_vest"
+    "item3"    "item_petri_supervest"
+    "item4"    "item_petri_supermegavest"
+    "item5"    "item_petri_superthing"
+    "item6"    "item_petri_shield_of_hell"
+    "item7"    "item_petri_shield_of_heaven"
+    "item8"    "item_petri_best_shield"
+    "item9"    "item_petri_crysis_armor"
+  }
+
+ // Level 4 - Orange / Orb / Artifacts
+  "artifacts"
+  {
+
+  }
+
+  //Sideshop Start - Page 1
+  //--------------------------
+
+  "sideshop1"
+  {
+    "item1"    "item_petri_trap"
+    "item2"    "item_petri_evasion_scroll"
+    "item3"    "item_petri_attack_scroll"
+    "item4"    "item_petri_alcohol"
+	"item5"    "item_petri_superkey"
+  }
+
+ //Sideshop Page 2
+
+  "sideshop2"
+  {
+    "item1"    "item_petri_gold_bag3"
+    "item2"    "item_petri_kvn_fan_blink"
+    "item3"    "item_petri_boots"
+    "item4"    "item_petri_pocketmiracle1"
+    "item5"    "item_petri_pocketmiracle2"
+    "item6"    "item_petri_pocketmiracle3"
+    "item7"    "item_petri_pocketexit"
+  }
+
+ //Secret Shop Start
+ //--------------------------   
+
+  "secretshop"
+  {
+    "item1"    "item_petri_hook"
+  }
+} 

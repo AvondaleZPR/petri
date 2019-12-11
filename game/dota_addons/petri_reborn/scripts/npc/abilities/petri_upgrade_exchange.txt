@@ -1,0 +1,62 @@
+"petri_upgrade_exchange"
+{
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+  "BaseClass"           "ability_datadriven"
+  "AbilityTextureName"      "custom/petri_upgrade_exchange"
+
+  "AbilityCastPoint"        "0.0"
+
+  "AbilityManaCost"       "0"
+  "AbilityGoldCost"       "0"
+  "AbilityChannelTime"      "2.5"
+  "AbilityUpgradeGoldCost"    "0"
+
+  "AbilityGoldCost" "%10"
+
+  "MaxLevel"            "2"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "lumber_cost"        "0"
+    }
+  }
+
+  "OnSpellStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"      "internal/util.lua"
+      "Function"        "StartUpgrading"
+      "Permanent"       "1"
+    }
+  }
+
+  "OnChannelInterrupted"
+  {
+    "RunScript"
+    {
+      "ScriptFile"      "internal/util.lua"
+      "Function"        "StopUpgrading"
+      "Permanent"       "1"
+    }
+  }
+  
+  "OnChannelSucceeded"
+  {
+    "RunScript"
+    {
+      "ScriptFile"  "units/sawmill.lua"
+      "Function"    "UpgradeExchange"
+    }
+    "RunScript"
+    {
+      "ScriptFile"      "internal/util.lua"
+      "Function"        "OnUpgradeSucceeded"
+      "Permanent"       "1"
+    }
+  }
+}

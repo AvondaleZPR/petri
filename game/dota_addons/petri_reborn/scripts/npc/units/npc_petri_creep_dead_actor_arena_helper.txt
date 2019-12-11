@@ -1,0 +1,62 @@
+"npc_petri_creep_dead_actor_arena_helper"
+{
+  "BaseClass"         "npc_dota_creature"
+  "Model"           "models/items/undying/idol_of_ruination/ruin_wight_minion_gold.vmdl"
+  "ModelScale"        "1.2"
+  "SoundSet"          "Creep_Good_Melee"  
+  "Level"           "3"
+  "HealthBarOffset"     "140"
+
+  "HasInventory"                "1"
+
+  "vscripts"     "units/creep.lua"
+
+  
+
+  "ArmorPhysical"       "0"
+  "MagicalResistance"     "0"
+
+  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+  "AttackDamageMin"     "3.0"
+  "AttackDamageMax"     "6.0"
+  "AttackRate"        "0.7"
+  "AttackAnimationPoint"    "0.39"
+  "AttackAcquisitionRange"  "500"
+  "AttackRange"       "90"
+
+  "BountyGoldMin"       "4.0"
+  "BountyGoldMax"       "6.0"
+  "BountyXP"          "10"  
+
+  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
+  "RingRadius"        "50"
+  
+  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+  "MovementSpeed"       "270"
+  "MovementTurnRate"      "0.5"
+
+  "StatusHealth"        "75"
+  "StatusHealthRegen"     "0"
+  "StatusMana"        "0"
+  "StatusManaRegen"     "0"
+
+  "VisionDaytimeRange"    "800"
+  "VisionNighttimeRange"    "800"
+
+  "TeamName"          "DOTA_TEAM_NEUTRALS"
+  "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+  "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+  "UnitRelationShipClass"   "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+  "Creature"
+  {
+    "EquippedItems"
+    {
+      "Jade_amulet"    {    "Item"    "item_petri_jade_amulet"    }
+      "Butt3"    {    "Item"    "item_petri_butt3"    }
+      "Supervest"    {    "Item"    "item_petri_supervest"    }
+      "Hyperubersword"    {    "Item"    "item_petri_hyperubersword"    }
+      "Mask_of_laugh"    {    "Item"    "item_petri_mask_of_laugh"    }
+    }
+  }
+}

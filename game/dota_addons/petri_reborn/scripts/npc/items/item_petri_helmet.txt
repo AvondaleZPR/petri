@@ -1,0 +1,44 @@
+"item_petri_helmet"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1505"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_helmet"
+
+  "ItemCost"            "5"
+  "ItemShopTags"          "armor"
+  "ItemQuality"         "component"
+  "ItemAliases"         "helmet"
+  
+  "ItemSellFullPrice" "1"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_armor"      "2"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "full_price"      "5"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_item_petri_helmet_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "%bonus_armor"
+      }
+    }
+  }
+}

@@ -1,0 +1,151 @@
+.ExchangeRoot
+{
+	width: 0px;
+
+	horizontal-align: left;
+	vertical-align: middle;
+	
+	flow-children: down;
+}
+
+.DefaultPanel
+{
+	width: 100%;
+	background-color: transparent;
+}
+
+#HeaderPanel
+{
+	height: 30px;
+}
+
+#HeaderLabel
+{	
+	color: #ffffff;
+	font-size: 22px;
+
+	horizontal-align: center;
+	vertical-align: middle;	
+}
+
+#BankPanel
+{
+	height: 50px;
+
+	padding: 5px;
+	flow-children: down;	
+}
+
+.BankLabel
+{
+	color: #ffffff;
+	font-size: 18px;
+
+	horizontal-align: left;
+	vertical-align: middle;
+
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#Countdown, 
+#Bank
+{
+	horizontal-align: right;
+	margin-top: -18px;
+}
+
+#BetPanel
+{
+	height: 240px;
+
+	vertical-align: bottom;
+	flow-children: down;	
+}
+
+#BetLabel
+{
+	color: #ffffff;
+	font-size: 18px;
+
+	horizontal-align: left;
+	vertical-align: top;
+
+	margin-left: 10px;
+	margin-right: 10px;	
+}
+
+#Companies
+{
+	width: fit-children;
+
+	margin-bottom: 5px;
+
+	horizontal-align: center;
+	flow-children: down;
+}
+
+.DarkTheme.Button
+{
+	width: 160px;
+}
+
+.DarkTheme.Button.checked
+{	
+	background-color: #607D8B;
+}
+
+.DarkTheme.Button.winner
+{	
+	background-color: #43A047;
+}
+
+.CompanyLabel
+{
+	color: #ffffff;
+	font-size: 18px;
+	text-shadow: 0px 0px 2px 2 #000000;
+
+	horizontal-align: center;
+	vertical-align: middle;	
+}
+
+#BetEntry
+{
+	color: #ffffff;
+	font-size: 18px;
+
+	width: 120px;
+
+	border: 1px solid #000000;
+
+	margin-top: -18px;
+	margin-left: 85px;
+	margin-right: 10px;
+
+	background-color: #1f1f1f;
+}
+
+#MakeBet
+{
+	height: 35px;
+
+	margin-bottom: 10px;
+
+	vertical-align: bottom;
+	horizontal-align: center;
+
+    border-radius: 3px;
+}
+
+#MakeBetLabel
+{
+	color: #ffffff;
+	font-size: 18px;
+			
+	vertical-align: middle;
+	horizontal-align: center;
+
+	margin-left: 5px;
+	margin-right: 5px;
+}

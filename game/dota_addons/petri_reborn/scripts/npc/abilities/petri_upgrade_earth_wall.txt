@@ -1,0 +1,149 @@
+"petri_upgrade_earth_wall"
+{
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "BaseClass"           "ability_datadriven"
+  "AbilityTextureName"      "earth_spirit_boulder_smash"
+
+  "AbilityCastAnimation"      "ACT_DOTA_DISABLED"
+
+  "AbilityCastPoint"        "0.0"
+
+  "MaxLevel"            "14"
+
+  "AbilityChannelTime"      "4.0 6.0 7.0 8.5 10.0 15.0 20.0 30.0 50.0 70.0 150.0 165.0 180.0"
+  "AbilityGoldCost"       "%0 %5 %40 %80 %400 %600 %1200 %1800 %3000 %7000 %12000 %21000 %26000"
+
+  "precache"
+  {
+    "particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
+  }
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "lumber_cost"        "250 2000 6000 10000 40000 80000 200000 400000 800000 1500000 2500000 2750000 3000000"
+    }
+    "02"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "health_points"        "275 375 500 900 1700 1800 2150 2500 5000 7500 30000 80000 300000"
+    }
+    "03"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "hit_stacks"        "0 0 0 0 0 0 0 0 0 0 0 0 0"
+    }
+    "04"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "hit_stacks_regen"        "1 2 2 2 3 3 4 4 4 5 5 7 10"
+    }
+    "05"
+    {
+      "var_type"          "FIELD_INTEGER"
+      "armor"        "63 130 144 270 350 500 700 3500 4500 8200 16750 19300 23000"
+    }
+  }
+
+  "OnSpellStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"      "internal/util.lua"
+      "Function"        "StartUpgrading"
+    }
+  }
+
+  "OnChannelInterrupted"
+  {
+    "RunScript"
+    {
+      "ScriptFile"      "internal/util.lua"
+      "Function"        "StopUpgrading"
+    }
+  }
+
+  "OnChannelSucceeded"
+  {
+    "RunScript"
+    {
+      "ScriptFile"      "units/wall.lua"
+      "Function"        "UpgradeEarth"
+    }
+    "RunScript"
+    {
+      "ScriptFile"      "internal/util.lua"
+      "Function"        "OnUpgradeSucceeded"
+    }
+  }
+
+  "Modifiers"
+  {
+    "modifier_hit_stacks_gold"
+    {
+      "Passive"      "0"
+      "IsHidden"      "1"
+      "IsDebuff"      "0"
+    
+      // "EffectName"                "particles/units/heroes/hero_warlock/warlock_fatal_bonds__2icon.vpcf"
+      // "EffectAttachType"          "follow_overhead"
+    }
+    "modifier_wall_notification"
+    {
+      "Passive"      "1"
+      "IsHidden"      "1"
+
+      "OnAttacked"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/wall.lua"
+          "Function"    "Notification"
+        }
+      }
+    }
+    "modifier_armor"
+    {
+      "IsPassive"  "1"
+      "IsHidden" "1"
+
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "1"
+      }
+    }
+    "modifier_hit_stacks"
+    {
+      "IsPassive"  "1"
+      "IsHidden" "0"
+
+      "Attributes"    "MODIFIER_ATTRIBUTE_PERMANENT"
+
+      "Priority"                     "MODIFIER_PRIORITY_ULTRA"
+
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "1"
+      }
+    }
+    "modifier_hit_stacks_regen"
+    {
+      "IsPassive"  "1"
+      "IsHidden" "1"
+
+      "Attributes"    "MODIFIER_ATTRIBUTE_PERMANENT"
+
+      "ThinkInterval"  "1.0"
+      "OnIntervalThink"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/wall.lua"
+          "Function"    "RegenHitStacks"
+        }
+      }
+    }
+  }
+}

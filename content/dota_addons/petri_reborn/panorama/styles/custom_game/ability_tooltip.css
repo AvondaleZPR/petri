@@ -1,0 +1,268 @@
+.AbilityTooltipRoot
+{
+	padding: 5px;
+	flow-children: right;
+	z-index: 5;
+
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 230px;
+
+	/*margin-top: 200px;*/
+}
+
+.AbilityTooltipRoot.Hide {
+	visibility: collapse;
+	opacity: 0.0;
+}
+
+#AbilityTooltip
+{
+	margin-left: -2px;
+	width: 350px;
+
+	flow-children: down;
+}
+
+.Cards
+{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.TooltipLabel
+{
+	color: #ffffff;
+	font-size: 18px;
+
+	horizontal-align: left;
+
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#Header
+{
+	width: 100%;	
+}
+
+#AbilityName
+{
+	vertical-align: middle;
+
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#AbilityLevel
+{
+	vertical-align: middle;
+	horizontal-align: right;
+
+	color: #e0e0e0;
+	font-size: 14px;
+
+	margin-top: 10px;
+	margin-bottom: 10px;	
+}
+
+#AbilityLevel.one_level
+{
+	visibility: collapse;
+}
+
+#Description
+{
+	width: 100%;
+}
+
+#AbilityDescription
+{
+	color: #e0e0e0;
+	font-size: 14px;
+
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+.flowDowm
+{
+	width: 100%;
+
+	flow-children: down;
+}
+
+#Dependencies
+{
+	width: 100%;
+
+	flow-children: down;
+}
+
+#Dependencies.all_enought
+{
+	visibility: collapse;
+}
+
+.DependenceLabel
+{
+	color: #ff0000;
+	font-size: 16px;
+
+	horizontal-align: right;
+
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.DependenceLabel.isBuild
+{
+	color: #00ff00;
+}
+
+.DependenceLabel.isEnemy
+{
+	color: #cccccc;
+}
+
+.SeparateLabel
+{
+	color: #e0e0e0;
+	font-size: 14px;
+
+	horizontal-align: middle;
+
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#Specials
+{
+	width: 100%;
+
+	flow-children: down;
+}
+
+#Specials.empty
+{
+	visibility: collapse;
+}
+
+.SpecialsLabel
+{
+	color: #e0e0e0;
+	font-size: 14px;
+
+	horizontal-align: left;
+
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.SpecialsLabelName
+{
+	color: #e0e0e0;
+	font-size: 14px;
+    font-weight: bold;
+}
+
+.SpecialsLabelColor
+{
+	color: #c0e8fb;
+    font-size: 14px;
+    font-weight: bold;
+	text-shadow: 0px 0px 16px 6 #245191;
+}
+
+#CooldownAndCosts
+{
+	width: 100%;
+}
+
+#Timers
+{
+	width: 150px;
+	flow-children: down;
+}
+
+#CooldownLabel.no_cd,
+#ChannelLabel.no_channel
+{
+	visibility: collapse;
+}
+
+#CooldownLabel,
+#ChannelLabel
+{
+	width: 60px;
+	height: 30px;
+  	line-height: 25px;
+
+  	border-style: solid;
+    border-right-width: 10px;
+
+	font-size: 16px;
+    font-weight: bold;
+
+    color: #ffffff;
+
+    border-radius: 6px;
+
+	text-align: right;
+
+	horizontal-align: left;
+	margin-left: 10px;
+}
+
+.Icon
+{
+	width: 20px;
+	height: 20px;
+
+	vertical-align: middle;
+}
+
+#Costs
+{
+	width: 100px;
+
+	horizontal-align: right;
+
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+	flow-children: down;
+}
+
+.Cost
+{
+	width: 100%;
+	height: 25px;
+  	line-height: 25px;
+
+  	border-style: solid;
+    border-right-width: 10px;
+
+	font-size: 16px;
+    font-weight: bold;
+
+    color: #ffffff;
+
+    border-radius: 6px;
+
+	text-transform: uppercase;
+
+	text-align: right;
+}
+
+.Cost.null
+{
+	visibility: collapse;
+}
+
+.Cost.not_enought
+{
+	color: #ff0000;
+}

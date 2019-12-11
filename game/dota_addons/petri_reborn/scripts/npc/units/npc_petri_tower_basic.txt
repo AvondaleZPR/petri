@@ -1,0 +1,55 @@
+"npc_petri_tower_basic"
+{
+  "BaseClass"         "npc_dota_base_additive"  
+  "Model"           "models/heroes/omniknight/omniknight.vmdl"  
+  "ModelScale"                "0.29"
+  "SoundSet"          "Creep_Good_Range"          
+  "Level"           "0"
+  "UnitLabel"         "npc_petri_tower_basic"
+  "HealthBarOffset"    "215"
+
+  "AbilityLayout"     "5"
+  "Ability1"        "petri_upgrade_basic_tower"
+  "Ability2"        "petri_upgrade_elements_tower"
+  "Ability3"        "petri_building"
+
+  "ArmorPhysical"       "0"     
+  "MagicalResistance"       "0"     
+
+  "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+  "AttackDamageMin"            "5"
+  "AttackDamageMax"            "5"
+  "AttackRate"        "1.55"
+  "AttackAnimationPoint"  "0.4"
+  "AttackAcquisitionRange"     "800"
+  "AttackRange"                "600"
+  "AttackRangeBuffer"          "250"
+
+  "ProjectileModel"            "particles/units/heroes/hero_mirana/mirana_base_attack.vpcf"
+  "ProjectileSpeed"            "900"
+
+  "BountyXP"          "0"     
+  "BountyGoldMin"       "7"     
+  "BountyGoldMax"       "7"     
+
+  "BoundsHullName"      "DOTA_HULL_SIZE_REGULAR"      
+  "RingRadius"                "70"
+
+  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE"     
+  "MovementSpeed"       "0"   
+  "MovementTurnRate"      "0.3"   
+  "FollowRange"       "0"   
+
+  "StatusHealth"        "35"     
+  "StatusHealthRegen"     "0"     
+  "StatusMana"        "0"     
+  "StatusManaRegen"     "0"     
+
+  "TeamName"          "DOTA_TEAM_GOODGUYS"      
+  "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+  "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+  "UnitRelationshipClass"   "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+
+  "VisionDaytimeRange"    "500"   
+  "VisionNighttimeRange"    "500"   
+}

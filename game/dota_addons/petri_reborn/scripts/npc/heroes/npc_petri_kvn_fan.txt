@@ -1,0 +1,73 @@
+"npc_petri_kvn_fan"
+{
+  "override_hero"     "npc_dota_hero_rattletrap"
+
+  "NoCombine"   "1"
+  "DisableWearables" "1" 
+
+  "HealthBarOffset"    "240"
+
+  "AbilityLayout"     "6"
+
+  "vscripts" "units/kvn_fan.lua"
+
+  "Ability1"        "petri_open_basic_buildings_menu" 
+  "Ability2"        "petri_open_advanced_buildings_menu" 
+  "Ability3"        "gather_lumber" 
+  "Ability4"        "petri_repair"
+  "Ability5"        "petri_kvn_fan_deny"
+  "Ability6"        "petri_empty1"
+  "Ability7"        "return_resources"
+  "Ability10"   "special_bonus_armor_4"
+  "Ability11"   "special_bonus_mp_200"
+  "Ability12"   "special_bonus_attack_damage_50"
+  "Ability13"   "special_bonus_unique_clockwerk_2"
+  "Ability14"   "special_bonus_respawn_reduction_25"
+  "Ability15"   "special_bonus_magic_resistance_12"
+  "Ability16"   "special_bonus_hp_400"
+  "Ability17"   "special_bonus_unique_clockwerk"
+  
+  "ArmorPhysical"       "0"
+  "MagicalResistance"       "0"
+
+  "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+  "AttackDamageMin"           "2.0"
+  "AttackDamageMax"           "3.0"
+  "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+  "AttackRate"                "2"
+  "AttackAnimationPoint"      "0.433"
+  "AttackAcquisitionRange"    "500"
+  "AttackRange"               "90"
+
+  //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+  "AttributeBaseStrength"   "0"
+  "AttributeStrengthGain"   "0"
+  "AttributeBaseIntelligence" "0"
+  "AttributeIntelligenceGain" "0"
+  "AttributeBaseAgility"    "0"
+  "AttributeAgilityGain"    "0"
+
+  "BountyXP"          "0"                 
+  "BountyGoldMin"       "0"                   
+  "BountyGoldMax"       "0"                   
+
+  //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+  //"RingRadius"        "70"
+
+  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+  "MovementSpeed"       "422"   
+  "MovementTurnRate"      "1.0" 
+
+  "StatusHealth"        "16"          
+  "StatusHealthRegen"     "0.165"
+  "StatusMana"        "20"     
+  "StatusManaRegen"     "5.0"         
+
+  "VisionDaytimeRange"    "1800"                  
+  "VisionNighttimeRange"    "1800"                  
+
+  "Creature"
+  {
+    "DisableClumpingBehavior" "0"
+  }
+}

@@ -1,0 +1,298 @@
+"DOTAHeroes"
+{
+	"npc_petri_elena"
+	{
+	  "override_hero"     "npc_dota_hero_death_prophet"
+	
+	  "NoCombine"   "1"
+	  "DisableWearables" "1" 
+	
+	  "HealthBarOffset"    "275"
+	
+	  "HasInventory"          "1"
+	  "ConsideredHero"        "1"
+	
+	  "AbilityLayout" "6"
+	
+	  "Ability1"        "petri_petrosyan_flat_joke" 
+	  "Ability2"        "petri_petrosyan_sleep" 
+	  "Ability3"        "petri_petrosyan_laugh_burst" 
+	  "Ability4"        "petri_petrosyan_explore"
+	  "Ability5"        "petri_petrosyan_wind_walk"
+	  "Ability6"        "petri_petrosyan_return"
+	  "Ability7"        "petri_petrosyan_passive"
+	  "Ability8"        "petri_exploration_tower_explore_world"
+	  "Ability10"   "special_bonus_spell_amplify_4"
+	  "Ability11"   "special_bonus_magic_resistance_8"
+	  "Ability12"   "special_bonus_unique_death_prophet_2"
+	  "Ability13"   "special_bonus_cast_range_100"
+	  "Ability14"   "special_bonus_cooldown_reduction_10"
+	  "Ability15"   "special_bonus_movement_speed_25"
+	  "Ability16"   "special_bonus_hp_400"
+	  "Ability17"   "special_bonus_unique_death_prophet"
+	
+	  "ArmorPhysical"       "0"                 
+	  "MagicalResistance"       "0"
+	
+	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+	  "AttackAcquisitionRange"  "200"
+	  "AttackRange"                "81"
+	  "AttackDamageMin"     "2"
+	  "AttackDamageMax"     "2"
+	  "AttackRate" "1.51"
+	  "AttackAnimationPoint"       "0.269"
+	
+	  "AttributePrimary"      "DOTA_ATTRIBUTE_INTELLECT"
+	  "AttributeBaseStrength"   "0"
+	  "AttributeStrengthGain"   "1.25"
+	  "AttributeBaseIntelligence" "1"
+	  "AttributeIntelligenceGain" "0.25"
+	  "AttributeBaseAgility"    "0.24"
+	  "AttributeAgilityGain"    "0.24"
+	
+	  "BountyXP"          "0"                 
+	  "BountyGoldMin"       "10"                   
+	  "BountyGoldMax"       "20"     
+	  "BountyGain"                "0"  
+	
+	  "BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+	  "RingRadius"        "70"
+	
+	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+	  "MovementSpeed"       "522"
+	  "MovementTurnRate"      "5.0"                 
+	
+	  "StatusHealth"        "55"                 
+	  "StatusHealthRegen"     "0.0"                 
+	  "StatusMana"        "5"                   
+	  "StatusManaRegen"     "1.5"                 
+	
+	  "VisionDaytimeRange"    "1000"                  
+	  "VisionNighttimeRange"    "1000"         
+	
+	  "Creature"
+	  {
+	    "DisableClumpingBehavior" "1" 
+	  }         
+	}
+	"npc_petri_io"
+	{
+	  "override_hero"     "npc_dota_hero_wisp"
+	  "Ability1"        "petri_hide_io"       
+	}
+	"npc_petri_kvn_fan"
+	{
+	  "override_hero"     "npc_dota_hero_rattletrap"
+	
+	  "NoCombine"   "1"
+	  "DisableWearables" "1" 
+	
+	  "HealthBarOffset"    "240"
+	
+	  "AbilityLayout"     "6"
+	
+	  "vscripts" "units/kvn_fan.lua"
+	
+	  "Ability1"        "petri_open_basic_buildings_menu" 
+	  "Ability2"        "petri_open_advanced_buildings_menu" 
+	  "Ability3"        "petri_open_bus_menu"
+	  "Ability4"        "gather_lumber" 
+	  "Ability5"        "petri_repair"
+	  "Ability6"        "petri_kvn_fan_deny"
+	  "Ability7"        "petri_empty1"
+	  "Ability8"        "return_resources"
+	  "Ability10"   "special_bonus_armor_4"
+	  "Ability11"   "special_bonus_mp_200"
+	  "Ability12"   "special_bonus_attack_damage_50"
+	  "Ability13"   "special_bonus_unique_clockwerk_2"
+	  "Ability14"   "special_bonus_respawn_reduction_25"
+	  "Ability15"   "special_bonus_magic_resistance_12"
+	  "Ability16"   "special_bonus_hp_400"
+	  "Ability17"   "special_bonus_unique_clockwerk"
+	  
+	  "ArmorPhysical"       "0"
+	  "MagicalResistance"       "0"
+	
+	  "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+	  "AttackDamageMin"           "2.0"
+	  "AttackDamageMax"           "3.0"
+	  "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+	  "AttackRate"                "2"
+	  "AttackAnimationPoint"      "0.433"
+	  "AttackAcquisitionRange"    "500"
+	  "AttackRange"               "90"
+	
+	  //"AttributePrimary"      "DOTA_ATTRIBUTE_STRENGTH"
+	  "AttributeBaseStrength"   "0"
+	  "AttributeStrengthGain"   "0"
+	  "AttributeBaseIntelligence" "0"
+	  "AttributeIntelligenceGain" "0"
+	  "AttributeBaseAgility"    "0"
+	  "AttributeAgilityGain"    "0"
+	
+	  "BountyXP"          "0"                 
+	  "BountyGoldMin"       "0"                   
+	  "BountyGoldMax"       "0"                   
+	
+	  //"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+	  //"RingRadius"        "70"
+	
+	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+	  "MovementSpeed"       "422"   
+	  "MovementTurnRate"      "1.0" 
+	
+	  "StatusHealth"        "16"          
+	  "StatusHealthRegen"     "0.165"
+	  "StatusMana"        "20"     
+	  "StatusManaRegen"     "5.0"         
+	
+	  "VisionDaytimeRange"    "1800"                  
+	  "VisionNighttimeRange"    "1800"                  
+	
+	  "Creature"
+	  {
+	    "DisableClumpingBehavior" "0"
+	  }
+	}
+	"npc_petri_mini_actor"
+	{
+	  "override_hero"     "npc_dota_hero_storm_spirit"
+	
+	  "NoCombine"   "1"
+	  "DisableWearables" "1" 
+	
+	  "HasInventory"          "1"
+	
+	  "AbilityLayout" "5"
+	
+	  "Ability1"        "petri_mini_actor_drink" 
+	  "Ability2"        "petri_mini_actor_pull_eyes"
+	  "Ability3"        "petri_mini_actor_drop_butt"
+	  "Ability4"        "petri_mini_actor_chains"
+	  "Ability5"        "petri_petrosyan_return"
+	  "Ability6"        "petri_mini_actor_phase"
+	  "Ability7"        "attribute_bonus"
+	  "Ability8"        "petri_petrosyan_passive"
+	  "Ability10"   "special_bonus_attack_damage_20"
+	  "Ability11"   "special_bonus_mp_regen_3"
+	  "Ability12"   "special_bonus_hp_200"
+	  "Ability13"   "special_bonus_intelligence_10"
+	  "Ability14"   "special_bonus_attack_speed_40"
+	  "Ability15"   "special_bonus_armor_8"
+	  "Ability16"   "special_bonus_spell_amplify_10"
+	  "Ability17"   "special_bonus_unique_storm_spirit"
+	
+	  "ArmorPhysical"       "0"                 
+	  "MagicalResistance"       "0"
+	
+	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+	  "AttackRange"                "81"
+	  "AttackDamageMin"     "1"
+	  "AttackDamageMax"     "2"
+	  "AttackRate" "1.51"
+	  "AttackAnimationPoint"       "0.269"
+	
+	  "AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+	  "AttributeBaseStrength"   "0"
+	  "AttributeStrengthGain"   "1.25"
+	  "AttributeBaseIntelligence" "1"
+	  "AttributeIntelligenceGain" "0.25"
+	  "AttributeBaseAgility"    "0.24"
+	  "AttributeAgilityGain"    "0.24"
+	
+	  "BountyXP"          "0"                 
+	  "BountyGoldMin"       "10"                   
+	  "BountyGoldMax"       "20"     
+	  "BountyGain"                "0"              
+	
+	  "BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+	  "RingRadius"        "70"
+	
+	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+	  "MovementSpeed"       "600"
+	  "MovementTurnRate"      "1.0"                 
+	
+	  "StatusHealth"        "55"                 
+	  "StatusHealthRegen"     "0.0"                 
+	  "StatusMana"        "5"                   
+	  "StatusManaRegen"     "1.5"                 
+	
+	  "VisionDaytimeRange"    "1000"                  
+	  "VisionNighttimeRange"    "1000"                  
+	}
+	"npc_petri_petrosyan"
+	{
+	  "override_hero"     "npc_dota_hero_brewmaster"
+	
+	  "NoCombine"   "1"
+	  "DisableWearables" "1" 
+	
+	  "HealthBarOffset"    "275"
+	
+	  "HasInventory"          "1"
+	  "ConsideredHero"        "1"
+	
+	  "AbilityLayout" "6"
+	
+	  "Ability1"        "petri_petrosyan_flat_joke" 
+	  "Ability2"        "petri_petrosyan_sleep" 
+	  "Ability3"        "petri_petrosyan_laugh_burst" 
+	  "Ability4"        "petri_petrosyan_explore"
+	  "Ability5"        "petri_petrosyan_wind_walk"
+	  "Ability6"        "petri_petrosyan_return"
+	  "Ability7"        "petri_petrosyan_passive"
+	  "Ability8"        "petri_exploration_tower_explore_world"
+	  "Ability10"   "special_bonus_attack_speed_30"
+	  "Ability11"   "special_bonus_mp_regen_3"
+	  "Ability12"   "special_bonus_unique_brewmaster_2"
+	  "Ability13"   "special_bonus_magic_resistance_10"
+	  "Ability14"   "special_bonus_respawn_reduction_35"
+	  "Ability15"   "special_bonus_strength_20"
+	  "Ability16"   "special_bonus_attack_damage_75"
+	  "Ability17"   "special_bonus_unique_brewmaster"
+	
+	  "ArmorPhysical"       "0"                 
+	  "MagicalResistance"       "0"
+	
+	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+	  "AttackAcquisitionRange"  "200"
+	  "AttackRange"                "81"
+	  "AttackDamageMin"     "1"
+	  "AttackDamageMax"     "2"
+	  "AttackRate" "1.51"
+	  "AttackAnimationPoint"       "0.269"
+	
+	  "AttributePrimary"      "DOTA_ATTRIBUTE_INTELLECT"
+	  "AttributeBaseStrength"   "0"
+	  "AttributeStrengthGain"   "1.25"
+	  "AttributeBaseIntelligence" "1"
+	  "AttributeIntelligenceGain" "0.25"
+	  "AttributeBaseAgility"    "0.24"
+	  "AttributeAgilityGain"    "0.24"
+	
+	  "BountyXP"          "0"                 
+	  "BountyGoldMin"       "10"                   
+	  "BountyGoldMax"       "20"     
+	  "BountyGain"                "0"  
+	
+	  "BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+	  "RingRadius"        "70"
+	
+	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+	  "MovementSpeed"       "522"
+	  "MovementTurnRate"      "5.0"                 
+	
+	  "StatusHealth"        "55"                 
+	  "StatusHealthRegen"     "0.0"                 
+	  "StatusMana"        "5"                   
+	  "StatusManaRegen"     "1.5"                 
+	
+	  "VisionDaytimeRange"    "1000"                  
+	  "VisionNighttimeRange"    "1000"         
+	
+	  "Creature"
+	  {
+	    "DisableClumpingBehavior" "1" 
+	  }         
+	}
+}

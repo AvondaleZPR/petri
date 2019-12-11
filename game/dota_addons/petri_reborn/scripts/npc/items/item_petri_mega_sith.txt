@@ -1,0 +1,149 @@
+"item_petri_mega_sith"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1509"
+  "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+  "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+  "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+  "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"  
+
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_mega_sith"
+
+  "AbilityCastRange"              "600"
+  "AbilityCastPoint"              "0.01"
+
+  "AbilityCooldown"               "80.0"
+
+  "AbilityDamage"                 "15"
+
+  "AbilityManaCost"               "750"
+
+  "ItemCost"            "21750"
+  "ItemSellable"      "0"
+  "ItemShopTags"          "mana_pool;str"
+  "ItemQuality"         "unique"
+  "ItemAliases"         "mega sith"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_strength"    "75"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_armor"      "30"
+    }
+    "03"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_mana"    "3000"
+    }
+    "04"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "dodge_chance"    "35"
+    }
+  }
+
+  "precache"
+  {
+    "soundfile"                 "soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+    "particle"                  "particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+  }
+  
+  "OnAbilityPhaseStart"
+  {
+    "FireSound"
+    {
+      "Target"                "CASTER"
+      "EffectName"            "Hero_Tinker.LaserAnim"
+    }
+  }
+  
+  "OnSpellStart"
+  {
+    "FireSound"
+    {
+      "Target"                "CASTER"
+      "EffectName"            "Hero_Tinker.Laser"
+    }
+
+    "TrackingProjectile"
+    {
+      "Target"                "TARGET"
+      "EffectName"            "particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+      "MoveSpeed"             "1100"
+      "Dodgeable"             "1"
+      "ProvidesVision"        "0"
+      "SourceAttachment"      "DOTA_PROJECTILE_ATTACHMENT_ATTACK_2"
+    }
+
+    "Damage"
+    {
+      "Target"        "TARGET"
+      "Damage"        "%AbilityDamage"
+      "Type"          "DAMAGE_TYPE_PURE"
+    }
+  }
+  
+  "OnProjectileHitUnit"
+  {
+    "FireSound"
+    {
+      "Target"                "CASTER"
+      "EffectName"            "Hero_Tinker.LaserImpact"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_mega_sith"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_MANA_BONUS" "%bonus_mana"
+        "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"    "%bonus_strength"
+
+        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "%bonus_armor"
+      }
+    }
+
+    "modifier_mega_sith_evasion"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_EVASION_CONSTANT" "%dodge_chance"
+      }
+    }
+  }
+}
+
+"item_recipe_petri_mega_sith"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1520"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "4900"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_mega_sith"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_stone_of_power;item_petri_supervest"
+  }
+}

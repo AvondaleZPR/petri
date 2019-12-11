@@ -1,0 +1,55 @@
+"return_resources"
+{
+  "BaseClass"                 "ability_datadriven"
+  "AbilityTextureName"      "custom/return_resources"
+  "MaxLevel"            "1"
+
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN" //Fake Toggle
+
+  "OnSpellStart"
+  {
+    "ApplyModifier"
+    {
+      "ModifierName"  "modifier_returning_resources"
+      "Target"    "CASTER"
+    }
+
+    "RunScript"
+    {
+      "ScriptFile"  "units/peasant.lua"
+      "Function"    "ReturnResources"
+    }
+  }
+
+  "Modifiers"
+  {
+    "modifier_returning_resources_on_order_cancel"
+    {
+      "IsHidden"        "1"
+
+      "ThinkInterval"  "0.03"
+      "OnIntervalThink"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "CheckBuildingPosition"
+        }
+      }
+
+      "OnOrder"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "ToggleOffReturn"
+        }
+      }  
+    }
+    "modifier_returning_resources"
+    {
+      "IsHidden"        "0"
+      "TextureName"     "furion_sprout"
+    }
+  }
+} 

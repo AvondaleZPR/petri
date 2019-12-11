@@ -1,0 +1,145 @@
+"petri_miracle_stun"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "custom/petri_miracle_stun"
+    "AOERadius"                     "%bolt_aoe"
+    "MaxLevel"            "1"
+
+    // Precache
+    //-------------------------------------------------------------------------------------------------------------
+    "precache"
+    {
+        "soundfile"         "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+        "particle"          "particles/units/heroes/hero_visage/visage_base_attack.vpcf"
+        "particle"          "particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
+        "particle"          "particles/generic_gameplay/generic_stunned.vpcf"
+    }
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "1500"
+    "AbilityCastPoint"              "0.3 0.3 0.3 0.3"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "240.0"
+
+    // Damage.
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityDamage"                 "100 175 250 325"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "0"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "bolt_stun_duration"    "6.0"
+        }
+        "02"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "bolt_aoe"          "300"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "TrackingProjectile"
+        {
+            "Target"            "TARGET"
+            "EffectName"        "particles/units/heroes/hero_visage/visage_base_attack.vpcf"
+            "Dodgeable"         "1"
+            "ProvidesVision"    "1"
+            "VisionRadius"      "225"
+            "MoveSpeed"         "1000"
+            "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+        }
+
+        "FireSound"
+        {
+            "EffectName"        "Hero_Leshrac.Diabolic_Edict_lp"
+            "Target"            "CASTER"
+        }
+    }
+
+    "OnProjectileHitUnit"
+    {
+        "FireSound"
+        {
+            "EffectName"        "Hero_Leshrac.Split_Earth"
+            "Target"            "TARGET"
+        }
+
+        "FireEffect"
+        {
+            "EffectName"    "particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
+            "EffectAttachType"  "attach_origin"
+            "Target"        "TARGET"
+            
+                    "ControlPoints"
+                    {
+                        "01"    "%bolt_aoe %bolt_aoe %bolt_aoe"
+                    }
+        }
+
+        "ActOnTargets"
+        {
+            "Target"
+            {
+                "Center" "POINT"
+                "Radius" "%bolt_aoe"
+                "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY" 
+                "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+            }
+
+            "Action"
+            {
+                "Damage"
+                {
+                    "Target"    "TARGET"
+                    "Type"      "DAMAGE_TYPE_MAGICAL"
+                    "Damage"    "%AbilityDamage"
+                }
+
+                "ApplyModifier"
+                {
+                    "ModifierName"  "modifier_storm_bolt_datadriven"
+                    "Target"        "TARGET"
+                }
+
+            }
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_storm_bolt_datadriven"
+        {
+            "Duration"      "%bolt_stun_duration"
+            "IsDebuff"      "1"
+            "OverrideAnimation" "ACT_DOTA_DISABLED"
+
+            "EffectName"    "particles/generic_gameplay/generic_stunned.vpcf"
+            "EffectAttachType"  "follow_overhead"
+
+            "States"
+            {
+                "MODIFIER_STATE_STUNNED"    "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+    }
+}

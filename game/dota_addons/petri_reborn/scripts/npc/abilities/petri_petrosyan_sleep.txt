@@ -1,0 +1,52 @@
+"petri_petrosyan_sleep"
+{
+  "BaseClass" "ability_datadriven"
+  "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+  "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+  "AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO"
+  "AbilityTextureName" "custom/petri_sleep"
+
+  "MaxLevel" "20"
+
+  "AbilityCastRange"        "650"
+
+  "AbilityCooldown" "11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30"
+
+  "AbilityManaCost" "20" 
+
+  "precache"
+  {
+    "particle"    "particles/generic_gameplay/generic_sleep.vpcf"
+  }
+
+  "OnSpellStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"  "units/petrosyan.lua"
+      "Function"    "Sleep"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "sleep_modifier"
+    {
+      "IsDebuff"  "1"
+
+      "EffectName"        "particles/generic_gameplay/generic_sleep.vpcf"
+      "EffectAttachType"      "follow_overhead"
+
+      "States"
+      {
+        "MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
+        "MODIFIER_STATE_FROZEN" "MODIFIER_STATE_VALUE_ENABLED"
+        "MODIFIER_STATE_NIGHTMARED"         "MODIFIER_STATE_VALUE_ENABLED"
+        "MODIFIER_STATE_LOW_ATTACK_PRIORITY"  "MODIFIER_STATE_VALUE_ENABLED" 
+        "MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED" 
+        "MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+        "MODIFIER_STATE_NO_HEALTH_BAR"  "MODIFIER_STATE_VALUE_ENABLED"   
+      }
+    } 
+  }   
+}

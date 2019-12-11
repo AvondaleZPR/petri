@@ -1,0 +1,293 @@
+"item_petri_shield_of_hell"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1551"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_shield_of_hell"
+
+  "ItemCost"            "5000"
+  "ItemShopTags"          "armor"
+  "ItemQuality"         "unique"
+  "ItemAliases"         "shield of hell"
+  
+  "ItemSellFullPrice" "1"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_armor"      "300"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_0,INTEGER"
+      "full_price"      "5000"
+    }
+  }
+
+  "Modifiers"
+  {
+    "modifier_item_petri_shield_of_hell_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "%bonus_armor"
+      }
+    }
+  }
+}
+
+"item_recipe_petri_shield_of_hell"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1552"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "3000"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_shield_of_hell"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_superthing"
+  }
+}
+
+"item_petri_shield_of_heaven"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1553"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_shield_of_heaven"
+
+  "ItemCost"            "15000"
+  "ItemShopTags"          "armor"
+  "ItemQuality"         "unique"
+  "ItemAliases"         "shield of heaven"
+  
+  "ItemSellFullPrice" "1"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_armor"      "750"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_0,INTEGER"
+      "full_price"      "15000"
+    }
+  }
+
+  "Modifiers"
+  {
+    "modifier_item_petri_shield_of_heaven_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "%bonus_armor"
+      }
+    }
+  }
+}
+
+"item_recipe_petri_shield_of_heaven"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1554"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "10000"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_shield_of_heaven"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_shield_of_hell;"
+  }
+}
+
+"item_petri_best_shield"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1555"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_best_shield"
+
+  "ItemCost"            "150000"
+  "ItemShopTags"          "armor"
+  "ItemQuality"         "unique"
+  "ItemAliases"         "best shield"
+  
+  "ItemSellFullPrice" "1"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_armor"      "2000"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_damage"      "50000"
+    }
+  }
+
+  "Modifiers"
+  {
+    "modifier_petri_sword_bonus"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"    "0"
+      }
+    }
+    "modifier_item_petri_best_shield_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+      "OnCreated"
+      {
+        "RemoveModifier"
+        {
+          "ModifierName"  "modifier_petri_sword_bonus"
+          "Target"     "CASTER"
+        }
+      }
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "%bonus_armor"
+        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_damage"
+      }
+    }
+  }
+}
+
+"item_recipe_petri_best_shield"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1556"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "85000"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_best_shield"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_grond;item_petri_shield_of_heaven"
+  }
+}
+
+"item_petri_crysis_armor"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1549"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_crysis_nanoshit"
+
+  "ItemCost"            "400000"
+  "ItemShopTags"          "armor"
+  "ItemQuality"         "unique"
+  "ItemAliases"         "best shield"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_armor"      "5000"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_damage"      "175000"
+    }
+  }
+
+  "Modifiers"
+  {
+    "modifier_petri_sword_bonus"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"    "0"
+      }
+    }
+    "modifier_item_petri_best_shield_datadriven"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+      "OnCreated"
+      {
+        "RemoveModifier"
+        {
+          "ModifierName"  "modifier_petri_sword_bonus"
+          "Target"     "CASTER"
+        }
+      }
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "%bonus_armor"
+        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"    "%bonus_damage"
+      }
+    }
+  }
+}
+
+"item_recipe_petri_crysis_armor"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1550"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "50000"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_crysis_armor"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_thunder;item_petri_best_shield;"
+  }
+}

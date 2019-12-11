@@ -1,0 +1,128 @@
+"petri_miracle_silence"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"             "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+    "FightRecapLevel"               "1"
+    "AbilityTextureName"            "custom/petri_miracle_silence"
+    "AOERadius"                     "400"
+    "MaxLevel"            "1"
+    // Precache
+    //-------------------------------------------------------------------------------------------------------------
+    "precache"
+    {
+        "soundfile"         "soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts"
+        "particle"          "particles/units/heroes/hero_templar_assassin/templar_assassin_meld_attack.vpcf"
+        "particle"          "particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+        "particle"          "particles/generic_gameplay/generic_silenced.vpcf"
+    }
+    
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"              "1500"
+    "AbilityCastPoint"              "0.3 0.3 0.3 0.3"
+
+    // Time     
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"               "240.0"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"               "0"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "silenced_duration"    "6.0"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "TrackingProjectile"
+        {
+            "Target"            "TARGET"
+            "EffectName"        "particles/units/heroes/hero_templar_assassin/templar_assassin_meld_attack.vpcf"
+            "Dodgeable"         "1"
+            "ProvidesVision"    "1"
+            "VisionRadius"      "225"
+            "MoveSpeed"         "500"
+            "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+        }
+
+        "FireSound"
+        {
+            "EffectName"        "Hero_DeathProphet.Exorcism.Cast"
+            "Target"            "CASTER"
+        }
+    }
+
+    "OnProjectileHitUnit"
+    {
+        "FireSound"
+        {
+            "EffectName"        "Hero_DeathProphet.Silence"
+            "Target"            "TARGET"
+        }
+
+        "FireEffect"
+        {
+            "EffectName"    "particles/units/heroes/hero_death_prophet/death_prophet_silence.vpcf"
+            "EffectAttachType"  "world_origin"
+            "Target"        "TARGET"
+            
+                    "ControlPoints"
+                    {
+                        "01"    "450 0 0"
+                    }
+        }
+
+        "ActOnTargets"
+        {
+            "Target"
+            {
+                "Center" "POINT"
+                "Radius" "400"
+                "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY" 
+                "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+            }
+
+            "Action"
+            {
+
+                "ApplyModifier"
+                {
+                    "ModifierName"  "modifier_silenced"
+                    "Target"        "TARGET"
+                }
+
+            }
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_silenced"
+        {
+            "Duration"      "%silenced_duration"
+            "IsDebuff"      "1"
+
+            "EffectName"    "particles/generic_gameplay/generic_silenced.vpcf"
+            "EffectAttachType"  "follow_overhead"
+
+            "States"
+            {
+                "MODIFIER_STATE_SILENCED"       "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_MUTED"          "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+    }
+}

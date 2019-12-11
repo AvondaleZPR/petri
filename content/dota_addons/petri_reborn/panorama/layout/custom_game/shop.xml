@@ -1,0 +1,130 @@
+<root>
+  <styles>
+    <include src="file://{resources}/styles/custom_game/shop.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/shop.js" />
+  </scripts>
+  <snippets>
+    <snippet name="Item">
+      <Panel class="Item">
+        <DOTAItemImage itemname="item_petri_butt" id="ItemImage"/>
+        <Label id="StockLabel" />
+      </Panel>
+    </snippet>
+    <snippet name="GuideBlock">
+      <Panel class="ShopGuideBlock">
+        <Label class="ShopTabText" id="ShopGuideBlockLabel" text="#DOTA_Item_Build_1st_Spot"/>
+        <Panel class="ShopGuideBlockItems" id="ShopGuideBlockItems">
+          
+        </Panel>
+      </Panel>
+    </snippet>
+  </snippets>
+  <Panel hittest="false" class="ShopRoot">
+    <Button id="ShopButton" onactivate="ToggleShop()">
+      <Label class="ShopTabText" id="" text="#Shop"/>
+    </Button>
+  	<Panel class="Hide" id="ShopWindow">
+      <Panel class="" id="ShopTabs">
+        <Panel id="Petri">
+          <Button class="ShopTab" id="BasicShopTab" onactivate="OpenTab('BasicShop')">
+            <Label class="ShopTabText" id="" text="#BasicShop"/>
+          </Button>    
+          <Button class="ShopTab" id="AdvancedShopTab" onactivate="OpenTab('AdvancedShop')">
+            <Label class="ShopTabText" id="" text="#AdvancedShop"/>
+          </Button>  
+          <Button class="ShopTab" id="SecretShopTab" onactivate="OpenTab('SecretShop')">
+            <Label class="ShopTabText" id="" text="#SecretShop"/>
+          </Button>  
+        </Panel>
+        <Panel id="KVN">
+          <Button class="ShopTab" id="SideShopTab" onactivate="OpenTab('SideShop')">
+            <Label class="ShopTabText" id="" text="#SideShop"/>
+          </Button>    
+        </Panel>
+      </Panel>
+      <Panel id="ShopColumns">
+        <Panel class="ShopContents" id="AdvancedShopContents">
+          <Panel class="ShopColumn" id="basics"/>
+          <Panel class="ShopColumn" id="support"/>
+          <Panel class="ShopColumn" id="magics"/>
+          <Panel class="ShopColumn" id="defense"/>
+          <Panel class="ShopColumn" id="weapons"/>
+          <Panel class="ShopColumn" id="artifacts"/>
+        </Panel>
+        <Panel class="ShopContents" id="SideShopContents">
+          <Panel class="ShopColumn" id="sideshop1"/>
+          <Panel class="ShopColumn" id="sideshop2"/>
+        </Panel>
+        <Panel class="ShopContents" id="SecretShopContents">
+          <Panel class="ShopColumn" id="secretshop"/>
+        </Panel>
+        <Panel class="ShopContents" id="BasicShopContents">
+          <Panel class="ShopColumn" id="consumables"/>
+          <Panel class="ShopColumn" id="attributes"/>
+          <Panel class="ShopColumn" id="weapons_armor"/>
+          <Panel class="ShopColumn" id="misc"/>
+        </Panel>
+      </Panel>
+      <Panel id="ShopRecipe">
+        <Panel id="ShopRecipeContainer">
+        </Panel>
+        <Label class="ShopTabText" id="ShopRecipeLabel" text="#ChooseItem"/>
+      </Panel>
+  	</Panel>  
+    <Panel id="ShopGuide" class="Hide">
+
+    </Panel>	
+    <Panel id="ShopQuickbuy" class="">
+
+    </Panel>  
+    <Button id="ReApplySkin" onactivate="ReApplySkin()">
+      <Label class="ShopTabText" text="R"/>
+    </Button>
+
+    <!--	
+	<Button id="SpectateBtn" onactivate="Spectate()">
+	    <Label class="ShopTabText" text="SPECTATE"/>
+	</Button>
+	<Button id="ChBtn" onactivate="ShowChPanel()">
+	</Button>
+	<Panel id="ChPanel">
+	    <Label id="CH1" class="ChLabel" text="1"/>
+		<Label id="CH1Pr" class="ChLabelPr" text="0/0"/>
+	    <Label id="CH2" class="ChLabel" text="2"/>
+		<Label id="CH2Pr" class="ChLabelPr" text="0/0"/>
+	    <Label id="CH3" class="ChLabel" text="3"/>		
+		<Label id="CH3Pr" class="ChLabelPr" text="0/0"/>
+		<Panel id="CHinfo" onmouseover="DOTAShowTextTooltip(#CHinfo)" onmouseout="DOTAHideTextTooltip()"/>
+		
+		<Label id="CHlvl" text="0"/>
+		<Panel id="rew1" class="reward">
+		    <Label id="rl1" class="rewardLabel"/>
+		</Panel>
+		<Panel id="rew2" class="reward">
+		    <Label id="rl2" class="rewardLabel"/>
+		</Panel>
+		<Panel id="rew3" class="reward">
+		    <Label id="rl3" class="rewardLabel"/>
+		</Panel>
+		<Panel id="rew4" class="reward">
+		    <Label id="rl4" class="rewardLabel"/>
+		</Panel>
+		<Panel id="rew5" class="reward">
+		    <Label id="rl5" class="rewardLabel"/>
+		</Panel>
+		<Panel id="rew6" class="reward">
+		    <Label id="rl6" class="rewardLabel"/>
+		</Panel>
+		<Panel id="rew7" class="reward">
+		    <Label id="rl7" class="rewardLabel"/>
+		</Panel>
+	</Panel>
+	-->
+	<Panel id="CourierPanel">
+	    <Button id="CourierBtn" onactivate="CourierSelect()" onmouseover="DOTAShowTextTooltip('#petri_select')" onmouseout="DOTAHideTextTooltip()"/>
+	    <Button id="DeliverBtn" onactivate="CourierDeliver()" onmouseover="DOTAShowTextTooltip('#petri_deliver')" onmouseout="DOTAHideTextTooltip()"/>
+	</Panel>
+  </Panel>
+</root>

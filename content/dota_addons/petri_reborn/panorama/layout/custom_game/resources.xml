@@ -1,0 +1,27 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/custom_game/abilities_container.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/resources.js" />		
+	</scripts>
+	<Panel hittest="false" class="LumberBase">
+      	<Label text="" class="TotalGoldText" id="TotalGoldText">
+        	<Image src="file://{images}/custom_game/custom_variables/gold.png" />
+      	</Label>
+		<Label text="0" class="GpmText" id="GpmText">
+			<Image src="file://{images}/custom_game/custom_variables/gpm.png" />
+    	</Label>
+      	<Label text="" class="TotalLumberText" id="TotalLumberText">
+        	<Image src="file://{images}/custom_game/custom_variables/lumber.png" />
+      	</Label>
+      	<Label text="" class="TotalFoodText" id="TotalFoodText">
+			<Image src="file://{images}/custom_game/custom_variables/food.png" />
+    	</Label>
+      	<Label text="" class="TotalBuildingText" id="TotalBuildingText">
+			<Image src="file://{images}/custom_game/custom_variables/building.png" />
+    	</Label>
+    </Panel>
+</root>
+

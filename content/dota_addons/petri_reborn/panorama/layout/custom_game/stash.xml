@@ -1,0 +1,124 @@
+<root>
+	<styles>
+	</styles>
+	<script>
+	function Hack() {
+	    var parent = $.GetContextPanel().GetParent();
+	    while(parent.id != "Hud")
+	        parent = parent.GetParent();
+
+	    var radar = parent.FindChildTraverse("RadarButton");
+	    radar.FindChildTraverse("RadarIcon").style.backgroundImage = "url(\"s2r://panorama/images/hud/reborn/icon_scan_on_psd.vtex\");";
+	    radar.FindChildTraverse("CooldownCover").visible = false;
+	    radar.FindChildTraverse("RadarIcon").SetPanelEvent("onactivate", function () {
+	    	var queryUnit = Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() );
+			for ( var i = 0; i < 23; ++i )
+			{
+				var ability = Entities.GetAbility( queryUnit, i );
+				if ( ability == -1 )
+					continue;
+				
+				if (Abilities.GetAbilityName(ability) == "petri_exploration_tower_explore_world")
+				{
+					Abilities.ExecuteAbility(ability, queryUnit, false)
+					return;
+				}
+			}
+	    })
+	    radar.SetPanelEvent('onmouseover', function() {
+	    	
+	    	var queryUnit = Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() );
+	    	if (Entities.GetTeamNumber( queryUnit ) == 3) {
+		        var ability = "petri_exploration_tower_explore_world";
+
+		        $.DispatchEvent('DOTAShowAbilityTooltip', radar, ability);
+	    	}
+	    });
+	    radar.SetPanelEvent('onmouseout', function() {
+	        $.DispatchEvent('DOTAHideAbilityTooltip');
+	        $.DispatchEvent('DOTAHideTitleTextTooltip');
+	    });
+
+	    parent.FindChildTraverse("HUDElements").FindChildTraverse("level_stats_frame").visible = false;
+	    parent.FindChildTraverse("HUDElements").FindChildTraverse("StatBranch").visible = false;
+	    parent.FindChildTraverse("HUDElements").FindChildTraverse("PortraitBacker").style.width = "160px;";
+	    parent.FindChildTraverse("HUDElements").FindChildTraverse("PortraitBackerColor").style.width = "160px;";
+	    <!-- parent.FindChildTraverse("HUDElements").FindChildTraverse("stats_container").style.width = "136px;"; -->
+
+	    parent.FindChildTraverse("HUDElements").FindChildTraverse("shop").enabled = false;
+	    parent.FindChildTraverse("HUDElements").FindChildTraverse("shop").visible = false;
+
+	    parent.FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("shop_launcher_block").FindChildTraverse("quickbuy").enabled = false;
+	    parent.FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("shop_launcher_block").FindChildTraverse("quickbuy").visible = false;
+
+	    parent.FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("shop_launcher_block").FindChildTraverse("stash").AddClass("StashVisible");
+
+	    parent.FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("shop_launcher_block").FindChildTraverse("stash").style.marginBottom = "31px;";
+
+	    var center_block = parent.FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("center_with_stats").FindChildTraverse("center_block");
+
+
+	    GameUI.CustomUIConfig().abilities = center_block.FindChildTraverse("abilities");
+	    GameUI.CustomUIConfig().abilities.style.marginBottom = "0px;";
+
+	    var hide = function () {
+	    		for (var c in GameUI.CustomUIConfig().abilities.Children()) {
+	    			if (GameUI.CustomUIConfig().abilities.Children()[c].id == "Ability6" || GameUI.CustomUIConfig().abilities.Children()[c].id == "Ability7" || GameUI.CustomUIConfig().abilities.Children()[c].id == "Ability8") {
+	    			GameUI.CustomUIConfig().abilities.Children()[c].visible = false;
+	    		}
+	    	}
+		    $.Schedule(0.1, function () {
+				hide()
+		    })
+	    }
+
+	    hide();
+
+	    for (var p in GameUI.CustomUIConfig().abilities.Children()) {
+	    	(function () {
+		    	var panel = GameUI.CustomUIConfig().abilities.Children()[p];
+
+		    	var image = panel.FindChildTraverse("AbilityButton");
+				image.SetPanelEvent("onmouseover", function () {
+					if (image.subPanel) {
+						$.Msg(image.subPanel.id);
+						image.subPanel.AbilityShowTooltip(image.subPanel.ability);
+					}
+				})
+
+				image.SetPanelEvent("onmouseout", function () {
+					if (image.subPanel) {
+						image.subPanel.AbilityHideTooltip();
+					}
+				})
+
+		    	var goldCost = panel.FindChildTraverse("GoldCost")
+		    	goldCost.style.fontSize = "9px;";
+	    	})();
+
+	    }
+
+
+	    // parent.FindChildTraverse("StatBranch").style.visibility = "collapse;";
+	    parent.FindChildTraverse("StatBranch").enabled = false;
+	    parent.FindChildTraverse("StatBranch").hittest = false;
+	    parent.FindChildTraverse("StatBranch").hittestchildren = false;
+	    parent.FindChildTraverse("StatBranch").SetPanelEvent("onhover", function () {
+		    parent.FindChildTraverse("StatBranch").enabled = false;
+		    parent.FindChildTraverse("StatBranch").hittest = false;
+		    parent.FindChildTraverse("StatBranch").hittestchildren = false;
+	    })
+	    $.Msg("asdasdasd");
+	    
+	    // parent.FindChildTraverse("PortraitContainer").style.marginLeft = "146px;";
+	}
+
+	(function () {
+		GameUI.CustomUIConfig().Hack = Hack;
+		Hack();
+	})();
+	</script>
+	<Panel hittest="false" class="Root">
+    </Panel>
+</root>
+

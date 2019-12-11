@@ -1,0 +1,21 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/material_design.css" />			
+		<include src="file://{resources}/styles/custom_game/game_setup.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/game_setup/game_setup_player.js" />
+	</scripts>
+	<Panel hittest="true" class="TeamSelectPlayer DarkTheme Background">
+		<DOTAAvatarImage hittest="false" class="circle" id="PlayerAvatar" />
+		<Label hittest="false" id="PlayerIsHostPanel" />
+		<Label hittest="false" id="PlayerStatusPanel" />
+		<Label hittest="false" class="DarkTheme PrimaryText" id="PlayerName" text="PLAYER_NAME" />
+		<!--<Label hittest="false" id="PlayerRating" text="0"/>
+		<Label hittest="false" id="PlayerLvl" text ="0"/>-->
+		<Panel hittest="false" id="Indicators">
+			<Image hittest="false" id="Petro" src="file://{images}/custom_game/timeofday/petrotime.png" />
+			<Image hittest="false" id="PetroPrefer" src="file://{images}/custom_game/timeofday/petrotime.png" />
+		</Panel>
+	</Panel>
+</root>

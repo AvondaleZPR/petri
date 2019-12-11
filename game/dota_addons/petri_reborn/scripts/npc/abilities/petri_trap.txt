@@ -1,0 +1,82 @@
+"petri_trap"
+{
+  "BaseClass" "ability_datadriven"
+  "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+  "AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO"
+  "AbilityTextureName" "custom/techies_stasis_trap"
+  "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+
+  "AoeRadius" "100"
+
+  "MaxLevel"            "1"
+
+  "precache"
+  {
+    "soundfile"     "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"         
+  }
+
+  "Modifiers"
+  {
+    "modifier_trap"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+  
+      "ThinkInterval"  "0.03"
+      "OnIntervalThink"
+      {
+        "ActOnTargets"
+        {
+          "Target"
+          {
+            "Center"    "TARGET"
+            "Radius"  "100"
+            "Teams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+            "Types"   "DOTA_UNIT_TARGET_HERO"
+            "Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+          }
+          
+          "Action"
+          {
+            "RunScript"
+            {
+              "ScriptFile"  "units/trap.lua"
+              "Function"    "AddTrap"
+              "Target"  "TARGET"
+            }
+          }      
+        }     
+      }   
+    }
+    "modifier_evasion_stacks"
+    {
+      "Passive"      "1"
+      "IsHidden"      "1"
+      "IsDebuff"      "0"
+
+      "OnCreated"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/trap.lua"
+          "Function"    "OnStacksCreated"
+        }
+      }
+
+      "OnAttacked"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/trap.lua"
+          "Function"    "OnAttacked"
+        }
+      }
+
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK" "100000"
+      }
+    }
+  }   
+}

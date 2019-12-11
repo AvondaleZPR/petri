@@ -1,0 +1,137 @@
+"petri_repair"
+{
+  "BaseClass"                 "ability_datadriven"
+  "AbilityTextureName"      "custom/petri_repair"
+  "MaxLevel"            "1"
+
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_ALL"
+
+  "AbilityMultiOrder" "1"
+
+  "OnAbilityPhaseStart"
+  {
+    "RunScript"
+    {
+      "ScriptFile"  "units/peasant.lua"
+      "Function"    "StartRepairing"
+    }
+  }
+
+  "Modifiers"
+  {
+    "modifier_repairing_autocast_aura"
+    {
+      "Passive" "1"
+      "IsHidden"  "1"
+
+      "OnCreated"
+      {
+        "RunScript"
+        {
+          "ScriptFile"    "units/peasant.lua"
+          "Function"      "RepairingAutocast"
+        }
+      }
+
+      "ThinkInterval" "3"
+      "OnIntervalThink"
+      {
+        "RunScript"
+        {
+          "ScriptFile"    "units/peasant.lua"
+          "Function"      "RepairingAutocast"
+        }
+      }
+    }
+
+    "modifier_repairing"
+    {
+      "IsHidden"        "1"
+        
+      "ThinkInterval"  "0.03"
+      "OnIntervalThink"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "CheckRepairingTargetPosition"
+        }
+      }
+
+      "OnOrder"
+      {
+        "RemoveModifier"
+        {
+          "ModifierName"  "modifier_repairing"
+          "Target"    "CASTER"
+        }
+
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "ToggleOffRepairing"
+        }
+      }
+    }
+
+    "modifier_chopping_building"
+    {
+      "IsHidden"        "1"
+
+      "OnOrder"
+      {     
+        "RemoveModifier"
+        {
+          "ModifierName"  "modifier_chopping_building"
+          "Target"    "CASTER"
+        }
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "ToggleOffRepairing"
+        }
+      }
+
+      "OnCreated"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "PlayAttackAnimation"
+        }
+      }
+
+      "OnDestroy"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "StopAnimation"
+        }
+      }
+
+ 
+
+      "ThinkInterval"  "0.03"
+      "OnIntervalThink"
+      {
+        "RunScript"
+        {
+          "ScriptFile"  "units/peasant.lua"
+          "Function"    "RepairBy1Percent"
+        }
+      }   
+    }
+
+    "modifier_being_repaired"
+    {
+      "IsHidden"  "0"
+
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+      "Duration"  "1.0"
+    }
+  }
+}

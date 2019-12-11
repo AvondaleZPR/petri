@@ -1,0 +1,8 @@
+petri_2_radiant
+{
+	material materials/overviews/petri_2_radiant.vmat
+	pos_x -13824
+	pos_y 13824
+	scale 27.000
+}
+

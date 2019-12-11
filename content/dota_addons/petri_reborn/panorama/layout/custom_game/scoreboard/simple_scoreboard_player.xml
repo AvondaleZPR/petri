@@ -1,0 +1,45 @@
+<root>
+    <styles>
+    	<include src="file://{resources}/styles/custom_game/material_design.css" />
+		<include src="file://{resources}/styles/custom_game/simple_scoreboard_styles.css" />
+        <include src="file://{resources}/styles/custom_game/simple_scoreboard.css" />
+    </styles>
+    <scripts>
+		<include src="file://{resources}/scripts/custom_game/scoreboard/simple_scoreboard_updater.js" />
+	</scripts>
+	<script>
+		function ToggleMute()
+		{
+			var playerId = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
+			if ( playerId !== -1 )
+			{
+				var newIsMuted = !Game.IsPlayerMuted( playerId );
+				Game.SetPlayerMuted( playerId, newIsMuted );
+				$.GetContextPanel().SetHasClass( "player_muted", newIsMuted );
+			}
+		}
+
+		(function()
+		{
+			var playerId = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
+			$.GetContextPanel().SetHasClass( "player_muted", Game.IsPlayerMuted( playerId ) );
+		})();
+	</script>
+	<Panel class="PlayerRow DarkTheme Cards z-index1">
+		<Panel id="PlayerRowContainer">
+			<Panel hittest="false" id="PlayerColor" />
+			<Panel id="Hero" class="ScoreCol_Hero">
+				<Image id="HeroIcon" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+			<Panel id="PlayerDetailsContainer" class="ScoreCol_PlayerDetails">
+				<Panel id="PlayerAndHeroName">
+					<Label class="DarkTheme PrimaryText" id="PlayerName" text="AAAAA" onactivate="PortraitClicked();" oncontextmenu="ShowContextMenu();"/>
+					<Label class="DarkTheme SecondaryText" id="HeroNameAndDescription" text="#custom_scoreboard_hero_name_and_desc" />
+				</Panel>
+				<Button id="MuteButton" onactivate="ToggleMute();" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>
+
+

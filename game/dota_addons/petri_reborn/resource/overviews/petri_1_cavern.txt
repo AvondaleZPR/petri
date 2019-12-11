@@ -1,0 +1,8 @@
+petri_1_cavern
+{
+	material materials/overviews/petri_1_cavern.vmat
+	pos_x -12288
+	pos_y 12288
+	scale 24.000
+}
+

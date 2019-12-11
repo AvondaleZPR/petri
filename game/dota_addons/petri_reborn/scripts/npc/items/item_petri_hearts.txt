@@ -1,0 +1,416 @@
+"item_petri_chicken"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1966"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_chicken"
+
+  "AbilityCooldown"       "90"
+  "AbilitySharedCooldown"         "heal"
+
+  "ItemCost"            "2000"
+  "ItemShopTags"          "health_pool"
+  "ItemQuality"         "component"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_health"      "17000"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_regen"      "17"
+
+    }
+    "03"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "buff_duration"     "3"
+    }
+    "04"
+    {
+      "var_type"        "FIELD_FLOAT"
+      "health_per_second"   "22222"
+    }
+  }
+
+  "OnSpellStart"
+  {
+    "ApplyModifier"
+    {
+      "Target"      "CASTER"
+      "ModifierName"    "modifier_item_petri_chicken_active"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_item_petri_chicken"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_HEALTH_BONUS"    "%bonus_health"
+        "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"    "%bonus_regen"
+      }
+    }
+
+    "modifier_item_petri_chicken_active"
+    {
+      "Duration"                "%buff_duration"
+      "Passive"         "0"
+      "IsHidden"          "0"
+      "IsBuff"          "1"
+      "IsDebuff"          "0"
+      "IsPurgable"        "1"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%health_per_second"
+      }
+    }
+  }
+}
+
+"item_recipe_petri_chicken"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1201"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "2000"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_chicken"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_butt3;"
+  }
+}
+
+"item_petri_cow"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1965"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_cow"
+
+  "AbilityCooldown"       "90"
+  "AbilitySharedCooldown"         "heal"
+
+  "ItemCost"            "10000"
+  "ItemShopTags"          "health_pool"
+  "ItemQuality"         "component"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_health"      "60000"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_regen"      "60"
+    }
+    "03"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "buff_duration"     "3"
+    }
+    "04"
+    {
+      "var_type"        "FIELD_FLOAT"
+      "health_per_second"   "66666"
+    }
+  }
+
+  "OnSpellStart"
+  {
+    "ApplyModifier"
+    {
+      "Target"      "CASTER"
+      "ModifierName"    "modifier_item_petri_cow_active"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_item_petri_cow"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_HEALTH_BONUS"    "%bonus_health"
+        "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"    "%bonus_regen"
+      }
+    }
+
+    "modifier_item_petri_cow_active"
+    {
+      "Duration"                "%buff_duration"
+      "Passive"         "0"
+      "IsHidden"          "0"
+      "IsBuff"          "1"
+      "IsDebuff"          "0"
+      "IsPurgable"        "1"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%health_per_second"
+      }
+    }
+  }
+}
+
+"item_recipe_petri_cow"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1963"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "AbilityCooldown"       "60"
+  "AbilitySharedCooldown"         "heal"
+
+  "ItemCost"            "8000"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_cow"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_chicken;"
+  }
+}
+
+"item_petri_dragon"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1964"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_dragon"
+
+  "AbilityCooldown"       "90"
+  "AbilitySharedCooldown"         "heal"
+
+  "ItemCost"            "50000"
+  "ItemShopTags"          "health_pool"
+  "ItemQuality"         "component"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_health"      "120000"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_regen"      "200"
+    }
+    "03"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "buff_duration"     "3"
+    }
+    "04"
+    {
+      "var_type"        "FIELD_FLOAT"
+      "health_per_second"   "222222"
+    }
+  }
+
+  "OnSpellStart"
+  {
+    "ApplyModifier"
+    {
+      "Target"      "CASTER"
+      "ModifierName"    "modifier_item_petri_dragon_active"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_item_petri_dragon"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_HEALTH_BONUS"    "%bonus_health"
+        "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"    "%bonus_regen"
+      }
+    }
+
+    "modifier_item_petri_dragon_active"
+    {
+      "Duration"                "%buff_duration"
+      "Passive"         "0"
+      "IsHidden"          "0"
+      "IsBuff"          "1"
+      "IsDebuff"          "0"
+      "IsPurgable"        "1"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%health_per_second"
+      }
+    }
+  }
+}
+
+"item_recipe_petri_dragon"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1962"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "40000"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_dragon"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_cow;"
+  }
+}
+
+
+"item_petri_kvn_heart"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1959"
+  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+  "Model"             "models/props_gameplay/red_box.vmdl" 
+  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
+  "AbilityTextureName"      "custom/petri_kvn_heart"
+  
+  "AbilityCooldown"       "90"
+  "AbilitySharedCooldown"         "heal"
+
+  "ItemCost"            "300000"
+  "ItemShopTags"          "health_pool"
+  "ItemQuality"         "component"
+
+  "AbilitySpecial"
+  {
+    "01"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_health"      "500000"
+    }
+    "02"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "bonus_regen"      "500"
+    }
+    "03"
+    {
+      "var_type"        "FIELD_INTEGER"
+      "buff_duration"     "3"
+    }
+    "04"
+    {
+      "var_type"        "FIELD_FLOAT"
+      "health_per_second"   "666666"
+    }
+    "05"
+    {
+      "var_type"        "FIELD_FLOAT"
+      "bonus_evasion"   "10"
+    }
+  }
+
+  "OnSpellStart"
+  {
+    "ApplyModifier"
+    {
+      "Target"      "CASTER"
+      "ModifierName"    "modifier_item_petri_kvn_heart_active"
+    }
+  }
+  
+  "Modifiers"
+  {
+    "modifier_item_petri_kvn_heart_evasion"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_EVASION_CONSTANT" "%bonus_evasion"
+      }
+    }
+    
+    "modifier_item_petri_kvn_heart"
+    {
+      "Passive"     "1"
+      "IsHidden"      "1"
+      "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_HEALTH_BONUS"    "%bonus_health"
+        "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"    "%bonus_regen"
+      }
+    }
+
+    "modifier_item_petri_kvn_heart_active"
+    {
+      "Duration"                "%buff_duration"
+      "Passive"         "0"
+      "IsHidden"          "0"
+      "IsBuff"          "1"
+      "IsDebuff"          "0"
+      "IsPurgable"        "1"
+      
+      "Properties"
+      {
+        "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%health_per_second"
+      }
+    }
+  }
+}
+
+"item_recipe_petri_kvn_heart"
+{
+  "BaseClass"           "item_datadriven"
+  "ID"              "1956"
+  "Model" "models/props_gameplay/recipe.mdl"
+  "AbilityTextureName"      "item_recipe"
+
+  "ItemCost"            "450000"
+  "ItemShopTags"          ""
+
+  "ItemRecipe"          "1"
+  "ItemResult"          "item_petri_kvn_heart"
+  "ItemRequirements"
+  {
+    "01"            "item_petri_dragon;"
+  }
+}

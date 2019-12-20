@@ -75,6 +75,7 @@ function FillDevelopers()
 //--
 //var sidminus = 76561197960265728;
 
+/*
 function OnTop(event_data)
 {
 	$("#top_Avatar").steamid = event_data.steamid;
@@ -89,13 +90,49 @@ function OnTopLvl(event_data)
 	$("#topLvl_Rating").text = event_data.lvl;
 	$("#TopPlayerLvl").SetHasClass( "hidden", false );
 }
+*/
+
+function OnTopRating(event_data)
+{
+	$("#top_AvatarRating").steamid = event_data.sid;
+	$("#top_Rating").text = event_data.stat;
+	$("#TopPlayerRating").SetHasClass( "hidden", false );
+}
+
+function OnTopKills(event_data)
+{
+	$("#top_AvatarKills").steamid = event_data.sid;
+	$("#top_Kills").text = event_data.stat;
+	$("#TopPlayerKills").SetHasClass( "hidden", false );
+}
+
+function OnTopGold(event_data)
+{
+	$("#top_AvatarGold").steamid = event_data.sid;
+	$("#top_Gold").text = event_data.stat;
+	$("#TopPlayerGold").SetHasClass( "hidden", false );
+}
 
 (function () {
 	//$.RegisterForUnhandledEvent( "DOTAShowProfileCardTooltip", ShowProfile);
 	//FillDevelopers();
     //--
-	$("#TopPlayer").SetHasClass( "hidden", true );
-	$("#TopPlayerLvl").SetHasClass( "hidden", true );
-	GameEvents.Subscribe( "set_top", OnTop);
-	GameEvents.Subscribe( "set_top_lvl", OnTopLvl);
+	//$("#TopPlayer").SetHasClass( "hidden", true );
+	//$("#TopPlayerLvl").SetHasClass( "hidden", true );
+	//GameEvents.Subscribe( "set_top", OnTop);
+	//GameEvents.Subscribe( "set_top_lvl", OnTopLvl);
+	
+	$("#TopPlayerRating").SetHasClass( "hidden", true );
+	$("#TopPlayerGold").SetHasClass( "hidden", true );
+	$("#TopPlayerKills").SetHasClass( "hidden", true );
+	
+	GameEvents.Subscribe( "set_top_rating", OnTopRating);
+	GameEvents.Subscribe( "set_top_kills", OnTopKills);
+	GameEvents.Subscribe( "set_top_totalgold", OnTopGold);
 })(); 
+
+function SwitchUpdateText() {
+	$("#LUText").ToggleClass("Hide")
+	$("#UpdateBtnImg1").ToggleClass("Hide")
+	$("#UpdateBtnImg2").ToggleClass("Hide")
+}

@@ -4485,4 +4485,134 @@
 	  "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 	  "UnitRelationShipClass"   "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	}
+	"npc_petri_gift"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/props_winter/present.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Ranged"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				"1.0"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.     
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"40"
+		"HealthBarOffset"			"-1"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"10"		// Gold earned min.
+		"BountyGoldMax"				"250"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"0"		// Speed.			
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"2"		// Base health.
+		"StatusHealthRegen"			"0.1"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"0"		// Range of vision during day light.
+		"VisionNighttimeRange"		"0"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+	  "Creature"
+      {
+      "ItemDrops"
+      {
+        "KvnAnyway"
+        {
+          "Item"
+          {
+            "1"       "item_petri_evasion_scroll"
+            "2"       "item_petri_attack_scroll"
+            "3"       "item_petri_trap"
+          }
+          "Chance"      "100"
+        }
+		"KvnRare"
+        {
+          "Item"
+          {
+            "1"       "item_petri_gold_coin"
+			"2"       "item_petri_alcohol"
+            "3"       "item_petri_kvn_fan_blink"
+			"4"       "item_petri_pocketmiracle2"
+			"5"       "item_petri_pocketmiracle3"
+			"6"       "item_petri_superkey"
+          }
+          "Chance"      "50"
+        }
+		"KvnSuperRare"
+        {
+          "Item"
+          {
+		    "1"       "item_petri_boots"
+			"2"       "item_petri_pocketexit"
+			"3"       "item_blink"
+          }
+          "Chance"      "10"
+        }
+		
+		"PetriAnyway"
+        {
+          "Item"
+          {
+            "1"       "item_petri_cola"
+            "2"       "item_petri_ward"
+            "3"       "item_petri_grease"
+          }
+          "Chance"      "100"
+        }
+		"PetriRare"
+        {
+          "Item"
+          {
+            "1"       "item_petri_bracer"
+			"2"       "item_petri_butt3"
+            "3"       "item_petri_kladenets_sword"
+			"4"       "item_petri_supervest"
+			"5"       "item_petri_stone_of_power"
+			"6"       "item_petri_snares_1"
+          }
+          "Chance"      "50"
+        }
+		"PetriSuperRare"
+        {
+          "Item"
+          {
+		    "1"       "item_petri_kvn_medal"
+			"2"       "item_petri_mega_sith"
+          }
+          "Chance"      "10"
+        }
+      }
+    }
+	}
 }

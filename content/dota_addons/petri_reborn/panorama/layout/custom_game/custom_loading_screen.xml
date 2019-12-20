@@ -22,8 +22,29 @@
 		    <Image src="file://{images}/custom_game/loading_screen/discord_server.png" />
         </Button>		
 	</Panel>
+	
+	<Panel id="SocialNetworks" >
+      <!--<Label text="#get_models" class="Headline1" id="GetModels" />
+      <Label text="TheProma#8032" class="Headline1" id="AlikVirg">
+      </Label>
+      -->
+      <Label text="vk.com/dota2petri" class="SN Headline1" id="VK" />
+    </Panel>
+	
+    <Panel id="LastUpdate">
+	    <Panel id="LUHead">
+	        <Label class="updateHeader" text="#LSlastupdate"/>
+			<Button id="UpdateHideBtn" class="updateBtnNotClicked" onactivate="SwitchUpdateText();">
+			    <Image id="UpdateBtnImg1" src="file://{images}/custom_game/loading_screen/hideUpdate.png" />
+				<Image id="UpdateBtnImg2" class="Hide" src="file://{images}/custom_game/loading_screen/hideUpdate2.png" />
+			</Button>
+		</Panel>
+		<Panel id="LUText" class ="Hide">
+		    <Label class="updateText" text="#LSlastupdateText"/>
+		</Panel>
+	</Panel> 
     
-	<Label id="version" text="111"/>
+	<Label id="version" text=""/>
 	
 	<!--
     <Panel id="Developers">
@@ -43,18 +64,22 @@
     </Panel>
 	-->
 	
-	<Panel id="TopPlayer">
-	    <Label class="toplabel" text="№1"/>
-		<!--<DOTAUserName id="top_Name" class="topname" steamid="local"/>-->
-		<DOTAAvatarImage id="top_Avatar" class="avatar" steamid="local" />
+	<Panel id="TopPlayerRating">
+	    <Label class="toplabel" text="#stats_top_rating"/>
+		<DOTAAvatarImage id="top_AvatarRating" class="avatar" steamid="local" />
 		<Label id="top_Rating" class="toplabel" text="1000"/>
 	</Panel>
-	
-	<Panel id="TopPlayerLvl">
-	    <Label class="lvllabel" text="№1"/>
-		<!--<DOTAUserName id="topLvl_Name" class="topname" steamid="local"/>-->
-		<DOTAAvatarImage id="topLvl_Avatar" class="avatar" steamid="local" />
-		<Label id="topLvl_Rating" class="lvllabel" text="10"/>
+	<Panel id="TopPlayerKills">
+	    <Label class="toplabel" text="#stats_top_kills"/>
+		<DOTAAvatarImage id="top_AvatarKills" class="avatar" steamid="local" />
+		<Label id="top_Kills" class="toplabel" text="1000"/>
+	</Panel>
+	<Panel id="TopPlayerGold">
+	    <Label class="toplabel" text="#stats_top_gold"/>
+		<DOTAAvatarImage id="top_AvatarGold" class="avatar" steamid="local" />
+		<Label id="top_Gold" class="toplabel" text="1000">
+		    <!--<Image class="topicon" src="file://{images}/custom_game/custom_variables/gold.png" />-->
+		</Label>
 	</Panel>
 
     <Panel id="Statistics">
@@ -63,17 +88,6 @@
       </Panel>
       <Panel id="MMR" class="DarkTheme Cards rounded z-index1" />
     </Panel>
-
-	<!--
-	
-    <Panel id="SocialNetworks" >
-      <Label text="#get_models" class="Headline1" id="GetModels" />
-      <Label text="TheProma#8032" class="Headline1" id="AlikVirg">
-      </Label>
-
-      <Label text="vk.com/dota2petri" class="SN Headline1" id="VK" />
-    </Panel>
-	-->
 	
 <!--     <Panel id="TitlePanel">
       <Label id="AddonTitle" text="#addon_game_name" style="" />

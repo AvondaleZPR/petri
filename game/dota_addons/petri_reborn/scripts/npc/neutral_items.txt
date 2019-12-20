@@ -1,0 +1,20 @@
+"neutral_items"
+{
+	"1"
+	{
+		"drop_rates"
+		{
+			"99:00"
+			{
+				"0" "9"
+				"1" "6"
+				"2" "3"
+			}
+		}
+		
+		"items"
+		{
+			"item_keen_optic"				  "1"
+		}
+	}
+}

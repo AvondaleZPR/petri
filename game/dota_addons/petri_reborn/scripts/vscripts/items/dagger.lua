@@ -7,6 +7,8 @@ function Blink(keys)
 	local range = ability:GetLevelSpecialValueFor("blink_range", (ability:GetLevel() - 1))
 	local hero = caster:GetPlayerOwner():GetAssignedHero()
 
+	if caster:GetTeam() == DOTA_TEAM_GOODGUYS then
+	
 	if caster:HasAbility("petri_upgrade_to_cop") then
 		caster:FindAbilityByName("petri_upgrade_to_cop"):StartCooldown(1.0)
 	end
@@ -70,6 +72,8 @@ function Blink(keys)
 	    end
 
 	    FindClearSpaceForUnit(caster, point, false)
+	end
+	
 	end
 end
 

@@ -2,6 +2,7 @@
 -- Do not remove the GameMode:_Function calls in these events as it will mess with the internal barebones systems.
 
 require('duels')
+require('newrating')
 
 -- Cleanup a player when they leave
 function GameMode:OnDisconnect(keys)
@@ -110,6 +111,10 @@ function OnGameRulesStateChangeDebug(keys)
 	    CustomGameEventManager:Send_ServerToAllClients( "players_can_leave", nil )
   	    return nil
 	end)
+	
+	if Rating.isRankedGame == true then
+	    Rating:SaveAndSendStats()
+	end
   end
 end
 
@@ -182,7 +187,7 @@ function OnNPCSpawnedDebug(keys)
 		local player = npc:GetPlayerOwner()
 		player.ch = {"","",""}
 		player.pr = {0,0,0}
-		player.tar = {0,0,0}
+	    player.tar = {0,0,0}
 		player.lvl = 0
 		
 		pp[player:GetPlayerID()].ch = {"","",""}
@@ -234,7 +239,9 @@ function OnItemPickedUpDebug(keys)
     local heroEntity = EntIndexToHScript(keys.HeroEntityIndex)
     local player = PlayerResource:GetPlayer(keys.PlayerID)
 
-    if player:GetTeam() == DOTA_TEAM_GOODGUYS then 
+	if GetMapName() ~= "petri_0_frostivus" then
+	
+    if player:GetTeam() == DOTA_TEAM_GOODGUYS  then 
       if CheckShopType(itemname, "SideShop") == false then
         heroEntity:DropItemAtPositionImmediate(itemEntity, heroEntity:GetAbsOrigin())
       end
@@ -244,6 +251,8 @@ function OnItemPickedUpDebug(keys)
         heroEntity:DropItemAtPositionImmediate(itemEntity, heroEntity:GetAbsOrigin())
       end
     end
+	
+	end
   end
 end
 
@@ -315,7 +324,7 @@ function OnPlayerReconnectDebug(keys)
 		
 		--Send score
 		GameMode:addScore(hero, 0)
-		
+		--[[
 		--Send challenges
 		GameMode:ChProgress(player:GetPlayerID(), "KILL", 0)
 		GameMode:ChProgress(player:GetPlayerID(), "BUILD", 0)
@@ -335,6 +344,7 @@ function OnPlayerReconnectDebug(keys)
             }
 			CustomGameEventManager:Send_ServerToPlayer( player, "send_ch_desc", event_data )
 		end
+		]]
       end)
     else
       return 0.03
@@ -421,6 +431,13 @@ function GameMode:OnPlayerLevelUp(keys)
 
   local player = EntIndexToHScript(keys.player)
   local level = keys.level
+  local hero = player:GetAssignedHero()  
+  
+  --времменый фикс вольво пока они сука не вернут всё как было
+  if level > 30 then
+    hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
+  end
+  --
 end
 
 -- A player last hit a creep, a tower, or a hero
@@ -545,6 +562,7 @@ function OnEntityKilledDebug( keys )
   
   if killedUnit:IsRealHero() and PlayerResource:IsValidPlayer(killerEntity:GetPlayerOwnerID()) then
     GameMode:ChProgress(killerEntity:GetPlayerOwnerID(), "KILL", 1)
+	Rating:UpdatePlayerProfile(killerEntity:GetPlayerOwnerID(), "kills", 1)
   end
   
   if killerEntity:GetTeam() == DOTA_TEAM_BADGUYS then
@@ -628,6 +646,12 @@ function OnEntityKilledDebug( keys )
 
   if killedUnit:GetUnitName() == "npc_petri_sawmill" and killedUnit.queueFood then
     hero.food = hero.food - killedUnit.queueFood
+  end
+  
+  if killedUnit:GetUnitName() == "npc_petri_gift" and killerEntity:GetPlayerOwnerID() then
+    local rgold = math.random(10, 250)
+	GameRules:SendCustomMessage("#petri_gift_found", 0, rgold)
+	AddCustomGold(killerEntity:GetPlayerOwnerID(), rgold)
   end
 
   if GameMode.UnitKVs[killedUnit:GetUnitName()] and GameMode.UnitKVs[killedUnit:GetUnitName()]["Unique"] and GameMode.UnitKVs[killedUnit:GetUnitName()]["Unique"] == 1 then
@@ -839,7 +863,7 @@ function GameMode:PlayerConnect(keys)
   DebugPrintTable(keys)
 end
 
-local fply = 0
+local loadedPlayerCount = 0
 
 -- This function is called once when the player fully connects and becomes "Ready" during Loading
 function GameMode:OnConnectFull(keys)
@@ -864,6 +888,13 @@ function GameMode:OnConnectFull(keys)
 	end
 	end
 	]]--
+	
+	if PlayerResource:IsValidPlayer(playerID) then
+	    loadedPlayerCount = loadedPlayerCount + 1
+        if loadedPlayerCount == Rating:GetRealPlayerCount() then
+		    Rating:LoadAllPlayers()
+        end		
+	end
 end
 
 -- This function is called whenever illusions are created and tells you which was/is the original entity

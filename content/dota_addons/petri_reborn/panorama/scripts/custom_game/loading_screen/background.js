@@ -26,8 +26,8 @@ var halloween = [
 
 function SetBackground()
 {
-	var backList = defaultBackgrounds;
-	//var backList = newYear;
+	//var backList = defaultBackgrounds;
+	var backList = newYear;
 	var dayMonth = curDate % 10000;
 
 	// if (dayMonth > 1024 && dayMonth < 1107)

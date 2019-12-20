@@ -76,6 +76,7 @@ function AddCustomGold( pID, gold )
 		goldOma[pID] = goldOma[pID] + gold
 		--\\
 		GameMode:ChProgress(pID, "GOLD", gold)
+		Rating:UpdatePlayerProfile(pID, "gold", gold)
 	end
 end
 

@@ -1,11 +1,17 @@
 "AddonInfo"
 {
+    maps			"petri_1_journey petri_2_radiant petri_0_frostivus"
 	"TeamCount"		"2"
+	"IsPlayable"	"1"
 	"petri_1_journey"
 	{
 		"MaxPlayers"		"12"
 	}
 	"petri_2_radiant"
+	{
+		"MaxPlayers"		"12"
+	}
+	"petri_0_frostivus"
 	{
 		"MaxPlayers"		"12"
 	}

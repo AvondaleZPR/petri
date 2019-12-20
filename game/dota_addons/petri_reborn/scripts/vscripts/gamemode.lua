@@ -101,7 +101,8 @@ require('scores')
 require('autogold')
 require('shop')
 
-require('rating')
+--require('rating')
+require('newrating')
 
 require('duels')
 
@@ -554,7 +555,7 @@ function ChProgressDebug(data)
 				cur = player.pr[i],
 				tar = player.tar[i],
             }
-			CustomGameEventManager:Send_ServerToPlayer( player, "send_ch_pr", event_data )
+			--CustomGameEventManager:Send_ServerToPlayer( player, "send_ch_pr", event_data )
 			if player.pr[i] >= player.tar[i] then
 			    print("CHALLENGE COMPLETED "..pid.." "..i)
 				player.lvl = player.lvl + i 
@@ -592,9 +593,34 @@ function GameMode:SpawnCouriers()
 	end
 end
 
+function GameMode:GetRandomMapPosition()
+    return Vector(math.random(GetWorldMinX(),GetWorldMaxX()),math.random(GetWorldMinY(),GetWorldMaxY()),0)
+end
+
+function GameMode:FrostivusGifts()
+    Timers:CreateTimer(3, function()
+	    GameMode:FrostivusSpawnGifts()
+        return 60.0
+    end)
+end
+
+function GameMode:FrostivusSpawnGifts()
+    local count = math.random(10, 50)
+	print("gifts "..count)
+	GameRules:SendCustomMessage("#petrt_gift_spawn", 0, count)
+	for i = 1, count do
+	    GameMode:FrostivusSpawnGift(GameMode:GetRandomMapPosition())
+	end
+end
+
+function GameMode:FrostivusSpawnGift(vector)
+    CreateUnitByName("npc_petri_gift", vector, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
 function GameMode:OnGameInProgress()
   
   DebugPrint("[BAREBONES] The game has officially begun")
+  
     Timers:CreateTimer(0.3,
     function()
 	GameMode:SpawnCouriers()
@@ -621,15 +647,20 @@ function GameMode:OnGameInProgress()
 	)
     Timers:CreateTimer(3.0,
         function()
+		    Rating:SetPlayerProfiles()
             GameRules:SendCustomMessage("#fix_chat_msg", 0, 0)
 			--fixPause()
-			--[[
-			if IS_RANKED_GAME == true then
+			
+			if GetMapName() == "petri_0_frostivus" then
+			    Rating.isRankedGame = false
+	            GameMode:FrostivusGifts()
+	        end
+			
+			if Rating.isRankedGame == true then
                 GameRules:SendCustomMessage("#ranked_game", 0, 0)    
 			else
                 GameRules:SendCustomMessage("#unranked_game", 0, 0)
 			end
-			]]
   		    return nil
 	    end
 	)
@@ -726,7 +757,7 @@ function GameMode:OnGameInProgress()
     end)
 	
 		--fix_armor()
-		
+	--[[	
 	if GameMode.UseMiracles == false then
 	    print('chuda sosatb')
         for _,v in pairs(Entities:FindAllByName("npc_dota_creature")) do	
@@ -735,6 +766,7 @@ function GameMode:OnGameInProgress()
 			end
         end		
 	end
+	]]
   
   Timers:CreateTimer(30.0,
     function()
@@ -901,6 +933,7 @@ function GameMode:InitGameMode()
   
   GameMode:_InitGameMode()
   
+  Rating:init()
   Duels:InitDuels()
   --if GetMapName() == "petri_random" then
     --RandomMap:Init()
@@ -1071,6 +1104,8 @@ function GameMode:InitGameMode()
 end
 
 function GameMode:ReplaceWithMiniActor(player, gold)
+  if GameMode.UseMiracles == true then
+
   PrecacheUnitByNameAsync("npc_dota_hero_storm_spirit",
     function() 
       -- GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS)-1)
@@ -1099,14 +1134,14 @@ function GameMode:ReplaceWithMiniActor(player, gold)
       newHero:UpgradeAbility(newHero:FindAbilityByName("petri_petrosyan_passive"))
       newHero:UpgradeAbility(newHero:FindAbilityByName("petri_petrosyan_flat_joke"))
 
-      newHero.key = "miniactors"
-      GameMode:SetupCustomSkin(newHero, PlayerResource:GetSteamAccountID(player:GetPlayerID()), newHero.key)
-
-      for k,v in pairs(newHero:GetChildren()) do
+	  for k,v in pairs(newHero:GetChildren()) do
         if v:GetClassname() == "dota_item_wearable" then
           v:AddEffects(EF_NODRAW) 
         end
       end
+	  
+      newHero.key = "miniactors"
+      GameMode:SetupCustomSkin(newHero, PlayerResource:GetSteamAccountID(player:GetPlayerID()), newHero.key)
 
       if newHero then
         EasyTimers:CreateTimer(function()
@@ -1128,6 +1163,8 @@ function GameMode:ReplaceWithMiniActor(player, gold)
     end
     , 
   player:GetPlayerID())
+  
+  end
 end
 
 function GameMode:SetupCustomSkin(hero, steamID, key)

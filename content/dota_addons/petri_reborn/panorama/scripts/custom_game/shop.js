@@ -315,6 +315,8 @@ function SelectUnit(event_data)
 }
 
 (function () {
+	GameEvents.Subscribe("petri_team", ChangeTeam);
+	CustomNetTables.SubscribeNetTableListener("shop", ShopStock)
 	SetupItems();
 	
     //rewards = [10, 20, 30, 40, 50, 60, 70];
@@ -324,8 +326,6 @@ function SelectUnit(event_data)
 	if (playerInfo.player_has_host_privileges == false){
 		$("#SpectateBtn").SetHasClass("Hide", true);
 	}
-	GameEvents.Subscribe("petri_team", ChangeTeam);
-	CustomNetTables.SubscribeNetTableListener("shop", ShopStock)
 
 	GameEvents.SendCustomGameEventToServer("petri_fix_hero", {});
 	

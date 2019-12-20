@@ -373,7 +373,7 @@ function build( keys )
 
 		hero.buildingCount = 0
 		for k,v in pairs(allBuildings) do
-            if v:GetPlayerOwnerID() == caster:GetPlayerOwnerID() then
+            if v:GetPlayerOwnerID() and v:GetPlayerOwnerID() == caster:GetPlayerOwnerID() then
                 hero.buildingCount = hero.buildingCount + 1
             end
         end

@@ -108,6 +108,8 @@ require('duels')
 
 require('randommap')
 
+require('classes')
+
 require('filters')
 require('commands')
 require('internal/gamemode')
@@ -623,12 +625,13 @@ function GameMode:OnGameInProgress()
   
     Timers:CreateTimer(0.3,
     function()
+	Classes:LoadAndSend()
+	
 	GameMode:SpawnCouriers()
 	
     --GameMode.MINUSTIME = math.floor(GameRules:GetGameTime()-0.3)
 	--GameMode:DEBUGMSG("MINUSTIME: ", GameMode.MINUSTIME)
     --print("BEGUN"..GameRules:GetGameTime())
-	
 	--GameMode:SetAllPlayersCameraYaw()
 	
     for i = 0, PlayerResource:GetPlayerCount() do
@@ -935,6 +938,7 @@ function GameMode:InitGameMode()
   
   Rating:init()
   Duels:InitDuels()
+  Classes:init()
   --if GetMapName() == "petri_random" then
     --RandomMap:Init()
   --end

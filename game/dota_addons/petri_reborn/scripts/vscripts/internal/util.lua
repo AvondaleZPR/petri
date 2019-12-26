@@ -404,7 +404,7 @@ function ToggleAbilityAutocastOff(ability)
 end
 
 function ToggleAbilityOff(ability)
-  if ability:GetToggleState() == true then 
+  if ability and ability:GetToggleState() == true then 
       ability:ToggleAbility()  
   end
 end

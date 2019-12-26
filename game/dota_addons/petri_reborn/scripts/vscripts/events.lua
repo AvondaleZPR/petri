@@ -182,6 +182,11 @@ function OnNPCSpawnedDebug(keys)
         npc.onduel = false	    
 	end
 	
+	if npc:IsRealHero() == true then --and npc:GetTeam() == DOTA_TEAM_GOODGUYS then
+	    local item = CreateItem("item_petri_key",nil,nil)
+        item:ApplyDataDrivenModifier(npc, npc, "modifier_item_key",{})  
+	end
+	
 	if npc:IsRealHero() and npc:GetUnitName() ~= npc_dota_hero_storm_spirit and npc:GetPlayerOwner() and npc.alreadyspawned ~= true then
 	    npc.alreadyspawned = true
 		local player = npc:GetPlayerOwner()
@@ -782,6 +787,10 @@ function OnEntityKilledDebug( keys )
 
   if killedUnit:GetUnitName () == "npc_petri_cop" then
     GameMode.assignedPlayerHeroes[killedUnit:GetPlayerOwnerID()].copIsPresent = false
+  end
+  
+  if killedUnit:GetUnitName() == "npc_petri_kosh_egg" and killedUnit.kosh then
+    killedUnit.kosh:ForceKill(false)
   end
 
   if string.match(killedUnit:GetUnitName (), "peasant") then

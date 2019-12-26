@@ -467,6 +467,17 @@ function GameMode:DamageFilter( filter_table )
         return false
       end
     end
+	
+	if victim:GetUnitName() == "npc_petri_sawmill" then
+	    for j = 0, 6 do
+	    for i = 0, 6 do
+		    local item = victim:GetItemInSlot(i)
+			if item then
+			    item:CastAbility()
+			end
+		end
+		end
+	end
 
     return true
 end

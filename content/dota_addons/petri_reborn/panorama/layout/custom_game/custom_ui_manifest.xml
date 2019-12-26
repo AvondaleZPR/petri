@@ -43,6 +43,7 @@
   	</script>
 	<Panel>
 	    <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/shop.xml" />
+	    <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/classes.xml" />		
 	    
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/stash.xml" /> 		
 

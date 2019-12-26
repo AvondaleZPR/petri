@@ -2635,7 +2635,7 @@
 	    "01"
 	    {
 	      "var_type"        "FIELD_INTEGER"
-	      "buff_duration"     "8"
+	      "buff_duration"     "12"
 	    }
 	  }
 	
@@ -9632,8 +9632,8 @@
 	  {
 	    "modifier_item_key"
 	    {
-            "Passive"   "1"
-            "IsHidden"  "0"
+            "Passive"   "0"
+            "IsHidden"  "1"
 	
 	        "States"
 	        {
@@ -9687,4 +9687,32 @@
 	    }
 	  }
 	}
+	"item_gold"
+	{
+		"BaseClass"                 "item_datadriven"
+ 	    "AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	    "Model"						"models/props_gameplay/red_box.vmdl" 
+	    "Effect"					"particles/generic_gameplay/dropped_item.vpcf"
+	    "AbilityTextureName"		"custom/present"	 
+	    "ItemDroppable"             "1"
+	    "ItemPurchasable"           "0"
+	    "ItemSellable"              "0"
+		"ItemShareability"			"ITEM_FULLY_SHAREABLE"
+		"ItemRequiresCharges"			"1"
+	    "ItemDisplayCharges"			"1"
+		"ItemPermanent"					"0"
+	    "ItemInitialCharges"			"0"
+		"AbilityCooldown"				"1.0"
+	    "AbilityCastPoint"				"0.0"
+	    "AbilityManaCost"				"0"
+		
+		"OnSpellStart"
+	    {
+		"RunScript"
+		{
+			"ScriptFile"			"classes.lua"
+			"Function"				"add_gold"
+		}
+	    }
+    }
 }

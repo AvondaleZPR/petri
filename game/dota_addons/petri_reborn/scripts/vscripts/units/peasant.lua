@@ -226,6 +226,12 @@ function CheckBuildingPosition( event )
 			local lumber_gathered = caster.lumber_gathered
 			caster.lumber_gathered = 0
 
+			--
+			if caster:HasAbility("petri_class_lumberjack") == true then
+			    lumber_gathered = lumber_gathered * 2
+			end
+			--
+			
 		    PopupParticle(lumber_gathered, Vector(10, 200, 90), 3.0, caster)
 		    
 		   	-- EmitSoundOnLocationWithCaster(caster:GetAbsOrigin(), "KVN.GatherWood", caster)

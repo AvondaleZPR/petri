@@ -89,7 +89,7 @@
 	
 	  "HealthBarOffset"    "240"
 	
-	  "AbilityLayout"     "6"
+	  "AbilityLayout"     "7"
 	
 	  "vscripts" "units/kvn_fan.lua"
 	
@@ -97,10 +97,12 @@
 	  "Ability2"        "petri_open_advanced_buildings_menu" 
 	  "Ability3"        "petri_open_bus_menu"
 	  "Ability4"        "gather_lumber" 
-	  "Ability5"        "petri_repair"
-	  "Ability6"        "petri_kvn_fan_deny"
+	  "Ability5"        "petri_kvn_fan_deny"
+	  //"Ability5"        "petri_repair"
+	  "Ability6"        "petri_empty6"
 	  "Ability7"        "petri_empty1"
 	  "Ability8"        "return_resources"
+	  "Ability9"        ""
 	  "Ability10"   "special_bonus_armor_4"
 	  "Ability11"   "special_bonus_mp_200"
 	  "Ability12"   "special_bonus_attack_damage_50"

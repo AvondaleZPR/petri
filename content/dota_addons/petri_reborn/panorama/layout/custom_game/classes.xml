@@ -1,0 +1,38 @@
+<root>
+  <styles>
+    <include src="file://{resources}/styles/custom_game/classes.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/classes.js" />
+  </scripts>
+    <Panel hittest="false" class="panelroot">
+        <Button hittest="true" id="ClassBtn" onactivate="ToggleClassPanel()">
+            <Label class="classText" text="#classes"/>
+        </Button>
+		
+		<Panel id="ClassesPanel" class="Hide">
+		    <Panel id="ClassList">
+			    <Panel id="ClassListPanel">
+				</Panel>
+			</Panel>
+			
+			<Panel id="ClassDesc">
+			    <Panel id="DescPanel">
+				    <Label id="DescName" class="classText" text="#name"/>
+			        <Image id="DescImage"/>
+					<Panel id="DescTextPanel">
+					    <Label id="DescText" text=""/>
+					</Panel>
+					<Panel id="ClassBtns">
+					    <Button id="PickBtn" onactivate="PickClass()" hittest="true">
+					        <Label class="classText" text="#pickclass" />
+					    </Button>
+					    <Button id="BanBtn" onactivate="BanClass()" hittest="true">
+					        <Label class="classText" text="#ban" />
+					    </Button>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+    </Panel>
+</root>

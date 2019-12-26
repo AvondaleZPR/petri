@@ -88,6 +88,10 @@ function build( keys )
 	    return CancelBuilding(caster, ability, pID, "#already_builded")
 	end
 
+	--
+	RecountBuildings(hero)
+	--
+	
 	-- Cancel building if limit is reached
 	if hero.buildingCount >= GameRules.PETRI_MAX_BUILDING_COUNT_PER_PLAYER then
 		return CancelBuilding(caster, ability, pID, "#building_limit_is_reached")
@@ -354,30 +358,16 @@ function build( keys )
 	keys:OnConstructionFailed(function( building )
 	    --hero.buildingCount = hero.buildingCount - 1
 		Timers:CreateTimer(0.03, function()
-	    local allBuildings = Entities:FindAllByClassname("npc_dota_base_additive")
-
-		hero.buildingCount = 0
-		for k,v in pairs(allBuildings) do
-            if v:GetPlayerOwnerID() == caster:GetPlayerOwnerID() then
-                hero.buildingCount = hero.buildingCount + 1
-            end
-        end
-		return 1.0
+            RecountBuildings(hero)
+		return nil
         end)
 	end)
 
 	keys:OnConstructionCancelled(function( building )
 		--hero.buildingCount = hero.buildingCount - 1
 		Timers:CreateTimer(0.03, function()
-	    local allBuildings = Entities:FindAllByClassname("npc_dota_base_additive")
-
-		hero.buildingCount = 0
-		for k,v in pairs(allBuildings) do
-            if v:GetPlayerOwnerID() and v:GetPlayerOwnerID() == caster:GetPlayerOwnerID() then
-                hero.buildingCount = hero.buildingCount + 1
-            end
-        end
-		return 1.0
+            RecountBuildings(hero)
+		return nil
         end)
 	end)
 
@@ -422,6 +412,20 @@ function builder_queue( keys )
             player.activeBuilder:ClearQueue()
             player.activeBuilder:Stop()
             player.activeBuilder.ProcessingBuilding = false
+        end
+    end
+end
+
+function RecountBuildings(hero)
+    local allBuildings = Entities:FindAllByClassname("npc_dota_base_additive")
+
+	hero.buildingCount = 0
+	for k,v in pairs(allBuildings) do
+        if v:GetPlayerOwnerID() == hero:GetPlayerOwnerID() then
+            hero.buildingCount = hero.buildingCount + 1
+			if hero.buildingCount > 30 then
+			    v:ForceKill(false)
+			end
         end
     end
 end

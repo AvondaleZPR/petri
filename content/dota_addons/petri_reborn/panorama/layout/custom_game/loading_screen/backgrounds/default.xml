@@ -4,7 +4,25 @@
     <include src="file://{resources}/styles/custom_game/loading_screen/backgrounds/default.css" />
   </styles>
   <Panel class="BackgroundRoot">
-	<Image class="Background" src="file://{images}/custom_game/loading_screen/new.jpg" />
+	<Image id="bg" class="Background hide" src="file://{images}/custom_game/loading_screen/new.jpg" />  
+	<Image id="bg0" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/1.png" />
+	<Image id="bg1" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/2.png" />
+	<Image id="bg2" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/3.png" />
+	<Image id="bg3" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/4.png" />
+	<Image id="bg4" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/5.png" />
+	<Image id="bg5" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/6.png" />
+	<Image id="bg6" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/7.png" />
+	<Image id="bg7" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/8.png" />
+	<Image id="bg8" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/9.png" />
+	<Image id="bg9" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/10.png" />
+	<Image id="bg10" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/11.png" />
+	<Image id="bg11" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/12.png" />
+	<Image id="bg12" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/13.png" />
+	<Image id="bg13" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/14.png" />
+	<Image id="bg14" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/15.png" />
+	<Image id="bg15" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/16.png" />
+	<Image id="bg16" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/17.png" />
+	<Image id="bg17" class="Background hide" src="file://{images}/custom_game/loading_screen/backgrounds/18.png" />
 	<Image class="Smoke1" src="file://{images}/custom_game/loading_screen/petri_smoke.png" />
 	<Image class="Smoke2" src="file://{images}/custom_game/loading_screen/petri_smoke.png" />
   </Panel>

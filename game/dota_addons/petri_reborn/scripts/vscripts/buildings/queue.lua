@@ -115,7 +115,7 @@ function DequeueUnit( event )
 	            caster:RemoveItem(item)
 	            
 	            -- Refund ability cost
-	            AddCustomGold( player, gold_cost )
+	            ReturnCustomGold( player, gold_cost )
 
 	            hero.numberOfUnits = hero.numberOfUnits - 1
 

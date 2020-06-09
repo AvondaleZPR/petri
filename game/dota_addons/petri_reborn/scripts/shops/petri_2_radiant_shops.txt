@@ -17,9 +17,10 @@
 
   "weapons_armor"
   {
-    "item"    "item_petri_mask_of_laugh"
+    "item"        "item_petri_mask_of_laugh"
     "item"        "item_petri_snares_1"
     "item"        "item_petri_snares_2"
+	"item"        "item_interrogation"
   }
 
   "misc"
@@ -28,6 +29,7 @@
     "item"    "item_petri_kvn_medal"
     "item"    "item_petri_grease"
     "item"    "item_petri_mega_sith"
+	"item"	  "item_petro_boots"
   }   
 
   "basics"
@@ -65,7 +67,7 @@
 
   "defense"
   {
-
+  
   }
 
   "weapons"
@@ -79,6 +81,7 @@
     "item"    "item_petri_shield_of_hell"
     "item"    "item_petri_shield_of_heaven"
     "item"    "item_petri_best_shield"
+	"item"    "item_petri_pizdorezka"
   }
 
  // Level 4 - Orange / Orb / Artifacts

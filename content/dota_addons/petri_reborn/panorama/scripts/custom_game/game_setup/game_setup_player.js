@@ -16,7 +16,83 @@ const STAT_KVN_GAMES = 6    //|
 const STAT_KILLS = 7        //|
 const STAT_KVN_WINRATE = 8  //|
 const STAT_PETRI_WINRATE = 9//|
+const STAT_SQL_ID = 10      //|
 //---------------------------//
+
+function GetRangImageId(rating)
+{
+	var id = 0
+	
+	if (rating > 0 && rating < 100)
+	{
+		id = 1
+	} else if(rating >= 2500){
+		id = 24
+	} else {
+		id = parseInt(rating/100)
+	}
+	
+	return id;
+}
+
+
+/*
+function SelectPlayerLoadScreen(id)
+{
+	var playerInfo = Game.GetPlayerInfo(id);
+	
+	$( "#PlayerStatsDisplay").SetHasClass("hidden", false)
+	
+	$( "#statAvatar").steamid = playerInfo.player_steamid;
+	$( "#statName").steamid = playerInfo.player_steamid;
+	
+	$( "#statRating").text = stats[pid][STAT_RATING]
+	$( "#statKills").text = stats[pid][STAT_KILLS]
+	$( "#statGold").text = stats[pid][STAT_GOLD]
+}
+*/
+function GetPlayerStatDisplayPanel()
+{
+	var parent = $.GetContextPanel().GetParent();
+	while(!parent.BHasClass("GameSetup")){
+	    parent = parent.GetParent();
+	}
+
+	return parent;
+}
+
+function SelectPlayerLoadScreen()
+{
+	var id = $.GetContextPanel().GetAttributeInt("player_id", -1)
+	var playerInfo = Game.GetPlayerInfo(id);
+	var panel = GetPlayerStatDisplayPanel()
+	
+	//if (stats[id][STAT_RATING] != 0 && id != -1) {
+		panel.FindChildTraverse( "PlayerStatsDisplay").SetHasClass("hidden", false)
+	
+		panel.FindChildTraverse( "statAvatar").steamid = playerInfo.player_steamid;
+		panel.FindChildTraverse( "statName").steamid = playerInfo.player_steamid;
+	
+		panel.FindChildTraverse( "statKills").text = stats[id][STAT_KILLS]
+		panel.FindChildTraverse( "statGold").text = stats[id][STAT_GOLD]
+		panel.FindChildTraverse( "statId").text = stats[id][STAT_SQL_ID]
+		panel.FindChildTraverse( "statId").text = stats[id][STAT_SQL_ID]
+	
+		panel.FindChildTraverse( "statKvnWl").text = stats[id][STAT_KVN_WIN] + "/" + stats[id][STAT_KVN_GAMES]
+		panel.FindChildTraverse( "statPetriWl").text = stats[id][STAT_PETRI_WIN] + "/" + stats[id][STAT_PETRI_GAMES]
+	
+		panel.FindChildTraverse( "statKvnWr").text = stats[id][STAT_KVN_WINRATE] + "%"
+		panel.FindChildTraverse( "statPetriWr").text = stats[id][STAT_PETRI_WINRATE] + "%"
+		
+		panel.FindChildTraverse( "statRang").SetImage("file://{images}/custom_game/rangs/def/" + GetRangImageId(stats[id][STAT_RATING]) + ".png")
+	//}
+}
+
+function HidePlayerLoadScreen()
+{
+	var panel = GetPlayerStatDisplayPanel()
+	panel.FindChildTraverse( "PlayerStatsDisplay").SetHasClass("hidden", true)
+}
 
 //--------------------------------------------------------------------------------------------------
 // Handeler for when the unssigned players panel is clicked that causes the player to be reassigned
@@ -56,6 +132,27 @@ function OnPlayerDetailsChanged()
 	    $( "#PlayerLvl").SetHasClass("ply_yellow", true)
 	}
 	
+	//$("#PlayerRangImg").RemoveAndDeleteChildren()
+	$("#PlayerRangImg").SetImage("file://{images}/custom_game/rangs/def/" + GetRangImageId(stats[playerId][STAT_RATING]) + ".png")
+	$("#PlayerRang").SetPanelEvent("onmouseover",
+	function(){
+		$.Msg("dsadasdsa")
+		$.DispatchEvent("DOTAShowTextTooltip", $("#PlayerRang"), $.Localize("#rang" + GetRangImageId(stats[playerId][STAT_RATING])))
+	})
+	$("#PlayerRang").SetPanelEvent("onmouseout",
+	function(){
+		$.DispatchEvent("DOTAHideTextTooltip", $("#PlayerRang"))
+	})	
+	
+	
+	/*
+	$.GetContextPanel().SetPanelEvent(
+	    "onmouseover",
+		function() {
+			SelectPlayerLoadScreen(playerId)
+		}
+	)
+	*/
 	
 	$("#PlayerRating").SetPanelEvent(
 	    "onmouseover",
@@ -106,8 +203,10 @@ function OnRating(event_data)
 	    stats[parseInt(event_data["pid"])][STAT_KILLS] = parseInt(event_data["1"]["kills"])
 	    stats[parseInt(event_data["pid"])][STAT_PETRI_WINRATE] = parseInt( (parseInt(event_data["1"]["petrivictories"])) / (parseInt(event_data["1"]["petrigames"])) * 100 )
 	    stats[parseInt(event_data["pid"])][STAT_KVN_WINRATE] = parseInt( (parseInt(event_data["1"]["kvnvictories"])) / (parseInt(event_data["1"]["kvngames"])) * 100	)
+		stats[parseInt(event_data["pid"])][STAT_SQL_ID] = parseInt(event_data["1"]["id"])
 	}
 	OnPlayerDetailsChanged();
+	$.GetContextPanel().statsArr = stats
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -122,7 +221,7 @@ function OnRating(event_data)
 	
 	stats = [[], [], [], [], [], [], [], [], [], [], [], [], [], []]
 	for(var i = 0; i < 13; i++ ){
-		stats[i] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+		stats[i] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	}
 	//rating = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 	//lvl = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];

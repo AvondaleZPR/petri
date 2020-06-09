@@ -1,5 +1,5 @@
-local particleName = "particles/units/heroes/hero_shadow_demon/shadow_demon_shadow_poison_stackui02.vpcf"
-local particleName2 = "particles/units/heroes/hero_shadow_demon/shadow_demon_shadow_poison_stackui.vpcf"
+local pN = "particles/units/heroes/hero_shadow_demon/shadow_demon_shadow_poison_stackui02.vpcf"
+local pN2 = "particles/units/heroes/hero_shadow_demon/shadow_demon_shadow_poison_stackui.vpcf"
 
 
 function GetGoldAutocast( event )
@@ -14,7 +14,10 @@ function Spawn ( entityKeyValues  )
 	Timers:CreateTimer(3.65,
     function()
     	if thisEntity:IsNull() == false and thisEntity:GetPlayerOwner() ~= nil then
-			if tonumber(lvls[thisEntity:GetPlayerOwnerID()]) >= 70 then
+			local particleName = pN
+			local particleName2 = pN2
+			
+			if tonumber(lvls[thisEntity:GetPlayerOwnerID()]) >= 150000 then
 			    particleName = "particles/units/heroes/hero_abaddon/abaddon_curse_counter_stack.vpcf"
 				particleName2 = "particles/units/heroes/hero_abaddon/abaddon_curse_counter_stack.vpcf"
 			end
@@ -44,11 +47,14 @@ function Upgrade ( event   )
 	local ability = event.ability
 	local particle = caster.particle
 
+	local particleName = pN
+	local particleName2 = pN2
+	
 	local tower_level = ability:GetLevel()
 
 	SetCustomBuildingModel(caster, PlayerResource:GetSteamAccountID(caster:GetPlayerOwnerID()), tower_level+1)
 	
-	if tonumber(lvls[caster:GetPlayerOwnerID()]) >= 70 then
+	if tonumber(lvls[caster:GetPlayerOwnerID()]) >= 150000 then
 	    particleName = "particles/units/heroes/hero_abaddon/abaddon_curse_counter_stack.vpcf"
 		particleName2 = "particles/units/heroes/hero_abaddon/abaddon_curse_counter_stack.vpcf"
 	end

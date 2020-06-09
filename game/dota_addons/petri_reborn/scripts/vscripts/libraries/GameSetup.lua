@@ -102,7 +102,7 @@ function GetTeamsFromEmptySelection( args )
     --end
   --end
   
-    if GetArraySize( petr ) == 0 and IsInToolsMode() == false then
+    if GetArraySize( petr ) == 0 and PlayerResource:GetPlayerCount() > 1 then
 	    kvn = {}
         for k,v in pairs(GameSetup.votes['prefer_team']) do
             if v == 'petri' and GetArraySize( petr ) < 2 then

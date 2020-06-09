@@ -21,6 +21,7 @@
     "item1"        "item_petri_mask_of_laugh"
     "item2"        "item_petri_snares_1"
     "item3"        "item_petri_snares_2"
+	"item4"        "item_interrogation"
   }
 
   "misc"
@@ -29,6 +30,7 @@
     "item1"        "item_petri_kvn_medal"
     "item2"        "item_petri_grease"
     "item3"        "item_petri_mega_sith"
+	"item4"		   "item_petro_boots"
   }   
 
   "basics"
@@ -75,15 +77,15 @@
 
   "weapons"
   {
-    "item1"    "item_petri_helmet"
-    "item2"    "item_petri_vest"
-    "item3"    "item_petri_supervest"
-    "item4"    "item_petri_supermegavest"
-    "item5"    "item_petri_superthing"
-    "item6"    "item_petri_shield_of_hell"
-    "item7"    "item_petri_shield_of_heaven"
-    "item8"    "item_petri_best_shield"
-    "item9"    "item_petri_crysis_armor"
+    "item1"    "item_petri_vest"
+    "item2"    "item_petri_supervest"
+    "item3"    "item_petri_supermegavest"
+    "item4"    "item_petri_superthing"
+    "item5"    "item_petri_shield_of_hell"
+    "item6"    "item_petri_shield_of_heaven"
+    "item7"    "item_petri_best_shield"
+    "item8"    "item_petri_crysis_armor"
+	"item9"    "item_petri_pizdorezka"
   }
 
  // Level 4 - Orange / Orb / Artifacts
@@ -101,7 +103,8 @@
     "item2"    "item_petri_evasion_scroll"
     "item3"    "item_petri_attack_scroll"
     "item4"    "item_petri_alcohol"
-	"item5"    "item_petri_superkey"
+	"item5"    "item_alarm_clock"
+	"item6"    "item_petri_superkey"
   }
 
  //Sideshop Page 2

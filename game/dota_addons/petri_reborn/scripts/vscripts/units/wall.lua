@@ -31,6 +31,10 @@ function Upgrade (event)
 	    GameMode:addScore(caster:GetPlayerOwner():GetAssignedHero(), 9+wall_level)
 		wallScoreArr[caster:GetPlayerOwnerID()+1][wall_level] = 1
 	end
+
+	if caster:GetPlayerOwnerID() then
+		--EmitAnnouncerSoundForPlayer("announcer_ann_custom_generic_alert_08", caster:GetPlayerOwnerID())	
+	end
 end
 
 function UpgradeEarth (event)
@@ -54,6 +58,10 @@ function UpgradeEarth (event)
 	    print("sasi hooy"..wallScoreArr[caster:GetPlayerOwnerID()+1][wall_level].." "..(caster:GetPlayerOwnerID()+1).." "..wall_level)
 	    GameMode:addScore(caster:GetPlayerOwner():GetAssignedHero(), 11+wall_level)
 		wallScoreArr[caster:GetPlayerOwnerID()+1][wall_level] = 1
+	end
+	
+	if caster:GetPlayerOwnerID() then
+		--EmitAnnouncerSoundForPlayer("announcer_ann_custom_generic_alert_08", caster:GetPlayerOwnerID())
 	end
 end
 
@@ -137,6 +145,7 @@ function Notification(keys)
 
 	if GameRules:GetGameTime() - caster.lastWallIsUnderAttackNotification > 15.0 then
 		EmitSoundOnClient("General.PingDefense", caster:GetPlayerOwner())
+		EmitAnnouncerSoundForTeam("announcer_ann_custom_generic_alert_02", DOTA_TEAM_GOODGUYS)
 		caster.lastWallIsUnderAttackNotification = GameRules:GetGameTime()
 	end
 

@@ -425,7 +425,7 @@ function RepairBy1Percent( event )
 
 			if caster:IsHero() == true and GetModifierCountByName(target,target,"modifier_being_repaired") <= 1 then
 				ability:ApplyDataDrivenModifier(target, target, "modifier_being_repaired", {})
-				healAmount = healAmount + healAmount
+				healAmount = healAmount + healAmount*2
 			end
 
 			if health == maxHealth then
@@ -502,5 +502,9 @@ function Suicide( keys )
 	local caster = keys.caster
 	local ability = keys.ability
 
+	--if caster:GetUnitName() == "npc_petri_cop_trap" and caster:HasAbility("petri_building") and caster:GetPlayerOwner() and caster:GetPlayerOwner():GetAssignedHero() then
+	--	caster:GetPlayerOwner():GetAssignedHero().cogK = caster:GetPlayerOwner():GetAssignedHero().cogK - 1
+	--end
+	
 	caster:Kill(ability, caster)
 end

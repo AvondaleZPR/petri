@@ -31,6 +31,7 @@ function ToWall(keys)
 			        target:SetAbsOrigin(pos)
 					--target:GetPlayerOwner():GetAssignedHero().canbuid = true
 					target.blocks = true
+					GameMode:SaveBuildingToPSO(target)
 					end
 					end
 			    end)
@@ -63,7 +64,7 @@ function Aura(keys)
 			for _, wall in pairs(walls) do
 			if wall then
 			if string.match(wall:GetUnitName(), "wall") then --or wall:GetUnitName() == "npc_petri_cop_trap" then
-			if wall.blocks ~= false and wall:IsAlive() then
+			if wall.blocks ~= false and wall:IsAlive() and wall:GetPlayerOwner() == caster:GetPlayerOwner() then
 			    if wall.fpos == nil then
 				   wall.fpos = wall:GetAbsOrigin()
 				end
@@ -106,6 +107,7 @@ function Aura(keys)
 			                wall.blockers = BuildingHelper:BlockGridNavSquare(2, pos)
 					        Timers:CreateTimer(0.01, function()
 			                wall:SetAbsOrigin(pos)
+							GameMode:SaveBuildingToPSO(wall)
 					      	--wall:GetPlayerOwner():GetAssignedHero().canbuid = true
 			                end)
 						end

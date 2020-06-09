@@ -20,16 +20,22 @@ function SpawnTrap(keys)
 	local point = keys.target_points[1]
 	local caster = keys.caster
 
-	local trap = CreateUnitByName("npc_petri_trap", point,  true, nil, caster, caster:GetTeam())
+	if not IsInsideEntityBounds(Entities:FindByName(nil, "blocking_trigger_b"), point) then
+		local trap = CreateUnitByName("npc_petri_trap", point,  true, nil, caster, caster:GetTeam())
 
-	SetCustomBuildingModel(trap, PlayerResource:GetSteamAccountID(caster:GetPlayerOwnerID()))
+		SetCustomBuildingModel(trap, PlayerResource:GetSteamAccountID(caster:GetPlayerOwnerID()))
 
-	caster = GameMode.assignedPlayerHeroes[caster:GetPlayerOwnerID()]
-	trap.owner = caster
+		caster = GameMode.assignedPlayerHeroes[caster:GetPlayerOwnerID()]
+		trap.owner = caster
 
-	InitAbilities(trap)
-	trap:AddNewModifier(trap, nil, "modifier_kill", {duration = 240})
-	StartAnimation(trap, {duration=-1, activity=ACT_DOTA_IDLE , rate=1.5})
+		InitAbilities(trap)
+		trap:AddNewModifier(trap, nil, "modifier_kill", {duration = 240})
+		StartAnimation(trap, {duration=-1, activity=ACT_DOTA_IDLE , rate=1.5})
+	
+		keys.ability:SpendCharge()
+	else
+		keys.ability:EndCooldown()
+	end
 end
 
 function GivePermissionToBuild( keys )
@@ -156,9 +162,13 @@ function CloseBusMenu(keys)
 end
 
 function SpawnGoldBag( keys )
-	local caster = keys.caster
+	local caster = keys.caster:GetPlayerOwner():GetAssignedHero()
 	local ability = keys.ability
 	local pID = caster:GetPlayerOwnerID()
+	
+	if keys.pos == nil then
+	    keys.pos = keys.caster:GetAbsOrigin()
+	end
 
 	GameMode.assignedPlayerHeroes[pID].goldBagStacks = GameMode.assignedPlayerHeroes[pID].goldBagStacks or 0
 
@@ -220,7 +230,7 @@ function Deny(keys)
 	}
  
 	if target:HasAbility("petri_building") == true and target:GetPlayerOwnerID() == caster:GetPlayerOwnerID() and target:HasAbility("petri_exit") ~= true and target:HasAbility("petri_cop_trap") ~= true then
-		if not string.match(target:GetUnitName(), "npc_petri_bus") then
+		if not string.match(target:GetUnitName(), "npc_petri_bus") and not (string.match(target:GetUnitName(), "npc_petri_tent") and target:GetHealth() ~= target:GetMaxHealth()) then
 		if caster:HasModifier("modifier_hunger") == true then
 			caster:RemoveModifierByName("modifier_hunger")
 		end

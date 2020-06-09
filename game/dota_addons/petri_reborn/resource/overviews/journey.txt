@@ -1,0 +1,8 @@
+journey
+{
+	material materials/overviews/journey.vmat
+	pos_x -12288
+	pos_y 12288
+	scale 24.000
+}
+

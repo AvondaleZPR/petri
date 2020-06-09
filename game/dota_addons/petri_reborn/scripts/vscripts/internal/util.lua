@@ -148,9 +148,11 @@ function IsBuilding( target )
   return IsValidEntity(target) and target:HasAbility("petri_building") == true or target:HasAbility("petri_tower") == true
 end
 
-function IsInsideEntityBounds(ent, position)
-  local origin = entity:GetAbsOrigin()
-  local bounds = entity:GetBounds()
+function IsInsideEntityBounds(ent, location)
+  if not ent or not location then return false end
+
+  local origin = ent:GetAbsOrigin()
+  local bounds = ent:GetBounds()
   local min = bounds.Mins
   local max = bounds.Maxs
   local X = location.x
@@ -546,7 +548,11 @@ function StartUpgrading (event)
   if CheckLumber(caster:GetPlayerOwner(), lumber_cost,true) == false
     or CheckFood(caster:GetPlayerOwner(), food_cost,true) == false
     or CheckUpgradeDependencies(pID, ability:GetName(), ability:GetLevel()) == false 
-    or GetCustomGold( pID ) < gold_cost then
+    or GetCustomGold( pID ) < gold_cost 
+	or not caster:GetPlayerOwner() or not caster:GetPlayerOwner():GetAssignedHero()
+	or not caster:GetPlayerOwner():GetAssignedHero():IsAlive()
+	or caster:GetPlayerOwner():GetAssignedHero():GetTeam() == DOTA_TEAM_BADGUYS
+	then
     Timers:CreateTimer(0.06,
       function()
           caster:InterruptChannel()
@@ -595,7 +601,7 @@ function StopUpgrading(event)
     hero.lumber = hero.lumber + caster.lastSpentLumber
     hero.food = hero.food - caster.lastSpentFood
     caster.foodSpent = caster.foodSpent - caster.lastSpentFood
-    AddCustomGold( caster:GetPlayerOwnerID(), caster.lastSpentGold )
+    ReturnCustomGold( caster:GetPlayerOwnerID(), caster.lastSpentGold )
   end
 
   caster.lastSpentLumber = 0

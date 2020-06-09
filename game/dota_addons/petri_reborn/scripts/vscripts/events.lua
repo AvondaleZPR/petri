@@ -58,8 +58,8 @@ function OnDisconnectDebug(keys)
     end
 
     if everyoneLeft then
-      --GameRules.Winner = DOTA_TEAM_GOODGUYS
-      --GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+      GameRules.Winner = DOTA_TEAM_GOODGUYS
+      GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
     end
   end)
 end
@@ -83,7 +83,7 @@ function OnGameRulesStateChangeDebug(keys)
   GameMode:_OnGameRulesStateChange(keys)
   
   if GameRules:State_Get() == DOTA_GAMERULES_STATE_POST_GAME then
-    
+    CustomGameEventManager:Send_ServerToAllClients( "petri_end_game_cam", nil )
 	--[[
 	for i = 0, 12 do
 	    if PlayerRT[i] ~= nil and PlayerRT[i].team ~= nil then
@@ -115,6 +115,8 @@ function OnGameRulesStateChangeDebug(keys)
 	if Rating.isRankedGame == true then
 	    Rating:SaveAndSendStats()
 	end
+	
+	Rating:SendMatch()
   end
 end
 
@@ -149,18 +151,29 @@ end
 function OnNPCSpawnedDebug(keys)
   DebugPrint("[BAREBONES] NPC Spawned")
   DebugPrintTable(keys)
-
+  
   -- This internal handling is used to set up main barebones functions
   GameMode:_OnNPCSpawned(keys)
-
+  
   local npc = EntIndexToHScript(keys.entindex)
   if npc:GetUnitName() == "npc_dota_courier" then
-    npc:SetMoveCapability(DOTA_UNIT_CAP_MOVE_FLY)
-    UpdateModel(npc, "models/creeps/neutral_creeps/n_creep_ghost_a/n_creep_ghost_a.vmdl", 0.8)
-    npc:AddAbility("petri_janitor_invisibility")
-    InitAbilities( npc )
+    if npc:GetTeam() == DOTA_TEAM_GOODGUYS then
+	    UTIL_Remove(npc)
+	else	
+	    npc:SetMoveCapability(DOTA_UNIT_CAP_MOVE_FLY)
+        --UpdateModel(npc, "models/creeps/neutral_creeps/n_creep_ghost_a/n_creep_ghost_a.vmdl", 0.8)
+        npc:AddAbility("petri_janitor_invisibility")
+        InitAbilities( npc )
 	
-	npc:SetBaseMoveSpeed(600)
+	    npc:SetBaseMoveSpeed(600)
+		
+	    Timers:CreateTimer(3, function()
+		    if npc and npc:GetOwnerEntity() then
+				npc:GetOwnerEntity():GetAssignedHero().petriCourier = npc
+			end
+			return nil
+		end)
+	end
   end
   
   print(npc:GetTeam())
@@ -182,6 +195,10 @@ function OnNPCSpawnedDebug(keys)
         npc.onduel = false	    
 	end
 	
+	if npc:IsRealHero() and npc:GetTeam() == DOTA_TEAM_GOODGUYS and npc.cogK == nil then
+		npc.cogK = 0
+	end
+	
 	if npc:IsRealHero() == true then --and npc:GetTeam() == DOTA_TEAM_GOODGUYS then
 	    local item = CreateItem("item_petri_key",nil,nil)
         item:ApplyDataDrivenModifier(npc, npc, "modifier_item_key",{})  
@@ -195,14 +212,18 @@ function OnNPCSpawnedDebug(keys)
 	    player.tar = {0,0,0}
 		player.lvl = 0
 		
-		pp[player:GetPlayerID()].ch = {"","",""}
-		pp[player:GetPlayerID()].pr = {0,0,0}
-		pp[player:GetPlayerID()].tar = {0,0,0}
-		pp[player:GetPlayerID()].lvl = 0
+		if pp[player:GetPlayerID()] then
+		    pp[player:GetPlayerID()].ch = {"","",""}
+		    pp[player:GetPlayerID()].pr = {0,0,0}
+		    pp[player:GetPlayerID()].tar = {0,0,0}
+		    pp[player:GetPlayerID()].lvl = 0
 		
-		pp[player:GetPlayerID()].score = 0
+		    pp[player:GetPlayerID()].score = 0
+		end
 		
 		npc.bus = {nil,nil,nil,nil}
+		
+		npc.itemsPurchased = 0
 	end
 	
 	if npc:IsRealHero() and npc:GetTeam() == DOTA_TEAM_GOODGUYS then
@@ -210,6 +231,16 @@ function OnNPCSpawnedDebug(keys)
 	end
 	
 	npc.isblink = false
+	
+	--special for cocksuckers
+	if npc:GetPlayerOwner() then
+        --GameMode:Ban(npc:GetPlayerOwner())
+	end
+    --
+	
+	if npc:GetPlayerOwner() and npc:GetTeam() then
+	    npc:GetPlayerOwner():SetTeam(npc:GetTeam())
+	end
 end
 
 -- An entity somewhere has been hurt.  This event fires very often with many units so don't do too many expensive
@@ -313,23 +344,32 @@ function OnPlayerReconnectDebug(keys)
         CustomGameEventManager:Send_ServerToPlayer( player, "petri_close_spawning", { state = false } )
 		
         --Set correct team
-        if hero:GetUnitName() == "npc_dota_hero_storm_spirit" then
-          player:SetTeam(hero:GetTeamNumber())
+        if hero and player and hero:GetUnitName() and hero:GetUnitName() == "npc_dota_hero_storm_spirit" then
+		    hero:SetTeam(DOTA_TEAM_BADGUYS)
+            player:SetTeam(DOTA_TEAM_BADGUYS)
         end
 		
 		--Set camera
-		GameMode:SetAllPlayersCameraYaw()
+		--GameMode:SetAllPlayersCameraYaw()
 		
 		--Set variables
+		if player and player:GetPlayerID() and pp[player:GetPlayerID()] then
 		player.ch = pp[player:GetPlayerID()].ch
 		player.pr = pp[player:GetPlayerID()].pr
 		player.tar = pp[player:GetPlayerID()].tar
 		player.lvl = pp[player:GetPlayerID()].lvl
 		player.score = pp[player:GetPlayerID()].score
 		
+		GameMode:ChUpdateLvl(player)
+		end
+		
 		--Send score
-		GameMode:addScore(hero, 0)
-		--[[
+		for i = 0, PlayerResource:GetPlayerCount() do
+		    if PlayerResource:IsValidPlayer(i) then
+			    local hero = PlayerResource:GetPlayer(i):GetAssignedHero()
+				if hero then GameMode:addScore(hero, 0) end
+			end
+		end
 		--Send challenges
 		GameMode:ChProgress(player:GetPlayerID(), "KILL", 0)
 		GameMode:ChProgress(player:GetPlayerID(), "BUILD", 0)
@@ -349,7 +389,15 @@ function OnPlayerReconnectDebug(keys)
             }
 			CustomGameEventManager:Send_ServerToPlayer( player, "send_ch_desc", event_data )
 		end
-		]]
+		
+		--special for cocksuckers
+            --GameMode:Ban(player)
+        --
+		
+		GameMode:CheckTeamAfterReconnect(keys.PlayerID)
+		
+		--Send classes
+		Classes:LoadAndSend()
       end)
     else
       return 0.03
@@ -357,6 +405,27 @@ function OnPlayerReconnectDebug(keys)
   end)
   
   end
+end
+
+function GameMode:CheckTeamAfterReconnect(pid)
+    Timers:CreateTimer(5, function()
+
+    if PlayerResource:GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
+	    local player = PlayerResource:GetPlayer(pid)
+		if player then
+		
+		local hero = player:GetAssignedHero()
+		
+		if player and hero and hero:GetUnitName() and hero:GetUnitName() == "npc_dota_hero_storm_spirit" then
+            hero:SetTeam(DOTA_TEAM_BADGUYS)
+			player:SetTeam(DOTA_TEAM_BADGUYS)
+        end
+		
+		end
+	end
+	
+	return nil
+    end)
 end
 
 -- An item was purchased by a player
@@ -407,6 +476,8 @@ function GameMode:OnPlayerChangedName(keys)
   DebugPrint('[BAREBONES] OnPlayerChangedName')
   DebugPrintTable(keys)
 
+  GameMode:UpdatePlayerChatIcons()
+  
   local newName = keys.newname
   local oldName = keys.oldName
 end
@@ -434,12 +505,20 @@ function GameMode:OnPlayerLevelUp(keys)
   DebugPrint('[BAREBONES] OnPlayerLevelUp')
   DebugPrintTable(keys)
 
-  local player = EntIndexToHScript(keys.player)
+  --PrintTable(keys)
+  
+  local player = PlayerResource:GetPlayer(keys.player_id) --EntIndexToHScript(keys.player)
   local level = keys.level
   local hero = player:GetAssignedHero()  
   
+  if level > 80 then
+	hero:SetBaseAgility(hero:GetBaseAgility() - hero:GetAgilityGain())
+	hero:SetBaseIntellect(hero:GetBaseIntellect() - hero:GetIntellectGain())
+	hero:SetBaseStrength(hero:GetBaseStrength() + hero:GetStrengthGain() * 2)
+  end
+  
   --времменый фикс вольво пока они сука не вернут всё как было
-  if level > 30 then
+  if level > 20 and level < 80 then
     hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
   end
   --
@@ -466,14 +545,45 @@ function GameMode:OnTreeCut(keys)
   local treeY = keys.tree_y
 end
 
+local petroRunes = {}
+petroRunes[DOTA_RUNE_DOUBLEDAMAGE] = "modifier_petri_rune_doubledamage"
+petroRunes[DOTA_RUNE_HASTE] = "modifier_petri_rune_haste"
+petroRunes[DOTA_RUNE_INVISIBILITY] = "modifier_petri_rune_miss"
+petroRunes[DOTA_RUNE_REGENERATION] = "modifier_petri_rune_regen"
+petroRunes[DOTA_RUNE_ARCANE] = "modifier_petri_rune_armor"
+
 -- A rune was activated by a player
 function GameMode:OnRuneActivated (keys)
+    local status, retval = pcall(OnRuneActivatedDebug, keys)
+    if not status then
+        GameMode:DEBUGMSG("OnRuneActivated ERROR: ", retval)	
+	end
+end
+
+function OnRuneActivatedDebug(keys)
   DebugPrint('[BAREBONES] OnRuneActivated')
   DebugPrintTable(keys)
 
   local player = PlayerResource:GetPlayer(keys.PlayerID)
   local rune = keys.rune
+  local hero = player:GetAssignedHero()
+  
+  print(rune) 
 
+  hero:RemoveModifierByName("modifier_rune_doubledamage")
+  hero:RemoveModifierByName("modifier_rune_regen")
+  hero:RemoveModifierByName("modifier_rune_arcane")
+  hero:RemoveModifierByName("modifier_rune_haste")
+  hero:RemoveModifierByName("modifier_rune_invis")
+  
+  local item = CreateItem("item_petri_key",nil,nil)  
+  
+  if hero:GetTeam() == DOTA_TEAM_GOODGUYS then
+	GameMode:ApplyModifierAtAllBuldings(petroRunes[rune], item, hero)
+  else 
+	GameMode:ApplyModifierAtAllPetroses(petroRunes[rune], item, hero)
+  end
+  
   --[[ Rune Can be one of the following types
   DOTA_RUNE_DOUBLEDAMAGE
   DOTA_RUNE_HASTE
@@ -585,9 +695,11 @@ function OnEntityKilledDebug( keys )
     killedUnit:SetTimeUntilRespawn(9999.0)
     GiveSharedGoldToTeam(math.floor(90 * GetGoldModifier()), DOTA_TEAM_BADGUYS)
 
-    if killerEntity:IsRealHero() and killerEntity.AddExperience then
+    if killerEntity:IsRealHero() and killerEntity.AddExperience and killerEntity:GetLevel() and killerEntity:GetLevel() < 80 then
       killerEntity:AddExperience(XP_PER_LEVEL_TABLE_OLD[killerEntity:GetLevel()] / 10,0,false,false)
     end
+	
+	GameMode:PlayRandomJoke()
 
     Timers:CreateTimer(1.0,
     function()
@@ -753,8 +865,11 @@ function OnEntityKilledDebug( keys )
       end
     end)
 	
-	if killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS and killerEntity:GetPlayerOwner():GetAssignedHero() then
+	if killerEntity and killerEntity:GetTeam() and killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS and killerEntity:GetPlayerOwner() and killerEntity:GetPlayerOwner():GetAssignedHero() then
 	    GameMode:addScore(killerEntity:GetPlayerOwner():GetAssignedHero(), 8)
+		if killedUnit:GetUnitName() ~= "npc_dota_hero_storm_spirit" and killerEntity:GetPlayerOwner():GetAssignedHero():HasAbility("petri_class_hunter") then
+			AddCustomGold( killerEntity:GetPlayerOwnerID(), 150)
+		end
 	end
     
 	end
@@ -776,6 +891,7 @@ function OnEntityKilledDebug( keys )
     local level = killedUnit:FindAbilityByName("petri_cop_trap"):GetLevel()
     local dmg = 100
     if level == 2 then dmg = 350 end
+	if killerEntity:GetTeam() == DOTA_TEAM_GOODGUYS then dmg = 0 end
     local damageTable = {
         victim = killerEntity,
         attacker = killedUnit,
@@ -783,14 +899,28 @@ function OnEntityKilledDebug( keys )
         damage_type = DAMAGE_TYPE_PURE,
     }
     ApplyDamage(damageTable)
+	
+	if killedUnit:GetPlayerOwner() and killedUnit:GetPlayerOwner():GetAssignedHero() and killedUnit:GetPlayerOwner():GetAssignedHero().cogK then
+		killedUnit:GetPlayerOwner():GetAssignedHero().cogK = killedUnit:GetPlayerOwner():GetAssignedHero().cogK - 1
+	end
   end
 
-  if killedUnit:GetUnitName () == "npc_petri_cop" then
+  if killedUnit:GetUnitName() == "npc_petri_cop" and GameMode.assignedPlayerHeroes[killedUnit:GetPlayerOwnerID()] and GameMode.assignedPlayerHeroes[killedUnit:GetPlayerOwnerID()].copIsPresent then
     GameMode.assignedPlayerHeroes[killedUnit:GetPlayerOwnerID()].copIsPresent = false
   end
   
   if killedUnit:GetUnitName() == "npc_petri_kosh_egg" and killedUnit.kosh then
-    killedUnit.kosh:ForceKill(false)
+    --killedUnit.kosh:ForceKill(false)
+	
+	killedUnit.kosh:RemoveModifierByName("modifier_kosh")
+	
+	local damageTable = {
+        victim = killedUnit.kosh,
+        attacker = killerEntity,
+        damage = 9999999,
+        damage_type = DAMAGE_TYPE_PURE,
+    }
+    ApplyDamage(damageTable)
   end
 
   if string.match(killedUnit:GetUnitName (), "peasant") then
@@ -830,6 +960,8 @@ function OnEntityKilledDebug( keys )
       end
       bounty = bounty/2
       GiveSharedGoldToTeam(bounty, DOTA_TEAM_BADGUYS)
+	  EmitAnnouncerSoundForTeam("announcer_ann_custom_generic_alert_39", DOTA_TEAM_BADGUYS)
+	  EmitAnnouncerSoundForTeam("announcer_ann_custom_generic_alert_40", DOTA_TEAM_GOODGUYS)
       return false
     else
       AddCustomGold( killerEntity:GetPlayerOwnerID(), bounty)
@@ -858,11 +990,38 @@ function OnEntityKilledDebug( keys )
       local pos = killedUnit:GetAbsOrigin()
       Timers:CreateTimer(0.37,
       function()
+	    if not string.match(killedUnit:GetUnitName(), "wall") then
+		
         local newUnit = CreateUnitByName(killedUnit:GetUnitName(), pos, true, nil, nil,DOTA_TEAM_NEUTRALS)
 
+		if killedUnit.newAreaId ~= nil then
+		    GameMode:NewAreaCreepDead(killedUnit, newUnit)
+		end
+		
+		end
       end)
     end
   end
+end
+
+function GameMode:NewAreaCreepDead(old, new)
+	new.newAreaId = old.newAreaId
+	
+	if GameRules.new_arena_first_brew_creeps and GameRules.new_arena_first_brew_creeps[old.newAreaId] == old then
+		GameRules.new_arena_first_brew_creeps[old.newAreaId] = new
+	end
+		
+    if GameRules.new_arena_second_brew_creeps and GameRules.new_arena_second_brew_creeps[old.newAreaId] == old then
+		GameRules.new_arena_second_brew_creeps[old.newAreaId] = new
+	end
+		
+	if GameRules.new_arena_first_death_creeps and GameRules.new_arena_first_death_creeps[old.newAreaId] == old then
+		GameRules.new_arena_first_death_creeps[old.newAreaId] = new
+    end
+		
+	if GameRules.new_arena_second_death_creeps and GameRules.new_arena_second_death_creeps[old.newAreaId] == old then
+		GameRules.new_arena_second_death_creeps[old.newAreaId] = new
+	end
 end
 
 -- This function is called 1 to 2 times as the player connects initially but before they 

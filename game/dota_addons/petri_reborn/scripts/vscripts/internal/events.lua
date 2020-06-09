@@ -35,7 +35,15 @@ function GameMode:_OnGameRulesStateChange(keys)
         PauseGame(true)
         return 0.03
       else
-        PauseGame(false)
+        PauseGame(true)
+		
+		Timers:CreateTimer({
+			useGameTime = false,
+			endTime = 2,
+			callback = function()
+				PauseGame(false)
+			end
+		})
       end
     end, 'auto_pause', 0.03)
 

@@ -55,12 +55,35 @@ function GiveSharedGoldToTeam(gold, team)
     end
 end
 
+function ReturnCustomGold(pID, gold)
+	local hero = GameMode.assignedPlayerHeroes[pID]
+	if hero then
+		hero._customGold = hero._customGold or 0
+	
+		hero._customGold = hero._customGold + gold
+	end
+	
+	print("ReturnCustomGold")
+end
+
 function AddCustomGold( pID, gold )
 	local hero = GameMode.assignedPlayerHeroes[pID]
 
 	if hero then
 		local gold = math.floor(gold)
 
+		if hero:HasAbility("petri_class_casino") then
+			print("casino "..gold)
+			
+			local rand = math.random(0, 100)
+			if rand > 50 then
+				if rand == 51 then gold = gold * 10 Notifications:Bottom(pID, {text="X10 ", duration=7, style={["font-size"]="40px", color="yellow"}, continue=true})
+				elseif rand < 76 then gold = 0 Notifications:Bottom(pID, {text="X0 ", duration=3, style={["font-size"]="30px", color="red"}, continue=true})
+				else gold = gold * 1.5 Notifications:Bottom(pID, {text="X1.5 ", duration=3, style={["font-size"]="30px", color="green"}, continue=true}) end
+			end
+			print("CASINO "..rand.." "..gold)
+		end		
+		
 		hero._customGold = hero._customGold or 0
 
 		hero.allEarnedGold = hero.allEarnedGold or 0
@@ -73,7 +96,9 @@ function AddCustomGold( pID, gold )
 		hero._customGold = hero._customGold + gold
 		
 		--//
-		goldOma[pID] = goldOma[pID] + gold
+		if goldOma[pID] then
+		    goldOma[pID] = goldOma[pID] + gold
+		end
 		--\\
 		GameMode:ChProgress(pID, "GOLD", gold)
 		Rating:UpdatePlayerProfile(pID, "gold", gold)

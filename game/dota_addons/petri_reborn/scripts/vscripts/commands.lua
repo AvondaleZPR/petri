@@ -94,3 +94,27 @@ function GameMode:FinishGameSetup(g)
     end
   end
 end
+
+function GameMode:TestError()
+    GameMode:DEBUGMSG("Test ERROR: ", "1234 test govna")
+end
+
+function GameMode:TestReconnect(g)
+	local keys = {PlayerID = tonumber(g)}
+	GameMode:OnPlayerReconnect(keys)
+end
+
+function GameMode:ClassReload()
+    Classes:LoadAndSend()
+end
+
+function GameMode:RestartGameSetup()
+    GameRules:ResetToCustomGameSetup()
+end
+
+function GameMode:ModifierInfo(g)
+	local hero = PlayerResource:GetPlayer(tonumber(g)):GetAssignedHero()
+	for i = 0, hero:GetModifierCount() do
+		print("modifier info "..i.." "..hero:GetModifierNameByIndex(i))
+	end
+end

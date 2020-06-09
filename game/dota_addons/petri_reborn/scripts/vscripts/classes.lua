@@ -6,6 +6,53 @@ function Classes:init()
     Classes.kv = LoadKeyValues("scripts/kv/classes.kv")
 	CustomGameEventManager:RegisterListener( "petri_player_pick_class", PickClass )
 	CustomGameEventManager:RegisterListener( "petri_player_ban_class", BanClass )
+	
+	Classes.random = {}
+	Classes.banned = {}
+end
+
+function Classes:RandomClassTimer()
+    Timers:CreateTimer(240, function()
+	    for i = 0, 20 do
+            if PlayerResource:IsValidPlayer(i) then
+			    local player = PlayerResource:GetPlayer(i)
+				if player and player:GetAssignedHero() and player:GetAssignedHero():GetTeam() == DOTA_TEAM_GOODGUYS and player:GetAssignedHero().PetriClass == nil then
+				    Classes:RandomClassForPlayer(player)
+				end
+			end
+        end		
+	end)
+end
+
+function Classes:IsBanned(name)
+	for i = 0, 20 do
+		if PlayerResource:IsValidPlayer(i) then
+			local player = PlayerResource:GetPlayer(i) 
+			if player and player:GetAssignedHero() and player:GetAssignedHero().PetriBan then
+				print(player:GetAssignedHero().PetriBan.." "..name)
+				if tostring(player:GetAssignedHero().PetriBan) == tostring(name) then
+				    return true
+				end
+			end
+		end
+	end
+	return false
+end
+
+function Classes:RandomClassForPlayer(player)
+	local hero = player:GetAssignedHero()
+	local name = tostring(Classes.random[math.random(1, #Classes.random)])
+	
+	if Classes:IsBanned(name) == true then
+	    Classes:RandomClassForPlayer(player)
+	else
+	    hero.PetriClass = name
+	    local ability = hero:AddAbility(name)
+	    ability:SetLevel(1)
+	    hero:SwapAbilities("petri_empty6", name, false, true)
+	
+	    print("RANDOM CLASS FOR PLAYER "..player:GetPlayerID()..name)
+	end
 end
 
 function Classes:LoadAndSend()
@@ -15,7 +62,8 @@ function Classes:LoadAndSend()
 		    name = k,
 		    id = "id",
 			icon = "icon",
-			ability = "ability"
+			ability = "ability",
+			banned = 0
 		}
 	    for k2, v2 in pairs(v) do
 	        print("classes "..k.." "..k2.." "..v2)
@@ -27,6 +75,14 @@ function Classes:LoadAndSend()
 			    data.ability = v2
 			end
 		end
+		
+		Classes.random[data.id] = data.ability
+		
+        if Classes:IsBanned(data.name) == true then
+			data.banned = 1
+		    data.classname = "#"..data.name
+		end
+		
 		CustomGameEventManager:Send_ServerToAllClients( "petri_send_class", data )
 	end
 	CustomGameEventManager:Send_ServerToAllClients( "petri_set_classes", nil )
@@ -66,7 +122,7 @@ function BanClass(event, args)
 		elseif GameRules:GetDOTATime(false, false) > 60 then
 		    errMsgToPlayer(player, "#classes_ban_time_over")
 		else
-		    hero.PetriBan = args["classname"]
+		    hero.PetriBan = args["ability"]
 			CustomGameEventManager:Send_ServerToAllClients( "petri_block_class", args )
 		end
 	end
@@ -188,7 +244,7 @@ function LandMinesTracker( keys )
 
 	-- Target variables
 	local target_team = DOTA_UNIT_TARGET_TEAM_ENEMY
-	local target_types = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING
+	local target_types = DOTA_UNIT_TARGET_HERO
 	local target_flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
 
 	-- Find the valid units in the trigger radius
@@ -216,6 +272,35 @@ function KoshEggCreate(keys)
 	
 	ability:ApplyDataDrivenModifier(kosh, kosh, "modifier_kosh", {})
 	ability:ApplyDataDrivenModifier(kosh, kosh.egg, "modifier_kosh_egg", {})
+	
+	KoshSlow(keys)
+	
+	if IsInsideEntityBounds(Entities:FindByName(nil, "blocking_trigger_b"), kosh.egg:GetAbsOrigin()) 
+	or IsInsideEntityBounds(Entities:FindByNameNearest("egg_blocking_trigger", kosh.egg:GetAbsOrigin(), 999999), kosh.egg:GetAbsOrigin()) then
+		print('tp to safe')
+		kosh.egg:SetAbsOrigin(Entities:FindByClassname(nil, "info_courier_spawn_radiant"):GetAbsOrigin())
+	end
+end
+
+function KoshSlow(keys)
+    local kosh = keys.caster
+	local ability = keys.ability
+	local egg = kosh.egg
+	local baseMs = kosh:GetBaseMoveSpeed()
+	
+	Timers:CreateTimer(1, function()
+		if kosh and egg and kosh:IsAlive() and egg:IsAlive() then
+			local dif = kosh:GetAbsOrigin() - egg:GetAbsOrigin()
+			dif = dif:Length2D()/25
+			--print("kosh dif "..dif)
+			
+			--ability:ApplyDataDrivenModifier(kosh, kosh, "modifier_kosh_slow", {value = dif})
+			kosh:SetBaseMoveSpeed(baseMs-dif)
+	    else
+		    return nil
+		end
+		return 1.0
+	end)
 end
 
 function add_gold(keys)
@@ -260,4 +345,112 @@ function HomeComing(keys)
 	 	MoveCamera(keys.caster:GetPlayerOwnerID(),keys.caster)
 	 	keys.caster:Stop()
     end)
+end
+
+function NoCourier(keys)
+	local caster = keys.caster
+	local courier = keys.target
+	local ability = keys.ability
+	local chance = tonumber(ability:GetLevelSpecialValueFor("kill_chance", 1))
+	local payout = tonumber(ability:GetLevelSpecialValueFor("gold", 1))
+	local owner = courier:GetOwnerEntity()
+
+	if not courier:IsCourier() then
+		ability:EndCooldown()
+	elseif owner and owner:GetAssignedHero() then
+		if owner:GetAssignedHero():GetUnitName() == "npc_dota_hero_storm_spirit" then
+			courier:ForceKill(false)
+			ability:EndCooldown()
+		else
+			AddCustomGold( caster:GetPlayerOwnerID(), payout)
+			if math.random(0, 100) <= chance then
+				courier:ForceKill(false)
+				ability:StartCooldown(ability:GetCooldown(1) * 2)
+			end
+		end
+	else
+		print("courier owner not found")
+		courier:ForceKill(true)
+		ability:EndCooldown()
+	end
+end
+
+--[[Author: Pizzalol
+	Date: 26.09.2015.
+	Initializes the required data for the arrow stun,damage and vision calculation]]
+function LaunchArrow( keys )
+	local caster = keys.caster
+	local caster_location = caster:GetAbsOrigin()
+	local target_point = keys.target_points[1]
+	local ability = keys.ability
+	local ability_level = ability:GetLevel() - 1
+
+	ability.arrow_vision_radius = ability:GetLevelSpecialValueFor("arrow_vision", ability_level)
+	ability.arrow_vision_duration = ability:GetLevelSpecialValueFor("vision_duration", ability_level)
+	ability.arrow_speed = ability:GetLevelSpecialValueFor("arrow_speed", ability_level)
+	ability.arrow_start = caster_location
+	ability.arrow_start_time = GameRules:GetGameTime()
+	ability.arrow_direction = (target_point - caster_location):Normalized()
+end
+
+--[[Calculates the distance traveled by the arrow, then applies damage and stun according to calculations]]
+function ArrowHit( keys )
+	local caster = keys.caster
+	local target = keys.target
+	local target_location = target:GetAbsOrigin()
+	local ability = keys.ability
+	local ability_level = ability:GetLevel() - 1
+	local ability_damage = ability:GetAbilityDamage()
+
+	-- Initializing the damage table
+	local damage_table = {}
+	damage_table.attacker = caster
+	damage_table.victim = target
+	damage_table.damage_type = ability:GetAbilityDamageType()
+	damage_table.ability = ability	
+
+	-- Arrow
+	local arrow_max_stunrange = ability:GetLevelSpecialValueFor("arrow_max_stunrange", ability_level)
+	local arrow_max_damagerange = ability:GetLevelSpecialValueFor("arrow_max_damagerange", ability_level)
+	local arrow_min_stun = ability:GetLevelSpecialValueFor("arrow_min_stun", ability_level)
+	local arrow_max_stun = ability:GetLevelSpecialValueFor("arrow_max_stun", ability_level)
+	local arrow_bonus_damage = ability:GetLevelSpecialValueFor("arrow_bonus_damage", ability_level)
+
+	-- Stun and damage per distance
+	local stun_per_30 = arrow_max_stun/(arrow_max_stunrange*1/30)
+	local damage_per_30 = arrow_bonus_damage/(arrow_max_damagerange*1/30)
+
+	local arrow_stun_duration = 0
+	local arrow_damage = 0
+	local distance = (target_location - ability.arrow_start):Length2D()
+
+	-- Stun
+	if distance < arrow_max_stunrange then
+		arrow_stun_duration = distance*1/30*stun_per_30 + arrow_min_stun
+	else
+		arrow_stun_duration = arrow_max_stun
+	end
+
+	-- Damage
+	if distance < arrow_max_damagerange then
+		arrow_damage = distance*1/30*damage_per_30 + ability_damage
+	else
+		arrow_damage = ability_damage + arrow_bonus_damage
+	end
+
+	target:AddNewModifier(caster, ability, "modifier_stunned", {duration = arrow_stun_duration})
+	damage_table.damage = arrow_damage
+	ApplyDamage(damage_table)
+end
+
+--[[Calculates arrow location using available data and then creates a vision point]]
+function ArrowVision( keys )
+	local caster = keys.caster
+	local ability = keys.ability
+
+	-- Calculate the arrow location using the data we saved at launch
+	local vision_location = ability.arrow_start + ability.arrow_direction * ability.arrow_speed * (GameRules:GetGameTime() - ability.arrow_start_time)
+
+	-- Create the vision point
+	AddFOWViewer(caster:GetTeamNumber(), vision_location, ability.arrow_vision_radius, ability.arrow_vision_duration, false)
 end

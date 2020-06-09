@@ -25,4 +25,6 @@ function SpawnCop( keys )
 
 	cop:SetHasInventory(true)
 	cop.spawnPosition = caster:GetAbsOrigin()
+	
+	hero.cop = cop
 end

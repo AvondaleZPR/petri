@@ -18,26 +18,28 @@ function Blink(keys)
 	end
 	
 	if caster:IsRealHero() then
-	caster.isblink = true
-	local s = CreateUnitByName("npc_dummy_unit", point, false, nil, nil, DOTA_TEAM_GOODGUYS)
-	local item = CreateItem("item_petri_jedi",nil,nil)
-    item:ApplyDataDrivenModifier(s,s,"modifier_jedi_invu",{})
-	Timers:CreateTimer(1, function()
-	if (Entities:FindByName(nil, "blocking_trigger_b"):IsTouching(s)) then
+	
+	if IsInsideEntityBounds(Entities:FindByName(nil, "blocking_trigger_b"), point) or caster:HasModifier("modifier_petri_spider") or GridNav:IsBlocked(point) 
+	or IsInsideEntityBounds(Entities:FindByNameNearest("egg_blocking_trigger", point, 999999), point) then
         ability:EndCooldown()
+		caster.isblink = false
     else
 	
 	if ability:IsItem() then
+	    ability:ApplyDataDrivenModifier(caster, caster, "modifier_blink_stun", {})
+	
 	    ability:Kill()
 	end
 
+	caster.isblink = true
+	
 	FindClearSpaceForUnit(caster, point, false)
 	
 	caster:SetRespawnPosition(point)
 	caster.spawnPosition = point
 	
 	caster.isblink = false
-	
+	--[[
 	Timers:CreateTimer(1, function()
 	print("CHEKAEM BLYAD")
 	if caster.currentArea ~= nil and caster:IsRealHero() == true then
@@ -60,18 +62,51 @@ function Blink(keys)
 		end
 	end
 	end)
+	]]
+	
+	local j = 0
+	Timers:CreateTimer(0.5, function()
+	    j = j + 1
+		if j <= 10 then
+		    if IsInsideEntityBounds(Entities:FindByName(nil, "blocking_trigger_b"), caster:GetOrigin()) then
+		        FindClearSpaceForUnit(caster, caster.spawnPosition, false)
+				caster:AddNewModifier(caster, nil, "modifier_stunned", {duration=0.4})
+				
+				Timers:CreateTimer(0.03, function()
+	 			MoveCamera(caster:GetPlayerOwnerID(),caster)
+	 			caster:Stop()
+	 		    end)
+			end
+            return 0.5		
+		else
+		    if IsInsideEntityBounds(Entities:FindByName(nil, "blocking_trigger_b"), caster:GetOrigin()) then
+		        local savepoint = Entities:FindByClassname(nil, "info_courier_spawn_radiant"):GetAbsOrigin()
+				caster:SetRespawnPosition(savepoint)
+	            caster.spawnPosition = savepoint
+				
+				FindClearSpaceForUnit(caster, caster.spawnPosition, false)
+				caster:AddNewModifier(caster, nil, "modifier_stunned", {duration=0.4})
+				
+				Timers:CreateTimer(0.03, function()
+	 			MoveCamera(caster:GetPlayerOwnerID(),caster)
+	 			caster:Stop()
+				end)
+		    end
+		    return nil
+		end
+	end)
 	
 	end
-	--Timers:CreateTimer(1, function()
-	--end)
-	s:ForceKill(false)
-	end)
-	else
+	else --ne geroy
 	    if ability:IsItem() then
 	        ability:Kill()
 	    end
-
-	    FindClearSpaceForUnit(caster, point, false)
+		
+		if IsInsideEntityBounds(Entities:FindByName(nil, "blocking_trigger_b"), point) or GridNav:IsBlocked(point) then
+			ability:EndCooldown()
+		else
+			FindClearSpaceForUnit(caster, point, false)
+		end
 	end
 	
 	end

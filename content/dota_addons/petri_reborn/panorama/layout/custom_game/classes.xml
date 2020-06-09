@@ -5,11 +5,52 @@
   <scripts>
     <include src="file://{resources}/scripts/custom_game/classes.js" />
   </scripts>
-    <Panel hittest="false" class="panelroot">
+    <Panel hittest="false" hittestchildren="true" class="panelroot">
+    <Panel id="RootRootRoot" hittest="false" hittestchildren="true" class="panelroot">
         <Button hittest="true" id="ClassBtn" onactivate="ToggleClassPanel()">
             <Label class="classText" text="#classes"/>
         </Button>
+		<Button hittest="true" id="HTPBtn" onactivate="ToggleHTPPanel()">
+            <Label class="classText" text="#howtoplay"/>
+        </Button>
+		<Button hittest="true" id="BPBtn" onactivate="ToggleBPPanel()">
+            <Label class="classText" text="#bp_btn"/>
+        </Button>
 		
+	    <Panel id="BPPanel" hittest="false" class="Hide">
+			<Panel id="BPTop">
+				<Panel id="BPCh">
+					<Label class="BPHead ChLabel" text="#bp_ch"/>
+			
+					<Label id="CH1" class="ChLabel BPDefault" text="1"/>
+					<Label id="CH1Pr" class="ChLabelPr BPDefault" text="0/0"/>
+					<Label id="CH2" class="ChLabel BPDefault" text="2"/>
+					<Label id="CH2Pr" class="ChLabelPr BPDefault" text="0/0"/>
+					<Label id="CH3" class="ChLabel BPDefault" text="3"/>		
+					<Label id="CH3Pr" class="ChLabelPr BPDefault" text="0/0"/>
+				</Panel>
+		
+				<Panel id="BPLvl">
+				    <Label class="BPHead ChLabel" text="#bp_lvl"/>
+					<Label id="CHlvl" text="0"/>
+					<Label id="CHexp" text="0/0"/>
+				</Panel>
+			</Panel>	
+			
+			<Panel id="BPBottom">
+			    <Label class="BPHead ChLabel" text="#bp_rewards"/>
+				
+				<Panel id="BPRewards">
+				</Panel>
+				
+				<Panel id="BPRewardsBtns">
+				    <Button hittest="true" class="BPRBtn" id="BPLeft" onactivate="MoveRewards('left')"/>
+					
+					<Button hittest="true" class="BPRBtn" id="BPRight" onactivate="MoveRewards('right')"/>
+				</Panel>
+			</Panel>
+	</Panel>
+				
 		<Panel id="ClassesPanel" class="Hide">
 		    <Panel id="ClassList">
 			    <Panel id="ClassListPanel">
@@ -34,5 +75,94 @@
 				</Panel>
 			</Panel>
 		</Panel>
+		
+		<Panel id="HTPPanel" class="Hide">
+			<Panel hittest="true" id="FeedBackPanel" >
+				<Panel id="FeedBackHead">
+					<Label class="guideHeader classText" text="#fb_head"/>
+					<Label class="feedheadtext feedText classText" text="#fb_desc"/>
+				</Panel>
+				<Panel id="FeedBackMain">			
+					<Panel id="FeedBackText">
+						<TextEntry tabindex="0" undohistory="enabled" multiline="true" id="FeedText" maxchars="954" placeholder="#fb_typehere"/>
+					</Panel>
+					<!--<Panel id="FeedBackCheck">
+						<ToggleButton id="FeedCheck" checked="false" class="feedText classText" text="#fb_check"/>
+					</Panel>-->
+					<Panel id="FeedBackSend">
+						<Button id="FeedBackBtn" onactivate="SendFeedBack()">
+							<Label class="feedText sendText" text="#fb_send" />
+						</Button>
+					</Panel>
+				</Panel>
+				<Panel id="FeedBackFoot">
+					<Panel id="FeedDiscord">
+						<Label class="feedText classText" text="#fb_discord"/>
+						<Image src="file://{images}/custom_game/loading_screen/skype.png" onactivate="DOTADisplayURL('https://discord.gg/RYa27fn');" class="avatar"/>
+					</Panel>
+					<Panel id="FeedSteam">
+						<Label class="feedText classText" text="#fb_dev"/>
+						<DOTAAvatarImage class="avatar" steamid="76561198056299804"/>
+					</Panel>
+				</Panel>
+			</Panel>
+		
+		<!-- 
+		    <Panel id="GuideSelect">
+		        <Button hittest="true" id="guide_basic" class="guideTopBtns" onactivate="BasicGuide()">
+                    <Label id="basicguidebtn" class="classText guideText" text="#guide_basic"/>
+                </Button>
+				<Button hittest="true" id="guide_kvn" class="guideTopBtns" onactivate="KvnGuide()">
+                    <Label id="kvnguidebtn" class="classText guideText" text="#guide_kvn"/>
+                </Button>
+				<Button hittest="true" id="guide_petri" class="guideTopBtns" onactivate="PetriGuide()">
+                    <Label id="petriguidebtn" class="classText guideText" text="#guide_petri"/>
+                </Button>
+			</Panel>
+			<Panel id="pages">
+			    <Panel id="basic1" class="guidePage Hide">
+				    <Label text="#basic1" class="guideHeader classText"/>
+					<Label text="#basic1_text" class="guidePageText"/>
+					<Image src="file://{images}/custom_game/loading_screen/new.jpg" class="guideImage"/>
+			    </Panel>
+				<Panel id="basic2" class="guidePage Hide">
+				    <Label text="#basic2" class="guideHeader classText"/>
+					<Label text="#basic2_text" class="guidePageText"/>
+			    </Panel>
+				<Panel id="basic3" class="guidePage Hide">
+				    <Label text="#basic3" class="guideHeader classText"/>
+					<Label text="#basic3_text" class="guidePageText"/>
+			    </Panel>
+				
+			    <Panel id="kvn1" class="guidePage Hide">
+				    <Label text="#kvn1" class="guideHeader classText"/>
+					<Label text="#kvn1_text" class="guidePageText"/>
+			    </Panel>
+				<Panel id="kvn2" class="guidePage Hide">
+				    <Label text="#kvn2" class="guideHeader classText"/>
+					<Label text="#kvn2_text" class="guidePageText"/>
+			    </Panel>
+				<Panel id="kvn3" class="guidePage Hide">
+				    <Label text="#kvn3" class="guideHeader classText"/>
+					<Label text="#kvn3_text" class="guidePageText"/>
+			    </Panel>
+				
+			    <Panel id="petri1" class="guidePage Hide">
+				    <Label text="#petri1" class="guideHeader classText"/>    
+			    </Panel>
+			</Panel>
+			
+			<Panel id="pagesBtns">
+			    <Button class="pagesBtn" onactivate="GuidePreviousPage()">
+				    <Label text="#previous" class="classText guideText" />
+				</Button>
+				<Label id="PageNumb" class="classText" text="0/0"/>
+				<Button class="pagesBtn" onactivate="GuideNextPage()">
+				    <Label text="#next" class="classText guideText" />
+				</Button>
+			</Panel>
+			-->
+		</Panel>
+	</Panel>
     </Panel>
 </root>

@@ -6,10 +6,13 @@
 	<scripts>
 		<include src="file://{resources}/scripts/custom_game/game_setup/game_setup_player.js" />
 	</scripts>
-	<Panel hittest="true" class="TeamSelectPlayer DarkTheme Background">
+	<Panel hittest="true" class="TeamSelectPlayer DarkTheme Background" onmouseover="SelectPlayerLoadScreen()" onmouseout="HidePlayerLoadScreen()">
 		<DOTAAvatarImage hittest="false" class="circle" id="PlayerAvatar" />
 		<Label hittest="false" id="PlayerIsHostPanel" />
 		<Label hittest="false" id="PlayerStatusPanel" />
+		<Panel hittest="true" id="PlayerRang">
+			<Image hittest="false" id="PlayerRangImg" src="file://{images}/custom_game/rangs/def/0.png"/>
+		</Panel>
 		<Label hittest="false" class="DarkTheme PrimaryText" id="PlayerName" text="PLAYER_NAME" />
 		<Label hittest="true" id="PlayerRating" text="" onmouseout="DOTAHideTextTooltip()"/>
 		<Label hittest="false" id="PlayerLvl" text=""/>

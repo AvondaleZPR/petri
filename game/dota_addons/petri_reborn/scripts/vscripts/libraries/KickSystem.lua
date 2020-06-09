@@ -7,12 +7,12 @@ function KickSystem:StartVoteKick( args )
 	print(playerID)
 	local teamID = PlayerResource:GetPlayer(playerID):GetTeamNumber()
 
-	local initiator = args["VoteInitiator"]
+	local initiator = args["PlayerID"]
 
 	if PlayerResource:GetTeam(initiator) == DOTA_TEAM_BADGUYS then
 		if GameMode.assignedPlayerHeroes[initiator]:GetUnitName() ~= "npc_dota_hero_storm_spirit" then
 		    local player = PlayerResource:GetPlayer(playerID)
-			if player:GetAssignedHero():GetUnitName() == "npc_dota_hero_storm_spirit" then
+			if player and player:GetAssignedHero() and player:GetAssignedHero():GetUnitName() == "npc_dota_hero_storm_spirit" then
 				player:GetAssignedHero():AddAbility("petri_suicide")
 				InitAbilities(player:GetAssignedHero())
 				player:GetAssignedHero():CastAbilityImmediately(player:GetAssignedHero():FindAbilityByName("petri_suicide"), playerID)

@@ -10,6 +10,7 @@ function Upgrade (event)
 	elseif sawmill_level == 2 then 
 		caster:AddAbility("train_petri_super_peasant")
 		caster:AddAbility("petri_upgrade_exchange")
+		caster:AddAbility("petri_kill_workers")
 		-- caster:SwapAbilities("train_petri_super_peasant","petri_upgrade_exchange",false,true)
 		-- caster:SwapAbilities("train_petri_super_peasant","petri_upgrade_exchange",false,true)
 	elseif sawmill_level == 3 then 
@@ -21,6 +22,17 @@ function Upgrade (event)
 	SetCustomBuildingModel(caster, PlayerResource:GetSteamAccountID(caster:GetPlayerOwnerID()), sawmill_level+1)
 
 	InitAbilities(caster)
+end
+
+function KillWorkers(keys)
+	local caster = keys.caster
+	local ents = Entities:FindAllByClassnameWithin("npc_dota_creature", caster:GetAbsOrigin(), 1000)
+	
+	for k, v in pairs(ents) do
+		if string.match(v:GetUnitName(), "peasant") and v:GetPlayerOwnerID() == caster:GetPlayerOwnerID() and v:HasAbility("petri_suicide") then
+			v:FindAbilityByName("petri_suicide"):CastAbility()
+		end
+	end
 end
 
 function BuyLumber(keys)

@@ -1,83 +1,114 @@
+require("triggers/area_trigger") -- чтоб триггеры спотов создовать бля
+
 if RandomMap == nil then
     _G.RandomMap = class({})
     
-	RandomMap.Types = {}
-    RandomMap.MAX_TYPES = 2
-    RandomMap.MAX_TYPES_SUB = 10
-    RandomMap.NAME_TYPES = "rm_type_"
-
-    RandomMap.Places = {}
-    RandomMap.MAX_PLACES = 10
-    RandomMap.NAME_PLACES = "rm_place_"
+	RandomMap.MaxSpots = 35 -- кол во спотов
 	
-	RandomMap.NAME_COL = "_col"
+	RandomMap.MinWidthX = -30
+	RandomMap.MinWidthY = -30
+	RandomMap.MaxWidthX = 30
+	RandomMap.MaxWidthY = 30
+	
+	RandomMap.PSOwidth = 128
 end
 
 function RandomMap:Init()
-    RandomMap:GetAllPlaces()
-	RandomMap:GetAllTypes()
+	RandomMap:Load()
+	rmprint(GetWorldMinX().." "..GetWorldMaxX().." "..GetWorldMinY().." "..GetWorldMaxY())
+end
+
+function RandomMap:Load()
+	for i = 1, RandomMap.MaxSpots do
+		RandomMap:CreateNewSpot(i)
+	end
+end
+
+function RandomMap:CreateNewSpot(id)
+	local widthX = RandomMap:WidthToActualWidth(RandomMap:RandomNumber(RandomMap.MinWidthX, RandomMap.MaxWidthX))
+	local widthY = RandomMap:WidthToActualWidth(RandomMap:RandomNumber(RandomMap.MinWidthY, RandomMap.MaxWidthY))
 	
-	RandomMap:SetRTypesToAllPlaces()
+	local center = RandomMap:GetRandomSpotPoint(widthX, widthY)
+	local maxX = Vector(center.x+widthX, center.y+widthX, center.z)
+	local maxY = Vector(center.x-widthY, center.y-widthY, center.z)
+	
+	local areaTrigger = CreateTrigger(center, maxX, maxY)
+	areaTrigger:ConnectOutput("OnStartTouch","OnStartTouch")
+	--local areaTrigger = SpawnEntityFromTableSynchronous('trigger_dota', {vscripts = "triggers/area_trigger.lua", targetname = "area_trigger", origin = center, model=Entities:FindByName(nil, "petri_idol"):GetModelName(), IsRealHero=1, wait=1})
+	areaTrigger:RedirectOutput("OnStartTouch", "OnStartTouch", areaTrigger)
+	
+	rmprint(areaTrigger:GetBounds().Maxs.x.." "..maxX.x)
+	rmprint(areaTrigger:GetBounds().Maxs.y.." "..maxY.y)
+	
+	ObstructPoint(maxX)
+	ObstructPoint(maxY)
+	
+	CreateTempTree(center, 999999)
+	
+	rmprint("spot "..id.." created")
+end
+------------------------
+----------pso-----------
+------------------------
+function ObstructPoint(point)
+	rmprint("obstruct point")
+
+	local pso = SpawnEntityFromTableSynchronous("point_simple_obstruction", {origin = point})
+	pso:SetEnabled(true, false)
+	
+	CreateUnitByName("random_map_thing", point, false, nil, nil, DOTA_TEAM_NEUTRALS)
+	--SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/base_platform.vmdl", DefaultAnim=animation, targetname=DoUniqueString("prop_dynamic")})
+	
+	return pso
 end
 
-function RandomMap:GetAllPlaces()
-    for i = 1, RandomMap.MAX_PLACES do
-	    print(tostring(RandomMap.NAME_PLACES..i))
-	    RandomMap.Places[i] = Entities:FindByName( nil, tostring(RandomMap.NAME_PLACES..i))
-		print(RandomMap.Places[i])
+----------------------------
+--------randomcenter--------
+----------------------------
+function RandomMap:GetRandomSpotPoint(wX, wY)
+	local point = nil
+	while (not RandomMap:CheckSpot(point, wX, wY)) do
+		point = Vector(RandomMap:RandomNumber(GetWorldMinX(), GetWorldMaxX()), RandomMap:RandomNumber(GetWorldMinY(), GetWorldMaxY()), 0)
+	end
+	return point
+end
+
+function RandomMap:CheckSpot(point, wX, wY)
+	if point == nil then return false end
+	return RandomMap:CheckPoint(point), RandomMap:CheckPoint(Vector(point.x+wX, point.y+wX, point.z)), RandomMap:CheckPoint(Vector(point.x-wY, point.y-wY, point.z))
+end
+
+function RandomMap:CheckPoint(point)
+	local nearestArea = Entities:FindByNameNearest("area_trigger", point, 10000)
+	if IsInsideEntityBounds(Entities:FindByName(nil, "blocking_trigger_b"), point) or GridNav:IsBlocked(point) or IsInsideEntityBounds(nearestArea, point) then
+		return false
+	end
+	
+	return true
+end
+
+-----------------------------
+------------utils------------
+-----------------------------
+function RandomMap:RandomNumber(min, max)
+	return math.abs(math.random(min, max))
+end
+
+function RandomMap:WidthToActualWidth(value)
+	return value * RandomMap.PSOwidth
+end
+
+function rmprint(text)
+	if text == nil then text = "nil" end
+	print("[RANDOM MAP] "..text)
+end
+
+function rmPrintTable(data)
+	for k,v in pairs(data) do
+		print("[RANDOM MAP | PRINT TABLE] "..k,v)
 	end
 end
 
-function RandomMap:GetAllTypes()
-    for i = 1, RandomMap.MAX_TYPES do
-	    RandomMap.Types[i] = {}
-		for j = 1, RandomMap.MAX_TYPES_SUB do
-	        print(tostring(RandomMap.NAME_TYPES..i.."_"..j))
-	        RandomMap.Types[i][j] = Entities:FindByName( nil, tostring(RandomMap.NAME_TYPES..i.."_"..j))
-			print(RandomMap.Types[i][j])
-		end
-	end
-end
-
-function RandomMap:SetRTypesToAllPlaces()
-    for i = 1, RandomMap.MAX_PLACES do
-	    RandomMap:SetRTypeToPlace(RandomMap.Places[i])
-	end
-	RandomMap:RemoveRestTypesAndSubs()
-end
-
-function RandomMap:SetRTypeToPlace(place)
-    if place ~= nil then
-    local pos = place:GetAbsOrigin()
-	local rtype = math.random(1, RandomMap.MAX_TYPES)
-	for i = 1, RandomMap.MAX_TYPES_SUB do
-	    local ype = RandomMap.Types[rtype][i]
-		if ype.placed ~= true then
-		    ype.placed = true
-			ype:SetAbsOrigin(pos)
-			RandomMap:AddCol(tostring(RandomMap.NAME_TYPES..rtype.."_"..i), pos)
-			break
-		end
-	end
-	end
-end
-
-function RandomMap:RemoveRestTypesAndSubs()
-    for i = 1, RandomMap.MAX_TYPES do
-	    for j = 1, RandomMap.MAX_TYPES_SUB do
-		    local ype = RandomMap.Types[i][j]
-			if ype.placed ~= true then
-				print("remove "..i.." "..j)
-			    UTIL_Remove(ype)
-			end
-		end
-	end
-	UTIL_Remove(Entities:FindByName(nil, tostring("rm_test")))
-	print(Entities:FindByName(nil, tostring("rm_test")))
-end
-
-function RandomMap:AddCol(name, point)
-    print(tostring(name..RandomMap.NAME_COL))
-    local col = Entities:FindByName( nil, tostring(name..RandomMap.NAME_COL))
-	col:SetAbsOrigin(point)
+function rmPing(location)
+	MinimapEvent(PlayerResource:GetPlayer(0):GetTeam(), nil, location.x, location.y, DOTA_MINIMAP_EVENT_HINT_LOCATION, 30)
 end

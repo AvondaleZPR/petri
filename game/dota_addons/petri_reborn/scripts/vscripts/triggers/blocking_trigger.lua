@@ -1,9 +1,10 @@
 function OnStartTouch(trigger)
  	local unitName = trigger.activator:GetUnitName()
+	print("blocking trigger check")
  	print(unitName)
  	if trigger.activator:GetTeam() == DOTA_TEAM_GOODGUYS then
 	    if trigger.activator.isblink ~= true then
-	    print("BLOCKING TRIGGER!!!")
+	    print("blocking trigger triggered")
  		if trigger.activator.spawnPosition ~= nil then
  			FindClearSpaceForUnit(trigger.activator, trigger.activator.spawnPosition + Vector(-70,-70,0), true)
 
@@ -27,6 +28,15 @@ function OnStartTouch(trigger)
 
 	 			trigger.activator.insideBlocking = false
 	 		end)
+			
+			if trigger.activator:HasItemInInventory("item_petri_kvn_fan_blink") == true then
+			    for i = 0, 20 do
+				    local item = trigger.activator:GetItemInSlot(i)
+                    if item and item:GetAbilityName() == "item_petri_kvn_fan_blink" then
+                        item:StartCooldown(20)
+                    end					
+				end
+			end
  		end
 		end
  	end

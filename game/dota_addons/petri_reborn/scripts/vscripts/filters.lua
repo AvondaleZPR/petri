@@ -77,8 +77,7 @@ function GameMode:FilterExecuteOrder( filterTable )
       end
     end
 
-    if order_type == DOTA_UNIT_ORDER_MOVE_ITEM then
-
+    if order_type == DOTA_UNIT_ORDER_MOVE_ITEM then		
       if filterTable["entindex_target"] >= 6 and PlayerResource:GetTeam(issuer) ~= DOTA_TEAM_BADGUYS then
         return false
       elseif filterTable["entindex_target"] >= 6 and PlayerResource:GetTeam(issuer) == DOTA_TEAM_BADGUYS then
@@ -87,17 +86,19 @@ function GameMode:FilterExecuteOrder( filterTable )
         local targetSlot = filterTable["entindex_target"]
         local heroSlot = 0
 
-        if not Entities:FindByName(nil,"PetrosyanShopTrigger"):IsTouching(hero) then
-          return false
-        end
-
-        for i=0,11 do
+        for i=0,20 do
           if hero:GetItemInSlot(i) == EntIndexToHScript(filterTable["entindex_ability"]) then
             heroSlot = i
             break
           end
         end
 
+		print("move item "..targetSlot.." "..heroSlot)
+		
+		if not Entities:FindByName(nil,"PetrosyanShopTrigger"):IsTouching(hero) and targetSlot > 8 or heroSlot > 8 then
+          return false
+        end
+		
         hero:SwapItems(heroSlot, targetSlot)
         return false
       elseif PlayerResource:GetTeam(issuer) == DOTA_TEAM_BADGUYS then
@@ -108,17 +109,16 @@ function GameMode:FilterExecuteOrder( filterTable )
         --   return false
         -- end
 
-        if Entities:FindByName(nil,"PetrosyanShopTrigger"):IsTouching(hero) then
+		local stashSlot = 6
 
-          local stashSlot = 6
-
-          for i=0,11 do
+        for i=0,20 do
             if hero:GetItemInSlot(i) == EntIndexToHScript(filterTable["entindex_ability"]) then
               stashSlot = i
               break
             end
-          end
-
+        end
+		
+        if Entities:FindByName(nil,"PetrosyanShopTrigger"):IsTouching(hero) then
           if hero:GetItemInSlot(stashSlot) and hero:GetItemInSlot(stashSlot):GetPurchaser() ~= hero then
             return false
           elseif not hero:GetItemInSlot(stashSlot) then
@@ -133,7 +133,9 @@ function GameMode:FilterExecuteOrder( filterTable )
           ent:AddItem(oldItem)
 
           UTIL_Remove(oldItem:GetContainer())
-        end
+        elseif stashSlot > 8 then
+			return false
+		end
       end
     elseif order_type == DOTA_UNIT_ORDER_GIVE_ITEM then
       local item = EntIndexToHScript(filterTable["entindex_ability"])
@@ -295,6 +297,9 @@ function GameMode:FilterExecuteOrder( filterTable )
       else return false end
     elseif order_type == DOTA_UNIT_ORDER_ATTACK_TARGET then
       local target = EntIndexToHScript(targetIndex)
+       
+      if string.match(target:GetClassname(), "rune") then return false end
+
       for n, unit_index in pairs(units) do
         local unit = EntIndexToHScript(unit_index)
         if UnitCanAttackTarget(unit, target) then
@@ -335,6 +340,24 @@ function GameMode:FilterExecuteOrder( filterTable )
 				end
 			end
 		end
+	end
+	
+	if order_type == DOTA_UNIT_ORDER_EJECT_ITEM_FROM_STASH and EntIndexToHScript(filterTable["entindex_ability"]) then
+		local item = EntIndexToHScript(filterTable["entindex_ability"])
+		if item:IsDroppable() == false then
+		    local cost = item:GetCost()
+			local pid = EntIndexToHScript(filterTable["units"]["0"]):GetPlayerOwnerID()
+			if pid and cost then
+			    AddCustomGold(pid, cost)
+			end
+			
+			UTIL_Remove(item)
+		    return false
+		end
+	end
+	
+	if order_type == DOTA_UNIT_ORDER_PICKUP_RUNE and EntIndexToHScript(filterTable["units"]["0"]) and EntIndexToHScript(filterTable["units"]["0"]):GetUnitName() == "npc_petri_cop" then
+	    return false
 	end
     return true
 end
@@ -381,6 +404,10 @@ function GameMode:DamageFilter( filter_table )
         attacker = EntIndexToHScript(filter_table["entindex_attacker_const"])
     end
 
+	if attacker:GetTeam() == DOTA_TEAM_GOODGUYS and victim:GetTeam() == DOTA_TEAM_NEUTRALS then
+		return false
+	end
+	
     local damage = filter_table["damage"]
     local damage_type = filter_table["damagetype_const"]
 
@@ -432,9 +459,9 @@ function GameMode:DamageFilter( filter_table )
 
 	if victim:GetUnitName() == "npc_petri_creep_kivin" then
 		local damage = attacker:GetAverageTrueAttackDamage(attacker)
-		if GameMode.allowkivin == false then
+		if GameRules:GetDOTATime(false, false) < 2880 then
 		    attacker:CastAbilityNoTarget(attacker:FindAbilityByName("petri_petrosyan_return"), attacker:GetPlayerOwnerID())
-            Notifications:Bottom(attacker:GetPlayerOwnerID(), {text="#early", duration=5, style={color="red", ["font-size"]="45px"}})
+            Notifications:Bottom(attacker:GetPlayerOwnerID(), {text="#too_early_kivin", duration=5, style={color="red", ["font-size"]="45px"}})
             Timers:CreateTimer(0.04,
             function()
                 MoveCamera(attacker:GetPlayerOwnerID(), attacker)
@@ -442,8 +469,12 @@ function GameMode:DamageFilter( filter_table )
 	    elseif damage > 605000 then
 		    local playerid = attacker:GetPlayerOwnerID()
 			AddCustomGold( playerid, 3500)
+			attacker:AddExperience(500000, DOTA_ModifyXP_CreepKill, false, false)
+		else
+		    Notifications:Bottom(attacker:GetPlayerOwnerID(), {text="#kivin_low_dmg", duration=5, style={color="red", ["font-size"]="45px"}})
 		end
-		--return false
+		
+		return false
 	else
 	if attacker:GetTeam() == DOTA_TEAM_BADGUYS then
 	    if string.match(victim:GetUnitName (), "npc_petri_creep_") then
@@ -468,7 +499,7 @@ function GameMode:DamageFilter( filter_table )
       end
     end
 	
-	if victim:GetUnitName() == "npc_petri_sawmill" then
+	if victim:GetUnitName() == "npc_petri_sawmill" and damage >= victim:GetHealth() then
 	    for j = 0, 6 do
 	    for i = 0, 6 do
 		    local item = victim:GetItemInSlot(i)
@@ -524,4 +555,10 @@ function OnKVNSideShop( unit )
     end
   end
   return false
+end
+
+local runeSpawners = {}
+
+function GameMode:FilterRuneSpawn(filter_table)
+    return true
 end

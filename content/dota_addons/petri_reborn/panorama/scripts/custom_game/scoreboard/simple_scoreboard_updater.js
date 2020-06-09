@@ -1,4 +1,4 @@
-"use strict";
+	"use strict";
 
 var playerScore = [];
 
@@ -434,11 +434,13 @@ function stableCompareFunc( a, b )
 //=============================================================================
 function ShowContextMenu()
 {
+	$.Msg(GameUI.CustomUIConfig().IsAllowedToKick($.GetContextPanel().GetAttributeInt("player_id", -1)))
+	if (GameUI.CustomUIConfig().IsAllowedToKick($.GetContextPanel().GetAttributeInt("player_id", -1)) == true) {
 	var contextMenu = $.CreatePanel( "ContextMenuScript", $.GetContextPanel(), "" );
 	contextMenu.SetAcceptsFocus(false);
 	// Remove default context menu
 	var menu = contextMenu.GetContentsPanel().GetParent();
-	menu.SetAcceptsFocus(false);
+	$.DispatchEvent('DropInputFocus', menu);
 	menu.RemoveAndDeleteChildren();
 
 	var content = $.CreatePanel( "Panel", menu, "" );
@@ -451,7 +453,5 @@ function ShowContextMenu()
 	
 	$.DispatchEvent('DropInputFocus', contextMenu);
 	$.DispatchEvent('DropInputFocus', content);
-	$("#PlayerPortraitWrapper").hittest(false);
-	$.DispatchEvent('DropInputFocus', $("#PlayerPortraitWrapper"));
-	$("#PlayerPortraitWrapper").hittest(true);
+	}
 };

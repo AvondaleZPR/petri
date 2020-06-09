@@ -63,7 +63,7 @@ function FarSight( event )
 	local duration = ability:GetLevelSpecialValueFor( "duration", level - 1 )
 
 	local particleName = "particles/items_fx/dust_of_appearance.vpcf"
-	if tonumber(lvls[caster:GetPlayerOwnerID()]) >= 60 then
+	if tonumber(lvls[caster:GetPlayerOwnerID()]) >= 125000 then
 	    particleName = "particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf"
 	end
 	local target = event.target_points[1]
@@ -118,7 +118,7 @@ function Sleep(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-
+	
 	RemoveGatheringAndRepairingModifiers(target)
 
 	for i=0,target:GetAbilityCount()-1 do
@@ -129,6 +129,18 @@ function Sleep(keys)
 
 	ability:ApplyDataDrivenModifier(caster, target, "sleep_modifier", {duration=ability:GetLevel()})
 
+	if target:HasItemInInventory("item_alarm_clock") then
+		for i = 0, 5 do
+		    local item = target:GetItemInSlot(i)
+			if item and item:GetAbilityName() == "item_alarm_clock" and item:IsCooldownReady() then
+                target:RemoveModifierByName("sleep_modifier")
+				item:StartCooldown(item:GetCooldown(item:GetLevel()))
+				
+				target:EmitSound("DOTA_Item.LinkensSphere.Target")
+            end			
+		end
+	end
+	
 	-- for i=0,target:GetModifierCount() do
 	-- 	local modifierName = target:GetModifierNameByIndex(i)
 	-- 	target:RemoveModifierByName(modifierName)

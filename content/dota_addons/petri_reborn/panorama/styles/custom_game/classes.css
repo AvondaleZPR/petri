@@ -42,6 +42,85 @@
 	color: #bbbbbb;
 }
 
+#HTPBtn
+{
+	align: right bottom;
+	width: 100px;
+	height: 40px;
+	margin-right: 125px;
+	margin-bottom: 180px;
+	background-color: blue;
+	border-radius: 2px;	
+	border: 4px solid blue;
+}
+
+#BPBtn
+{
+	align: right bottom;
+	width: 100px;
+	height: 40px;
+	margin-right: 15px;
+	margin-bottom: 180px;
+	background-color: green;
+	border-radius: 2px;	
+	border: 4px solid green;
+}
+
+#BPBtn Label {
+    color: white;
+	font-size: 18px;
+}
+
+#HTPBtn Label {
+	color: white;
+	font-size: 18px;
+}
+
+#HTPBtn:hover {
+	wash-color: #bbbbbb;
+}
+
+#HTPPanel 
+{
+	width: 650px;
+	height: 700px;
+	background-color: #0F0F0FEB;
+	align: middle center;
+	margin-bottom: 235px;
+	flow-children: down;
+	transition-property: blur, transform, opacity, width, height, wash-color, pre-transform-scale2d;
+	transition-duration: 0.3s, 0.3s, 0.3s;
+	transition-timing-function: ease-in;
+}
+
+#GuideSelect
+{
+	align: middle top;
+	margin-top: 10px;
+    width: 100%;
+	height: 30px;
+	flow-children: right;
+}
+
+.guideTopBtns
+{
+	width: 32%;
+	height: 100%;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.guideText:hover
+{
+	font-size: 30px;
+}
+
+.guideSelected
+{
+	color: white;
+	font-size: 25px;
+}
+
 #ClassesPanel 
 {
 	width: 650px;
@@ -95,7 +174,7 @@
 
 .umriotspida
 {
-	background-image: url("file://{images}/custom_game/classes/small/ban_spider.png");
+	background-image: url("file://{images}/custom_game/loading_screen/backgrounds/18.png");
 }
 
 #DescPanel
@@ -181,4 +260,415 @@
 
 .banned {
     wash-color: red;
+}
+
+#pages {
+	margin-top: 10px;
+	
+	width: 100%;
+	height: 85%;
+	
+	flow-children: none;
+}
+
+.guidePage {
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 100%;
+	height: 100%;
+	
+	flow-children: down;
+}
+
+#pagesBtns {
+	width: 100%;
+	height: 100%;
+	
+	flow-children: right;
+}
+
+.pagesBtn {
+	width: 50%;
+	height: 100%;
+	align: middle center;
+}
+
+.guideHeader {
+	align: middle top;
+	font-size: 20px;
+}
+
+.guidePageText {
+	margin-top: 5px;
+	margin-bottom: 5px;
+    align: middle top;
+	color: white;
+	font-size: 17px;
+	text-align: center;
+}
+
+.guideImage {
+	align: middle top;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 300px;
+	height: 200px;
+}
+
+#guide_basic {
+	align: left center;
+}
+
+#guide_kvn {
+	align: middle center;
+}
+
+#guide_petri {
+	align: right center;
+}
+
+#BPPanel
+{
+	width: 660px;
+	height: 500px;
+	vertical-align: center;
+	horizontal-align: middle;
+	background-color: #0F0F0FEB;
+	
+	transition-property: blur, transform, opacity, width, height, wash-color, pre-transform-scale2d;
+	transition-duration: 0.3s, 0.3s, 0.3s;
+	transition-timing-function: ease-in;
+	
+	flow-children: down;
+}
+
+#BPTop
+{
+	width: 100%;
+	height: 50%;
+	
+	flow-children: right;
+}
+
+#BPBottom
+{
+	width: 100%;
+	height: 50%;
+	
+	flow-children: down;
+}
+
+#BPRewards
+{
+	width: 100%;
+	height: 60%;
+	
+	flow-children: none;
+}
+
+#BPCh
+{
+	width: 60%;
+	height: 80%;
+	
+	flow-children: down;
+}
+
+#BPLvl
+{
+	width: 40%;
+	height: 100%;
+	
+	flow-children: down;
+}
+
+#BPRewardsBtns
+{
+	width: 100%;
+	height: 40%;
+}
+
+.BPRBtn
+{
+	margin: 5px;
+	width: 150px;
+	height: 100px;
+	background-repeat: no-repeat;
+}
+
+#BPLeft
+{
+	align: left top;
+	background-image: url("file://{images}/custom_game/comp/left.png");
+	background-position: left top;
+}
+
+#BPRight
+{
+	align: right top;
+	background-image: url("file://{images}/custom_game/comp/right.png");
+	background-position: right top;
+}
+
+.BPHead
+{
+	color: white;
+	align: middle center;
+	font-size: 30px;
+}
+
+.BPCompleted
+{
+	color: green;
+}
+
+.BPDefault
+{
+	color: #D8D8D8;
+}
+
+.ChLabel
+{
+	font-size: 25px;
+	font-family: RadianceM;
+	margin-left: 5px;
+}
+
+.bprR
+{
+	margin-right: 10px;
+}
+
+.bprL
+{
+	margin-left: 10px;
+}
+
+.ChLabelPr
+{
+	font-size: 20px;
+	font-family: RadianceM;
+	align: right center;
+}
+
+#CHinfo
+{
+	margin-top: 240px;
+	margin-left: 5px;
+	width: 25px;
+	height: 25px;
+    background-image: url( "file://{images}/custom_game/info.png");
+}
+
+#CHlvl
+{
+	align: middle center;
+	font-size: 100px;
+	font-family: RadianceM;
+	color: green;
+}
+
+#CHexp
+{
+	align: middle center;
+	color: #D8D8D8;
+	font-size: 25px;
+	font-family: RadianceM;
+}
+
+.reward
+{
+	margin: 5px;
+	width: 15%;
+	height: 100%;
+	vertical-align: top;
+	
+	flow-children: down;
+}
+
+.reward Label
+{
+	vertical-align: top;
+	horizontal-align: middle;
+	color: white;
+	font-size: 15px;
+}
+
+.locked
+{
+	brightness: 0.2;
+}	
+
+#rew1
+{
+	margin-left: 10px;
+}
+
+#rew2
+{
+	margin-left: 120px;
+}
+#rew3
+{
+	margin-left: 230px;
+}
+#rew4
+{
+	margin-left: 340px;
+}
+#rew5
+{
+	margin-left: 450px;
+}
+#rew6
+{
+	margin-left: 560px;
+}
+
+.REWLVL10
+{
+	background-image: url( "file://{images}/custom_game/comp/rewards/10000.png");
+}
+
+.feedheadtext
+{
+	font-family: "Arial";
+}
+
+#FeedBackPanel
+{
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+}
+
+#FeedBackHead
+{
+	width: 100%;
+	height: 12%;
+	margin: 5px;
+}
+
+#FeedBackMain
+{
+	width: 100%;
+	height: 73%;
+	margin: 5px;
+	flow-children: down;
+}
+
+#FeedBackFoot
+{
+	width: 100%;
+	height: 15%;
+	margin: 5px;
+}
+
+#FeedDiscord
+{
+	width: 50%;
+	height: 100%;
+	flow-children: right;
+	horizontal-align: left;
+}
+
+#FeedSteam
+{
+	width: 50%;
+	height: 100%;
+	flow-children: right;
+	horizontal-align: right;
+}
+
+#FeedBackSend
+{
+	width: 100%;
+	height: 20%;
+}
+
+#FeedBackBtn
+{
+	widtH: 145px;
+	height: 35px;
+	background-color: #6ED771;
+	color: white;
+	vertical-align: middle;
+	horizontal-align: center;
+}
+
+.sendText
+{
+	font-size: 55px;
+	vertical-align: middle;
+	horizontal-align: center;
+}
+
+#FeedBackText
+{
+	width: 100%;
+	height: 80%;
+}
+
+#FeedBackCheck
+{
+	width: 100%;
+	height: 20%;
+}
+
+#FeedText
+{
+	color: white;
+	background-color: black;
+	font-size: 22px;
+	width: 100%;
+	height: 100%;
+	white-space: normal;
+}
+
+#FeedCheckText
+{
+	width: 50%;
+	height: 100%;
+	horizontal-align: left;
+}
+
+#FeedCheck
+{
+	border: 1px solid black;
+	width: 25%;
+	border-radius: 4px;
+	background-color: #913B3B;
+	border: 1px solid black;
+	padding-right: 6px;
+	padding-left: 8px;
+	padding-top: 4px;	
+	padding-bottom: 4px;
+	color: white;
+}
+
+#FeedCheck:hover
+{
+	border: 1px solid black;
+}
+
+#FeedCheck:selected
+{
+	background-color: #88E386;
+	color: black;
+}
+
+.feedText
+{
+	font-size: 15px;
+}
+
+.avatar
+{
+  width: 48px;
+  height: 48px;
+
+  margin-top: 2px;
+  margin-bottom: 2px;
+  	vertical-align: middle;
+	horizontal-align: center;
 }

@@ -1,4 +1,5 @@
 var selectedItem;
+var selectedItemName = "";
 
 var shopItems = {};
 
@@ -47,6 +48,10 @@ function SetupItems(team, hero) {
 	var team = team || Entities.GetTeamNumber(Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() ));
 	var heroName = hero || Entities.GetUnitName(Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() ));
 
+	if (team != DOTATeam_t.DOTA_TEAM_BADGUYS){
+		$("#CourierPanel").SetHasClass("Hide", true);
+	}	
+	
 	for (var key in GameUI.CustomUIConfig().shopsKVs) {
 		var r = $("#ShopWindow").FindChildTraverse(key);
 		if (r) {
@@ -131,6 +136,8 @@ function OpenQuickbuy(itemname) {
 }
 
 function OpenRecipe(itemname) {
+	selectedItemName = itemname
+	
 	for (var key in $("#ShopRecipeContainer").Children()) {
 		var child = $("#ShopRecipeContainer").Children()[key];
 		if (child == selectedItem) {
@@ -209,7 +216,7 @@ function ShopStock(table_name, key, data) {
 	}
 }
 
-function ChangeTeam(args) {
+function ChangeTeam(args) {		
 	for (var key in $("#ShopRecipeContainer").Children()) {
 		var child = $("#ShopRecipeContainer").Children()[key];
 		if (child == selectedItem) {
@@ -329,9 +336,13 @@ function SelectUnit(event_data)
 
 	GameEvents.SendCustomGameEventToServer("petri_fix_hero", {});
 	
-	if (Players.GetTeam(Players.GetLocalPlayer()) != DOTATeam_t.DOTA_TEAM_BADGUYS){
-		$("#CourierPanel").SetHasClass("Hide", true);
-	}
+	GameUI.CustomUIConfig().RegisterKeyBind('ShopToggle', ToggleShop);
+	GameUI.CustomUIConfig().RegisterKeyBind('PurchaseQuickbuy', function(){
+		$.Msg(selectedItemName)
+		if (selectedItemName != ""){
+			GameEvents.SendCustomGameEventToServer("petri_buy_item", { itemname : selectedItemName, hero : Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() ), buyer : Players.GetLocalPlayerPortraitUnit() })
+		}
+	});
 })();
 
 //GameEvents.Subscribe( "dota_inventory_changed", OnInventoryChanged() )

@@ -64,3 +64,13 @@ GameRules.PETRI_LOCK_ITEMS[8] = "item_petri_jade_amulet"
 GameRules.PETRI_LOCK_ITEMS[9] = "item_petri_tourmaline_patch"
 
 GameRules.PETRI_EXPERIENCE_MULTIPLIER = 1.07 --// множитель опыта для убийства крипов
+
+GameRules.PETRI_MAX_CREEPS_ON_ARENA = 9
+
+GameRules.PETRI_KIVIN_TIMING = 2880.0
+
+GameRules.PETRI_RUNE_DURATION = 60
+GameRules.PETRI_RUNE_SPAWNER_SPAWN_CHANCE = 25
+
+GameRules.MaxCogs = 10
+GameRules.MaxItemsToBuy = 1337

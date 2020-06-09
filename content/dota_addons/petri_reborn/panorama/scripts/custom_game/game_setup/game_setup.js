@@ -325,9 +325,73 @@ function CreatePlayerList()
 
 		playerPanel.AddClass("playerInfo");
 		playerPanel.SetParent( playersPanel );
+		
+		/*
+		playerPanel.SetPanelEvent(
+	    "onmouseover",
+		function() {
+			SelectPlayerLoadScreen(playerPanel, id)
+		}
+	    )
+		
+		playerPanel.SetPanelEvent(
+	    "onmouseout",
+		function() {
+			HidePlayerLoadScreen()
+		}
+	    )
+		*/
+	}
+}
+/*
+//---------------------------//
+const STAT_RATING = 0       //|
+const STAT_GOLD = 1         //|
+const STAT_GAMES = 2        //|
+const STAT_PETRI_WIN = 3    //|
+const STAT_PETRI_GAMES = 4  //|
+const STAT_KVN_WIN = 5      //|
+const STAT_KVN_GAMES = 6    //|
+const STAT_KILLS = 7        //|
+const STAT_KVN_WINRATE = 8  //|
+const STAT_PETRI_WINRATE = 9//|
+const STAT_SQL_ID = 10      //|
+//---------------------------//
+
+function SelectPlayerLoadScreen(panel, id)
+{
+	//panel = $("#Player_" + id)
+	//var id = 0 
+	//id = panel.GetAttributeInt("player_id", id)
+
+	var playerInfo = Game.GetPlayerInfo(id);
+	var stats = panel.statsArr
+	
+	if (stats[id][STAT_RATING] != 0) {
+	$( "#PlayerStatsDisplay").SetHasClass("hidden", false)
+	
+	$( "#statAvatar").steamid = playerInfo.player_steamid;
+	$( "#statName").steamid = playerInfo.player_steamid;
+	
+	$( "#statRating").text = stats[id][STAT_RATING]
+	$( "#statKills").text = stats[id][STAT_KILLS]
+	$( "#statGold").text = stats[id][STAT_GOLD]
+	$( "#statId").text = stats[id][STAT_SQL_ID]
+	$( "#statId").text = stats[id][STAT_SQL_ID]
+	
+	$( "#statKvnWl").text = stats[id][STAT_KVN_WIN] + "/" + stats[id][STAT_KVN_GAMES]
+	$( "#statPetriWl").text = stats[id][STAT_PETRI_WIN] + "/" + stats[id][STAT_PETRI_GAMES]
+	
+	$( "#statKvnWr").text = stats[id][STAT_KVN_WINRATE] + "%"
+	$( "#statPetriWr").text = stats[id][STAT_PETRI_WINRATE] + "%"
 	}
 }
 
+function HidePlayerLoadScreen()
+{
+	$( "#PlayerStatsDisplay").SetHasClass("hidden", true)
+}
+*/
 
 //--------------------------------------------------------------------------------------------------
 // Teams list

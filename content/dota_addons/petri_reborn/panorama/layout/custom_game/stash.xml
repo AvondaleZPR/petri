@@ -7,6 +7,25 @@
 	    while(parent.id != "Hud")
 	        parent = parent.GetParent();
 
+		var tpSlot = parent.FindChildTraverse("inventory_tpscroll_container");	
+		tpSlot.visible = false;
+		
+		for(var i = 0; i < 30; i++){
+			$.Msg(i);
+			var buff = parent.FindChildTraverse("Buff" + i);
+			if(buff != null){
+				buff.style.width = "50px"
+				buff.style.height = "50px"
+			
+				var label = buff.FindChildTraverse("StackCount")
+				label.style.fontSize = "16px";
+				label.style.fontFamily = "Arial";
+				label.style.textAlign = "center";
+				label.style.width = "70%";
+				label.style.height = "70%";
+			}
+		}
+			
 	    var radar = parent.FindChildTraverse("RadarButton");
 	    radar.FindChildTraverse("RadarIcon").style.backgroundImage = "url(\"s2r://panorama/images/hud/reborn/icon_scan_on_psd.vtex\");";
 	    radar.FindChildTraverse("CooldownCover").visible = false;
@@ -23,6 +42,8 @@
 					Abilities.ExecuteAbility(ability, queryUnit, false)
 					return;
 				}
+				
+				$.DispatchEvent('DropInputFocus', radar);
 			}
 	    })
 	    radar.SetPanelEvent('onmouseover', function() {
@@ -38,9 +59,11 @@
 	        $.DispatchEvent('DOTAHideAbilityTooltip');
 	        $.DispatchEvent('DOTAHideTitleTextTooltip');
 	    });
+		
+		var chat = parent.FindChildTraverse("ChatLinesPanel")
 
-	    parent.FindChildTraverse("HUDElements").FindChildTraverse("level_stats_frame").visible = false;
-	    parent.FindChildTraverse("HUDElements").FindChildTraverse("StatBranch").visible = false;
+	   parent.FindChildTraverse("HUDElements").FindChildTraverse("level_stats_frame").visible = false;
+	     parent.FindChildTraverse("HUDElements").FindChildTraverse("StatBranch").visible = false; 
 	    parent.FindChildTraverse("HUDElements").FindChildTraverse("PortraitBacker").style.width = "160px;";
 	    parent.FindChildTraverse("HUDElements").FindChildTraverse("PortraitBackerColor").style.width = "160px;";
 	    <!-- parent.FindChildTraverse("HUDElements").FindChildTraverse("stats_container").style.width = "136px;"; -->
@@ -66,6 +89,35 @@
 	    			if (GameUI.CustomUIConfig().abilities.Children()[c].id == "Ability6" || GameUI.CustomUIConfig().abilities.Children()[c].id == "Ability7" || GameUI.CustomUIConfig().abilities.Children()[c].id == "Ability8") {
 	    			GameUI.CustomUIConfig().abilities.Children()[c].visible = false;
 	    		}
+				
+				for (var msg in chat.Children()){
+					if (chat.Children()[msg].text != null && !chat.Children()[msg].text.startsWith('(')){
+						if (chat.Children()[msg].FindChildTraverse("RangIcon") == null){
+							for(var i = 0; i <= 20; i++){
+								if (name[i] != null && rank[i] != null && chat.Children()[msg].text.includes(name[i])){
+									//chat.Children()[msg].text = "    " + chat.Children()[msg].text;
+									
+									var icon = $.CreatePanel("Image", chat.Children()[msg], "RangIcon");
+									icon.SetImage("s2r://panorama/images/custom_game/rangs/def/" + rank[i] +".png");
+									icon.SetHasClass("InlineImage", true)
+									icon.style.width = "4%";
+									icon.style.height = "25px";
+									
+									if(status[i] != null){
+										var icon = $.CreatePanel("Image", chat.Children()[msg], "StatusIcon");
+										icon.SetImage("s2r://panorama/images/custom_game/loading_screen/status/" + status[i] +".png");
+										icon.SetHasClass("InlineImage", true)
+										icon.style.width = "3%";
+										icon.style.height = "25px";
+										icon.style.marginLeft = "30px";
+										icon.style.backgroundColor = "#0F0F0FF2";
+									}
+								}
+							}
+						}
+						
+					}
+				}
 	    	}
 		    $.Schedule(0.1, function () {
 				hide()
@@ -99,7 +151,7 @@
 	    }
 
 
-	    // parent.FindChildTraverse("StatBranch").style.visibility = "collapse;";
+	     parent.FindChildTraverse("StatBranch").style.visibility = "collapse;";
 	    parent.FindChildTraverse("StatBranch").enabled = false;
 	    parent.FindChildTraverse("StatBranch").hittest = false;
 	    parent.FindChildTraverse("StatBranch").hittestchildren = false;
@@ -113,6 +165,18 @@
 	    // parent.FindChildTraverse("PortraitContainer").style.marginLeft = "146px;";
 	}
 
+	var name = []
+	var rank = {}
+	var status = {}
+	function OnChatData( data )
+	{
+		$.Msg( "OnMyEvent: ", data );
+		name[data["id"]] = data["name"]
+		rank[data["id"]] = data["rank"]
+		status[data["id"]] = data["status"]
+	}
+	GameEvents.Subscribe( "petri_chat_player_icon", OnChatData);
+	
 	(function () {
 		GameUI.CustomUIConfig().Hack = Hack;
 		Hack();

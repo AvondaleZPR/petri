@@ -78,6 +78,7 @@ function Duels:StartDuel()
 	    Duels.ison = true
 		Duels:Aggr(hero1, hero2)
 		Duels:Timer()
+		EmitAnnouncerSound('announcer_ann_custom_mode_20')
         return nil
 	--end
     end)
@@ -143,6 +144,7 @@ end
 function Duels:EndDuel()
     Duels.ison = false
 	for i = 1, 2 do
+	if Duels.pids[i] and PlayerResource:IsValidPlayer(Duels.pids[i]) then
 	    local player = PlayerResource:GetPlayer(Duels.pids[i])
 		local hero = player:GetAssignedHero()
 		hero.onduel = false
@@ -158,17 +160,22 @@ function Duels:EndDuel()
 		    return nil
         end)
 	end
+	end
 	Duels:ClearDuelists()
 end
 
 function Duels:EndDuelLose(loserid)
     local msg = ""
 	for i = 1, 2 do
+	    if Duels.pids[i] and PlayerResource:GetPlayer(Duels.pids[i]) and PlayerResource:GetPlayer(Duels.pids[i]):GetAssignedHero() then
+		
 	    if Duels.pids[i] ~= loserid then
 		    GameMode:addScore(PlayerResource:GetPlayer(Duels.pids[i]):GetAssignedHero(), 5)
 			msg = PlayerResource:GetPlayerName(Duels.pids[i])
 		else
             GameMode:addScore(PlayerResource:GetPlayer(Duels.pids[i]):GetAssignedHero(), -5)
+		end
+		
 		end
 	end
 	Notifications:TopToAll({text=msg, duratione=20, style={color="green"}, continue=false})

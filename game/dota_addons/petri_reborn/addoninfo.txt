@@ -1,18 +1,38 @@
-"AddonInfo"
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
-    maps			"petri_1_journey petri_2_radiant petri_0_frostivus"
-	"TeamCount"		"2"
-	"IsPlayable"	"1"
-	"petri_1_journey"
+	maps = 
+	[
+		"seasons",
+		"journey",
+	]
+	TeamCount = 2
+	IsPlayable = 1
+	map_options = 
+	[
+		{
+			MaxPlayers = 12
+			map = "journey"
+		},
+		{
+			MaxPlayers = 12
+			map = "seasons"
+		},
+	]
+	HideInTools = false
+	IsTemplate = false
+	CheckAFKPlayers = false
+	DefaultMap = ""
+	Default_Keys = [  ]
+	DisableIK = false
+	EnablePickRules = false
+	EventGame = false
+	hero_picker = 
 	{
-		"MaxPlayers"		"12"
 	}
-	"petri_2_radiant"
-	{
-		"MaxPlayers"		"12"
-	}
-	"petri_0_frostivus"
-	{
-		"MaxPlayers"		"12"
-	}
+	HeroGuidesSupported = false
+	ForceDefaultGuide = false
+	MinimalPrecache = false
+	MinPlayers = 1
+	MaxPlayers = 12
+	PenaltiesEnabled = false
 }

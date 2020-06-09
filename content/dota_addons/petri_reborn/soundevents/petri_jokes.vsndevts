@@ -1,0 +1,2902 @@
+"petri_reborn.joke_100"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/100.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_99"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/99.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_98"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/98.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_97"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/97.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_96"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/96.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_95"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/95.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_94"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/94.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_93"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/93.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_92"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/92.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_91"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/91.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_90"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/90.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_89"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/89.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_88"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/88.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_87"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/87.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_86"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/86.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_85"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/85.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_84"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/84.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_83"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/83.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_82"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/82.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_81"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/81.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_80"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/80.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_79"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/79.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_78"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/78.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_77"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/77.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_76"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/76.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_75"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/75.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_74"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/74.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_73"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/73.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_72"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/72.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_71"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/71.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_70"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/70.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_69"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/69.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_68"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/68.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_67"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/67.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_66"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/66.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_65"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/65.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_64"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/64.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_63"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/63.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_62"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/62.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_61"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/61.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_60"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/60.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_59"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/59.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_58"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/58.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_57"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/57.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_56"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/56.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_55"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/55.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_54"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/54.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_53"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/53.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_52"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/52.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_51"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/51.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_50"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/50.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_49"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/49.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_48"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/48.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_47"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/47.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_46"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/46.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_45"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/45.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_44"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/44.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_43"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/43.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_42"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/42.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_41"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/41.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_40"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/40.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_39"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/39.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_38"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/38.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_37"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/37.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_36"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/36.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_35"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/35.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_34"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/34.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_33"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/33.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_32"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/32.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_31"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/31.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_30"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/30.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_29"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/29.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_28"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/28.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_27"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/27.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_26"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/26.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_25"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/25.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_24"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/24.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_23"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/23.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_22"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/22.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_21"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/21.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_20"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/20.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+
+"petri_reborn.joke_19"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/19.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+
+"petri_reborn.joke_18"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/18.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+
+"petri_reborn.joke_17"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/17.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_16"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/16.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_15"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/15.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_14"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/14.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_13"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/13.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_12"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/12.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_11"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/11.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_10"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/10.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_9"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/9.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_8"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/8.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_7"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/7.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_6"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/6.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_5"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/5.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_4"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/4.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_3"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/3.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_2"
+{
+		"operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/2.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}
+
+"petri_reborn.joke_1"
+{
+        "operator_stacks"
+        {
+                "update_stack"
+                {
+                        "reference_operator"
+                        {
+                                "operator"              "sos_reference_stack"
+                                "reference_stack"               "src1_3d"
+                                "operator_variables"
+                                {
+                                        "vsnd_files"
+                                        {"value"{"value0"                "sounds/jokes/1.vsnd"}}
+										
+                                        "volume"         { "value"         "0.400000" }
+                                        "volume_max"     { "value"         "0.500000" }
+                                        "pitch_min"      { "value"         "0.950000" }
+                                        "pitch_max"      { "value"         "1.050000" }
+                                        "chan_type"      { "value"         "6" }
+                                        "memory_type"    { "value"         "0" } 
+										"soundlevel_min" { "value"         "50.000000" }
+                                        "soundlevel_max" { "value"         "50.000000" }
+                                }
+                        }
+                }
+        }
+}

@@ -4,6 +4,7 @@
   </styles>
   <scripts>
     <include src="file://{resources}/scripts/custom_game/shop.js" />
+	<include src="file://{resources}/scripts/custom_game/hotkey_tracker.js" />
   </scripts>
   <snippets>
     <snippet name="Item">

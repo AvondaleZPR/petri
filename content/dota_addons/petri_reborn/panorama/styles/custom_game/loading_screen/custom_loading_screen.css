@@ -349,8 +349,10 @@
 #TopPlayerRating
 {
   padding: 0px;
-  margin-right:1000px;
+  margin-right:1250px;
   margin-top: 30px;
+  width: 150px;
+  height: 100px;  
 
   horizontal-align: middle;
   vertical-align: top;
@@ -361,8 +363,11 @@
 #TopPlayerKills
 {
   padding: 0px;
-  margin-right:800px;
+  margin-right:1000px;
   margin-top: 30px;
+  width: 150px;
+  height: 100px;  
+  
 
   horizontal-align: middle;
   vertical-align: top;
@@ -373,8 +378,24 @@
 #TopPlayerGold
 {
   padding: 0px;
-  margin-right:600px;
+  margin-right:750px;
   margin-top: 30px;
+  width: 150px;
+  height: 100px;
+  
+  horizontal-align: middle;
+  vertical-align: top;
+
+  flow-children: down;
+}
+
+#TopPlayerLvl
+{
+  padding: 0px;
+  margin-right: 500px;
+  margin-top: 30px;
+  width: 150px;
+  height: 100px;
 
   horizontal-align: middle;
   vertical-align: top;
@@ -395,6 +416,11 @@
 #top_Gold
 {
 	color: yellow;
+}
+
+#top_Lvl
+{
+	color: green;
 }
 
 .toplabel
@@ -428,18 +454,6 @@
 	visibility: collapse;
 }
 
-#TopPlayerLvl
-{
-  padding: 0px;
-  margin-right:450px;
-  margin-top: 30px;
-
-  horizontal-align: middle;
-  vertical-align: top;
-
-  flow-children: down;
-}
-
 .lvllabel
 {
 	font-size: 20px;
@@ -463,13 +477,118 @@
     margin-top: 26px;
 }
 
+#eSportPanel
+{
+	margin-top: 620px;
+	margin-left: 25px;
+	width: 400px;
+	height: 130px;
+	background-color: #0F0F0FF2;
+	flow-children: right;
+}
+
+.eSportTour
+{
+	width: 50%;
+	height: 100%;
+	flow-children: down;
+}
+
+.eSportHead
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	width: 100%;
+	height: 20%;
+}
+
+.eSportHeadLabel
+{
+	vertical-align: middle;
+	horizontal-align: center;
+	font-size: 20px;
+	font-family: RadianceM;
+	color: white;
+}
+
+.eSportWinners
+{
+	width: 100%;
+	height: 60%;
+	flow-children: right;
+}
+
+.eSportWin
+{
+	width: 50%;
+	height: 100%;
+	flow-children: down;
+}
+
+.eSportName
+{
+	font-size: 14px;
+	font-family: RadianceM;
+	color: white;	
+    vertical-align: middle;
+    horizontal-align: center;	
+}
+
+.eSportAvatar
+{
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    horizontal-align: center;
+}
+
+#eSportReg
+{
+	vertical-align: middle;
+	horizontal-align: center;
+    width: 90%;
+    height: 60%;
+	
+	/*gradient(90deg, rgba(0,0,0,1) 0%, rgba(210,14,14,1) 57%, rgba(102,0,255,1) 100%);*/
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #000000 ), color-stop( 0.01, #303ae9 ), to( #00ff0c ) );
+}
+
+.eSportRegLabel
+{
+	font-size: 25px;
+	font-family: RadianceM;
+	color: white;	
+    vertical-align: middle;
+    horizontal-align: center;	
+}
+
+#eSportWatch
+{
+	vertical-align: middle;
+	horizontal-align: center;
+    width: 50%;
+    height: 100%;
+	
+	/*gradient(90deg, rgba(0,0,0,1) 0%, rgba(210,14,14,1) 57%, rgba(102,0,255,1) 100%);*/
+	background-color: blue;
+}
+
+.eSportWatchLabel
+{
+	font-size: 20px;
+	font-family: RadianceM;
+	color: white;	
+    vertical-align: middle;
+    horizontal-align: center;	
+}
+
 #LastUpdate
 {
-	width: 530px;
-	height: 500px;
+	width: 440px;
+	height: 300px;
     padding: 0px; 
-	margin-left: 100px;
-    margin-top: 286px;
+	margin-left: 25px;
+    margin-top: 300px;
 }
 
 .updateHeader
@@ -490,15 +609,15 @@
 {
 	background-color: #0F0F0FF2;
 	width: 100%;
-	height: 10%;
+	height: 15%;
 }
 
 #LUText
 {
 	background-color: #0F0F0FF2;
     width: 100%;
-	margin-top: 10%;
-	height: 90%;
+	margin-top: 15%;
+	height: 80%;
 }
 
 #UpdateHideBtn
@@ -506,4 +625,12 @@
 	horizontal-align: right;
 	width: 10%;
 	height: 100%;
+}
+
+#MapLogo
+{
+	width: 400px;
+	height: 250px;
+	margin-top: 150px;
+	margin-left: 20px;
 }

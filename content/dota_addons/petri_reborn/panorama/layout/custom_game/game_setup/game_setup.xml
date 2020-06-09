@@ -14,6 +14,33 @@
 			<Label id="AdLabel" text="#ad" onactivate="OpenLink()"/>
 		</Panel>
 		-->
+		
+		<Panel id="PlayerStatsDisplay" class="hidden">
+	    <Panel id="PlayerStatsTop">
+	        <DOTAAvatarImage class="avarang" id="statAvatar" steamid="1" />
+			<Image class="avarang" id="statRang" src="file://{images}/custom_game/rangs/def/0.png"/>
+		    <DOTAUserName id="statName" steamid="1" class="statText" />
+			<!--<Label id="statRating" class="statText" text="999"/>-->
+			<Label id="statKills" class="statText" text="999"/>
+			<Label id="statGold" class="statText" text="9999999"/>
+		</Panel>
+		<Panel id="PlayerStatsMain">
+			<Panel id="KvnStats">
+			    <Image class="TeamStatsImg" src="file://{images}/custom_game/team_icons/kvn.png" />
+			    <Label id="statKvnWl" class="statText TeamStatsLabel" text="0/100"/>
+				<Label id="statKvnWr" class="statText TeamStatsLabel" text="0%"/>
+			</Panel>
+		    <Panel id="PetriStats">
+			    <Image class="TeamStatsImg" src="file://{images}/custom_game/team_icons/petro.png" />
+			    <Label id="statPetriWl" class="statText TeamStatsLabel" text="100/100"/>
+				<Label id="statPetriWr" class="statText TeamStatsLabel" text="100%"/>
+			</Panel>
+		</Panel>
+		<Panel id="PlayerStatsBottom">
+		        <Label class="statText" id="statId" text="9999"/>
+		</Panel>
+	    </Panel>
+		
 		<Panel hittest="false" id="TeamSelectContainer">
 
 			<Panel hittest="false" class="DarkTheme Primary500 z-index3" id="AppBar">

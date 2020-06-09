@@ -46,7 +46,7 @@ function ExploreWorld(keys)
 
     local allBuildings = Entities:FindAllByClassname("npc_dota_base_additive")
     for k,v in pairs(allBuildings) do
-    	if IsValidEntity(v) and v:GetTeamNumber() == 2 then
+    	if IsValidEntity(v) and v:GetTeamNumber() == 2 and not caster:CanEntityBeSeenByMyTeam(v) then
     		AddFOWViewer(caster_team, v:GetAbsOrigin(), 350, 10, false)
     	end
     end

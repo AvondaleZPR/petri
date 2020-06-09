@@ -14,7 +14,7 @@ function EvasionTornado(keys)
     tornado_dummy_unit:SetNightTimeVisionRange(keys.VisionDistance)
     
 	local effname = "particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
-	if tonumber(lvls[keys.caster:GetPlayerOwnerID()]) >= 30 then
+	if tonumber(lvls[keys.caster:GetPlayerOwnerID()]) >= 50000 then
 	    effname = "particles/econ/items/invoker/invoker_ti6/invoker_tornado_ti6.vpcf"
 	end
 	

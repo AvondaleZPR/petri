@@ -6,7 +6,7 @@ function RemoveSnare( keys )
 	
 	if target:GetPlayerOwner() == caster:GetPlayerOwner() and caster:IsRealHero() then
 	ability:ApplyDataDrivenModifier(caster, target, "modifier_item_petri_alcohol_active", nil)
-	if tonumber(lvls[caster:GetPlayerOwnerID()]) >= 20 then
+	if tonumber(lvls[caster:GetPlayerOwnerID()]) >= 25000 then
 	    ability:ApplyDataDrivenModifier(caster, target, "modifier_item_petri_alcohol_parcticle_lvl20", nil)
 	else
 	    ability:ApplyDataDrivenModifier(caster, target, "modifier_item_petri_alcohol_parcticle_default", nil)

@@ -11,7 +11,7 @@ function ApplyBonusDamage( event )
 			v:HasAbility("petri_building") then
 			ability:ApplyDataDrivenModifier(caster, v, "modifier_item_petri_attack_scroll_active", {duration = ability:GetSpecialValueFor("duration")})
 			local fxName = "particles/items_fx/aegis_timer_i.vpcf"
-		    if tonumber(lvls[caster:GetPlayerOwnerID()]) >= 40 then
+		    if tonumber(lvls[caster:GetPlayerOwnerID()]) >= 75000 then
 				ability:ApplyDataDrivenModifier(caster, v, "modifier_item_petri_attack_scroll_lvl40", {duration = ability:GetSpecialValueFor("duration")})
 				fxName = "particles/items_fx/aegis_timer_k.vpcf"
 			else

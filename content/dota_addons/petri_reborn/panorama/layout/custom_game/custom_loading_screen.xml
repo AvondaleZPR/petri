@@ -11,26 +11,70 @@
   <Panel class="AddonLoadingRoot">
     <Panel id="CustomBackground" />
 
+	<Panel id="MapLogo"/>
+	
     <Panel id="PlaceholdersRoot" >
       <Panel id="Placeholders" >
         <!-- <Image class="Placeholder" src="file://{images}/custom_game/loading_screen/ads/cc.jpg" /> -->
       </Panel>
     </Panel>
 	
+	<!--
 	<Panel id="DiscordServer">
 	    <Button id="DiscordButton" onactivate="DOTADisplayURL('https://discord.gg/RYa27fn');">
 		    <Image src="file://{images}/custom_game/loading_screen/discord_server.png" />
         </Button>		
 	</Panel>
+	-->
+	
+	<!--
+	<Panel id="eSportPanel" hittest="true">
+	    <Panel id="eSportPrev" class="eSportTour">
+		    <Panel id="eSportHead">
+				<Label class="eSportHeadLabel" text="The Petrinternational 1"/>
+			</Panel>
+			<Panel class="eSportWinners">
+				<Panel class="eSportWin">
+					<DOTAUserName class="eSportName" steamid="76561198129357949" />
+					<DOTAAvatarImage class="eSportAvatar" steamid="76561198129357949" />
+				</Panel>
+				<Panel class="eSportWin">
+					<DOTAUserName class="eSportName" steamid="76561198083536629" />
+					<DOTAAvatarImage class="eSportAvatar" steamid="76561198083536629" />
+				</Panel>
+			</Panel>
+			<Button id="eSportWatch" onactivate="DOTADisplayURL('https://www.youtube.com/playlist?list=PLO_Ryll5gIohcE0itHkDHbdQg29WqQ1rm');">
+			    <Label class="eSportWatchLabel" text="#esport_watch"/>
+			</Button>
+		</Panel>
+		<Panel id="eSportCur" class="eSportTour">
+		    <Panel id="eSportHead">
+				<Label class="eSportHeadLabel" text="The Petrinternational 2"/>
+			</Panel>
+			<Button id="eSportReg" onactivate="DOTADisplayURL('https://vk.com/dota2petri?w=wall-70696070_13070');">
+				    <Label class="eSportRegLabel" text="#esport_reg"/>
+			</Button>
+		</Panel>
+	</Panel>
+	-->
 	
 	<Panel id="SocialNetworks" >
-      <!--<Label text="#get_models" class="Headline1" id="GetModels" />
-      <Label text="TheProma#8032" class="Headline1" id="AlikVirg">
-      </Label>
-      -->
-      <Label text="vk.com/dota2petri" class="SN Headline1" id="VK" />
+      <Label text="#get_models" class="Headline1" id="GetModels" />
+	  <Button onactivate="DOTADisplayURL('https://discord.gg/RYa27fn');">	
+		<Label text="discord.gg/RYa27fn" class="Headline1" id="AlikVirg" />
+	  </Button>
+	  <Button onactivate="DOTADisplayURL('https://vk.com/dota2petri');">
+		<Label text="vk.com/dota2petri" class="SN Headline1" id="VK" />
+	  </Button>
+	  <!--
+	  <Button onactivate="DOTADisplayURL('https://patreon.com/petrireborn');">
+		<Label text="patreon.com/petrireborn" class="SN Headline1" id="TWITTER" />
+	  </Button>
+	  -->
     </Panel>
 	
+	
+	<!--
     <Panel id="LastUpdate">
 	    <Panel id="LUHead">
 	        <Label class="updateHeader" text="#LSlastupdate"/>
@@ -43,7 +87,8 @@
 		    <Label class="updateText" text="#LSlastupdateText"/>
 		</Panel>
 	</Panel> 
-    
+	-->
+	
 	<Label id="version" text=""/>
 	
 	<!--
@@ -80,6 +125,11 @@
 		<Label id="top_Gold" class="toplabel" text="1000">
 		    <!--<Image class="topicon" src="file://{images}/custom_game/custom_variables/gold.png" />-->
 		</Label>
+	</Panel>
+	<Panel id="TopPlayerLvl">
+	    <Label class="toplabel" text="#stats_top_lvl"/>
+		<DOTAAvatarImage id="top_AvatarLvl" class="avatar" steamid="local" />
+		<Label id="top_Lvl" class="toplabel" text="1000"/>
 	</Panel>
 
     <Panel id="Statistics">

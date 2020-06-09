@@ -87,7 +87,18 @@ function build( keys )
 	if ability:GetName() == "build_petri_bus_4" and GameMode.busData[4][1] == false then
 	    return CancelBuilding(caster, ability, pID, "#already_builded")
 	end
+	
+	if ability:GetName() == "build_petri_cop_trap" and caster:GetPlayerOwner():GetAssignedHero().cogK >= GameRules.MaxCogs then
+		return CancelBuilding(caster, ability, pID, "#cog_limit")
+	end
 
+	--
+	if player.activeBuilder then
+		print("sosi huy blyad kusok govna zaebal")
+		player.activeBuilder:ClearQueue()
+	end
+	--
+	
 	--
 	RecountBuildings(hero)
 	--
@@ -156,7 +167,7 @@ function build( keys )
 		gnvTable["pos"] = unit:GetAbsOrigin() + Vector(gnvTable["size"] / -2, gnvTable["size"] / -2, 0)
 		AddKeyToNetTable(unit:entindex(), "gridnav", "building", gnvTable)
 		--PrintTable(GetKeyInNetTable(unit:entindex(), "gridnav", "building"))
-
+		
 		if GameMode.UnitKVs[unit_name]["Unique"] == 1 then
 			hero.uniqueUnitList[unit_name] = true
 		end
@@ -275,8 +286,8 @@ function build( keys )
 			end
 		end
 
-		if hero:GetUnitName() == "npc_petri_miracle3" then
-		    if unit.boolmiracle3 == nil then
+		if unit:GetUnitName() == "npc_petri_miracle3" then
+		    if hero.boolmiracle3 == nil then
 			GameMode:addScore(hero, 50)
 			hero.boolmiracle3 = true
 			end
@@ -317,6 +328,10 @@ function build( keys )
 		unit:SetMana(0)
 		unit.tempManaRegen = unit:GetManaRegen()
 		unit:SetBaseManaRegen(0.0)
+		
+		if unit:GetUnitName() == "npc_petri_cop_trap" then
+			hero.cogK = hero.cogK + 1
+		end
 	end)
 	keys:OnConstructionCompleted(function(unit)
 		InitAbilities(unit)
@@ -326,7 +341,7 @@ function build( keys )
 		if unit.onBuildingCompleted then
 			unit.onBuildingCompleted(unit)
 		end
-
+		
 		unit:SetMana(unit:GetMaxMana())
 		unit:SetBaseManaRegen(unit.tempManaRegen)
 		unit.tempManaRegen = nil
@@ -338,12 +353,30 @@ function build( keys )
 		--GridNav:DestroyTreesAroundPoint( unit:GetAbsOrigin(), 150, false )
 		
 		if unit:GetUnitName() == "npc_petri_tower_of_evil" then
-		    if tonumber(lvls[unit:GetPlayerOwnerID()]) >= 10 then
+		    if tonumber(lvls[unit:GetPlayerOwnerID()]) >= 10000 then
 			    unit:SetRangedProjectileName("particles/units/heroes/hero_lina/lina_base_attack.vpcf")
 			end
 		end
 		
 		GameMode:ChProgress(unit:GetPlayerOwnerID(), "BUILD", 1)
+		
+		if unit:GetPlayerOwnerID() then
+			--EmitAnnouncerSoundForPlayer("announcer_ann_custom_generic_alert_10", unit:GetPlayerOwnerID())
+		end
+		
+		Timers:CreateTimer(1.5, function()
+			if unit and unit:IsAlive() then
+				local trigg = Entities:FindByNameNearest("area_trigger", unit:GetAbsOrigin(), 10000)
+				if trigg:IsTouching(unit:GetPlayerOwner():GetAssignedHero()) then 
+					print("building in the area")
+					if trigg.claimers and CheckAreaClaimers(unit:GetPlayerOwner():GetAssignedHero(), trigg.claimers) == false then
+						Timers:CreateTimer(0.03, function ()
+							unit:ForceKill(false)
+						end)
+					end
+				end
+			end
+		end)		
 	end)
 
 	-- These callbacks will only fire when the state between below half health/above half health changes.
@@ -361,6 +394,10 @@ function build( keys )
             RecountBuildings(hero)
 		return nil
         end)
+		
+		if hero:GetPlayerOwnerID() then
+			--EmitAnnouncerSoundForPlayer("announcer_ann_custom_generic_alert_15", hero:GetPlayerOwnerID())
+		end
 	end)
 
 	keys:OnConstructionCancelled(function( building )
@@ -369,6 +406,10 @@ function build( keys )
             RecountBuildings(hero)
 		return nil
         end)
+		
+		if hero:GetPlayerOwnerID() then
+			--EmitAnnouncerSoundForPlayer("announcer_ann_custom_generic_alert_15", hero:GetPlayerOwnerID())
+		end
 	end)
 
 	-- Have a fire effect when the building goes below 50% health.
@@ -392,7 +433,9 @@ function building_canceled( keys )
 end
 
 function create_building_entity( keys )
-	BuildingHelper:InitializeBuildingEntity(keys)
+    if keys.caster.work then
+	    BuildingHelper:InitializeBuildingEntity(keys)
+	end
 end
 
 function builder_queue( keys )

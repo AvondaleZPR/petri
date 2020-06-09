@@ -206,8 +206,10 @@ function Precache( context )
   -- SOUNDS
   PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts", context)
   PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts", context)
-  PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts", context)
+  PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts", context)  
   PrecacheResource("soundfile", "soundevents/game_sounds_custom.vsndevts", context)
+ 
+  PrecacheResource("soundfile", "soundevents/petri_jokes.vsndevts", context )
 
 
   PrecacheUnitByNameSync("npc_petri_peasant", context)
@@ -224,5 +226,12 @@ end
 
 function Activate()
   GameRules.GameMode = GameMode()
-  GameRules.GameMode:InitGameMode()
+  local status, retval = pcall(ActivateDebug)
+  if not status then
+    GameMode:DEBUGMSG("GameMode ERROR: ", retval)
+  end	
+end
+
+function ActivateDebug()
+    GameRules.GameMode:InitGameMode()
 end

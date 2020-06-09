@@ -75,7 +75,7 @@ end
 function MoveToStash( hero, slot )
   local target = hero:GetItemInSlot(slot)
   if target then
-    for i=6+4,11+4 do
+    for i=6+3,11+3 do
       local it = hero:GetItemInSlot(i)
 
       if not it then
@@ -159,7 +159,7 @@ function GameMode:BuyItem(keys)
   -- end
   
   local function confirm(target, deleteItems)
-    if CheckStock( item, hero ) then
+    if CheckStock( item, hero ) and hero.itemsPurchased < GameRules.MaxItemsToBuy then
       if cost <= GetCustomGold( hero:GetPlayerID() ) then
         SpendCustomGold( pID, cost )
         if target == "stash" then
@@ -180,13 +180,17 @@ function GameMode:BuyItem(keys)
         hero:EmitSound("General.Buy")
         SpendStock(item)
 		
+		hero.itemsPurchased = hero.itemsPurchased + 1
+		print("itemcount "..hero.itemsPurchased)
+		
 		if hero:GetTeam() == DOTA_TEAM_GOODGUYS then
             GameMode:BusPayOut(1)
 		elseif hero:GetTeam() == DOTA_TEAM_BADGUYS and cost >= 5 then
 		    GameMode:BusPayOut(4)
 		end
 		
-		if item_name == "item_petri_cola" then
+		if item == "item_petri_cola" then
+		    print("COLA BUS")
 		    GameMode:BusPayOut(2)
 		end
 		

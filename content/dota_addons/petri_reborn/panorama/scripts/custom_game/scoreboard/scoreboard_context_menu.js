@@ -15,6 +15,7 @@ function VoteKick()
 
 function Close()
 {
+	$.DispatchEvent('DropInputFocus', $.GetContextPanel("#ContextMenuScript"));
     $.GetContextPanel("#ContextMenuScript").DeleteAsync(0.0);
 }
 

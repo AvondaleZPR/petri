@@ -398,11 +398,39 @@ function SetupUI(pID)
   CustomGameEventManager:Send_ServerToPlayer( player, "petri_set_shops", GameMode.shopsKVs )
 end
 
+function checkarenatriggers()
+	--[[
+	for i = 0, PlayerResource:GetPlayerCount() do
+		if PlayerResource:IsValidPlayer(i) and PlayerResource:GetPlayer(i):GetAssignedHero() and PlayerResource:GetPlayer(i):GetAssignedHero():GetTeam() == DOTA_TEAM_BADGUYS then
+			local hero = PlayerResource:GetPlayer(i):GetAssignedHero()
+			local nTrigg = Entities:FindByClassnameNearest("trigger_dota", hero:GetAbsOrigin(), 500)
+			print("POSHEL NAHOOY "..nTrigg:GetName() )
+			if nTrigg and nTrigg:IsTouching(hero) and string.match(nTrigg:GetName(), "space") then
+				print("POSHEL NAHOOY found touching portal trigger")
+				nTrigg:Disable()
+				nTrigg:Enable()
+			end
+		end
+	end
+	]]
+	
+	local trigs = Entities:FindAllByClassname("trigger_dota")
+	for k,v in pairs(trigs) do
+		print(v:GetName())
+		if v and (string.match(v:GetName(), "space") or string.match(v:GetName(), "portal")) then
+			print("poshel nahooy")
+			v:Disable()
+			v:Enable()
+		end
+	end
+end
+
 function daynight(time_elapsed, start_time_of_day, end_time_of_day)
 	print('noch')
+	EmitAnnouncerSound('announcer_ann_custom_time_alert_02')
 	GameMode.isday = false
 	GameRules:SetTimeOfDay(0)
-	Timers:CreateTimer(1, function()
+	Timers:CreateTimer(0.03, function()
 	    if time_elapsed < 240 then
 		    GameRules:SetTimeOfDay(0)
 		    time_elapsed = time_elapsed + 1
@@ -410,9 +438,12 @@ function daynight(time_elapsed, start_time_of_day, end_time_of_day)
 	    else
 		    time_elapsed = 0
 			print('denb')
+			EmitAnnouncerSound('announcer_ann_custom_time_alert_06')
 			GameMode.isday = true
 		   -- GameRules:SetTimeOfDay(end_time_of_day)
 		    GameRules:SetTimeOfDay(0.26)
+			
+			checkarenatriggers()
 		    return nil
 	    end
 	end)
@@ -494,18 +525,18 @@ function GiveCh()
 				ChDesc = "#CH_GOLD"
 				player.ch[j] = "GOLD"
 				pp[i].ch[j] = "GOLD"
-				ChTar = math.random(500, j*5000)
+				ChTar = math.random(j*1000, j*15000)
 			elseif rand == 5 then
                 if team == DOTA_TEAM_GOODGUYS then
                     ChDesc = "#CH_LUMBER"
 				    player.ch[j] = "LUMBER"
 					pp[i].ch[j] = "LUMBER"
-				    ChTar = math.random(500, j*5000)
+				    ChTar = math.random(j*500, j*15000)
                 elseif team == DOTA_TEAM_BADGUYS then
                     ChDesc = "#CH_CREEPS"
 				    player.ch[j] = "CREEPS"
 					pp[i].ch[j] = "CREEPS"
-				    ChTar = math.random(50, j*300)
+				    ChTar = math.random(j*100, j*1000)
                 end		
 			end
 			player.tar[j] = ChTar
@@ -515,7 +546,6 @@ function GiveCh()
             {
                 text = ChDesc,
 				chid = tostring(j),
-				lvl = lvls[i],
             }
 			CustomGameEventManager:Send_ServerToPlayer( player, "send_ch_desc", event_data )
 			event_data =
@@ -526,12 +556,21 @@ function GiveCh()
             }
 			CustomGameEventManager:Send_ServerToPlayer( player, "send_ch_pr", event_data )
 		end
-	GameMode:DEBUGMSG("GIVECH: ", i)
+	--GameMode:DEBUGMSG("GIVECH: ", i)
+	GameMode:ChUpdateLvl(PlayerResource:GetPlayer(i))
 	end
 	end
   return nil
   end
   )
+end
+
+function GameMode:ChUpdateLvl(player)
+    local event_data =
+    {
+		lvl = lvls[player:GetPlayerID()],
+    }
+	CustomGameEventManager:Send_ServerToPlayer( player, "send_ch_lvl", event_data)
 end
 
 function GameMode:ChProgress(pid, chtype, progress)
@@ -549,7 +588,7 @@ function ChProgressDebug(data)
     local player = PlayerResource:GetPlayer(pid)
 	for i = 1, 3 do
 	    if PlayerResource:GetConnectionState(pid) == DOTA_CONNECTION_STATE_CONNECTED then
-	    if player.ch[i] == chtype and player.pr[i] < player.tar[i] then
+	    if player.ch[i] and player.ch[i] == chtype and player.pr[i] and player.tar[i] and player.pr[i] < player.tar[i] then
 		    player.pr[i] = player.pr[i] + progress
 			event_data =
             {
@@ -557,14 +596,21 @@ function ChProgressDebug(data)
 				cur = player.pr[i],
 				tar = player.tar[i],
             }
-			--CustomGameEventManager:Send_ServerToPlayer( player, "send_ch_pr", event_data )
+			CustomGameEventManager:Send_ServerToPlayer( player, "send_ch_pr", event_data )
 			if player.pr[i] >= player.tar[i] then
 			    print("CHALLENGE COMPLETED "..pid.." "..i)
-				player.lvl = player.lvl + i 
-				pp[pid].lvl = pp[pid].lvl + i
-				lvls[pid] = lvls[pid] + i
+				local addExp = i * 100
+				player.lvl = player.lvl + addExp
+                if pp[pid] and pp[pid].lvl then				
+					pp[pid].lvl = pp[pid].lvl + addExp
+				end
+				lvls[pid] = lvls[pid] + addExp
+				
+				GameMode:ChUpdateLvl(player)
+				
+				--EmitAnnouncerSoundForPlayer("announcer_ann_custom_adventure_alerts_11", pid)
 			end
-			if pp[pid].pr[i] ~= nil then
+			if pp[pid] and pp[pid].pr[i] then
 			    pp[pid].pr[i] = pp[pid].pr[i] + progress
 			end
 		end
@@ -619,15 +665,238 @@ function GameMode:FrostivusSpawnGift(vector)
     CreateUnitByName("npc_petri_gift", vector, true, nil, nil, DOTA_TEAM_NEUTRALS)
 end
 
+--dlya rune posuti
+function GameMode:ApplyModifierAtAllBuldings(mname, item, hero)
+	item:ApplyDataDrivenModifier(hero, hero, mname, {Duration = GameRules.PETRI_RUNE_DURATION})
+	if hero.cop and hero.cop:IsAlive() then
+		item:ApplyDataDrivenModifier(hero, hero.cop, mname, {Duration = GameRules.PETRI_RUNE_DURATION})
+    end	
+
+    local allBuildings = Entities:FindAllByClassname("npc_dota_base_additive")
+	for k,v in pairs(allBuildings) do
+        if v:GetPlayerOwnerID() == hero:GetPlayerOwnerID() then
+			item:ApplyDataDrivenModifier(hero, v, mname, {Duration = GameRules.PETRI_RUNE_DURATION})
+		end
+	end
+end
+
+function GameMode:ApplyModifierAtAllPetroses(mname, item, hero)
+    for i = 0, 20 do
+	    if PlayerResource:IsValidPlayer(i) then
+		    local player = PlayerResource:GetPlayer(i)
+			local petro = player:GetAssignedHero()
+			if player and petro and petro:GetTeam() == DOTA_TEAM_BADGUYS then
+			    item:ApplyDataDrivenModifier(hero, petro, mname, {Duration = GameRules.PETRI_RUNE_DURATION/2})
+			end
+		end
+	end
+end
+--
+
+function GameMode:PetriElenaDamage()
+    GameMode.elenaInGame = GameMode:IsElenaInGame()
+
+	local item = CreateItem("item_petri_key",nil,nil)
+	
+    local status, retval = pcall(
+	function()
+	    Timers:CreateTimer(1.0,
+        function()
+		    if GameMode.elenaInGame == true then
+			    local allBuildings = Entities:FindAllByClassname("npc_dota_base_additive")
+				
+				for k,v in pairs(allBuildings) do
+				    if v:GetBaseDamageMax() > 0 then
+					    item:ApplyDataDrivenModifier(v, v, "modifier_elena_buff",{})     
+					end
+				end
+				
+				return 5.0		
+            else 
+			    item = nil
+			    return nil
+			end
+		end)
+	end
+	
+	, keys)
+    if not status then
+        GameMode:DEBUGMSG("PetriElenaDamage ERROR: ", retval)
+    end
+end
+
+function GameMode:IsElenaInGame()
+    for i = 0, PlayerResource:GetPlayerCount() do
+	    if PlayerResource:IsValidPlayer(i) then
+		    print('elena '..i)
+		    local player = PlayerResource:GetPlayer(i)
+			if player and player:GetAssignedHero() and player:GetAssignedHero():GetUnitName() == "npc_dota_hero_death_prophet" then
+			    print('elena in game')
+			    return true
+			end
+		end
+	end
+	
+	return false
+end
+
+function GameMode:KivinTimer()
+    Timers:CreateTimer(GameRules.PETRI_KIVIN_TIMING,
+        function()
+		    GameMode.allowkivin = true
+		    return nil
+	    end
+	)
+end
+
+--[[
+function GameMode:PlayerBoundsTimer()
+    Timers:CreateTimer(1.0, 
+	    function()
+		    for i = 0, PlayerResource:GetPlayerCount() do
+			    if PlayerResource:IsValidPlayer(i) == true then
+				    local player = PlayerResource:GetPlayer(i)
+					local hero = player:GetAssignedHero()
+					if hero then
+					if GameMode:IsInWorldBounds(hero) == false or and hero:GetTeam() == DOTA_TEAM_GOODGUYS and Entities:FindByName(nil, "blocking_trigger_b"):IsTouching(hero) == true then
+					    print("DASDSACXZCASDAS")
+						if hero.spiderpos then
+						    FindClearSpaceForUnit(hero, hero.spiderpos, false)
+						elseif hero.spawnPosition then
+						    FindClearSpaceForUnit(hero, hero.spawnPosition, false)
+						else
+						    hero:RespawnHero(false, false)
+						end
+						
+						Timers:CreateTimer(0.03, function()
+	 	                    MoveCamera(hero:GetPlayerOwnerID(),hero)
+	 	                    hero:Stop()
+                        end)
+					end
+					end
+				end
+			end
+			
+	        return 1.0	
+		end
+	)	
+end
+]]
+
+function GameMode:IsInWorldBounds(hero)
+    local hO = hero:GetAbsOrigin()
+	local wO = {}
+	wO.minX = GetWorldMinX()
+	wO.maxX = GetWorldMaxX()
+	wO.minY = GetWorldMinY()
+	wO.maxY = GetWorldMaxY()
+	
+	print(hO.y)
+	print(hO.x)
+	
+	if hO.y >= wO.minY and hO.y <= wO.maxY and hO.x >= wO.minX and hO.x <= wO.maxX then
+	    print("is in world bounds")
+	    return true
+	end
+	
+	print("isnt in world bounds")
+	return false
+end
+
+function GameSetupDropFix()
+    local bool = false
+
+	for i = 0, PlayerResource:GetPlayerCount() do
+	    if PlayerResource:IsValidPlayer(i) then
+			local player = PlayerResource:GetPlayer(i)
+			if player and player:GetAssignedHero() and player:GetAssignedHero():GetTeam() == DOTA_TEAM_BADGUYS then
+			    bool = true
+			end
+		end		
+	end
+	
+	if bool == false and PlayerResource:GetPlayerCount() > 1 then
+	    IS_RANKED_GAME = false
+		Rating.isRankedGame = false
+		GameRules.Winner = DOTA_TEAM_GOODGUYS
+        GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+		--SendToServerConsole("script_reload")
+		--SendToServerConsole("cl_script_reload")
+		--SendToServerConsole("cl_script_reload_code libraries/gamesetup.lua")
+		--GameMode:RestartGameSetup()
+		--GameRules:ResetDefeated()
+	end
+end
+
+function GameMode:LoadHelpersCosts()
+	local item = CreateItem("item_petri_key",nil,nil)
+	local allcreats = Entities:FindAllByClassname("npc_dota_creature")
+    for k,v in pairs(allcreats) do
+		if IsValidEntity(v) and string.match(v:GetUnitName(), "helper") then
+			item:ApplyDataDrivenModifier(v, v, "modifier_helper_gold", {})
+			v:SetModifierStackCount("modifier_helper_gold", v, v:GetMaximumGoldBounty())
+			
+			item:ApplyDataDrivenModifier(v, v, "modifier_helper_exp", {})
+			v:SetModifierStackCount("modifier_helper_exp", v, v:GetDeathXP() * GameRules.PETRI_EXPERIENCE_MULTIPLIER)
+		end
+	end
+	UTIL_Remove(item)
+end
+
+function GameMode:SaveBuildingToPSO(unit)
+	for k,v in pairs(unit.blockers) do
+		v.IsBuildingPso = true
+		v.BuildingUnit = unit
+	end
+end
+
+function GameMode:NoInvWallsTimer()
+	local status, retval = pcall(NoInvWalls, keys)
+    if not status then
+        GameMode:DEBUGMSG("NoInvWalls ERROR: ", retval)	
+	end
+end
+
+function NoInvWalls()
+	Timers:CreateTimer(1.0, function()
+		local PSOs = Entities:FindAllByClassname("point_simple_obstruction")
+		for k,v in pairs(PSOs) do
+			if v and v:IsEnabled() and v.IsBuildingPso then
+				if not v.BuildingUnit or not v.BuildingUnit:IsAlive() then
+					print(v:GetAbsOrigin())
+					UTIL_Remove(v)
+				end
+			end
+		end
+		return 10.0
+	end)
+end
+
+function GameMode:UpdatePlayerChatIcons()
+	for i = 0, PlayerResource:GetPlayerCount() do
+		if PlayerResource:IsValidPlayer(i) then
+			local data = {id = i, name = PlayerResource:GetPlayerName(i), status = GetPlayerStatus(PlayerResource:GetSteamAccountID(i)), rank = Rating.rangs[i]}
+			CustomGameEventManager:Send_ServerToAllClients( "petri_chat_player_icon", data )
+		end
+	end
+end
+
 function GameMode:OnGameInProgress()
   
   DebugPrint("[BAREBONES] The game has officially begun")
   
     Timers:CreateTimer(0.3,
     function()
-	Classes:LoadAndSend()
 	
-	GameMode:SpawnCouriers()
+	Classes:LoadAndSend()
+    Classes:RandomClassTimer()
+	
+	GameMode:LoadHelpersCosts()
+	--GameMode:NoInvWallsTimer()
+	
+	GameMode:UpdatePlayerChatIcons()
+	
+	--GameMode:SpawnCouriers()
 	
     --GameMode.MINUSTIME = math.floor(GameRules:GetGameTime()-0.3)
 	--GameMode:DEBUGMSG("MINUSTIME: ", GameMode.MINUSTIME)
@@ -651,7 +920,7 @@ function GameMode:OnGameInProgress()
     Timers:CreateTimer(3.0,
         function()
 		    Rating:SetPlayerProfiles()
-            GameRules:SendCustomMessage("#fix_chat_msg", 0, 0)
+            GameRules:SendCustomMessage("#feedback_reminder", 0, 0)
 			--fixPause()
 			
 			if GetMapName() == "petri_0_frostivus" then
@@ -664,11 +933,18 @@ function GameMode:OnGameInProgress()
 			else
                 GameRules:SendCustomMessage("#unranked_game", 0, 0)
 			end
+			
+			GameMode:PetriElenaDamage()
+			
+			GameSetupDropFix()
+			
   		    return nil
 	    end
 	)
+	GameMode:KivinTimer()
+	--GameMode:PlayerBoundsTimer()
 	
-	--GiveCh()
+	GiveCh()
 	
 	--if IS_RANKED_GAME == true then
 	    --GiveCh()
@@ -712,12 +988,14 @@ function GameMode:OnGameInProgress()
 		return 60.0
 	end)
    
+   --[[
    Timers:CreateTimer(2880.0,
         function()
 		    GameMode.allowkivin = true
 		    return nil
 	    end
 	)
+	]]
 	
 	--Timers:CreateTimer(60.0,
         --function()
@@ -777,6 +1055,11 @@ function GameMode:OnGameInProgress()
         v:RemoveModifierByName("dummy_sleep_modifier")
       end
     end)
+	
+	Timers:CreateTimer(60.0,
+    function()
+		Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#class_pick_reminder", duration=7, style={color="purple", ["font-size"]="45px"}})
+    end)
 
   Shop:Init()
   
@@ -834,6 +1117,8 @@ function GameMode:OnGameInProgress()
 
       creepID = creepID + 1
 
+	  GameMode:LoadHelpersCosts()
+	  
       return 8.0 * 60
     end)
 
@@ -931,17 +1216,59 @@ function SobakaTest()
     --Say(PlayerResource:GetPlayer(sobakarandom),"SOBAKA", false)
 end
 
+function GameMode:IsBanned(sid)
+    for k,v in pairs(GameMode.BanKVs) do
+	    if v == sid then	   
+	        print("pidoras nayden")
+		    return true
+	    end
+	end
+	return false
+end
+
+function GameMode:Ban(player)
+    if player and player:GetPlayerID() then
+	    local pid = player:GetPlayerID()
+	    if GameMode:IsBanned(PlayerResource:GetSteamAccountID(pid)) == true then
+		    print("ban "..PlayerResource:GetSteamAccountID(pid))
+			GameMode:ActuallyBan(player)
+		end
+	end
+end
+
+function GameMode:ActuallyBan(player)
+    Timers:CreateTimer(1, function()
+        local hero = player:GetAssignedHero()
+		
+	    if hero then
+            local item = CreateItem("item_petri_key",nil,nil)
+            item:ApplyDataDrivenModifier(hero, hero, "modifier_ban_govna",{})
+			
+			PlayerResource:SetCameraTarget(player:GetPlayerID(), hero)
+        end
+		
+		CustomGameEventManager:Send_ServerToPlayer( player, "petri_ban_player", nil )
+		
+		return 1.0
+    end)
+end
+
 function GameMode:InitGameMode()
   GameMode = self
   
   GameMode:_InitGameMode()
   
+  math.randomseed(RandomFloat(0,1))
+  
   Rating:init()
   Duels:InitDuels()
   Classes:init()
-  --if GetMapName() == "petri_random" then
-    --RandomMap:Init()
-  --end
+  if GetMapName() == "random" then
+    RandomMap:Init()
+  end
+  
+  GameRules:GetGameModeEntity():SetUseDefaultDOTARuneSpawnLogic(false)
+  GameRules:GetGameModeEntity():SetPowerRuneSpawnInterval(300.0)
   
   --//chat commands
   --ChatCommand:LinkCommand("-sobaka", "SobakaTest")
@@ -952,6 +1279,8 @@ function GameMode:InitGameMode()
   print("cameraYaw: "..GameMode.cameraYaw)
   
   GameMode.DependenciesKVs = LoadKeyValues("scripts/kv/dependencies.kv")
+  
+  GameMode.BanKVs = LoadKeyValues("scripts/kv/ban.kv")
 
   GameMode.BuildingMenusKVs = LoadKeyValues("scripts/kv/building_menus.kv")
 
@@ -989,7 +1318,7 @@ function GameMode:InitGameMode()
   GameMode.ratingArr = {1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000}
   GameMode.ratingArr[0] = 1000
   
-  for i=0,PlayerResource:GetPlayerCount() do
+  for i=0,20 do
     pp[i] = class({})
 	pp[i].ch = {"","",""}
 	pp[i].pr = {0,0,0}
@@ -1065,6 +1394,9 @@ function GameMode:InitGameMode()
   -- Filter orders
   GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( GameMode, "FilterExecuteOrder" ), self )
 
+  -- Filter runes
+  GameRules:GetGameModeEntity():SetRuneSpawnFilter( Dynamic_Wrap( GameMode, "FilterRuneSpawn" ), self )
+
   -- Fix gold bounties
   GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(GameMode, "ModifyGoldFilter"), self)
 
@@ -1073,6 +1405,9 @@ function GameMode:InitGameMode()
 
   -- Fix up damage
   GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(GameMode, "DamageFilter"), GameMode)
+  
+  --couriers
+  GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
 
   -- Commands
   Convars:RegisterCommand( "lumber", Dynamic_Wrap(GameMode, 'LumberCommand'), "Gives you lumber", FCVAR_CHEAT )
@@ -1084,6 +1419,12 @@ function GameMode:InitGameMode()
   Convars:RegisterCommand( "tc", Dynamic_Wrap(GameMode, 'TestCommand'), "TestCommand", FCVAR_CHEAT )
   Convars:RegisterCommand( "fgs", Dynamic_Wrap(GameMode, 'FinishGameSetup'), "FinishGameSetup", FCVAR_CHEAT )
   Convars:RegisterCommand( "st", Dynamic_Wrap(GameMode, 'SetTime'), "SetTime", FCVAR_CHEAT )
+  Convars:RegisterCommand( "terr", Dynamic_Wrap(GameMode, 'TestError'), "TestError", FCVAR_CHEAT )
+  Convars:RegisterCommand( "trec", Dynamic_Wrap(GameMode, 'TestReconnect'), "Test Reconnect", FCVAR_CHEAT )
+  Convars:RegisterCommand( "cr", Dynamic_Wrap(GameMode, 'ClassReload'), "Class Reload", FCVAR_CHEAT )
+  Convars:RegisterCommand( "rgs", Dynamic_Wrap(GameMode, 'GameSetupDropFix'), "Restart Game Setup", FCVAR_CHEAT )
+  Convars:RegisterCommand( "mi", Dynamic_Wrap(GameMode, 'ModifierInfo'), "get names of all hero modifiers", FCVAR_CHEAT )
+  Convars:RegisterCommand( "joke", Dynamic_Wrap(GameMode, 'PlayRandomJoke'), "test jokes", FCVAR_CHEAT )
 
   BuildingHelper:Init()
 
@@ -1440,6 +1781,17 @@ function fix_armor()
     end)
 end
 
+function GetPlayerStatus(steamid)
+	GameMode.DevKVs = LoadKeyValues("scripts/kv/status.kv")
+	for k,v in pairs(GameMode.DevKVs["id"]) do
+        local id = tonumber(k)
+        if steamid == id then
+			return v
+	    end
+    end	
+	return nil
+end
+
 function Check4Dev()
     GameMode.DevKVs = LoadKeyValues("scripts/kv/status.kv")
     for i = 0, PlayerResource:GetPlayerCount() do  
@@ -1506,33 +1858,31 @@ function addScoreDebug(data)
 	local score = data[2]
     print("ADDSCOREDEBUG")
     if hero ~= nil then
-	if hero:IsRealHero() then
-    local player = hero:GetPlayerOwner()
-	if player ~= nil then
-	if player.score == nil then
-	    player.score = 0
-	end
-	if pp[player:GetPlayerID()].score == nil then
-	    pp[player:GetPlayerID()].score = 0
-	end
-	if pp[player:GetPlayerID()].score ~= nil then
-    player.score = player.score + score
-	pp[player:GetPlayerID()].score = pp[player:GetPlayerID()].score + score
-	print(player:GetPlayerID().." score: "..player.score)
+		local player = hero:GetPlayerOwner()
+		if player ~= nil and pp[player:GetPlayerID()] then
+			if pp[player:GetPlayerID()].score == nil then
+				pp[player:GetPlayerID()].score = 0
+			end
+			if pp[player:GetPlayerID()].score ~= nil then
+				pp[player:GetPlayerID()].score = pp[player:GetPlayerID()].score + score
+				print(player:GetPlayerID().." score: "..pp[player:GetPlayerID()].score)
 	
-	--PlayerRT[i].score = PlayerRT[i].score + score
+				local event_data =
+				{
+					pid = player:GetPlayerID(),
+					score = pp[player:GetPlayerID()].score,
+				}
+				CustomGameEventManager:Send_ServerToAllClients( "update_score_player", event_data )
 	
-	local event_data =
-    {
-    pid = player:GetPlayerID(),
-    score = player.score,
-    }
-    CustomGameEventManager:Send_ServerToAllClients( "update_score_player", event_data )
-	
-	scoreArr[player:GetPlayerID()] = player.score
-	end
-	end
-	end
+				scoreArr[player:GetPlayerID()] = scoreArr[player:GetPlayerID()] + score
+	                
+				lvls[player:GetPlayerID()] = lvls[player:GetPlayerID()] + score
+				
+				player.score = pp[player:GetPlayerID()].score
+					
+				GameMode:ChUpdateLvl(player)
+			end
+		end
 	end
 end
 
@@ -1557,6 +1907,20 @@ function GameMode:DEBUGMSG(msg, numb)
 			CustomGameEventManager:Send_ServerToPlayer( player, "debug_print", event_data )
 		end 
 	end
+	
+	if string.match(msg, "ERROR:")then
+	    --if Rating.isRankedGame == true then
+	    --    Rating.isRankedGame = false
+	    --    GameRules:SendCustomMessage("#unranked_game", 0, 0)
+	    --end
+	
+	    msg = msg:gsub("%s+", "")
+		numb = numb:gsub("%s+", "")
+		
+	    local url = tostring(Rating.errorUrl.."key="..Rating.key.."&error="..msg..numb)
+		print(url)
+	    Rating:SimpleRequest(url)
+	end
 end
 
 function GameMode:BusPayOut(id)
@@ -1567,7 +1931,7 @@ function GameMode:BusPayOut(id)
 		if player then
 	    local hero = player:GetAssignedHero()
 		if hero then
-		if hero:IsAlive() and hero:GetTeam() == DOTA_TEAM_GOODGUYS and hero.bus[id]:IsNull() == false then
+		if hero:IsRealHero() and hero:IsAlive() and hero:GetTeam() == DOTA_TEAM_GOODGUYS and hero.bus and hero.bus[id] and hero.bus[id]:IsNull() == false then
 		    if hero.bus[id]:IsAlive() then
 		        AddCustomGold(pid, GameMode.busPO[id])
 			    local unit = hero.bus[id]
@@ -1603,10 +1967,10 @@ function CourierSelect(eventSourceIndex, args)
 end
 
 function CourierDeliver(eventSourceIndex, args)
-    print("deliver"..args['id'])
 	--local courier = Entities:FindByName(nil,"npc_dota_courier")
     local courier = PlayerResource:GetPlayer(args['id']):GetAssignedHero().petriCourier
 	if courier ~= nil then
+	print("deliver"..args['id'])
     Timers:CreateTimer(0.1, function()
         courier:CastAbilityNoTarget(courier:FindAbilityByName("courier_take_stash_and_transfer_items"), args['id'])
         return nil
@@ -1617,6 +1981,26 @@ end
 CustomGameEventManager:RegisterListener( "courier_select", CourierSelect )
 CustomGameEventManager:RegisterListener( "courier_deliver", CourierDeliver )
 CustomGameEventManager:RegisterListener( "check4dev", Check4Dev )
+
+JOKE_PLAYING = false
+function GameMode:PlayRandomJoke()
+	if not JOKE_PLAYING then
+		local id = "petri_reborn.joke_"..tostring(math.abs(math.random(1, 100)))
+		EmitGlobalSound(id)
+
+		--[[ всегда возвращает 2 блядь
+		local dummy = CreateUnitByName("npc_dummy_blank", Vector(0, 0, 0), false, nil, nil, DOTA_TEAM_NEUTRALS)
+		local duration = dummy:GetSoundDuration(id, "")
+		print(id.." sound duration "..duration)
+		UTIL_Remove(dummy)
+		]]
+		
+		JOKE_PLAYING = true
+		Timers:CreateTimer(30.0, function() 
+			JOKE_PLAYING = false
+		end)
+	end
+end
 
 if LOADED then
   return

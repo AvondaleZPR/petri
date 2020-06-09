@@ -41,7 +41,7 @@ END_GAME_ON_KILLS = false                -- Should the game end after a certain 
 KILLS_TO_END_GAME_FOR_TEAM = 8         -- How many kills for a team should signify an end of game?
 
 USE_CUSTOM_HERO_LEVELS = true           -- Should we allow heroes to have custom levels?
-MAX_LEVEL = 80                        -- What level should we let heroes get to?
+MAX_LEVEL = 2500                        -- What level should we let heroes get to?
 USE_CUSTOM_XP_VALUES = true             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
 
 -- Fill this table up with the required XP per level if you want to change it
@@ -207,9 +207,13 @@ XP_PER_LEVEL_TABLE[77] = 700000
 XP_PER_LEVEL_TABLE[78] = 800000
 XP_PER_LEVEL_TABLE[79] = 900000
 XP_PER_LEVEL_TABLE[80] = 1000000
+XP_PER_LEVEL_TABLE[81] = 20000000
 for i=1,MAX_LEVEL do
-	local originalValue = XP_PER_LEVEL_TABLE[i]
 	if i > 2 then
+		if i > 81 then
+			XP_PER_LEVEL_TABLE[i] = 500000
+		end
+		local originalValue = XP_PER_LEVEL_TABLE[i]
 		XP_PER_LEVEL_TABLE[i] = XP_PER_LEVEL_TABLE[i] + XP_PER_LEVEL_TABLE[i-1]
 	end
 end 
@@ -235,10 +239,11 @@ MINIMUM_ATTACK_SPEED = 20               -- What should we use for the minimum at
 ENABLED_RUNES = {}                      -- Which runes should be enabled to spawn in our game mode?
 ENABLED_RUNES[DOTA_RUNE_DOUBLEDAMAGE] = true
 ENABLED_RUNES[DOTA_RUNE_HASTE] = true
-ENABLED_RUNES[DOTA_RUNE_ILLUSION] = true
+ENABLED_RUNES[DOTA_RUNE_ILLUSION] = false
 ENABLED_RUNES[DOTA_RUNE_INVISIBILITY] = true
 ENABLED_RUNES[DOTA_RUNE_REGENERATION] = true -- Regen runes are currently not spawning as of the writing of this comment
-ENABLED_RUNES[DOTA_RUNE_BOUNTY] = true
+ENABLED_RUNES[DOTA_RUNE_BOUNTY] = false
+ENABLED_RUNES[DOTA_RUNE_ARCANE] = true
 
 
 MAX_NUMBER_OF_TEAMS = 2                -- How many potential teams can be in this game mode?

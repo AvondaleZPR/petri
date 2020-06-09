@@ -105,11 +105,11 @@ function ParseCustomBuldingKVs(entry, building, level)
 		for k2,v2 in pairs(v) do
 	        if k2 == "animation" then
 	        	local data = Split(v2, "+")
-	        	local act = _G[data[1]]
+	        	local act = data[1]
 	        	local translate = data[2]
 	        	print(act, data[1], translate)
-	        	-- EndAnimation(building)
-	        	StartAnimation(building, {duration=-1, activity=act, rate=1, translate = tranlate})
+	        	--EndAnimation(building)
+	        	--StartAnimation(building, {duration=999999, activity=act, rate=1, translate = tranlate})
 	        end
 	    end
 

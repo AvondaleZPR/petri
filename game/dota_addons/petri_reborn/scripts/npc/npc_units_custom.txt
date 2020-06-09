@@ -464,7 +464,7 @@
 	
 	  "BountyGoldMin"       "1.0"
 	  "BountyGoldMax"       "1.0"
-	  "BountyXP"          "1"  
+	  "BountyXP"          "1"    
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"        "50"
@@ -569,9 +569,9 @@
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "10.0"
-	  "BountyGoldMax"       "10.0"
-	  "BountyXP"          "6"  
+	  "BountyGoldMin"       "14.0"
+	  "BountyGoldMax"       "15.0"
+	  "BountyXP"          "15"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"        "50"
@@ -620,9 +620,9 @@
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "4.0"
-	  "BountyGoldMax"       "6.0"
-	  "BountyXP"          "10"  
+	  "BountyGoldMin"       "14.0"
+	  "BountyGoldMax"       "15.0"
+	  "BountyXP"          "15"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"        "50"
@@ -951,9 +951,9 @@
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "41.0"
-	  "BountyGoldMax"       "43.0"
-	  "BountyXP"          "70"  
+	  "BountyGoldMin"       "43.0"
+	  "BountyGoldMax"       "47.0"
+	  "BountyXP"          "105"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"        "50"
@@ -1164,9 +1164,9 @@
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "320.0"
-	  "BountyGoldMax"       "320.0"
-	  "BountyXP"          "3000"  
+  "BountyGoldMin"       "320.0"
+  "BountyGoldMax"       "320.0"
+  "BountyXP"          "3000"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"        "50"
@@ -1386,9 +1386,9 @@
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "18.0"
-	  "BountyGoldMax"       "20.0"
-	  "BountyXP"          "22"  
+	  "BountyGoldMin"       "25.0"
+	  "BountyGoldMax"       "27.0"
+	  "BountyXP"          "75"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"        "50"
@@ -1560,9 +1560,9 @@
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "41.0"
-	  "BountyGoldMax"       "43.0"
-	  "BountyXP"          "70"  
+	  "BountyGoldMin"       "750.0"
+	  "BountyGoldMax"       "750.0"
+	  "BountyXP"          "20000"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"        "50"
@@ -1680,9 +1680,9 @@
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "41.0"
-	  "BountyGoldMax"       "43.0"
-	  "BountyXP"          "70"  
+	  "BountyGoldMin"       "59.0"
+	  "BountyGoldMax"       "71.0"
+	  "BountyXP"          "105"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"        "50"
@@ -2082,9 +2082,9 @@
 	  "AttackAcquisitionRange"  "800"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "13.0"
-	  "BountyGoldMax"       "17.0"
-	  "BountyXP"          "18"  
+		"BountyGoldMin"       "13.0"
+		"BountyGoldMax"       "17.0"
+		"BountyXP"          "18"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"        "50"
@@ -2142,9 +2142,9 @@
 	  "AttackAcquisitionRange"  "800"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "21.0"
-	  "BountyGoldMax"       "24.0"
-	  "BountyXP"          "27"  
+  "BountyGoldMin"       "21.0"
+  "BountyGoldMax"       "24.0"
+  "BountyXP"          "27"   
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"        "50"
@@ -2206,8 +2206,8 @@
 		"AttackRange"       "90"
 	
 		"BountyGoldMin"       "83.0"
-		"BountyGoldMax"       "101.0"
-		"BountyXP"          "200"  
+	"BountyGoldMax"       "101.0"
+	"BountyXP"          "175"   
 	
 		"BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 		"RingRadius"        "50"
@@ -2265,9 +2265,9 @@
 	  "AttackAcquisitionRange"  "800"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "119.0"
-	  "BountyGoldMax"       "153.0"
-	  "BountyXP"          "300"  
+  "BountyGoldMin"       "119.0"
+  "BountyGoldMax"       "153.0"
+  "BountyXP"          "175"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"        "50"
@@ -2326,9 +2326,9 @@
 	  "AttackAcquisitionRange"  "800"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "750.0"
-	  "BountyGoldMax"       "750.0"
-	  "BountyXP"          "14"  
+  "BountyGoldMin"       "750.0"
+  "BountyGoldMax"       "750.0"
+  "BountyXP"          "6000"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"        "50"
@@ -2387,9 +2387,9 @@
 	  "AttackAcquisitionRange"  "800"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "1250.0"
-	  "BountyGoldMax"       "1250.0"
-	  "BountyXP"          "14"  
+  "BountyGoldMin"       "1250.0"
+  "BountyGoldMax"       "1250.0"
+  "BountyXP"          "20000"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"        "50"
@@ -2448,9 +2448,9 @@
 	  "AttackAcquisitionRange"  "800"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "1250.0"
-	  "BountyGoldMax"       "1250.0"
-	  "BountyXP"          "5000"  
+  "BountyGoldMin"       "1500.0"
+  "BountyGoldMax"       "1500.0"
+  "BountyXP"          "50000"   
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"        "50"
@@ -3719,8 +3719,9 @@
 	  "Ability2"          ""
 	  "Ability3"          ""
 	  "Ability4"          ""
-	  "Ability5"          "petri_building"
-	  "Ability6"          "building_queue"
+	  "Ability5"		  ""
+	  "Ability6"          "petri_building"
+	  "Ability7"          "building_queue"
 	
 	  "ArmorPhysical"       "0"
 	  "MagicalResistance"     "0"
@@ -4224,7 +4225,7 @@
 	"npc_petri_boss_zadornov"
 	{
 	  "BaseClass"     "npc_dota_creature"
-	  "Model"      "models/heroes/lich/lich.vmdl"
+	  "Model"      "models/heroes/gyro/gyro.vmdl"
 	  "ModelScale"    "1.3"
 	  "Level"      "1"
 	  "HealthBarOffset"    "240"
@@ -4291,6 +4292,7 @@
 	  "HealthBarOffset"     "160"
 	
 	  "Ability1"     "memorial1"
+	  "Ability2"	 "memorial2"
 	
 	  "ArmorPhysical"       "4258"
 	  "MagicalResistance"     "0" 
@@ -4650,8 +4652,8 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"101"		// Speed.			
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.			
 
 		// Status
 		//----------------------------------------------------------------
@@ -4671,5 +4673,289 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+	
+	"npc_petri_creep_small_kvn"
+	{
+	  "BaseClass"         "npc_dota_creature"
+	  "Model"           "models/heroes/rattletrap/rattletrap.vmdl"
+	  "ModelScale"        "0.5"
+	  "Level"           "1"
+	  "HealthBarOffset"     "140"
+	  "GameSoundsFile"      "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+	
+	  "vscripts"     "units/creep.lua"
+	
+	  "ArmorPhysical"       "0"
+	  "MagicalResistance"     "0"
+	
+	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+	  "AttackDamageMin"     "2.0"
+	  "AttackDamageMax"     "3.0"
+	  "AttackRate"        "3.0"
+	  "AttackAnimationPoint"    "0.53"
+	  "AttackAcquisitionRange"  "900"
+	  "AttackRange"       "150"
+	
+	  "BountyGoldMin"       "1.0"
+	  "BountyGoldMax"       "1.0"
+	  "BountyXP"          "1"  
+	
+	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
+	  "RingRadius"        "50"
+	  
+	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+	  "MovementSpeed"       "270"
+	  "MovementTurnRate"      "0.5"
+	
+	  "StatusHealth"        "2"
+	  "StatusHealthRegen"     "0"
+	  "StatusMana"        "0"
+	  "StatusManaRegen"     "0"
+	
+	  "VisionDaytimeRange"    "800"
+	  "VisionNighttimeRange"    "800"
+	
+	  "TeamName"          "DOTA_TEAM_NEUTRALS"
+	  "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	  "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	  "UnitRelationShipClass"   "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	  
+	  "UseNeutralCreepBehavior" "1"
+	}
+	
+	"npc_petri_creep_big_kvn"
+	{
+	  "BaseClass"         "npc_dota_creature"
+	  "Model"           "models/heroes/rattletrap/rattletrap.vmdl"
+	  "ModelScale"        "1.5"
+	  "Level"           "10"
+	  "HealthBarOffset"     "140"
+	  "GameSoundsFile"      "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+	
+	  "vscripts"     "units/creep.lua"
+	
+	  "ArmorPhysical"       "0"
+	  "MagicalResistance"     "0"
+	
+	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+	  "AttackDamageMin"     "4.0"
+	  "AttackDamageMax"     "6.0"
+	  "AttackRate"        "3.0"
+	  "AttackAnimationPoint"    "0.53"
+	  "AttackAcquisitionRange"  "900"
+	  "AttackRange"       "150"
+	
+	  "BountyGoldMin"       "10.0"
+	  "BountyGoldMax"       "12.0"
+	  "BountyXP"          "10"  
+	
+	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
+	  "RingRadius"        "50"
+	  
+	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+	  "MovementSpeed"       "270"
+	  "MovementTurnRate"      "0.5"
+	
+	  "StatusHealth"        "100"
+	  "StatusHealthRegen"     "0"
+	  "StatusMana"        "0"
+	  "StatusManaRegen"     "0"
+	
+	  "VisionDaytimeRange"    "800"
+	  "VisionNighttimeRange"    "800"
+	
+	  "TeamName"          "DOTA_TEAM_NEUTRALS"
+	  "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	  "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	  "UnitRelationShipClass"   "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	  
+	  "UseNeutralCreepBehavior" "1"
+	}
+	
+	"npc_petri_creep_boss_kvn"
+	{
+	  "BaseClass"         "npc_dota_creature"
+	  "Model"           "models/heroes/rattletrap/rattletrap.vmdl"
+	  "ModelScale"        "3.0"
+	  "Level"           "10"
+	  "HealthBarOffset"     "228"
+	  "GameSoundsFile"      "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+	
+	  "ArmorPhysical"       "100"
+	  "MagicalResistance"     "25"
+	
+	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+	  "AttackDamageMin"     "3000.0"
+	  "AttackDamageMax"     "6000.0"
+	  "AttackRate"        "2.0"
+	  "AttackAnimationPoint"    "0.53"
+	  "AttackAcquisitionRange"  "900"
+	  "AttackRange"       "150"
+	
+	  "BountyGoldMin"       "20000.0"
+	  "BountyGoldMax"       "20000.0"
+	  "BountyXP"            "1000"  
+	
+	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
+	  "RingRadius"        "50"
+	  
+	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+	  "MovementSpeed"       "270"
+	  "MovementTurnRate"      "0.5"
+	
+	  "StatusHealth"        "1000000"
+	  "StatusHealthRegen"     "10"
+	  "StatusMana"        "0"
+	  "StatusManaRegen"     "0"
+	
+	  "VisionDaytimeRange"    "800"
+	  "VisionNighttimeRange"    "800"
+	
+	  "TeamName"          "DOTA_TEAM_NEUTRALS"
+	  "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	  "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	  "UnitRelationShipClass"   "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+	
+	"npc_petri_creep_wall"
+	{
+	  "BaseClass"         "npc_dota_creature"
+	  "Model"           "models/heroes/brewmaster/brewmaster_earthspirit.vmdl"  
+	  "ModelScale"                "0.95"
+	  "SoundSet"          "Brewmaster_Earth"  
+	  "Level"           "1"
+	  "HealthBarOffset"    "301"
+	
+	  "ArmorPhysical"       "0"
+	  "MagicalResistance"     "0"
+	
+	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+	  "AttackDamageMin"     "20.0"
+	  "AttackDamageMax"     "20.0"
+	  "AttackRate"        "3.0"
+	  "AttackAnimationPoint"    "0.53"
+	  "AttackAcquisitionRange"  "900"
+	  "AttackRange"       "150"
+	
+	  "BountyGoldMin"       "100.0"
+	  "BountyGoldMax"       "100.0"
+	  "BountyXP"          "40"  
+	
+	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
+	  "RingRadius"        "50"
+	  
+	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE"
+	  "MovementSpeed"       "0"
+	  "MovementTurnRate"      "0.5"
+	
+	  "StatusHealth"        "2000"
+	  "StatusHealthRegen"     "1"
+	  "StatusMana"        "0"
+	  "StatusManaRegen"     "0"
+	
+	  "VisionDaytimeRange"    "800"
+	  "VisionNighttimeRange"    "800"
+	
+	  "TeamName"          "DOTA_TEAM_NEUTRALS"
+	  "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	  "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	  "UnitRelationShipClass"   "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+	
+	"npc_petri_creep_wall2"
+	{
+	  "BaseClass"         "npc_dota_creature"
+	  "Model"           "models/heroes/brewmaster/brewmaster_earthspirit.vmdl"  
+	  "ModelScale"                "1.15"
+	  "SoundSet"          "Brewmaster_Earth"  
+	  "Level"           "1"
+	  "HealthBarOffset"    "301"
+	
+	  "ArmorPhysical"       "0"
+	  "MagicalResistance"     "0"
+	
+	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+	  "AttackDamageMin"     "500.0"
+	  "AttackDamageMax"     "550.0"
+	  "AttackRate"        "3.0"
+	  "AttackAnimationPoint"    "0.53"
+	  "AttackAcquisitionRange"  "900"
+	  "AttackRange"       "150"
+	
+	  "BountyGoldMin"       "1000.0"
+	  "BountyGoldMax"       "1000.0"
+	  "BountyXP"            "100"  
+	
+	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
+	  "RingRadius"        "50"
+	  
+	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE"
+	  "MovementSpeed"       "0"
+	  "MovementTurnRate"      "0.5"
+	
+	  "StatusHealth"        "20000"
+	  "StatusHealthRegen"     "40"
+	  "StatusMana"        "0"
+	  "StatusManaRegen"     "0"
+	
+	  "VisionDaytimeRange"    "800"
+	  "VisionNighttimeRange"    "800"
+	
+	  "TeamName"          "DOTA_TEAM_NEUTRALS"
+	  "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	  "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	  "UnitRelationShipClass"   "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+	
+	"random_map_thing"
+	{
+	  "BaseClass"         "npc_dota_building"
+	  "Model"           "models/heroes/brewmaster/brewmaster_earthspirit.vmdl"  
+	  "ModelScale"                "1.15"
+	  "SoundSet"          "Brewmaster_Earth"  
+	  "Level"           "1"
+	  "HealthBarOffset"    "301"
+	
+	  "ArmorPhysical"       "0"
+	  "MagicalResistance"     "0"
+	
+	  "AttackCapabilities"    "DOTA_UNIT_CAP_NO_ATTACK"
+	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+	  "AttackDamageMin"     "0.0"
+	  "AttackDamageMax"     "0.0"
+	  "AttackRate"        "3.0"
+	  "AttackAnimationPoint"    "0.53"
+	  "AttackAcquisitionRange"  "900"
+	  "AttackRange"       "150"
+	
+	  "BountyGoldMin"       "0.0"
+	  "BountyGoldMax"       "0.0"
+	  "BountyXP"            "0"  
+	
+	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
+	  "RingRadius"        "0"
+	  
+	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE"
+	  "MovementSpeed"       "0"
+	  "MovementTurnRate"      "0.5"
+	
+	  "StatusHealth"        "1337"
+	  "StatusHealthRegen"     "1337"
+	  "StatusMana"        "0"
+	  "StatusManaRegen"     "0"
+	
+	  "VisionDaytimeRange"    "800"
+	  "VisionNighttimeRange"    "800"
+	
+	  "TeamName"          "DOTA_TEAM_NEUTRALS"
+	  "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	  "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	  "UnitRelationShipClass"   "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	}
 }

@@ -1080,7 +1080,7 @@
 	  "AbilityChannelTime"      "4.5"
 	  "AbilityUpgradeGoldCost"    "0"
 	
-	  "AbilityGoldCost" "%750"
+	  "AbilityGoldCost" "%200"
 	
 	  "precache"
 	  {
@@ -1395,7 +1395,7 @@
 	    "03"
 	    {
 	      "var_type"          "FIELD_INTEGER"
-	      "regeneration"        "2 3 7 20 30 40 50 90 80 120 100 400 400"
+	      "regeneration"        "2 3 7 20 30 40 50 90 80 120 150 400 600"
 	    }
 	    "04"
 	    {
@@ -2764,9 +2764,8 @@
 	
 	      "States"
 	      {
-	        "MODIFIER_STATE_TRUESIGHT_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
-	        "MODIFIER_STATE_INVISIBLE"  "MODIFIER_STATE_VALUE_ENABLED"
 	        "MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+			"MODIFIER_STATE_INVULNERABLE"      "MODIFIER_STATE_VALUE_ENABLED"
 	      }
 	
 	      "Properties"
@@ -6210,6 +6209,29 @@
 	    }
 	  }
 	}
+	"petri_kill_workers"
+	{
+	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	  "BaseClass"           "ability_datadriven"
+	  "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"	   
+	  "AbilityTextureName"      "techies_suicide"
+	
+	  "AbilityCastAnimation"      "ACT_DOTA_DISABLED"
+	
+	  "AbilityCastPoint"        "0.0"
+	  "AbilityGoldCost"       "%0"
+	
+	  "MaxLevel"            "1"
+
+	  "OnSpellStart"
+	  {
+	    "RunScript"
+	    {
+	      "ScriptFile"      "units/sawmill.lua"
+	      "Function"        "KillWorkers"
+	    }
+	  }
+	}	
 	"petri_upgrade_tent"
 	{
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -6672,7 +6694,7 @@
 	 //4.0 6.0 7.0 8.5 10.0 15.0 20.0 30.0 50.0 80.0 95.0 170.0 170.0 170.0 170.0 1.70
 	
 	  "AbilityChannelTime"      "4.0 6.0 7.0 8.5 10.0 15.0 20.0 30.0 50.0 80.0 95.0 170.0 170.0 170.0 170.0 1.70"
-	  "AbilityGoldCost"       "%0 %5 %50 %80 %100 %350 %600 %900 %1500 %1980 %3870 %6120 %11250 %16380 %20250 %23130"
+	  "AbilityGoldCost"       "%0 %5 %50 %80 %100 %350 %600 %900 %1500 %1980 %3870 %6120 %11250 %16380 %20250 %26130"
 	
 	  "precache"
 	  {
@@ -7211,6 +7233,12 @@
 	  "AbilityTextureName"      "custom/memorial1"
 	  "MaxLevel"            "1"
 	}
+	"memorial2"
+	{
+	  "BaseClass"                 "ability_datadriven"
+	  "AbilityTextureName"      "custom/memorial2"
+	  "MaxLevel"            "1"
+	}	
 	"build_petri_bus_1"
 	{
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -7616,7 +7644,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"50"
+			"damage"					"100"
 		}
 		"04"
 		{
@@ -7728,6 +7756,13 @@
 	  "BaseClass"           "ability_datadriven"
 	  "AbilityTextureName"            "class/petri_class_lumberjack"
 	}
+	"petri_class_casino"
+	{
+	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	  "MaxLevel"            "1"
+	  "BaseClass"           "ability_datadriven"
+	  "AbilityTextureName"            "class/petri_class_casino"
+	}	
 	"petri_class_scout"
     {
 	// General
@@ -7898,7 +7933,7 @@
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"class/petri_class_evil"
 	"AOERadius"						"%small_radius"
 	"MaxLevel"                      "1"
@@ -8042,7 +8077,7 @@
 						"Radius" 	"%small_radius"
 						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
-						"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+						"Flags"     "DOTA_UNIT_TARGET_FLAG_NONE"
 					}
 				
 					"Action"    
@@ -8053,7 +8088,7 @@
 							"Target"
 							{
 								"Center"	"TARGET"
-								"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+								"Flags"     "DOTA_UNIT_TARGET_FLAG_NONE"
 							}
 					        "Duration"		"%slow_duration"
 				        }
@@ -8079,7 +8114,7 @@
 						"Radius" 	"%big_radius"
 						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
-						"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+						"Flags"     "DOTA_UNIT_TARGET_FLAG_NONE"
 					}
 				
 					"Action"    
@@ -8090,7 +8125,7 @@
 							"Target"
 							{
 								"Center"	"TARGET"
-								"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+								"Flags"     "DOTA_UNIT_TARGET_FLAG_NONE"
 							}
 					        "Duration"		"%slow_duration"
 				        }
@@ -8110,7 +8145,7 @@
 
 				"RunScript"
 				{
-					"ScriptFile"	"heroes/hero_techies/land_mines.lua"
+					"ScriptFile"	"classes.lua"
 					"Function"		"LandMinesDeath"
 					"modifier_caster"	"modifier_land_mine_caster_datadriven"
 				}
@@ -8177,10 +8212,14 @@
 		
 		"modifier_evil_slow"
 		{
+			"IsDebuff" "1"
+			
 		    "Duration"  "%slow_duration"
 			"Properties"
 			{
 			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_percent"
+				"MODIFIER_PROPERTY_MOVESPEED_MAX" "500"
+				"MODIFIER_PROPERTY_MOVESPEED_LIMIT" "500"
 			}
 		}
 	}
@@ -8228,7 +8267,9 @@
 		    "IsHidden" "1"
 			"States"
 			{
-			    "MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+			    "MODIFIER_STATE_NO_UNIT_COLLISION"                "MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY" "MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_STUNNED"                          "MODIFIER_STATE_VALUE_ENABLED" 
 			}
 		}
 		"modifier_kosh"
@@ -8236,6 +8277,15 @@
 			"States"
 			{
 			    "MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		"modifier_kosh_slow"
+		{
+		    "Duration" "1"
+			"value" "10"  
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%value"
 			}
 		}
 	}
@@ -8460,6 +8510,230 @@
 			        "Function"		"HomeComing"
 		        }
 			}
+		}
+	}
+	}
+	"petri_class_hunter"
+	{
+	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	  "MaxLevel"            "1"
+	  "BaseClass"           "ability_datadriven"
+	  "AbilityTextureName"            "class/petri_class_hunter"
+	}
+	"petri_class_nocourier"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL | DOTA_UNIT_TARGET_COURIER"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"class/petri_class_nocourier"
+	"MaxLevel"						"1"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1500"
+	"AbilityCastPoint"				"0.1"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"60.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"		
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"kill_chance"					"10"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"gold"							"500"
+		}		
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{ 
+			"ScriptFile"	"classes.lua"
+			"Function"		"NoCourier"
+			"Target"		"TARGET"
+		}	
+	}
+    }	
+	// Rewrite of the Mirana Sacred Arrow ability
+	// Author: Pizzalol
+	// Date: 26.09.2015.
+	"petri_class_arrow"
+	{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"class/petri_class_arrow"
+	"MaxLevel"						"1"	
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+		"particle"			"particles/units/heroes/hero_mirana/mirana_spell_arrow.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"2000"
+	"AbilityCastPoint"				"1.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"120.0"
+	"AbilityDuration"				"3.11"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"10"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"3"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"arrow_speed"		"725.0"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"arrow_width"		"125"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"arrow_range"		"2000"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"arrow_max_stunrange"	"2000"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"arrow_min_stun"	"1.0"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"arrow_max_stun"	"3.0"
+		}
+		"07"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"arrow_bonus_damage"	"10"
+		}
+		"08"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"arrow_vision"	"1500"
+		}
+		"09"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"arrow_max_damagerange"	"1500"
+		}
+		"10"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"vision_duration"	"3.0"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"			"Hero_Mirana.ArrowCast"
+			"Target"				"CASTER"
+		}
+
+		"LinearProjectile"
+		{
+			"Target"      	"POINT"
+		    "EffectName"  	"particles/units/heroes/hero_mirana/mirana_spell_arrow.vpcf"
+		    "MoveSpeed"   	"%arrow_speed"
+		    "StartRadius"   "%arrow_width"
+		    "StartPosition" "attach_origin"
+		    "EndRadius"     "%arrow_width"
+		    "FixedDistance" "%arrow_range"
+		    "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		    "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		    "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+		    "HasFrontalCone"    "0"
+		    "ProvidesVision"	"1"
+		    "VisionRadius"	"%arrow_vision"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"			"classes.lua"
+			"Function"				"LaunchArrow"
+			"Target"				"POINT"
+		}		
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"FireSound"
+		{
+			"EffectName"			"Hero_Mirana.ArrowImpact"
+			"Target"
+			{
+				"Center"			"TARGET"
+				"Flags"     		"DOTA_UNIT_TARGET_FLAG_DEAD"
+			}
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"			"classes.lua"
+			"Function"				"ArrowHit"
+			"Target"				"TARGET"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"classes.lua"
+			"Function"		"ArrowVision"
+		}
+	}
+
+	"OnProjectileFinish"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"classes.lua"
+			"Function"		"ArrowVision"
 		}
 	}
 	}

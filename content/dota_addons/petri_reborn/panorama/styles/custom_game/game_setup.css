@@ -233,6 +233,11 @@ DOTAAvatarImage
 	background-image: url( "file://{images}/custom_game/loading_screen/status/run.png");
 }
 
+.patreon #PlayerStatusPanel
+{
+	background-image: url( "file://{images}/custom_game/loading_screen/status/patreon.png");
+}
+
 .TeamSelectPlayer.player_has_host_privileges #PlayerIsHostPanel
 {
     visibility: visible;
@@ -549,4 +554,146 @@ DOTAAvatarImage
 .ply_green
 {
 	color: green;
+}
+
+#PlayerStatsDisplay
+{
+	margin-top: 135px;
+	margin-left: 55px;
+	
+	flow-children: down;
+	
+	background-color: #0F0F0FF2;
+	width: 600px;
+	height: 120px;
+}
+
+#PlayerStatsTop
+{
+	width: 100%;
+	height: 60%;
+}
+
+#PlayerStatsMain
+{
+	width: 100%;
+	height: 30%;
+	flow-children: right;
+}
+
+#PlayerStatsBottom
+{
+	width: 100%;
+	height: 12%;
+}
+
+#PetriStats
+{
+	width: 50%;
+	height: 100%;
+	flow-children: right;
+}
+
+#KvnStats
+{
+	width: 50%;
+	height: 100%;
+	flow-children: right;
+}
+
+.TeamStatsImg
+{
+	width: 50px;
+	height: 25px;
+}
+
+.TeamStatsLabel
+{
+	color: white;
+	font-size: 25px;
+	margin-left: 5px;
+	margin-right: 5px;
+	horizontal-align: right;
+}
+
+#statAvatar
+{
+
+}
+
+#statRang
+{
+	margin-left: 90px;
+}
+
+#statRating
+{
+	margin-right: 30px;
+}
+
+.avarang
+{
+	align: left top;
+	width: 80px;
+    height: 110px;
+
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#statName
+{
+	align: center top;
+	margin-left: 0px;
+	color: white;
+	font-size: 40px;
+}
+
+#statId
+{
+	color: white;
+	font-size: 12px;
+	align: right top;
+}
+
+.statText
+{
+	text-shadow: 2px 2px 8px 3.0 #333333b0; 
+    text-overflow: clip;
+    box-shadow: #00000000 -1px -1px 8px 0.3;
+    font-weight: bold;
+	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+}
+
+#statRating
+{
+	align: left bottom;
+	color: white;
+	font-size: 20px;
+	margin-left: 50px;
+}
+
+#statKills
+{
+	align: center bottom;
+	color: red;
+	font-size: 20px;
+}
+
+#statGold
+{
+	align: right bottom;
+	color: yellow;
+	font-size: 20px;
+}
+
+.hidden
+{
+	visibility: collapse;
+}
+
+#PlayerRang
+{
+	width: 7%;
+	height: 100%;
 }

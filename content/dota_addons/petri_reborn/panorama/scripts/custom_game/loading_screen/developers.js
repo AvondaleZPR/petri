@@ -113,6 +113,13 @@ function OnTopGold(event_data)
 	$("#TopPlayerGold").SetHasClass( "hidden", false );
 }
 
+function OnTopLvl(event_data)
+{
+	$("#top_AvatarLvl").steamid = event_data.sid;
+	$("#top_Lvl").text = parseInt(event_data.stat/1000);
+	$("#TopPlayerLvl").SetHasClass( "hidden", false );
+}
+
 (function () {
 	//$.RegisterForUnhandledEvent( "DOTAShowProfileCardTooltip", ShowProfile);
 	//FillDevelopers();
@@ -125,14 +132,31 @@ function OnTopGold(event_data)
 	$("#TopPlayerRating").SetHasClass( "hidden", true );
 	$("#TopPlayerGold").SetHasClass( "hidden", true );
 	$("#TopPlayerKills").SetHasClass( "hidden", true );
+	$("#TopPlayerLvl").SetHasClass( "hidden", true );
 	
 	GameEvents.Subscribe( "set_top_rating", OnTopRating);
 	GameEvents.Subscribe( "set_top_kills", OnTopKills);
 	GameEvents.Subscribe( "set_top_totalgold", OnTopGold);
+	GameEvents.Subscribe( "set_top_lvl", OnTopLvl);
+	
+	PrepareMapLogo()
 })(); 
 
 function SwitchUpdateText() {
 	$("#LUText").ToggleClass("Hide")
 	$("#UpdateBtnImg1").ToggleClass("Hide")
 	$("#UpdateBtnImg2").ToggleClass("Hide")
+}
+
+function PrepareMapLogo(){
+	if (Game.GetMapInfo().map_display_name == "")
+  		$.Schedule(0.1, PrepareMapLogo);
+  	else
+  		LoadMapLogo()
+}
+
+function LoadMapLogo() {
+	var panel = $("#MapLogo")
+	var icon = $.CreatePanel("Image", panel, "Image");
+	icon.SetImage("file://{images}/custom_game/loading_screen/map/" + Game.GetMapInfo().map_display_name + ".png");
 }

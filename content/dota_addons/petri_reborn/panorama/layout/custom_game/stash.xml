@@ -26,6 +26,8 @@
 			}
 		}
 			
+		parent.FindChildTraverse("AghsStatusContainer").visible = false;
+			
 	    var radar = parent.FindChildTraverse("RadarButton");
 	    radar.FindChildTraverse("RadarIcon").style.backgroundImage = "url(\"s2r://panorama/images/hud/reborn/icon_scan_on_psd.vtex\");";
 	    radar.FindChildTraverse("CooldownCover").visible = false;
@@ -130,6 +132,7 @@
 	    	(function () {
 		    	var panel = GameUI.CustomUIConfig().abilities.Children()[p];
 
+				/*
 		    	var image = panel.FindChildTraverse("AbilityButton");
 				image.SetPanelEvent("onmouseover", function () {
 					if (image.subPanel) {
@@ -143,6 +146,7 @@
 						image.subPanel.AbilityHideTooltip();
 					}
 				})
+				*/
 
 		    	var goldCost = panel.FindChildTraverse("GoldCost")
 		    	goldCost.style.fontSize = "9px;";

@@ -8,6 +8,8 @@ function GameMode:FilterExecuteOrder( filterTable )
     local order_type = filterTable["order_type"]
     local issuer = filterTable["issuer_player_id_const"]
 
+	--print(order_type)
+	
     local abilityIndex = filterTable["entindex_ability"]
     local targetIndex = filterTable["entindex_target"]
     local x = tonumber(filterTable["position_x"])
@@ -327,6 +329,15 @@ function GameMode:FilterExecuteOrder( filterTable )
 			    return false
 			end
 		end
+		end
+	end
+	
+	if order_type == DOTA_UNIT_ORDER_MOVE_TO_POSITION or order_type == DOTA_UNIT_ORDER_ATTACK_MOVE or order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET 
+	or order_type == DOTA_UNIT_ORDER_MOVE_TO_DIRECTION or order_type == DOTA_UNIT_ORDER_VECTOR_TARGET_POSITION 
+	or order_type == DOTA_UNIT_ORDER_ATTACK_TARGET or order_type == DOTA_UNIT_ORDER_PATROL then
+		for _,u in pairs(filterTable["units"]) do
+			local unit = EntIndexToHScript(u)		
+			if unit and not unit:IsIllusion() and string.match(unit:GetUnitName(), "wall") or unit:HasModifier("modifier_wall_notification") or unit:HasModifier("petri_building") then return false end
 		end
 	end
 	

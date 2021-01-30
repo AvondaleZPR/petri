@@ -7,6 +7,8 @@ function Classes:init()
 	CustomGameEventManager:RegisterListener( "petri_player_pick_class", PickClass )
 	CustomGameEventManager:RegisterListener( "petri_player_ban_class", BanClass )
 	
+	Classes.randomClassBanned = false
+	
 	Classes.random = {}
 	Classes.banned = {}
 end
@@ -25,6 +27,7 @@ function Classes:RandomClassTimer()
 end
 
 function Classes:IsBanned(name)
+--[[
 	for i = 0, 20 do
 		if PlayerResource:IsValidPlayer(i) then
 			local player = PlayerResource:GetPlayer(i) 
@@ -36,6 +39,11 @@ function Classes:IsBanned(name)
 			end
 		end
 	end
+	]]
+	print("check is banned "..name)
+	
+	if Classes.banned[name] == true then return true end
+	
 	return false
 end
 
@@ -78,14 +86,36 @@ function Classes:LoadAndSend()
 		
 		Classes.random[data.id] = data.ability
 		
-        if Classes:IsBanned(data.name) == true then
+        if Classes:IsBanned(data.ability) == true then
+			print("banned")
 			data.banned = 1
-		    data.classname = "#"..data.name
+		    data.classname = data.name
 		end
 		
 		CustomGameEventManager:Send_ServerToAllClients( "petri_send_class", data )
 	end
 	CustomGameEventManager:Send_ServerToAllClients( "petri_set_classes", nil )
+	
+	if Classes.randomClassBanned == false then
+		Classes.randomClassBanned = true
+			
+		for i = 1, (3 - PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS)) do
+			BanRandomClass()
+		end
+		
+		Classes:LoadAndSend()
+	end
+end
+
+function BanRandomClass()
+	local name = tostring(Classes.random[math.random(1, #Classes.random)])
+	
+	if Classes:IsBanned(name) == true then
+	    BanRandomClass()
+	else
+		print("CLASS BANNED "..name)
+		Classes.banned[name] = true
+	end
 end
 
 function PickClass(event, args)
@@ -96,7 +126,7 @@ function PickClass(event, args)
 		
 		if hero:GetTeam() == DOTA_TEAM_BADGUYS then
 		    errMsgToPlayer(player, "#classes_wrong_team")
-		elseif hero.PetriClass ~= nil then
+		elseif hero.PetriClass ~= nil or Classes:IsBanned(args["ability"]) == true then
 		    errMsgToPlayer(player, "#classes_picked")
 		elseif GameRules:GetDOTATime(false, false) > 240 or GameRules:GetDOTATime(false, false) < 60 then
 		    errMsgToPlayer(player, "#classes_time_over")
@@ -124,6 +154,7 @@ function BanClass(event, args)
 		else
 		    hero.PetriBan = args["ability"]
 			CustomGameEventManager:Send_ServerToAllClients( "petri_block_class", args )
+			Classes.banned[args["ability"]] = true
 		end
 	end
 end
@@ -453,4 +484,140 @@ function ArrowVision( keys )
 
 	-- Create the vision point
 	AddFOWViewer(caster:GetTeamNumber(), vision_location, ability.arrow_vision_radius, ability.arrow_vision_duration, false)
+end
+
+function Illusion(keys)
+	local caster = keys.caster
+	local target = keys.target
+	local playerID = caster:GetPlayerOwnerID()
+	local unit_name = target:GetUnitName()
+	
+	local ability = keys.ability
+	local duration = ability:GetLevelSpecialValueFor( "duration", ability:GetLevel() - 1 )
+	
+	local origin = caster:GetAbsOrigin() + RandomVector(math.random(0,200))
+	local outgoingDamage = 0
+	local incomingDamage = 1000
+	
+	local illusion = CreateUnitByName(unit_name, origin, true, caster, nil, caster:GetTeamNumber())
+	illusion:SetControllableByPlayer(playerID, true)
+	
+	local model = target:GetModelName()
+	illusion:SetModel(model)
+	illusion:SetOriginalModel(model)
+	illusion:SetModelScale(target:GetModelScale())
+	
+	if target:IsRealHero() then
+		illusion:SetPlayerID(playerID)
+	end
+	
+	if target:HasInventory() then
+		for itemSlot=0,8 do
+			local item = target:GetItemInSlot(itemSlot)
+			if item ~= nil then
+				local itemName = item:GetName()
+				local newItem = CreateItem(itemName, illusion, illusion)
+				illusion:AddItem(newItem)
+			end
+		end
+	end	
+	
+	ability:ApplyDataDrivenModifier(caster, illusion, "modifier_petri_illusion", {})
+	illusion:AddNewModifier(caster, ability, "modifier_illusion", { duration = duration, outgoing_damage = outgoingDamage, incoming_damage = incomingDamage })
+	illusion:MakeIllusion()
+	
+	illusion:SetMoveCapability(DOTA_UNIT_CAP_MOVE_GROUND)
+	--illusion:SetBaseMoveSpeed(350)
+	
+	if target:IsRealHero() then
+		GameMode:SetupCustomSkin(illusion, PlayerResource:GetSteamAccountID(target:GetPlayerOwnerID()), target.key)
+	elseif target:HasAbility("petri_building") then
+		local lvl = target:GetModifierStackCount("modifier_upgrade", target)
+		if lvl < 1 then lvl = 1 end
+		SetCustomBuildingModel(illusion, PlayerResource:GetSteamAccountID(target:GetPlayerOwnerID()), lvl)
+	elseif target:GetTeam() == DOTA_TEAM_GOODGUYS then
+		SetCustomBuildingModel(illusion, PlayerResource:GetSteamAccountID(target:GetPlayerOwnerID()))
+	end
+end
+
+function WallUpgrade(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+	local wall_level = ability:GetLevel()
+	
+	ability:SetLevel(wall_level)
+	
+	if wallScoreArr[caster:GetPlayerOwnerID()+1][wall_level] == 0 then
+	    GameMode:addScore(caster:GetPlayerOwner():GetAssignedHero(), 9+wall_level)
+		wallScoreArr[caster:GetPlayerOwnerID()+1][wall_level] = 1
+	end
+	
+	
+	if caster:HasModifier("modifier_class_wall_buff") then 
+		--caster:RemoveModifierByName("modifier_class_wall_buff")
+		ability:ApplyDataDrivenModifier(caster, caster, "modifier_class_wall_buff", {})
+	end
+end
+
+function WallAddPSO(keys)
+	local caster = keys.caster
+	
+	--FindClearSpaceForUnit(caster, caster:GetAbsOrigin(), true)
+	if caster.blockers == nil then
+		caster.blockers = BuildingHelper:BlockGridNavSquare(2, caster:GetAbsOrigin())
+		GameMode:SaveBuildingToPSO(caster)
+		
+		caster:SetAbsOrigin(caster.WALL_PREV_POS)
+	end
+end
+function WallRemovePSO(keys)
+	local caster = keys.caster
+	
+	for k, v in pairs(caster.blockers) do
+        DoEntFireByInstanceHandle(v, "Disable", "1", 0, nil, nil)
+        DoEntFireByInstanceHandle(v, "Kill", "1", 1, nil, nil)
+    end
+	
+	caster.blockers = nil
+end
+
+function WallThink(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+	local casterCurrPos = caster:GetAbsOrigin()
+	local isWall = caster:HasModifier("modifier_class_wall_buff")
+	local isDelayed = caster:HasModifier("modifier_class_wall_delay")
+	
+	local canBeWall = true
+	local trigg = Entities:FindByNameNearest("area_trigger", caster:GetAbsOrigin(), 10000)
+	if trigg:IsTouching(caster) then 
+		if trigg.claimers and CheckAreaClaimers(caster, trigg.claimers) == false then
+			canBeWall = false
+		end
+	end
+	
+	if caster.WALL_PREV_POS ~= nil and canBeWall then
+		if caster.WALL_PREV_POS == casterCurrPos and not isWall and not isDelayed then
+			local delay = ability:GetSpecialValueFor("delay")
+		
+			ability:ApplyDataDrivenModifier(caster, caster, "modifier_class_wall_delay", {duration = delay+0.1})
+			Timers:CreateTimer(1.0, function()				
+				if caster and ability and caster:IsAlive() then 
+					local quads = BuildingHelper:ValidGridPosition(2, caster:GetAbsOrigin())
+					if caster:GetAbsOrigin() == casterCurrPos and not caster:HasModifier("modifier_class_wall_buff") and not quads[1] and not quads[2] then
+						if delay <= 0 then 
+							ability:ApplyDataDrivenModifier(caster, caster, "modifier_class_wall_buff", {})
+						end
+					else
+						caster:RemoveModifierByName("modifier_class_wall_delay")
+					end
+				end
+				
+				delay = delay - 1.0
+				if delay >= 0 then return 1.0 end
+			end)
+		end
+	end
+	
+	caster.WALL_PREV_POS = casterCurrPos
 end

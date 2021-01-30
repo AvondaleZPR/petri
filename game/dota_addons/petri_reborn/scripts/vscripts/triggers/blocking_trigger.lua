@@ -2,7 +2,7 @@ function OnStartTouch(trigger)
  	local unitName = trigger.activator:GetUnitName()
 	print("blocking trigger check")
  	print(unitName)
- 	if trigger.activator:GetTeam() == DOTA_TEAM_GOODGUYS then
+ 	if trigger.activator ~= nil and trigger.activator:GetTeam() == DOTA_TEAM_GOODGUYS then
 	    if trigger.activator.isblink ~= true then
 	    print("blocking trigger triggered")
  		if trigger.activator.spawnPosition ~= nil then
@@ -38,6 +38,11 @@ function OnStartTouch(trigger)
 				end
 			end
  		end
+		
+		if trigger.activator:IsIllusion() then 
+			trigger.activator:ForceKill(false)
 		end
- 	end
+		
+		end
+	end
 end

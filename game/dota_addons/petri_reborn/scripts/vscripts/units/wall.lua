@@ -254,3 +254,12 @@ function StartGlyphCooldown( caster, charge_replenish_time )
         end
     )
 end
+
+function created(keys)
+	if keys.caster.PETRI_WALL_FIX_MOVE == nil then
+		keys.caster.PETRI_WALL_FIX_MOVE = keys.caster:GetAbsOrigin()
+	end
+end
+function moveFix(keys)
+	keys.caster:SetAbsOrigin(keys.caster.PETRI_WALL_FIX_MOVE)
+end

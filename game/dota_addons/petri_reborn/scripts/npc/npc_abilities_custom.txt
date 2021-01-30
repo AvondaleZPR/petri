@@ -847,6 +847,7 @@
 	        "MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED" // Makes most abilities don't affect this. Use custom damage
 	        "MODIFIER_STATE_ROOTED"   "MODIFIER_STATE_VALUE_ENABLED" // Prevents moving
 	        "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED" // GridNav is blocked
+			"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY" "MODIFIER_STATE_VALUE_ENABLED"
 	      }
 	      "Properties"
 	      {
@@ -1490,6 +1491,11 @@
 	        "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" "%damage"
 	        "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"  "%attack_range_bonus"
 	      }
+		  
+		  "States"
+		  {
+			"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"	"MODIFIER_STATE_VALUE_ENABLED"
+		  }
 	    }
 	    "modifier_earth_attacked"
 	    {
@@ -2852,6 +2858,8 @@
 	        "MODIFIER_STATE_UNSELECTABLE"           "MODIFIER_STATE_VALUE_ENABLED"
 	        "MODIFIER_STATE_NO_HEALTH_BAR"            "MODIFIER_STATE_VALUE_ENABLED"
 	        "MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+			"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"	"MODIFIER_STATE_VALUE_ENABLED"
+			"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
 	      }
 	    }
 	  }  
@@ -5838,6 +5846,37 @@
 	          "Function"    "Notification"
 	        }
 	      }
+		  
+		  "OnCreated"
+		  {
+		  	"RunScript"
+	        {
+	          "ScriptFile"  "units/wall.lua"
+	          "Function"    "created"
+	        }
+		  }
+		  "OnUnitMoved"
+		  {
+	        "RunScript"
+	        {
+	          "ScriptFile"  "units/wall.lua"
+	          "Function"    "moveFix"
+	        }
+		  }
+		  
+	      "States"
+	      {
+	        "MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED" // Makes most abilities don't affect this. Use custom damage
+	        "MODIFIER_STATE_ROOTED"   "MODIFIER_STATE_VALUE_ENABLED" // Prevents moving
+	        "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED" // GridNav is blocked
+			"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY" "MODIFIER_STATE_VALUE_ENABLED"
+	      }
+	      "Properties"
+	      {
+	        "MODIFIER_PROPERTY_DISABLE_TURNING" "1"
+	        "MODIFIER_PROPERTY_IGNORE_CAST_ANGLE" "1"
+	        "MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE" "0.1"
+	      }
 	    }
 	    "modifier_armor"
 	    {
@@ -6785,6 +6824,37 @@
 	          "ScriptFile"  "units/wall.lua"
 	          "Function"    "Notification"
 	        }
+	      }
+		  
+		  "OnCreated"
+		  {
+		  	"RunScript"
+	        {
+	          "ScriptFile"  "units/wall.lua"
+	          "Function"    "created"
+	        }
+		  }
+		  "OnUnitMoved"
+		  {
+	        "RunScript"
+	        {
+	          "ScriptFile"  "units/wall.lua"
+	          "Function"    "moveFix"
+	        }
+		  }
+		  
+	      "States"
+	      {
+	        "MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED" // Makes most abilities don't affect this. Use custom damage
+	        "MODIFIER_STATE_ROOTED"   "MODIFIER_STATE_VALUE_ENABLED" // Prevents moving
+	        "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED" // GridNav is blocked
+			"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY" "MODIFIER_STATE_VALUE_ENABLED"
+	      }
+	      "Properties"
+	      {
+	        "MODIFIER_PROPERTY_DISABLE_TURNING" "1"
+	        "MODIFIER_PROPERTY_IGNORE_CAST_ANGLE" "1"
+	        "MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE" "0.1"
 	      }
 	    }
 	    "modifier_armor"
@@ -7749,6 +7819,211 @@
 		}
 	}
     }
+	
+	"petri_class_wall"
+    {
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	"AbilityTextureName"			"class/petri_class_wall"
+	"MaxLevel"                      "17"
+	
+	"AbilityCastAnimation"      "ACT_DOTA_DISABLED"
+	"AbilityCooldown"		    "0.0"
+	"AbilityChannelTime"         "4.0 6.0 7.0 8.5 10.0 15.0 20.0 30.0 50.0 80.0 95.0 170.0 170.0 170.0 170.0 1.70"
+	"AbilityGoldCost"            "%0 %5 %50 %80 %100 %350 %600 %900 %1500 %1980 %3870 %6120 %11250 %16380 %20250 %26130"
+	"AbilityManaCost"				"0"		
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+	    "01"
+	    {
+	      "var_type"            "FIELD_INTEGER"
+	      "lumber_cost"         "250 2500 4000 7500 10000 15000 25000 40000 60000 99000 135000 450000 900000 1125000 1350000 1800000"
+	    }
+	    "02"
+	    {
+	      "var_type"            "FIELD_INTEGER"
+	      "health_points"       "250 350 550 600 625 650 675 1200 1350 1500 2000 5087 22000 50000 80000 120000"
+	    }
+	    "03"
+	    {
+	      "var_type"            "FIELD_INTEGER"
+	      "hit_stacks"         "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+	    }
+	    "04"
+	    {
+	      "var_type"            "FIELD_INTEGER"
+	      "hit_stacks_regen"          "1 1 1 2 2 2 2 3 3 3 5 10 20 30 52 75"
+	    }
+	    "05"
+	    {
+	      "var_type"            "FIELD_INTEGER"
+	      "armor"               "40 70 175 250 300 350 850 900 1800 3000 7800 9000 15500 19750 22550"
+	    }
+		"06"
+		{
+			"var_type"            "FIELD_FLOAT"
+			"delay"               "5.0"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+	  "RunScript"
+	  {
+	      "ScriptFile"      "internal/util.lua"
+	      "Function"        "StartUpgrading"
+	   }
+	}
+	"OnChannelInterrupted"
+	{
+	    "RunScript"
+	    {
+	      "ScriptFile"      "internal/util.lua"
+	      "Function"        "StopUpgrading"
+	    }
+	}
+	"OnChannelSucceeded"
+	{
+	    "RunScript"
+	    {
+	      "ScriptFile"      "classes.lua"
+	      "Function"        "WallUpgrade"
+	    }
+	    "RunScript"
+	    {
+	      "ScriptFile"      "internal/util.lua"
+	      "Function"        "OnUpgradeSucceeded"
+		}
+	}
+	
+	"Modifiers"
+	{
+		
+		"modifier_class_wall"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+		
+			"ThinkInterval"		"0.5"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+				  "ScriptFile"      "classes.lua"
+				  "Function"        "WallThink"
+				}
+			}
+		}
+		
+		"modifier_class_wall_delay"
+		{
+			"Passive"	"0"
+			"IsHidden"	"0"
+		}
+		
+		"modifier_class_wall_buff"
+		{
+			"Passive"	"0"
+			"IsHidden"	"0"
+		
+			"Priority"                     "MODIFIER_PRIORITY_ULTRA"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS"	"%health_points"
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor"
+			}
+			
+			"States"
+			{
+				"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"	"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_DISARMED"							"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_MUTED"								"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_EVADE_DISABLED"						"MODIFIER_STATE_VALUE_ENABLED"
+			}
+			
+			"OnAttacked"
+			{
+				"RunScript"
+				{
+					"ScriptFile"  "units/wall.lua"
+					"Function"    "Notification"
+				}
+			}
+			
+			"OnUnitMoved"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_class_wall_buff"
+					"Target"		"CASTER"
+				}
+				
+				"FireSound"
+				{
+					"EffectName"	"Hero_Bloodseeker.Rupture"
+					"Target"		"TARGET"
+				}
+			}
+			
+			"OnCreated"
+			{
+				"RunScript"
+				{
+				  "ScriptFile"      "classes.lua"
+				  "Function"        "WallAddPSO"
+				}
+			}
+			
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+				  "ScriptFile"      "classes.lua"
+				  "Function"        "WallRemovePSO"
+				}
+			}
+		}
+		
+		"modifier_hit_stacks"
+	    {
+	      "IsPassive"  "1"
+	      "IsHidden" "0"
+	
+	      "Attributes"    "MODIFIER_ATTRIBUTE_PERMANENT"
+	
+	      "Priority"                     "MODIFIER_PRIORITY_ULTRA"
+	
+	      "Properties"
+	      {
+	        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "1"
+	      }
+	    }
+	    "modifier_hit_stacks_regen"
+	    {
+	      "IsPassive"  "1"
+	      "IsHidden" "1"
+	
+	      "Attributes"    "MODIFIER_ATTRIBUTE_PERMANENT"
+	
+	      "ThinkInterval"  "1.0"
+	      "OnIntervalThink"
+	      {
+	        "RunScript"
+	        {
+	          "ScriptFile"  "units/wall.lua"
+	          "Function"    "RegenHitStacks"
+	        }
+	      }
+	    }
+	}
+    }
+	
 	"petri_class_lumberjack"
 	{
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -8734,6 +9009,82 @@
 		{
 			"ScriptFile"	"classes.lua"
 			"Function"		"ArrowVision"
+		}
+	}
+	}
+	
+	"petri_class_illusion"
+    {
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL | DOTA_UNIT_TARGET_COURIER"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	
+	"AbilityTextureName"	"class/petri_class_illusion"
+	"MaxLevel"                      "1"
+		
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.0"
+	"AbilityCastRange"				"15000"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"30"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"1"
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"					"300"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"movespeed"					"350"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"classes.lua"
+			"Function"		"Illusion"
+			"Target"		"TARGET"
+		}
+	}
+	"Modifiers"
+    {
+	    "modifier_petri_illusion"
+		{
+		    "IsHidden" 	"1"
+			"Passive" 	"0"
+			"Priority"	"MODIFIER_PRIORITY_SUPER_ULTRA"
+			
+			"States"
+			{
+			    "MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY" "MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_UNIT_COLLISION" 				  "MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_EVADE_DISABLED" 				  "MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_BLOCK_DISABLED" 				  "MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_CANNOT_TARGET_ENEMIES" 			  "MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_DISARMED"						  "MODIFIER_STATE_VALUE_ENABLED"
+			}
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"		"350"	
+				"MODIFIER_PROPERTY_TURN_RATE_OVERRIDE"		"1"
+			}
 		}
 	}
 	}

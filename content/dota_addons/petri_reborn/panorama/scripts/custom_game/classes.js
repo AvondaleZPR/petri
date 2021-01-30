@@ -199,6 +199,8 @@ function UpdatePageNumbDisplayer() {
 }
 
 function OnClass(data) {
+	$.Msg(data)
+	
 	if (classes[data["id"]][CLASS_ID] == "") {
 	
 	classes[data["id"]][CLASS_ID] = data["id"]
@@ -209,23 +211,29 @@ function OnClass(data) {
 	classes[data["id"]][CLASS_PANEL] = null
 	classes[data["id"]][CLASS_IMAGE] = null
 	
-	if(data["banned"] == 1){
-	    OnBlock(data)
 	}
 	
-	}
+	if (parseInt(data["banned"]) == 1) { classes[data["id"]][CLASS_BANNED] = true}
 }
 
 function SetClasses() {
-	for(var i = 0; i < classes.length; i++){
-		//$("#class_" + classes[i][CLASS_ID]).SetHasClass("Hide", true)
-		if ($("#class_" + classes[i][CLASS_ID]) == null) {
-			if (classes[i][CLASS_ICON] != ""){
-				CreateClassBtn(classes[i]);			
+	$.Schedule(0.1, function () {
+		for(var i = 0; i < classes.length; i++){
+			//$("#class_" + classes[i][CLASS_ID]).SetHasClass("Hide", true)
+			if ($("#class_" + classes[i][CLASS_ID]) == null) {
+				if (classes[i][CLASS_ICON] != ""){
+					CreateClassBtn(classes[i]);		
+					
+					if(classes[i][CLASS_BANNED] == true){
+						$.Msg("ZAEBAL 2")
+						BlockClass(i)
+					}
+				}
 			}
 		}
-	}
-	SelectClass(1)
+		
+		SelectClass(1)
+	})
 }
 
 function CreateClassBtn(clasie){
@@ -273,6 +281,7 @@ function BanClass() {
 }
 
 function OnBlock(data) {
+	$.Msg("block pls dood " + data["classname"])
     for (var i = 0; i < classes.length; i++){
 	    if (classes[i][CLASS_NAME] == data["classname"]){
 		    classes[i][CLASS_BANNED] = true

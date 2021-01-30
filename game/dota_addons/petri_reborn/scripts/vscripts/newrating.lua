@@ -13,11 +13,11 @@ function Rating:init()
 	Rating.key = GetDedicatedServerKeyV2("petro")
 	Rating.newKey = GetDedicatedServerKeyV2("petro")
 	
-	Rating.url = "http://188.120.231.137/?"
-	Rating.topUrl = "http://188.120.231.137/top.php/?"
-	Rating.errorUrl = "http://188.120.231.137/error.php?"
-	Rating.gameUrl = "http://188.120.231.137/game.php?"
-	Rating.feedbackUrl = "http://188.120.231.137/feedback.php/?"
+	Rating.url = "http://185.180.231.205/?"
+	Rating.topUrl = "http://185.180.231.205/top.php/?"
+	Rating.errorUrl = "http://185.180.231.205/error.php?"
+	Rating.gameUrl = "http://185.180.231.205/game.php?"
+	Rating.feedbackUrl = "http://185.180.231.205/feedback.php/?"
 	
 	Rating.isRankedGame = false
 	Rating.LastRequestBody = nil
@@ -31,7 +31,7 @@ function Rating:init()
 end
 
 function Rating:CheckConnection()
-    Rating:SimpleRequest(Rating.url.."sid=1")
+	Rating:SimpleRequest(Rating.url.."sid=1")
 	
 	Timers:CreateTimer(2, function()
 	if Rating.LastRequestBody ~= nil then
@@ -47,7 +47,7 @@ function Rating:CheckConnection()
 end
 
 function Rating:SimpleRequest(url)
-    local req = CreateHTTPRequestScriptVM("GET",url)
+	local req = CreateHTTPRequest("GET",url)
 	req:Send(function(res)
         if res.StatusCode == 200 then
             print("rating SimpleRequest 200")		
@@ -89,7 +89,7 @@ end
 function Rating:GetTop()
 	for i = 1, 4 do
 	local url = Rating.topUrl.."stat="..Rating.TOPS[i]
-	local req = CreateHTTPRequestScriptVM("GET",url)
+	local req = CreateHTTPRequest("GET",url)
 	req:Send(function(res)
         if res.StatusCode == 200 then
 			local obj, pos, err = json.decode(res.Body)
@@ -122,7 +122,7 @@ end
 function Rating:GetPlayerStat(pid)
     print("rating loading player "..pid)
 	local url = Rating.url.."sid="..PlayerResource:GetSteamAccountID(pid)
-	local req = CreateHTTPRequestScriptVM("GET",url)
+	local req = CreateHTTPRequest("GET",url)
 	req:Send(function(res)
         if res.StatusCode == 200 then
 			local obj, pos, err = json.decode(res.Body)

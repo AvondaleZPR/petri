@@ -2,6 +2,7 @@
 {
 	maps = 
 	[
+		"old",
 		"seasons",
 		"journey",
 	]
@@ -10,12 +11,16 @@
 	map_options = 
 	[
 		{
+			map = "old"
 			MaxPlayers = 12
-			map = "journey"
 		},
 		{
 			MaxPlayers = 12
 			map = "seasons"
+		},
+		{
+			MaxPlayers = 12
+			map = "journey"
 		},
 	]
 	HideInTools = false

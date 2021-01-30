@@ -24,6 +24,24 @@ new_arena_second_brew_creeps
 1_space_miniactor_spawn
 ]]
 
+function Activate(keys)
+	--print("NewPortal activated "..thisEntity:GetName())
+	local lvl, name = DecodeName(thisEntity:GetName())
+	
+	local unit = CreateUnitByName("npc_dummy_unit", thisEntity:GetAbsOrigin(), false, nil, nil, DOTA_TEAM_BADGUYS)
+
+	local oldPos = unit:GetAbsOrigin()
+	oldPos.z = oldPos.z + 250
+	unit:SetAbsOrigin(oldPos)
+	
+	unit:AddAbility("petri_dummy_static_popup")
+	InitAbilities(unit)
+
+	Timers:CreateTimer(5, function ()
+		PopupStaticParticle(lvl, Vector(255,0,0), unit)
+	end)
+end
+
 function OnStartTouch(eventTrigger) 
     local activator = eventTrigger.activator
 	local trigger = eventTrigger.caller

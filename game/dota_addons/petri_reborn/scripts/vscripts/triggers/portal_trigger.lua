@@ -1,3 +1,5 @@
+require('libraries/util/split')
+
 PORTAL_LEVELS = {}
 PORTAL_LEVELS["1portal_brewmaster_in_portalarena1"] = 1
 PORTAL_LEVELS["3portal_brewmaster_in_portalarena2"] = 5
@@ -76,6 +78,13 @@ function OnStartTouch(trigger)
 		 	ParticleManager:SetParticleControl( particle, 0, trigger.activator:GetAbsOrigin() )
 		end
 	end
+	
+	--[[
+	if string.match(trigger.caller:GetName(), "input") then
+		local unit = trigger.activator
+		local pos = (split(trigger.caller:GetName(),"_input")[1].."_output"):GetAbsOrigin()
+	end
+	]]
 end
  
 function OnEndTouch(trigger)

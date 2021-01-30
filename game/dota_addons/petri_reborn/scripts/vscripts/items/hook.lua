@@ -93,7 +93,7 @@ end
 --------------------------------------------------------------------------------
 
 function item_petri_hook:OnProjectileHit( hTarget, vLocation )
-	if hTarget == self:GetCaster() or (hTarget and hTarget:GetTeam() ~= DOTA_TEAM_GOODGUYS) or (hTarget and hTarget:HasAbility("petri_building") and hTarget:GetUnitName() ~= "npc_petri_cop_trap") then
+	if hTarget == self:GetCaster() or (hTarget and hTarget:HasModifier("modifier_class_wall_buff")) or (hTarget and hTarget:GetTeam() ~= DOTA_TEAM_GOODGUYS) or (hTarget and hTarget:HasAbility("petri_building") and hTarget:GetUnitName() ~= "npc_petri_cop_trap") then
 		return false
 	end
 

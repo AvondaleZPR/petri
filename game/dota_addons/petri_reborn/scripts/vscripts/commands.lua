@@ -29,7 +29,8 @@ end
 function GameMode:LumberAndGoldCommand(g)
   local cmdPlayer = Convars:GetCommandClient()
   if cmdPlayer then
-    local playerID = cmdPlayer:GetPlayerID()
+    local playerID = 0--cmdPlayer:GetPlayerID()
+	cmdPlayer = PlayerResource:GetPlayer(playerID)
     if playerID ~= nil and playerID ~= -1 then
       GameMode.assignedPlayerHeroes[playerID].lumber = GameMode.assignedPlayerHeroes[playerID].lumber + 15000000
       if g and tonumber(g) then
@@ -85,7 +86,7 @@ end
 function GameMode:FinishGameSetup(g)
   local cmdPlayer = Convars:GetCommandClient()
   if cmdPlayer then
-    local playerID = cmdPlayer:GetPlayerID()
+    local playerID = 0--cmdPlayer:GetPlayerID()
     if playerID ~= nil and playerID ~= -1 then
       cmdPlayer:SetTeam(tonumber(g))
       GameRules:FinishCustomGameSetup()

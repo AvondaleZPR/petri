@@ -130,7 +130,7 @@ function CheckBoss(trigger, activator)
 		end
 	end
 	if string.match(triggerName, "2portal_brewmaster_in_portalboss2") or string.match(triggerName, "2portal_death_prophet_in_portalboss2") or string.match(triggerName, "2portal_storm_spirit_in_portalboss2") then
-		if activator:GetLevel() >= 30 and (GameMode.PETRI_TRUE_TIME > 1200 or GameMode.assignedPlayerHeroes[activator:GetPlayerOwnerID()].allEarnedGold > 900000000000) then 
+		if activator:GetLevel() >= 30 and (GameMode.PETRI_TRUE_TIME > 1200 or GameMode.assignedPlayerHeroes[activator:GetPlayerOwnerID()].allEarnedGold > 900000000000 or (GameMode.isTurboMode and GameMode.PETRI_TRUE_TIME > 600)) then 
 			return false 
 		else 
 			Notifications:Top(activator:GetPlayerOwner(), {text="#boss_2_notification", duration=4, style={color="white", ["font-size"]="45px"}})
@@ -138,7 +138,7 @@ function CheckBoss(trigger, activator)
 		end
 	end
 	if string.match(triggerName, "2portal_brewmaster_in_portalboss3") or string.match(triggerName, "2portal_death_prophet_in_portalboss3") or string.match(triggerName, "2portal_storm_spirit_in_portalboss3") then
-		if activator:GetLevel() >= 40 and (GameMode.PETRI_TRUE_TIME > 1680 or GameMode.assignedPlayerHeroes[activator:GetPlayerOwnerID()].allEarnedGold > 9000000000) then 
+		if activator:GetLevel() >= 40 and (GameMode.PETRI_TRUE_TIME > 1680 or GameMode.assignedPlayerHeroes[activator:GetPlayerOwnerID()].allEarnedGold > 9000000000 or (GameMode.isTurboMode and GameMode.PETRI_TRUE_TIME > 1680/2)) then 
 			return false 
 		else 
 			Notifications:Top(activator:GetPlayerOwner(), {text="#boss_3_notification", duration=4, style={color="white", ["font-size"]="45px"}})
@@ -146,7 +146,7 @@ function CheckBoss(trigger, activator)
 		end
 	end
 	if string.match(triggerName, "2portal_brewmaster_in_portalboss4") or string.match(triggerName, "2portal_death_prophet_in_portalboss4") or string.match(triggerName, "2portal_storm_spirit_in_portalboss4") then
-		if activator:GetLevel() >= 30 and (GameMode.PETRI_TRUE_TIME > 2160 or GameMode.assignedPlayerHeroes[activator:GetPlayerOwnerID()].allEarnedGold > 900000000) then 
+		if activator:GetLevel() >= 30 and (GameMode.PETRI_TRUE_TIME > 2160 or GameMode.assignedPlayerHeroes[activator:GetPlayerOwnerID()].allEarnedGold > 900000000 or (GameMode.isTurboMode and GameMode.PETRI_TRUE_TIME > 2160/2)) then 
 			return false 
 		else 
 			Notifications:Top(activator:GetPlayerOwner(), {text="#boss_4_notification", duration=4, style={color="white", ["font-size"]="45px"}})
@@ -154,7 +154,7 @@ function CheckBoss(trigger, activator)
 		end
 	end
 	if string.match(triggerName, "2portal_brewmaster_in_portalboss5") or string.match(triggerName, "2portal_death_prophet_in_portalboss5") or string.match(triggerName, "2portal_storm_spirit_in_portalboss5") then
-		if activator:GetLevel() >= 30 and (GameMode.PETRI_TRUE_TIME > 2640 or GameMode.assignedPlayerHeroes[activator:GetPlayerOwnerID()].allEarnedGold > 90000000000) then 
+		if activator:GetLevel() >= 30 and (GameMode.PETRI_TRUE_TIME > 2640 or GameMode.assignedPlayerHeroes[activator:GetPlayerOwnerID()].allEarnedGold > 90000000000 or (GameMode.isTurboMode and GameMode.PETRI_TRUE_TIME > 2640/2)) then 
 			return false 
 		else 
 			Notifications:Top(activator:GetPlayerOwner(), {text="#boss_5_notification", duration=4, style={color="white", ["font-size"]="45px"}})

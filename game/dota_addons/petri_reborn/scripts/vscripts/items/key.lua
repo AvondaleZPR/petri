@@ -5,7 +5,7 @@ function ToWall(keys)
 	local duration = ability:GetSpecialValueFor("duration")
 	
 	if target:GetPlayerOwner() == caster:GetPlayerOwner() and target.blocks ~= false then
-	if string.match(target:GetUnitName(), "wall") or target:GetUnitName() == "npc_petri_cop_trap" then
+	if target.state ~= "building" and (string.match(target:GetUnitName(), "wall") or target:GetUnitName() == "npc_petri_cop_trap") then
 	    print("ToWall")
 		--target:GetPlayerOwner():GetAssignedHero().canbuid = false
 		if target.fpos == nil then
@@ -64,7 +64,7 @@ function Aura(keys)
 			for _, wall in pairs(walls) do
 			if wall then
 			if string.match(wall:GetUnitName(), "wall") then --or wall:GetUnitName() == "npc_petri_cop_trap" then
-			if wall.blocks ~= false and wall:IsAlive() and wall:GetPlayerOwner() == caster:GetPlayerOwner() then
+			if wall.state ~= "building" and wall.blocks ~= false and wall:IsAlive() and wall:GetPlayerOwner() == caster:GetPlayerOwner() then
 			    if wall.fpos == nil then
 				   wall.fpos = wall:GetAbsOrigin()
 				end

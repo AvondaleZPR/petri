@@ -2,17 +2,17 @@
 {
 	maps = 
 	[
-		"old",
+		"turbo",
 		"seasons",
 		"journey",
+		"old",
 	]
 	TeamCount = 2
 	IsPlayable = 1
 	map_options = 
 	[
 		{
-			map = "old"
-			MaxPlayers = 12
+			map = "turbo"
 		},
 		{
 			MaxPlayers = 12
@@ -21,6 +21,10 @@
 		{
 			MaxPlayers = 12
 			map = "journey"
+		},
+		{
+			map = "old"
+			MaxPlayers = 12
 		},
 	]
 	HideInTools = false

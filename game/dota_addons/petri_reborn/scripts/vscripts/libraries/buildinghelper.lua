@@ -218,6 +218,10 @@ function BuildingHelper:SetupBuildingTable( abilityName )
     if expectedType == "handle" then
       return val
     end
+	
+	if key == "BuildTime" and GameMode.isTurboMode then
+		return tonumber(val / 2)
+	end
 
     local sVal = tostring(val)
     if sVal == "1" and expectedType == "bool" then
@@ -229,6 +233,7 @@ function BuildingHelper:SetupBuildingTable( abilityName )
     elseif expectedType == "number" or expectedType == "float" then
       return tonumber(val)
     end
+	
     return sVal
   end
 

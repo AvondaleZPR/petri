@@ -204,6 +204,12 @@ function OnNPCSpawnedDebug(keys)
         item:ApplyDataDrivenModifier(npc, npc, "modifier_item_key",{})  
 	end
 	
+	if GameMode.isTurboMode then
+		local item = CreateItem("item_petri_key",nil,nil)
+        item:ApplyDataDrivenModifier(npc, npc, "modifier_turbo",{}) 
+		UTIL_Remove(item)
+	end
+	
 	if npc:IsRealHero() and npc:GetUnitName() ~= npc_dota_hero_storm_spirit and npc:GetPlayerOwner() and npc.alreadyspawned ~= true then
 	    npc.alreadyspawned = true
 		local player = npc:GetPlayerOwner()
@@ -696,7 +702,9 @@ function OnEntityKilledDebug( keys )
     GiveSharedGoldToTeam(math.floor(90 * GetGoldModifier()), DOTA_TEAM_BADGUYS)
 
     if killerEntity:IsRealHero() and killerEntity.AddExperience and killerEntity:GetLevel() and killerEntity:GetLevel() < 80 then
-      killerEntity:AddExperience(XP_PER_LEVEL_TABLE_OLD[killerEntity:GetLevel()] / 10,0,false,false)
+      local give_exp = XP_PER_LEVEL_TABLE_OLD[killerEntity:GetLevel()] / 10;
+	  if GameMode.isTurboMode then give_exp = give_exp * 2 end
+	  killerEntity:AddExperience(give_exp,0,false,false)
     end
 	
 	GameMode:PlayRandomJoke()
@@ -941,7 +949,9 @@ function OnEntityKilledDebug( keys )
   end
 
   if string.match(killedUnit:GetUnitName (), "npc_petri_creep_") or string.match(killedUnit:GetUnitName (), "boss") then
-    killerEntity:AddExperience(killedUnit:GetDeathXP() * GameRules.PETRI_EXPERIENCE_MULTIPLIER, 0, false, true)
+    local give_exp = killedUnit:GetDeathXP() * GameRules.PETRI_EXPERIENCE_MULTIPLIER;
+	if GameMode.isTurboMode then give_exp = give_exp * 2 end
+	killerEntity:AddExperience(give_exp, 0, false, true)
 	GameMode:ChProgress(killerEntity:GetPlayerOwnerID(), "CREEPS", 1)
     if killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS and string.match(killedUnit:GetUnitName (), "boss") then -- boss
 	  GameMode:ChProgress(killerEntity:GetPlayerOwnerID(), "BOSS", 1)
@@ -1042,6 +1052,8 @@ function GameMode:OnConnectFull(keys)
   local entIndex = keys.index+1
   -- The Player entity of the joining user
   local ply = EntIndexToHScript(entIndex)
+
+  if ply == nil then return; end
 
   -- The Player ID of the joining player
   local playerID = ply:GetPlayerID()

@@ -85,7 +85,7 @@ function SetupItems(team, hero) {
 			var guideBlock = $.CreatePanel("Panel", $("#ShopGuide"), t.replace("#", ""));
 			guideBlock.BLoadLayoutSnippet("GuideBlock");
 
-			guideBlock.FindChildTraverse("ShopGuideBlockLabel").text = $.Localize(t.replace("#", ""));
+			guideBlock.FindChildTraverse("ShopGuideBlockLabel").text = $.Localize(t);
 
 			var x = 0;
 			var y = 0;

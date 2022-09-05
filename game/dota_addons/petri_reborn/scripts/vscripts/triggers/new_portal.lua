@@ -72,7 +72,7 @@ function CheckMiniActor(hero)
     if hero and hero:IsRealHero() == true and hero:GetUnitName() == "npc_dota_hero_storm_spirit" then return true end
 	
 	if hero:GetUnitName() ~= "npc_dota_hero_storm_spirit" then
-	    SendPortalMsg(hero:GetPlayerOwnerID(), "new_arena_not_miniactor")
+	    SendPortalMsg(hero:GetPlayerOwnerID(), "#new_arena_not_miniactor")
 	end
 	return false
 end
@@ -99,7 +99,7 @@ end
 
 function CheckLevel(hero, lvl)
     if hero:GetLevel() < lvl then
-	    SendPortalMsg(hero:GetPlayerOwnerID(), "new_arena_lvl_need")
+	    SendPortalMsg(hero:GetPlayerOwnerID(), "#new_arena_lvl_need")
 		SendPortalMsg(hero:GetPlayerOwnerID(), lvl)
 		return false
 	end

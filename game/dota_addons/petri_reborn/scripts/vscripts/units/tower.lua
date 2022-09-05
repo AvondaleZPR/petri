@@ -99,7 +99,7 @@ function UpgradeBasic (event)
 
 	local tower_level = ability:GetLevel()
 
-	caster:SetModelScale(0.35 + (tower_level/30))
+	caster:SetModelScale(0.45 + (tower_level/30))
 
 	caster:RemoveAbility("petri_upgrade_elements_tower")
 

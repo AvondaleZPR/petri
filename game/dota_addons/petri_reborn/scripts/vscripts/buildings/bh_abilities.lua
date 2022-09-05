@@ -364,6 +364,10 @@ function build( keys )
 			--EmitAnnouncerSoundForPlayer("announcer_ann_custom_generic_alert_10", unit:GetPlayerOwnerID())
 		end
 		
+		if unit:GetUnitName() == "npc_petri_tower_basic"  then
+
+		end
+		
 		Timers:CreateTimer(1.5, function()
 			if unit and unit:IsAlive() then
 				local trigg = Entities:FindByNameNearest("area_trigger", unit:GetAbsOrigin(), 10000)
@@ -453,7 +457,7 @@ function builder_queue( keys )
         --player.activeBuilding = nil
         if player.activeBuilder and player.activeBuilder ==caster and IsValidEntity(player.activeBuilder) then
             player.activeBuilder:ClearQueue()
-            player.activeBuilder:Stop()
+            --player.activeBuilder:Stop()
             player.activeBuilder.ProcessingBuilding = false
         end
     end

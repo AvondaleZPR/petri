@@ -257,13 +257,13 @@ function GameMode:FilterExecuteOrder( filterTable )
       Timers:CreateTimer(function (  )
         if not IsValidEntity(item) and GameMode.ItemKVs[item_name].ItemSellable ~= "0" then
           if (time and time + 10 > GameMode.PETRI_TRUE_TIME) or GameMode.ItemKVs[item_name].ItemSellFullPrice == 1 then
-            AddCustomGold( issuer, math.floor(GameMode.ItemKVs[item_name].ItemCost) )
+            ReturnCustomGold( issuer, math.floor(GameMode.ItemKVs[item_name].ItemCost) )
           else
             local zero = GameMode.ItemKVs[item_name].ItemCost / 2.0
             if zero < 1.0 then
               zero = 0.0
             end
-            AddCustomGold( issuer, math.floor(zero))
+            ReturnCustomGold( issuer, math.floor(zero))
           end
 
           EmitSoundOnClient("Quickbuy.Confirmation", PlayerResource:GetPlayer(issuer))
@@ -337,7 +337,7 @@ function GameMode:FilterExecuteOrder( filterTable )
 	or order_type == DOTA_UNIT_ORDER_ATTACK_TARGET or order_type == DOTA_UNIT_ORDER_PATROL then
 		for _,u in pairs(filterTable["units"]) do
 			local unit = EntIndexToHScript(u)		
-			if unit and not unit:IsIllusion() and string.match(unit:GetUnitName(), "wall") or unit:HasModifier("modifier_wall_notification") or unit:HasModifier("petri_building") then return false end
+			if (unit and not unit:IsIllusion()) and (string.match(unit:GetUnitName(), "wall") or unit:HasModifier("modifier_wall_notification") or unit:HasModifier("petri_building")) then return false end
 		end
 	end
 	
@@ -370,6 +370,16 @@ function GameMode:FilterExecuteOrder( filterTable )
 	if order_type == DOTA_UNIT_ORDER_PICKUP_RUNE and EntIndexToHScript(filterTable["units"]["0"]) and EntIndexToHScript(filterTable["units"]["0"]):GetUnitName() == "npc_petri_cop" then
 	    return false
 	end
+	
+	local ability = EntIndexToHScript(abilityIndex)
+	if abilityIndex ~= 0 and GameMode.isTurboMode and ability and ability:GetChannelTime() > 0 then
+		Timers:CreateTimer(ability:GetChannelTime(), function()
+			if ability and ability:IsChanneling() then
+				ability:EndChannel(false)
+			end
+		end)
+	end
+	
     return true
 end
 
@@ -470,7 +480,7 @@ function GameMode:DamageFilter( filter_table )
 
 	if victim:GetUnitName() == "npc_petri_creep_kivin" then
 		local damage = attacker:GetAverageTrueAttackDamage(attacker)
-		if GameRules:GetDOTATime(false, false) < 2880 then
+		if (not GameMode.isTurboMode and GameRules:GetDOTATime(false, false) < 2880) or (GameMode.isTurboMode and GameRules:GetDOTATime(false, false) < 1440) then
 		    attacker:CastAbilityNoTarget(attacker:FindAbilityByName("petri_petrosyan_return"), attacker:GetPlayerOwnerID())
             Notifications:Bottom(attacker:GetPlayerOwnerID(), {text="#too_early_kivin", duration=5, style={color="red", ["font-size"]="45px"}})
             Timers:CreateTimer(0.04,
@@ -529,6 +539,9 @@ function GameMode:ModifyExperienceFilter(filterTable)
     filterTable["experience"] = 0
   end
 
+  if GameRules.isTurboMode then
+	filterTable["experience"] = filterTable["experience"] * 2
+  end
   --if not filterTable["player_id_const"] or not PlayerResource:GetPlayer(filterTable["player_id_const"]) then return false end
   --if PlayerResource:GetPlayer(filterTable["player_id_const"]):GetTeam() == DOTA_TEAM_GOODGUYS
   --or PlayerResource:GetPlayer(filterTable["player_id_const"]):GetTeam() == DOTA_TEAM_BADGUYS
@@ -572,4 +585,13 @@ local runeSpawners = {}
 
 function GameMode:FilterRuneSpawn(filter_table)
     return true
+end
+
+function GameMode:FilterAbilityTuning(filter_table)
+	local ability = EntIndexToHScript(filter_table.entindex_ability_const)
+	if GameMode.isTurboMode and (filter_table.value_name_const == "AbilityCooldown" or filter_table.value_name_const == "AbilityChannelTime") then
+		filter_table.value = filter_table.value / 2
+	end
+	
+	return true
 end

@@ -84,6 +84,10 @@ function AddCustomGold( pID, gold )
 			print("CASINO "..rand.." "..gold)
 		end		
 		
+		if GameMode.isTurboMode then
+			gold = gold * 2;
+		end
+		
 		hero._customGold = hero._customGold or 0
 
 		hero.allEarnedGold = hero.allEarnedGold or 0

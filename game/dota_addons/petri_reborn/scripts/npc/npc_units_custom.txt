@@ -3916,8 +3916,8 @@
 	"npc_petri_tower_basic"
 	{
 	  "BaseClass"         "npc_dota_base_additive"  
-	  "Model"           "models/heroes/omniknight/omniknight.vmdl"  
-	  "ModelScale"                "0.29"
+	  "Model"           "models/items/world/towers/radiant_tower_2021/radiant_tower_2021_right.vmdl"  
+	  "ModelScale"                "0.45"
 	  "SoundSet"          "Creep_Good_Range"          
 	  "Level"           "0"
 	  "UnitLabel"         "npc_petri_tower_basic"
@@ -3926,7 +3926,7 @@
 	  "AbilityLayout"     "5"
 	  "Ability1"        "petri_upgrade_basic_tower"
 	  "Ability2"        "petri_upgrade_elements_tower"
-	  "Ability3"        "petri_building"
+	  "Ability3"		"petri_building"
 	
 	  "ArmorPhysical"       "0"     
 	  "MagicalResistance"       "0"     
@@ -3940,7 +3940,7 @@
 	  "AttackRange"                "600"
 	  "AttackRangeBuffer"          "250"
 	
-	  "ProjectileModel"            "particles/units/heroes/hero_mirana/mirana_base_attack.vpcf"
+	  "ProjectileModel"            "particles/econ/world/towers/radiant_tower_2021/radiant_tower_2021_attack.vpcf"
 	  "ProjectileSpeed"            "900"
 	
 	  "BountyXP"          "0"     

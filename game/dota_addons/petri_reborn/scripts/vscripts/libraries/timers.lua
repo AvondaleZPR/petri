@@ -205,6 +205,11 @@ function Timers:CreateTimer(name, args, context)
     return
   end
 
+	--//
+	if GameMode.isTurboMode and args.endTime ~= nil and args.endTime > 1 and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		args.endTime = args.endTime / 2;
+	end
+	--\\
 
   local now = GameRules:GetGameTime()
   if args.useGameTime ~= nil and args.useGameTime == false then

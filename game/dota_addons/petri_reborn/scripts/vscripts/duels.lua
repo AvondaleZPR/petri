@@ -5,6 +5,8 @@ if Duels == nil then
 end
 
 function Duels:InitDuels()
+	if GetMapName() == "turbo" then return end
+
     Duels.point = {Entities:FindByName( nil, "duel_tp3"):GetAbsOrigin(), Entities:FindByName( nil, "duel_tp2"):GetAbsOrigin()}
 	Duels.center = Entities:FindByName( nil, "duel_center"):GetAbsOrigin()
 	

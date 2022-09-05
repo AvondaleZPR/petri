@@ -20,7 +20,7 @@ function Blink(keys)
 	if caster:IsRealHero() then
 	
 	if IsInsideEntityBounds(Entities:FindByName(nil, "blocking_trigger_b"), point) or caster:HasModifier("modifier_petri_spider") or GridNav:IsBlocked(point) 
-	or IsInsideEntityBounds(Entities:FindByNameNearest("egg_blocking_trigger", point, 999999), point) then
+	or IsInsideEntityBounds(Entities:FindByNameNearest("egg_blocking_trigger", point, 5000), point) then
         ability:EndCooldown()
 		caster.isblink = false
     else

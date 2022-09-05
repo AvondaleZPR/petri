@@ -7,6 +7,8 @@ if GameMode == nil then
     _G.GameMode = class({})
 end
 
+GameMode.isTurboMode = false
+
 GameMode.cameraYaw = 0
 
 pp = {}
@@ -107,6 +109,7 @@ require('newrating')
 require('duels')
 
 require('randommap')
+require('randomspots')
 
 require('classes')
 
@@ -431,7 +434,7 @@ function daynight(time_elapsed, start_time_of_day, end_time_of_day)
 	GameMode.isday = false
 	GameRules:SetTimeOfDay(0)
 	Timers:CreateTimer(0.03, function()
-	    if time_elapsed < 240 then
+	    if (GameMode.isTurboMode and time_elapsed < 120) or (not GameMode.isTurboMode and time_elapsed < 240) then
 		    GameRules:SetTimeOfDay(0)
 		    time_elapsed = time_elapsed + 1
 		    return 1
@@ -453,9 +456,11 @@ function GameMode:isdaydumb()
     local t = GameRules:GetDOTATime(false, false)
     --print("DUMBTIME: "..t)
 	--GameMode:DEBUGMSG("DUMBTIME: ", t)
-	if t <= 240 or t >= 480 and t <= 720 or t >= 960 and t <= 1200 or t >= 1440 and t <= 1680 or t >= 1920 and t <= 2160 or t >= 2400 and t <= 2640 or t >= 2880 and t <= 3120 or t >= 3360 and t <= 3600 or t >= 3840 and t <= 4080 then
+	if (not GameMode.isTurboMode) and (t <= 240 or t >= 480 and t <= 720 or t >= 960 and t <= 1200 or t >= 1440 and t <= 1680 or t >= 1920 and t <= 2160 or t >= 2400 and t <= 2640 or t >= 2880 and t <= 3120 or t >= 3360 and t <= 3600 or t >= 3840 and t <= 4080) then
         return true
-    else 
+    elseif GameMode.isTurboMode and (t <= 120 or t >= 240 and t <= 360 or t >= 480 and t <= 600 or t >= 720 and t <= 840 or t >= 960 and t <= 1080 or t >= 1200 and t <= 1320 or t >= 1440 and t <= 1560 or t >= 1680 and t <= 1800 or t >= 1920 and t <= 2040) then
+		return true
+	else 
 	    return false
 	end
 end
@@ -884,6 +889,7 @@ end
 function GameMode:OnGameInProgress()
   
   DebugPrint("[BAREBONES] The game has officially begun")
+	if GetMapName() == "turbo" then GameMode.isTurboMode = true end
   
     Timers:CreateTimer(0.3,
     function()
@@ -1031,9 +1037,11 @@ function GameMode:OnGameInProgress()
    local time_elapsed = 0
    local start_time_of_day = GameRules:GetTimeOfDay()
    local end_time_of_day = start_time_of_day + 240 * time_flow
+   if GameMode.isTurboMode then end_time_of_day = start_time_of_day + 120 * time_flow end
    Timers:CreateTimer(240.0,
     function()
 	    daynight(time_elapsed, start_time_of_day, end_time_of_day)
+		if GameMode.isTurboMode then return 240 end
 		return 480.0
     end)
 	
@@ -1093,6 +1101,7 @@ function GameMode:OnGameInProgress()
 
       creepID = creepID + 1
 
+	  if GameMode.isTurboMode then return (8.0 * 60)/2 end
       return 8.0 * 60
     end)
 
@@ -1119,6 +1128,7 @@ function GameMode:OnGameInProgress()
 
 	  GameMode:LoadHelpersCosts()
 	  
+	  if GameMode.isTurboMode then return (8.0 * 60)/2 end
       return 8.0 * 60
     end)
 
@@ -1266,6 +1276,9 @@ function GameMode:InitGameMode()
   if GetMapName() == "random" then
     RandomMap:Init()
   end
+  if GetMapName() == "turbo" then
+	RandomSpots:Init()
+  end
   
   GameRules:GetGameModeEntity():SetUseDefaultDOTARuneSpawnLogic(false)
   GameRules:GetGameModeEntity():SetPowerRuneSpawnInterval(300.0)
@@ -1332,7 +1345,7 @@ function GameMode:InitGameMode()
   GameMode.busPO = {3, 10, 1, 5}
   
   --armorfix
-    ListenToGameEvent('dota_inventory_item_added', Dynamic_Wrap(GameMode, 'OnInventoryChanged'), self)
+    --ListenToGameEvent('dota_inventory_item_added', Dynamic_Wrap(GameMode, 'OnInventoryChanged'), self)
 
   -- KVN Building menus
   for k,menu in pairs(GameMode.BuildingMenusKVs) do
@@ -1408,6 +1421,9 @@ function GameMode:InitGameMode()
   
   --couriers
   GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
+  
+  --ability param filter
+  GameRules:GetGameModeEntity():SetAbilityTuningValueFilter( Dynamic_Wrap(GameMode, "FilterAbilityTuning" ), self )
 
   -- Commands
   Convars:RegisterCommand( "lumber", Dynamic_Wrap(GameMode, 'LumberCommand'), "Gives you lumber", FCVAR_CHEAT )
@@ -1449,7 +1465,7 @@ function GameMode:InitGameMode()
 end
 
 function GameMode:ReplaceWithMiniActor(player, gold)
-  if GameMode.UseMiracles == true then
+  if GameMode.UseMiracles == true and not GameMode.isTurboMode then
 
   PrecacheUnitByNameAsync("npc_dota_hero_storm_spirit",
     function() 

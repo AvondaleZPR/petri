@@ -33,7 +33,7 @@ function CheckFarmPlaces(trigger, activator)
 		end
 	end
 	if string.match(triggerName, "portal_trigger_boss_b") then
-		if GameMode.PETRI_TRUE_TIME > 1200 
+		if (GameMode.PETRI_TRUE_TIME > 1200) or (GameMode.isTurboMode and GameMode.PETRI_TRUE_TIME > 600)
 			or GameMode.assignedPlayerHeroes[activator:GetPlayerOwnerID()].allEarnedGold > 30000 then 
 			return false 
 		else 
@@ -42,7 +42,7 @@ function CheckFarmPlaces(trigger, activator)
 		end
 	end
 	if string.match(triggerName, "portal_trigger_boss_c") then
-		if GameMode.PETRI_TRUE_TIME > 1680 
+		if GameMode.PETRI_TRUE_TIME > 1680 or (GameMode.isTurboMode and GameMode.PETRI_TRUE_TIME > 840)
 			or GameMode.assignedPlayerHeroes[activator:GetPlayerOwnerID()].allEarnedGold > 90000 then 
 			return false 
 		else 

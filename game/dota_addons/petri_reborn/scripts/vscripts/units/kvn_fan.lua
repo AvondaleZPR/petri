@@ -32,7 +32,7 @@ function SpawnTrap(keys)
 		trap:AddNewModifier(trap, nil, "modifier_kill", {duration = 240})
 		StartAnimation(trap, {duration=-1, activity=ACT_DOTA_IDLE , rate=1.5})
 	
-		keys.ability:SpendCharge()
+		keys.ability:SpendCharge(0.1)
 	else
 		keys.ability:EndCooldown()
 	end

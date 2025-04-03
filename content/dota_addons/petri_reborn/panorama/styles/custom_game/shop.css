@@ -66,8 +66,8 @@
 	color: #bbbbbb;
 }
 
-.ShopTab:hover .ShopTabText,
-.ShopTabHighlight .ShopTabText,
+.ShopTab:hover .ShopTabText
+.ShopTabHighlight .ShopTabText
  {
 	color: white;
 }

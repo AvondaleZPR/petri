@@ -429,6 +429,8 @@ function GameMode:DamageFilter( filter_table )
 		return false
 	end
 	
+  print("att:"..attacker:GetUnitName())
+
     local damage = filter_table["damage"]
     local damage_type = filter_table["damagetype_const"]
 

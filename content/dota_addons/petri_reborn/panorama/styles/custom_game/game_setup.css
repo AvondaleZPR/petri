@@ -412,6 +412,8 @@ DOTAAvatarImage
 
 #GameModeNameLabel 
 {
+	align: left top;
+	color: white;
     margin-left: 30px;
     margin-top: 16px;
     font-size: 32px;
@@ -504,10 +506,10 @@ DOTAAvatarImage
     visibility: visible;
 }
 
-#StartGameCountdownTimer.countdown_inactive #TimerBg,
-#StartGameCountdownTimer.countdown_inactive #TimerRing,
-#StartGameCountdownTimer.countdown_inactive #TimerLabelAutoStart,
-#StartGameCountdownTimer.countdown_inactive #TimerLabelGameStart,
+#StartGameCountdownTimer.countdown_inactive #TimerBg
+#StartGameCountdownTimer.countdown_inactive #TimerRing
+#StartGameCountdownTimer.countdown_inactive #TimerLabelAutoStart
+#StartGameCountdownTimer.countdown_inactive #TimerLabelGameStart
 {
     opacity: 0;
 }

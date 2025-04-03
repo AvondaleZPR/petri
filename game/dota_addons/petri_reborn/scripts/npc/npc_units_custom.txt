@@ -51,7 +51,7 @@
 	  //----------------------------------------------------------------
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     // Type of locomotion - ground, air
 	  "MovementSpeed"       "450"   // Speed
-	  "MovementTurnRate"      "1.0"   // Turning rate.
+	  "MovementTurnRate"      "1"   // Turning rate.
 	  "FollowRange"       "250"   // Distance to keep when following
 	
 	  // Status
@@ -313,11 +313,11 @@
 	  "MagicalResistance"   "0"
 	
 	  "AttackCapabilities"  "DOTA_UNIT_CAP_NO_ATTACK"
-	  "AttackDamageMin"    "228.0"
-	  "AttackDamageMax"    "228.0"
+	  "AttackDamageMin"    "228"
+	  "AttackDamageMax"    "228"
 	
-	  "BountyGoldMin"    "175.0"
-	  "BountyGoldMax"    "200.0"
+	  "BountyGoldMin"    "175"
+	  "BountyGoldMax"    "200"
 	
 	  "BoundsHullName"   "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"    "60"
@@ -367,14 +367,14 @@
 	  "AttackDamageMin"       "0"
 	  "AttackDamageMax"       "0"
 	
-	  "BountyGoldMin"       "20.0"
-	  "BountyGoldMax"       "20.0"
+	  "BountyGoldMin"       "20"
+	  "BountyGoldMax"       "20"
 	
 	  "BoundsHullName"    "DOTA_HULL_SIZE_HERO"    
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE" 
 	  "MovementSpeed"         "0"   
-	  "MovementTurnRate"    "0.0"  
+	  "MovementTurnRate"    "0"  
 	  "HasAggressiveStance"     "0"
 	  
 	  "StatusHealth"        "60"
@@ -394,7 +394,7 @@
 	{
 	  "BaseClass"         "npc_dota_creature"
 	  "Model"           "models/creeps/neutral_creeps/n_creep_kobold/kobold_a/n_creep_kobold_a.vmdl"
-	  "ModelScale"        "1.0"
+	  "ModelScale"        "1"
 	  "Level"           "1"
 	  "HealthBarOffset"     "140"
 	  "GameSoundsFile"      "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
@@ -406,15 +406,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "0.1"
-	  "AttackDamageMax"     "1.0"
+	  "AttackDamageMin"     "1"
+	  "AttackDamageMax"     "1"
 	  "AttackRate"        "2.3"
 	  "AttackAnimationPoint"    "0.53"
 	  "AttackAcquisitionRange"  "900"
 	  "AttackRange"       "150"
 	
-	  "BountyGoldMin"       "1.0"
-	  "BountyGoldMax"       "1.0"
+	  "BountyGoldMin"       "1"
+	  "BountyGoldMax"       "1"
 	  "BountyXP"          "1"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -441,7 +441,7 @@
 	{
 	  "BaseClass"         "npc_dota_creature"
 	  "Model"           "models/creeps/neutral_creeps/n_creep_kobold/kobold_a/n_creep_kobold_a.vmdl"
-	  "ModelScale"        "1.0"
+	  "ModelScale"        "1"
 	  "Level"           "1"
 	  "HealthBarOffset"     "140"
 	  "GameSoundsFile"      "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
@@ -455,15 +455,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "0.1"
-	  "AttackDamageMax"     "1.0"
+	  "AttackDamageMin"     "1"
+	  "AttackDamageMax"     "1"
 	  "AttackRate"        "2.3"
 	  "AttackAnimationPoint"    "0.53"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "150"
 	
-	  "BountyGoldMin"       "1.0"
-	  "BountyGoldMax"       "1.0"
+	  "BountyGoldMin"       "1"
+	  "BountyGoldMax"       "1"
 	  "BountyXP"          "1"    
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -509,8 +509,8 @@
 	  "MagicalResistance"     "0"
 	
 	  "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
-	  "AttackDamageMin"            "1200.0"
-	  "AttackDamageMax"            "1500.0"
+	  "AttackDamageMin"            "1200"
+	  "AttackDamageMax"            "1500"
 	  "AttackRate"                 "0.3"
 	  "AttackAnimationPoint"       "0.39"
 	  "AttackAcquisitionRange"     "200"
@@ -520,8 +520,8 @@
 	  "ProjectileModel"            "particles/units/heroes/hero_razor/razor_base_attack.vpcf"
 	  "ProjectileSpeed"            "1400"
 	
-	  "BountyGoldMin"       "70.0"
-	  "BountyGoldMax"       "100.0"
+	  "BountyGoldMin"       "70"
+	  "BountyGoldMax"       "100"
 	  "BountyXP"          "475"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -562,15 +562,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "4.0"
-	  "AttackDamageMax"     "6.0"
+	  "AttackDamageMin"     "4"
+	  "AttackDamageMax"     "6"
 	  "AttackRate"        "0.7"
 	  "AttackAnimationPoint"    "0.39"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "14.0"
-	  "BountyGoldMax"       "15.0"
+	  "BountyGoldMin"       "14"
+	  "BountyGoldMax"       "15"
 	  "BountyXP"          "15"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -613,15 +613,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "3.0"
-	  "AttackDamageMax"     "6.0"
+	  "AttackDamageMin"     "3"
+	  "AttackDamageMax"     "6"
 	  "AttackRate"        "0.7"
 	  "AttackAnimationPoint"    "0.39"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "14.0"
-	  "BountyGoldMax"       "15.0"
+	  "BountyGoldMin"       "14"
+	  "BountyGoldMax"       "15"
 	  "BountyXP"          "15"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -675,15 +675,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "150000.33"
-	  "AttackDamageMax"     "150000.01"
+	  "AttackDamageMin"     "150000"
+	  "AttackDamageMax"     "1500001"
 	  "AttackRate"        "0.37"
-	  "AttackAnimationPoint"    "0.01"
+	  "AttackAnimationPoint"    "01"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "500.0"
-	  "BountyGoldMax"       "500.0"
+	  "BountyGoldMin"       "500"
+	  "BountyGoldMax"       "500"
 	  "BountyXP"          "5000"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -726,15 +726,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "150000.33"
-	  "AttackDamageMax"     "150000.01"
+	  "AttackDamageMin"     "150000"
+	  "AttackDamageMax"     "1500001"
 	  "AttackRate"        "0.37"
-	  "AttackAnimationPoint"    "0.01"
+	  "AttackAnimationPoint"    "01"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "500.0"
-	  "BountyGoldMax"       "500.0"
+	  "BountyGoldMin"       "500"
+	  "BountyGoldMax"       "500"
 	  "BountyXP"          "5000"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -777,15 +777,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "150000.33"
-	  "AttackDamageMax"     "150000.01"
+	  "AttackDamageMin"     "150000"
+	  "AttackDamageMax"     "1500001"
 	  "AttackRate"        "0.37"
-	  "AttackAnimationPoint"    "0.01"
+	  "AttackAnimationPoint"    "01"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "500.0"
-	  "BountyGoldMax"       "500.0"
+	  "BountyGoldMin"       "500"
+	  "BountyGoldMax"       "500"
 	  "BountyXP"          "5000"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -837,15 +837,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "150000.33"
-	  "AttackDamageMax"     "150000.01"
+	  "AttackDamageMin"     "150000"
+	  "AttackDamageMax"     "1500001"
 	  "AttackRate"        "0.37"
-	  "AttackAnimationPoint"    "0.01"
+	  "AttackAnimationPoint"    "01"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "500.0"
-	  "BountyGoldMax"       "500.0"
+	  "BountyGoldMin"       "500"
+	  "BountyGoldMax"       "500"
 	  "BountyXP"          "5000"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -894,15 +894,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "500.10"
-	  "AttackDamageMax"     "500.0"
+	  "AttackDamageMin"     "500"
+	  "AttackDamageMax"     "500"
 	  "AttackRate"        "0.37"
-	  "AttackAnimationPoint"    "0.01"
+	  "AttackAnimationPoint"    "01"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "43.0"
-	  "BountyGoldMax"       "47.0"
+	  "BountyGoldMin"       "43"
+	  "BountyGoldMax"       "47"
 	  "BountyXP"          "105"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -944,15 +944,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "500.10"
-	  "AttackDamageMax"     "500.0"
+	  "AttackDamageMin"     "500"
+	  "AttackDamageMax"     "500"
 	  "AttackRate"        "0.37"
-	  "AttackAnimationPoint"    "0.01"
+	  "AttackAnimationPoint"    "01"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "43.0"
-	  "BountyGoldMax"       "47.0"
+	  "BountyGoldMin"       "43"
+	  "BountyGoldMax"       "47"
 	  "BountyXP"          "105"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -989,7 +989,7 @@
 	{
 	  "BaseClass"         "npc_dota_creature"
 	  "Model"           "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
-	  "ModelScale"        "1.0"
+	  "ModelScale"        "1"
 	  "Level"           "2"
 	  "HealthBarOffset"     "140"
 	
@@ -1000,15 +1000,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "0.5"
-	  "AttackDamageMax"     "2.5"
+	  "AttackDamageMin"     "1"
+	  "AttackDamageMax"     "2"
 	  "AttackRate"        "1.2"
 	  "AttackAnimationPoint"    "0.42"
 	  "AttackAcquisitionRange"  "900"
 	  "AttackRange"       "120"
 	
-	  "BountyGoldMin"       "2.0"
-	  "BountyGoldMax"       "3.0"
+	  "BountyGoldMin"       "2"
+	  "BountyGoldMax"       "3"
 	  "BountyXP"          "3"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1035,7 +1035,7 @@
 	{
 	  "BaseClass"         "npc_dota_creature"
 	  "Model"           "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
-	  "ModelScale"        "1.0"
+	  "ModelScale"        "1"
 	  "Level"           "2"
 	  "HealthBarOffset"     "140"
 	
@@ -1055,8 +1055,8 @@
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "120"
 	
-	  "BountyGoldMin"       "2.0"
-	  "BountyGoldMax"       "3.0"
+	  "BountyGoldMin"       "2"
+	  "BountyGoldMax"       "3"
 	  "BountyXP"          "3"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1107,15 +1107,15 @@
 
   "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
   "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-  "AttackDamageMin"     "7000.0"
-  "AttackDamageMax"     "7000.0"
+  "AttackDamageMin"     "7000"
+  "AttackDamageMax"     "7000"
   "AttackRate"        "0.37"
-  "AttackAnimationPoint"    "0.01"
+  "AttackAnimationPoint"    "01"
   "AttackAcquisitionRange"  "500"
   "AttackRange"       "90"
 
-  "BountyGoldMin"       "320.0"
-  "BountyGoldMax"       "320.0"
+  "BountyGoldMin"       "320"
+  "BountyGoldMax"       "320"
   "BountyXP"          "3000"  
 
   "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1157,15 +1157,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "12326.10"
-	  "AttackDamageMax"     "12326.0"
+	  "AttackDamageMin"     "12326"
+	  "AttackDamageMax"     "12326"
 	  "AttackRate"        "0.37"
-	  "AttackAnimationPoint"    "0.01"
+	  "AttackAnimationPoint"    "01"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-  "BountyGoldMin"       "320.0"
-  "BountyGoldMax"       "320.0"
+  "BountyGoldMin"       "320"
+  "BountyGoldMax"       "320"
   "BountyXP"          "3000"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1204,7 +1204,7 @@
 	{
 	  "BaseClass"         "npc_dota_creature"
 	  "Model"           "models/props_structures/tower_dragon_white.vmdl"
-	  "ModelScale"        "1.0"
+	  "ModelScale"        "1"
 	  "SoundSet"          "Creep_Good_Range"
 	  "Level"           "7"
 	  "HealthBarOffset"     "290"
@@ -1216,8 +1216,8 @@
 	  "MagicalResistance"     "0"
 	
 	  "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
-	  "AttackDamageMin"            "57077003.0"
-	  "AttackDamageMax"            "57077003.0"
+	  "AttackDamageMin"            "57077003"
+	  "AttackDamageMax"            "57077003"
 	  "AttackRate"                 "0.3"
 	  "AttackAnimationPoint"       "0.39"
 	  "AttackAcquisitionRange"     "200"
@@ -1227,8 +1227,8 @@
 	  "ProjectileModel"            "particles/units/heroes/hero_razor/razor_base_attack.vpcf"
 	  "ProjectileSpeed"            "1400"
 	
-	  "BountyGoldMin"       "99999.0"
-	  "BountyGoldMax"       "99999.0"
+	  "BountyGoldMin"       "99999"
+	  "BountyGoldMax"       "99999"
 	  "BountyXP"          "475"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1271,12 +1271,12 @@
 	  "AttackDamageMin"     "1025000"
 	  "AttackDamageMax"     "1025000"
 	  "AttackRate"        "0.3"
-	  "AttackAnimationPoint"    "0.01"
+	  "AttackAnimationPoint"    "01"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "274.0"
-	  "BountyGoldMax"       "276.0"
+	  "BountyGoldMin"       "274"
+	  "BountyGoldMax"       "276"
 	  "BountyXP"          "22"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1332,12 +1332,12 @@
 	  "AttackDamageMin"     "145"
 	  "AttackDamageMax"     "155"
 	  "AttackRate"        "0.37"
-	  "AttackAnimationPoint"    "0.01"
+	  "AttackAnimationPoint"    "01"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "25.0"
-	  "BountyGoldMax"       "27.0"
+	  "BountyGoldMin"       "25"
+	  "BountyGoldMax"       "27"
 	  "BountyXP"          "75"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1379,15 +1379,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "145.88"
+	  "AttackDamageMin"     "145"
 	  "AttackDamageMax"     "155"
 	  "AttackRate"        "0.37"
-	  "AttackAnimationPoint"    "0.01"
+	  "AttackAnimationPoint"    "01"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "25.0"
-	  "BountyGoldMax"       "27.0"
+	  "BountyGoldMin"       "25"
+	  "BountyGoldMax"       "27"
 	  "BountyXP"          "75"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1439,15 +1439,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "1.0"
-	  "AttackDamageMax"     "1.0"
+	  "AttackDamageMin"     "1"
+	  "AttackDamageMax"     "1"
 	  "AttackRate"        "0.7"
 	  "AttackAnimationPoint"    "0.39"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "150"
 	
-	  "BountyGoldMin"       "1.0"
-	  "BountyGoldMax"       "7.0"
+	  "BountyGoldMin"       "1"
+	  "BountyGoldMax"       "7"
 	  "BountyXP"          "5"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1489,15 +1489,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "121851.10"
-	  "AttackDamageMax"     "121851.0"
+	  "AttackDamageMin"     "121851"
+	  "AttackDamageMax"     "121851"
 	  "AttackRate"        "0.37"
-	  "AttackAnimationPoint"    "0.01"
+	  "AttackAnimationPoint"    "01"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "750.0"
-	  "BountyGoldMax"       "750.0"
+	  "BountyGoldMin"       "750"
+	  "BountyGoldMax"       "750"
 	  "BountyXP"          "20000"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1553,15 +1553,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "184851.10"
-	  "AttackDamageMax"     "184851.0"
+	  "AttackDamageMin"     "184851"
+	  "AttackDamageMax"     "184851"
 	  "AttackRate"        "0.37"
-	  "AttackAnimationPoint"    "0.01"
+	  "AttackAnimationPoint"    "01"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "750.0"
-	  "BountyGoldMax"       "750.0"
+	  "BountyGoldMin"       "750"
+	  "BountyGoldMax"       "750"
 	  "BountyXP"          "20000"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1623,15 +1623,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "2543.10"
-	  "AttackDamageMax"     "2550.0"
+	  "AttackDamageMin"     "2543"
+	  "AttackDamageMax"     "2550"
 	  "AttackRate"        "0.37"
-	  "AttackAnimationPoint"    "0.01"
+	  "AttackAnimationPoint"    "01"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "59.0"
-	  "BountyGoldMax"       "71.0"
+	  "BountyGoldMin"       "59"
+	  "BountyGoldMax"       "71"
 	  "BountyXP"          "105"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1673,15 +1673,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "2543.10"
-	  "AttackDamageMax"     "2550.0"
+	  "AttackDamageMin"     "2543"
+	  "AttackDamageMax"     "2550"
 	  "AttackRate"        "0.37"
-	  "AttackAnimationPoint"    "0.01"
+	  "AttackAnimationPoint"    "01"
 	  "AttackAcquisitionRange"  "500"
 	  "AttackRange"       "90"
 	
-	  "BountyGoldMin"       "59.0"
-	  "BountyGoldMax"       "71.0"
+	  "BountyGoldMin"       "59"
+	  "BountyGoldMax"       "71"
 	  "BountyXP"          "105"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1732,15 +1732,15 @@
 
   "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
   "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-  "AttackDamageMin"     "18.4"
-  "AttackDamageMax"     "36.8"
+  "AttackDamageMin"     "18"
+  "AttackDamageMax"     "36"
   "AttackRate"        "0.7"
   "AttackAnimationPoint"    "0.39"
   "AttackAcquisitionRange"  "800"
   "AttackRange"       "90"
 
-  "BountyGoldMin"       "13.0"
-  "BountyGoldMax"       "17.0"
+  "BountyGoldMin"       "13"
+  "BountyGoldMax"       "17"
   "BountyXP"          "18"  
 
   "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1781,15 +1781,15 @@
 
   "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
   "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-  "AttackDamageMin"     "138.0"
-  "AttackDamageMax"     "276.0"
+  "AttackDamageMin"     "138"
+  "AttackDamageMax"     "276"
   "AttackRate"        "0.7"
   "AttackAnimationPoint"    "0.39"
   "AttackAcquisitionRange"  "800"
   "AttackRange"       "90"
 
-  "BountyGoldMin"       "21.0"
-  "BountyGoldMax"       "24.0"
+  "BountyGoldMin"       "21"
+  "BountyGoldMax"       "24"
   "BountyXP"          "27"  
 
   "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1828,15 +1828,15 @@
 
 	"AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	"AttackDamageMin"     "736000.0"
-	"AttackDamageMax"     "920000.0"
+	"AttackDamageMin"     "736000"
+	"AttackDamageMax"     "920000"
 	"AttackRate"        "0.3"
 	"AttackAnimationPoint"    "0.29"
 	"AttackAcquisitionRange"  "800"
 	"AttackRange"       "90"
 
-	"BountyGoldMin"       "83.0"
-	"BountyGoldMax"       "101.0"
+	"BountyGoldMin"       "83"
+	"BountyGoldMax"       "101"
 	"BountyXP"          "175"  
 
 	"BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1877,15 +1877,15 @@
 
   "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
   "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-  "AttackDamageMin"     "9200000.0"
-  "AttackDamageMax"     "12880000.0"
+  "AttackDamageMin"     "9200000"
+  "AttackDamageMax"     "12880000"
   "AttackRate"        "0.3"
   "AttackAnimationPoint"    "0.29"
   "AttackAcquisitionRange"  "800"
   "AttackRange"       "90"
 
-  "BountyGoldMin"       "119.0"
-  "BountyGoldMax"       "153.0"
+  "BountyGoldMin"       "119"
+  "BountyGoldMax"       "153"
   "BountyXP"          "175"  
 
   "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1926,15 +1926,15 @@
 
   "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
   "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-  "AttackDamageMin"     "11500000.0"
-  "AttackDamageMax"     "13800000.0"
+  "AttackDamageMin"     "11500000"
+  "AttackDamageMax"     "13800000"
   "AttackRate"        "0.2"
   "AttackAnimationPoint"    "0.19"
   "AttackAcquisitionRange"  "800"
   "AttackRange"       "90"
 
-  "BountyGoldMin"       "750.0"
-  "BountyGoldMax"       "750.0"
+  "BountyGoldMin"       "750"
+  "BountyGoldMax"       "750"
   "BountyXP"          "6000"  
 
   "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -1975,15 +1975,15 @@
 
   "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
   "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-  "AttackDamageMin"     "14720000.0"
-  "AttackDamageMax"     "15640000.0"
+  "AttackDamageMin"     "14720000"
+  "AttackDamageMax"     "15640000"
   "AttackRate"        "0.15"
   "AttackAnimationPoint"    "0.3"
   "AttackAcquisitionRange"  "800"
   "AttackRange"       "90"
 
-  "BountyGoldMin"       "1250.0"
-  "BountyGoldMax"       "1250.0"
+  "BountyGoldMin"       "1250"
+  "BountyGoldMax"       "1250"
   "BountyXP"          "20000"  
 
   "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -2024,15 +2024,15 @@
 
   "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
   "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-  "AttackDamageMin"     "6900000.0"
-  "AttackDamageMax"     "7820000.0"
+  "AttackDamageMin"     "6900000"
+  "AttackDamageMax"     "7820000"
   "AttackRate"        "0.3"
   "AttackAnimationPoint"    "0.30"
   "AttackAcquisitionRange"  "800"
   "AttackRange"       "90"
 
-  "BountyGoldMin"       "1500.0"
-  "BountyGoldMax"       "1500.0"
+  "BountyGoldMin"       "1500"
+  "BountyGoldMax"       "1500"
   "BountyXP"          "50000"  
 
   "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -2075,15 +2075,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "20.0"
-	  "AttackDamageMax"     "40.0"
+	  "AttackDamageMin"     "20"
+	  "AttackDamageMax"     "40"
 	  "AttackRate"        "0.7"
 	  "AttackAnimationPoint"    "0.39"
 	  "AttackAcquisitionRange"  "800"
 	  "AttackRange"       "90"
 	
-		"BountyGoldMin"       "13.0"
-		"BountyGoldMax"       "17.0"
+		"BountyGoldMin"       "13"
+		"BountyGoldMax"       "17"
 		"BountyXP"          "18"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -2135,15 +2135,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "150.0"
-	  "AttackDamageMax"     "300.0"
+	  "AttackDamageMin"     "150"
+	  "AttackDamageMax"     "300"
 	  "AttackRate"        "0.7"
 	  "AttackAnimationPoint"    "0.39"
 	  "AttackAcquisitionRange"  "800"
 	  "AttackRange"       "90"
 	
-  "BountyGoldMin"       "21.0"
-  "BountyGoldMax"       "24.0"
+  "BountyGoldMin"       "21"
+  "BountyGoldMax"       "24"
   "BountyXP"          "27"   
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -2198,15 +2198,15 @@
 	
 		"AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-		"AttackDamageMin"     "10000.0"
-		"AttackDamageMax"     "100000.0"
+		"AttackDamageMin"     "10000"
+		"AttackDamageMax"     "100000"
 		"AttackRate"        "0.7"
 		"AttackAnimationPoint"    "0.39"
 		"AttackAcquisitionRange"  "800"
 		"AttackRange"       "90"
 	
-		"BountyGoldMin"       "83.0"
-	"BountyGoldMax"       "101.0"
+		"BountyGoldMin"       "83"
+	"BountyGoldMax"       "101"
 	"BountyXP"          "175"   
 	
 		"BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -2258,15 +2258,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "10000000.0"
-	  "AttackDamageMax"     "10000000.0"
+	  "AttackDamageMin"     "10000000"
+	  "AttackDamageMax"     "10000000"
 	  "AttackRate"        "0.7"
 	  "AttackAnimationPoint"    "0.39"
 	  "AttackAcquisitionRange"  "800"
 	  "AttackRange"       "90"
 	
-  "BountyGoldMin"       "119.0"
-  "BountyGoldMax"       "153.0"
+  "BountyGoldMin"       "119"
+  "BountyGoldMax"       "153"
   "BountyXP"          "175"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -2319,15 +2319,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "1000000.0"
-	  "AttackDamageMax"     "1000000.0"
+	  "AttackDamageMin"     "1000000"
+	  "AttackDamageMax"     "1000000"
 	  "AttackRate"        "0.7"
 	  "AttackAnimationPoint"    "0.39"
 	  "AttackAcquisitionRange"  "800"
 	  "AttackRange"       "90"
 	
-  "BountyGoldMin"       "750.0"
-  "BountyGoldMax"       "750.0"
+  "BountyGoldMin"       "750"
+  "BountyGoldMax"       "750"
   "BountyXP"          "6000"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -2380,15 +2380,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "16000000.0"
-	  "AttackDamageMax"     "1700000.0"
+	  "AttackDamageMin"     "16000000"
+	  "AttackDamageMax"     "1700000"
 	  "AttackRate"        "0.15"
 	  "AttackAnimationPoint"    "0.3"
 	  "AttackAcquisitionRange"  "800"
 	  "AttackRange"       "90"
 	
-  "BountyGoldMin"       "1250.0"
-  "BountyGoldMax"       "1250.0"
+  "BountyGoldMin"       "1250"
+  "BountyGoldMax"       "1250"
   "BountyXP"          "20000"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -2441,15 +2441,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "3000000.0"
-	  "AttackDamageMax"     "3365762.0"
+	  "AttackDamageMin"     "3000000"
+	  "AttackDamageMax"     "3365762"
 	  "AttackRate"        "0.7"
 	  "AttackAnimationPoint"    "0.39"
 	  "AttackAcquisitionRange"  "800"
 	  "AttackRange"       "90"
 	
-  "BountyGoldMin"       "1500.0"
-  "BountyGoldMax"       "1500.0"
+  "BountyGoldMin"       "1500"
+  "BountyGoldMax"       "1500"
   "BountyXP"          "50000"   
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -2492,8 +2492,8 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "30.0"
-	  "AttackDamageMax"     "30.0"
+	  "AttackDamageMin"     "30"
+	  "AttackDamageMax"     "30"
 	  "AttackRate"        "0.9"
 	  "AttackAnimationPoint"    "0.2"
 	  "AttackAcquisitionRange"  "500"
@@ -2531,7 +2531,7 @@
 	{
 	  "BaseClass"         "npc_dota_base_additive"  
 	  "Model"           "models/props_structures/tower_upgrade/tower_upgrade.vmdl"  
-	  "ModelScale"                "1.0"
+	  "ModelScale"                "1"
 	  "SoundSet"          "Creep_Good_Range"          
 	  "Level"           "1"
 	
@@ -2552,7 +2552,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	  
 	  "StatusHealth"        "6000"     
@@ -2589,7 +2589,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	  
 	  "StatusHealth"        "1000"     
@@ -2630,7 +2630,7 @@
 	  
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	
 	  "StatusHealth"        "200"     
@@ -2673,7 +2673,7 @@
 	  
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_FLY"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	
 	  
@@ -2811,7 +2811,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	
 	  "StatusHealth"        "10"     
@@ -2860,7 +2860,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	
 	  "StatusHealth"        "10"     
@@ -2909,7 +2909,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	
 	  "StatusHealth"        "10"     
@@ -2958,7 +2958,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	
 	  "StatusHealth"        "10"     
@@ -3003,7 +3003,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	
 	  "StatusHealth"        "150"     
@@ -3034,16 +3034,16 @@
 	  "MagicalResistance"   "0"
 	
 	  "AttackCapabilities"  "DOTA_UNIT_CAP_MELEE_ATTACK"
-	  "AttackDamageMin"    "2000000.0"
-	  "AttackDamageMax"    "2000000.0"
+	  "AttackDamageMin"    "2000000"
+	  "AttackDamageMax"    "2000000"
 	  "AttackDamageType"   "DAMAGE_TYPE_ArmorPhysical"
 	  "AttackRate"    "1"
 	  "AttackAnimationPoint"  "0.433"
 	  "AttackAcquisitionRange" "500"
 	  "AttackRange"     "90"
 	
-	  "BountyGoldMin"    "100000.0"
-	  "BountyGoldMax"    "100000.0"
+	  "BountyGoldMin"    "100000"
+	  "BountyGoldMax"    "100000"
 	
 	  "BoundsHullName"   "DOTA_HULL_SIZE_HUGE"
 	  //"RingRadius"    "40"
@@ -3101,8 +3101,8 @@
 	  "AttackDamageMin"       "0"
 	  "AttackDamageMax"       "0"
 	
-	  "BountyGoldMin"       "10.0"
-	  "BountyGoldMax"       "10.0"
+	  "BountyGoldMin"       "10"
+	  "BountyGoldMax"       "10"
 	
 	  "BoundsHullName"    "DOTA_HULL_SIZE_SMALL"    
 	  "RingRadius"        "100"
@@ -3110,7 +3110,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE" 
 	  "MovementSpeed"         "0"   
-	  "MovementTurnRate"    "0.0"  
+	  "MovementTurnRate"    "0"  
 	  "HasAggressiveStance"     "0"
 	  
 	  "StatusHealth"        "100"
@@ -3149,7 +3149,7 @@
 	
 	  "AttackCapabilities"  "DOTA_UNIT_CAP_NO_ATTACK"
 	
-	  "BountyGoldMin"    "10.0"
+	  "BountyGoldMin"    "10"
 	
 	  "BoundsHullName"   "DOTA_HULL_SIZE_REGULAR"
 	  "RingRadius"    "40"
@@ -3161,7 +3161,7 @@
 	  "MovementTurnRate"   "0.6"
 	
 	  "StatusHealth"    "20"
-	  "StatusHealthRegen"   "0.0"
+	  "StatusHealthRegen"   "0"
 	  "StatusMana"    "0"
 	  "StatusManaRegen"    "0"
 	
@@ -3180,7 +3180,7 @@
 	{
 	  "BaseClass"         "npc_dota_base_additive"
 	  "Model"           "models/props_gameplay/shopkeeper_fountain/shopkeeper_fountain.vmdl"
-	  "ModelScale"        "1.0"
+	  "ModelScale"        "1"
 	  "Level"           "0"
 	  "HealthBarOffset"       "255"
 	  "HasInventory"        "0"
@@ -3203,8 +3203,8 @@
 	  "AttackDamageMax"       "0"
 	  "AttackRange" "5000"
 	
-	  "BountyGoldMin"       "10.0"
-	  "BountyGoldMax"       "10.0"
+	  "BountyGoldMin"       "10"
+	  "BountyGoldMax"       "10"
 	
 	  "BoundsHullName"    "DOTA_HULL_SIZE_SMALL"    
 	  "RingRadius"        "100"
@@ -3212,7 +3212,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE" 
 	  "MovementSpeed"         "0"   
-	  "MovementTurnRate"    "0.0"  
+	  "MovementTurnRate"    "0"  
 	  "HasAggressiveStance"     "0"
 	  
 	  "StatusHealth"        "100"
@@ -3232,7 +3232,7 @@
 	{
 	  "BaseClass"         "npc_dota_creature"
 	  "Model"           "models/items/courier/krobeling/krobeling.vmdl"
-	  "ModelScale"        "1.0"
+	  "ModelScale"        "1"
 	  "SoundSet"          "Creep_Good_Range"
 	  "Level"           "1"
 	  "HealthBarOffset"     "290"
@@ -3242,8 +3242,8 @@
 	
 	  "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	
-	  "BountyGoldMin"       "0.0"
-	  "BountyGoldMax"       "0.0"
+	  "BountyGoldMin"       "0"
+	  "BountyGoldMax"       "0"
 	  "BountyXP"          "0"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_BARRACKS"
@@ -3270,7 +3270,7 @@
 	{
 	  "BaseClass"         "npc_dota_creature"
 	  "Model"           "models/items/juggernaut/ward_foo.vmdl"
-	  "ModelScale"        "1.0"
+	  "ModelScale"        "1"
 	  "SoundSet"          "Creep_Good_Range"
 	  "Level"           "1"
 	  "HealthBarOffset"     "290"
@@ -3280,8 +3280,8 @@
 	
 	  "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	
-	  "BountyGoldMin"       "0.0"
-	  "BountyGoldMax"       "0.0"
+	  "BountyGoldMin"       "0"
+	  "BountyGoldMax"       "0"
 	  "BountyXP"          "0"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_BARRACKS"
@@ -3308,7 +3308,7 @@
 	{
 	  "BaseClass"         "npc_dota_creature"
 	  "Model"           "models/items/juggernaut/ward/healing_gills_of_the_lost_isles/healing_gills_of_the_lost_isles.vmdl"
-	  "ModelScale"        "1.0"
+	  "ModelScale"        "1"
 	  "SoundSet"          "Creep_Good_Range"
 	  "Level"           "1"
 	  "HealthBarOffset"     "290"
@@ -3318,8 +3318,8 @@
 	
 	  "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
 	
-	  "BountyGoldMin"       "0.0"
-	  "BountyGoldMax"       "0.0"
+	  "BountyGoldMin"       "0"
+	  "BountyGoldMax"       "0"
 	  "BountyXP"          "0"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_BARRACKS"
@@ -3356,16 +3356,16 @@
 	  "MagicalResistance"   "0"
 	
 	  "AttackCapabilities"  "DOTA_UNIT_CAP_MELEE_ATTACK"
-	  "AttackDamageMin"    "250000.0"
-	  "AttackDamageMax"    "250000.0"
+	  "AttackDamageMin"    "250000"
+	  "AttackDamageMax"    "250000"
 	  "AttackDamageType"   "DAMAGE_TYPE_ArmorPhysical"
 	  "AttackRate"    "1"
 	  "AttackAnimationPoint"  "0.433"
 	  "AttackAcquisitionRange" "500"
 	  "AttackRange"     "90"
 	
-	  "BountyGoldMin"    "50000.0"
-	  "BountyGoldMax"    "50000.0"
+	  "BountyGoldMin"    "50000"
+	  "BountyGoldMax"    "50000"
 	
 	  "BoundsHullName"   "DOTA_HULL_SIZE_HUGE"
 	  //"RingRadius"    "40"
@@ -3423,8 +3423,8 @@
 	
 	  "AttackCapabilities"  "DOTA_UNIT_CAP_NO_ATTACK"
 	
-	  "BountyGoldMin"    "11.0"
-	  "BountyGoldMax"    "31.0"
+	  "BountyGoldMin"    "11"
+	  "BountyGoldMax"    "31"
 	
 	  "BoundsHullName"   "DOTA_HULL_SIZE_REGULAR"
 	  "RingRadius"    "40"
@@ -3465,7 +3465,7 @@
 	{
 	  "BaseClass"         "npc_dota_base_additive"
 	  "Model"           "models/items/courier/krobeling_gold/krobeling_gold.vmdl"
-	  "ModelScale"                "1.0"
+	  "ModelScale"                "1"
 	  "SoundSet"          "Creep_Good_Range"          
 	  "Level"           "1"
 	
@@ -3487,7 +3487,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	  
 	  "StatusHealth"        "6000"     
@@ -3509,7 +3509,7 @@
 	{
 	  "BaseClass"         "npc_dota_base_additive"
 	  "Model"           "models/items/juggernaut/ward/dc_wardupate/dc_wardupate.vmdl"
-	  "ModelScale"        "1.0"
+	  "ModelScale"        "1"
 	  "SoundSet"          "Creep_Good_Range"          
 	  "Level"           "1"
 	
@@ -3531,7 +3531,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	  
 	  "StatusHealth"        "6000"     
@@ -3552,7 +3552,7 @@
 	{
 	  "BaseClass"         "npc_dota_base_additive"
 	  "Model"           "models/items/witchdoctor/wd_ward/ribbitar_ward/ribbitar_ward.vmdl"
-	  "ModelScale"        "1.0"
+	  "ModelScale"        "1"
 	  "SoundSet"          "Creep_Good_Range"          
 	  "Level"           "1"
 	
@@ -3574,7 +3574,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	  
 	  "StatusHealth"        "6000"     
@@ -3605,16 +3605,16 @@
 	  "MagicalResistance"   "0"
 	
 	  "AttackCapabilities"  "DOTA_UNIT_CAP_MELEE_ATTACK"
-	  "AttackDamageMin"    "100.0"
-	  "AttackDamageMax"    "100.0"
+	  "AttackDamageMin"    "100"
+	  "AttackDamageMax"    "100"
 	  "AttackDamageType"   "DAMAGE_TYPE_ArmorPhysical"
 	  "AttackRate"    "1"
 	  "AttackAnimationPoint"  "0.433"
 	  "AttackAcquisitionRange" "500"
 	  "AttackRange"     "90"
 	
-	  "BountyGoldMin"    "19866.0"
-	  "BountyGoldMax"    "19866.0"
+	  "BountyGoldMin"    "19866"
+	  "BountyGoldMax"    "19866"
 	
 	  "BoundsHullName"   "DOTA_HULL_SIZE_HUGE"
 	  //"RingRadius"    "40"
@@ -3675,8 +3675,8 @@
 	
 	  "AttackCapabilities"  "DOTA_UNIT_CAP_NO_ATTACK"
 	
-	  "BountyGoldMin"    "6.0"
-	  "BountyGoldMax"    "14.0"
+	  "BountyGoldMin"    "6"
+	  "BountyGoldMax"    "14"
 	
 	  "BoundsHullName"   "DOTA_HULL_SIZE_SMALL"
 	  "RingRadius"    "40"
@@ -3731,8 +3731,8 @@
 	  "AttackDamageMin"       "0"
 	  "AttackDamageMax"       "0"
 	
-	  "BountyGoldMin"       "10.0"
-	  "BountyGoldMax"       "10.0"
+	  "BountyGoldMin"       "10"
+	  "BountyGoldMax"       "10"
 	
 	  "BoundsHullName"    "DOTA_HULL_SIZE_SMALL"    
 	  "RingRadius"        "100"
@@ -3740,10 +3740,10 @@
 	  
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE" 
 	  "MovementSpeed"         "0"   
-	  "MovementTurnRate"    "0.0"  
+	  "MovementTurnRate"    "0"  
 	  "HasAggressiveStance"     "0"
 	
-	  "StatusHealth"        "50.0"
+	  "StatusHealth"        "50"
 	  "StatusHealthRegen"     "0"
 	  "StatusMana"        "0"
 	  "StatusManaRegen"       "0"
@@ -3782,8 +3782,8 @@
 	
 	  "AttackCapabilities"  "DOTA_UNIT_CAP_NO_ATTACK"
 	
-	  "BountyGoldMin"    "13.0"
-	  "BountyGoldMax"    "25.0"
+	  "BountyGoldMin"    "13"
+	  "BountyGoldMax"    "25"
 	
 	  "BoundsHullName"   "DOTA_HULL_SIZE_REGULAR"
 	  "RingRadius"    "40"
@@ -3825,16 +3825,16 @@
 	  "MagicalResistance"   "0"
 	
 	  "AttackCapabilities"  "DOTA_UNIT_CAP_MELEE_ATTACK"
-	  "AttackDamageMin"    "450.0"
-	  "AttackDamageMax"    "550.0"
+	  "AttackDamageMin"    "450"
+	  "AttackDamageMax"    "550"
 	  "AttackDamageType"   "DAMAGE_TYPE_ArmorPhysical"
 	  "AttackRate"    "1"
 	  "AttackAnimationPoint"  "0.433"
 	  "AttackAcquisitionRange" "3000"
 	  "AttackRange"     "90"
 	
-	  "BountyGoldMin"    "3950.0"
-	  "BountyGoldMax"    "3950.0"
+	  "BountyGoldMin"    "3950"
+	  "BountyGoldMax"    "3950"
 	
 	  "BoundsHullName"   "DOTA_HULL_SIZE_HUGE"
 	  //"RingRadius"    "40"
@@ -3897,7 +3897,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	  
 	  "StatusHealth"        "20"     
@@ -4007,7 +4007,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	
 	  "StatusHealth"        "250"     
@@ -4062,7 +4062,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE"     
 	  "MovementSpeed"       "0"   
-	  "MovementTurnRate"      "0.0"   
+	  "MovementTurnRate"      "0"   
 	  "FollowRange"       "0"   
 	
 	  "StatusHealth"        "250"     
@@ -4082,7 +4082,7 @@
 	{
 	  "BaseClass"         "npc_dota_creature"
 	  "Model"           "models/heroes/techies/fx_techiesfx_stasis.vmdl"
-	  "ModelScale"        "1.0"
+	  "ModelScale"        "1"
 	  "Level"           "4"
 	  "HealthBarOffset"       "140"
 	  "HasInventory"        "0"
@@ -4099,8 +4099,8 @@
 	  "AttackDamageMin"       "0"
 	  "AttackDamageMax"       "0"
 	
-	  "BountyGoldMin"       "20.0"
-	  "BountyGoldMax"       "20.0"
+	  "BountyGoldMin"       "20"
+	  "BountyGoldMax"       "20"
 	
 	  "BoundsHullName"    "DOTA_HULL_SIZE_SMALL"    
 	  "RingRadius"        "10"
@@ -4108,7 +4108,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE" 
 	  "MovementSpeed"         "0"   
-	  "MovementTurnRate"    "0.0"  
+	  "MovementTurnRate"    "0"  
 	  "HasAggressiveStance"     "0"
 	  
 	  "StatusHealth"        "4"
@@ -4142,8 +4142,8 @@
 	  "MagicalResistance"       "0"     
 	
 	  "AttackCapabilities"  "DOTA_UNIT_CAP_MELEE_ATTACK"
-	  "AttackDamageMin"    "0.0"
-	  "AttackDamageMax"    "0.0"
+	  "AttackDamageMin"    "0"
+	  "AttackDamageMax"    "0"
 	  "AttackDamageType"   "DAMAGE_TYPE_ArmorPhysical"
 	  "AttackRate"    "1"
 	  "AttackAnimationPoint"  "0.433"
@@ -4165,7 +4165,7 @@
 	  "StatusHealth"        "30"     
 	  "StatusHealthRegen"     "0"     
 	  "StatusMana"        "10"     
-	  "StatusManaRegen"     "1.0"   
+	  "StatusManaRegen"     "1"   
 	
 	  "TeamName"     "DOTA_TEAM_GOODGUYS"
 	  "CombatClassAttack"   "DOTA_COMBAT_CLASS_ATTACK_BASIC"
@@ -4197,8 +4197,8 @@
 	  "AttackDamageMin"       "0"
 	  "AttackDamageMax"       "0"
 	
-	  "BountyGoldMin"       "10.0"
-	  "BountyGoldMax"       "10.0"
+	  "BountyGoldMin"       "10"
+	  "BountyGoldMax"       "10"
 	
 	  "BoundsHullName"    "DOTA_HULL_SIZE_SMALL"    
 	  "RingRadius"        "10"
@@ -4206,7 +4206,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE" 
 	  "MovementSpeed"         "0"   
-	  "MovementTurnRate"    "0.0"  
+	  "MovementTurnRate"    "0"  
 	  "HasAggressiveStance"     "0"
 	  
 	  "StatusHealth"        "1"
@@ -4237,16 +4237,16 @@
 	  "MagicalResistance"   "0"
 	
 	  "AttackCapabilities"  "DOTA_UNIT_CAP_MELEE_ATTACK"
-	  "AttackDamageMin"    "5000000.0"
-	  "AttackDamageMax"    "5000000.0"
+	  "AttackDamageMin"    "5000000"
+	  "AttackDamageMax"    "5000000"
 	  "AttackDamageType"   "DAMAGE_TYPE_ArmorPhysical"
 	  "AttackRate"    "1"
 	  "AttackAnimationPoint"  "0.433"
 	  "AttackAcquisitionRange" "500"
 	  "AttackRange"     "90"
 	
-	  "BountyGoldMin"    "300000.0"
-	  "BountyGoldMax"    "300000.0"
+	  "BountyGoldMin"    "300000"
+	  "BountyGoldMax"    "300000"
 	
 	  "BoundsHullName"   "DOTA_HULL_SIZE_HUGE"
 	  //"RingRadius"    "40"
@@ -4287,7 +4287,7 @@
 	{
 	  "BaseClass"         "npc_dota_building"
 	  "Model"           "models/ui/battle_cup_trophy/battle_cup_winter_champions_trophy.vmdl"
-	  "ModelScale"        "1.0"
+	  "ModelScale"        "1"
 	  "Level"           "1"
 	  "HealthBarOffset"     "160"
 	
@@ -4327,8 +4327,8 @@
 	  "AttackDamageMin"       "0"
 	  "AttackDamageMax"       "0"
 	
-	  "BountyGoldMin"       "10.0"
-	  "BountyGoldMax"       "10.0"
+	  "BountyGoldMin"       "10"
+	  "BountyGoldMax"       "10"
 	
 	  "BoundsHullName"    "DOTA_HULL_SIZE_SMALL"    
 	  "RingRadius"        "100"
@@ -4336,7 +4336,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE" 
 	  "MovementSpeed"         "0"   
-	  "MovementTurnRate"    "0.0"  
+	  "MovementTurnRate"    "0"  
 	  "HasAggressiveStance"     "0"
 	  
 	  "StatusHealth"        "100"
@@ -4372,8 +4372,8 @@
 	  "AttackDamageMin"       "0"
 	  "AttackDamageMax"       "0"
 	
-	  "BountyGoldMin"       "10.0"
-	  "BountyGoldMax"       "10.0"
+	  "BountyGoldMin"       "10"
+	  "BountyGoldMax"       "10"
 	
 	  "BoundsHullName"    "DOTA_HULL_SIZE_SMALL"    
 	  "RingRadius"        "100"
@@ -4381,7 +4381,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE" 
 	  "MovementSpeed"         "0"   
-	  "MovementTurnRate"    "0.0"  
+	  "MovementTurnRate"    "0"  
 	  "HasAggressiveStance"     "0"
 	  
 	  "StatusHealth"        "100"
@@ -4417,8 +4417,8 @@
 	  "AttackDamageMin"       "0"
 	  "AttackDamageMax"       "0"
 	
-	  "BountyGoldMin"       "10.0"
-	  "BountyGoldMax"       "10.0"
+	  "BountyGoldMin"       "10"
+	  "BountyGoldMax"       "10"
 	
 	  "BoundsHullName"    "DOTA_HULL_SIZE_SMALL"    
 	  "RingRadius"        "100"
@@ -4426,7 +4426,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE" 
 	  "MovementSpeed"         "0"   
-	  "MovementTurnRate"    "0.0"  
+	  "MovementTurnRate"    "0"  
 	  "HasAggressiveStance"     "0"
 	  
 	  "StatusHealth"        "100"
@@ -4462,8 +4462,8 @@
 	  "AttackDamageMin"       "0"
 	  "AttackDamageMax"       "0"
 	
-	  "BountyGoldMin"       "10.0"
-	  "BountyGoldMax"       "10.0"
+	  "BountyGoldMin"       "10"
+	  "BountyGoldMax"       "10"
 	
 	  "BoundsHullName"    "DOTA_HULL_SIZE_SMALL"    
 	  "RingRadius"        "100"
@@ -4471,7 +4471,7 @@
 	
 	  "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_NONE" 
 	  "MovementSpeed"         "0"   
-	  "MovementTurnRate"    "0.0"  
+	  "MovementTurnRate"    "0"  
 	  "HasAggressiveStance"     "0"
 	  
 	  "StatusHealth"        "100"
@@ -4496,7 +4496,7 @@
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				"1.0"
+		"ModelScale" 				"1"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -4530,7 +4530,7 @@
 		"StatusHealth"				"2"		// Base health.
 		"StatusHealthRegen"			"0.1"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -4626,7 +4626,7 @@
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"228"
-		"ModelScale" 				"1.0"
+		"ModelScale" 				"1"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -4660,7 +4660,7 @@
 		"StatusHealth"				"1000"		// Base health.
 		"StatusHealthRegen"			"0.1"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -4691,15 +4691,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "2.0"
-	  "AttackDamageMax"     "3.0"
-	  "AttackRate"        "3.0"
+	  "AttackDamageMin"     "2"
+	  "AttackDamageMax"     "3"
+	  "AttackRate"        "3"
 	  "AttackAnimationPoint"    "0.53"
 	  "AttackAcquisitionRange"  "900"
 	  "AttackRange"       "150"
 	
-	  "BountyGoldMin"       "1.0"
-	  "BountyGoldMax"       "1.0"
+	  "BountyGoldMin"       "1"
+	  "BountyGoldMax"       "1"
 	  "BountyXP"          "1"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -4741,15 +4741,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "4.0"
-	  "AttackDamageMax"     "6.0"
-	  "AttackRate"        "3.0"
+	  "AttackDamageMin"     "4"
+	  "AttackDamageMax"     "6"
+	  "AttackRate"        "3"
 	  "AttackAnimationPoint"    "0.53"
 	  "AttackAcquisitionRange"  "900"
 	  "AttackRange"       "150"
 	
-	  "BountyGoldMin"       "10.0"
-	  "BountyGoldMax"       "12.0"
+	  "BountyGoldMin"       "10"
+	  "BountyGoldMax"       "12"
 	  "BountyXP"          "10"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -4779,7 +4779,7 @@
 	{
 	  "BaseClass"         "npc_dota_creature"
 	  "Model"           "models/heroes/rattletrap/rattletrap.vmdl"
-	  "ModelScale"        "3.0"
+	  "ModelScale"        "3"
 	  "Level"           "10"
 	  "HealthBarOffset"     "228"
 	  "GameSoundsFile"      "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
@@ -4789,15 +4789,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "3000.0"
-	  "AttackDamageMax"     "6000.0"
-	  "AttackRate"        "2.0"
+	  "AttackDamageMin"     "3000"
+	  "AttackDamageMax"     "6000"
+	  "AttackRate"        "2"
 	  "AttackAnimationPoint"    "0.53"
 	  "AttackAcquisitionRange"  "900"
 	  "AttackRange"       "150"
 	
-	  "BountyGoldMin"       "20000.0"
-	  "BountyGoldMax"       "20000.0"
+	  "BountyGoldMin"       "20000"
+	  "BountyGoldMax"       "20000"
 	  "BountyXP"            "1000"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -4835,15 +4835,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "20.0"
-	  "AttackDamageMax"     "20.0"
-	  "AttackRate"        "3.0"
+	  "AttackDamageMin"     "20"
+	  "AttackDamageMax"     "20"
+	  "AttackRate"        "3"
 	  "AttackAnimationPoint"    "0.53"
 	  "AttackAcquisitionRange"  "900"
 	  "AttackRange"       "150"
 	
-	  "BountyGoldMin"       "100.0"
-	  "BountyGoldMax"       "100.0"
+	  "BountyGoldMin"       "100"
+	  "BountyGoldMax"       "100"
 	  "BountyXP"          "40"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -4881,15 +4881,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "500.0"
-	  "AttackDamageMax"     "550.0"
-	  "AttackRate"        "3.0"
+	  "AttackDamageMin"     "500"
+	  "AttackDamageMax"     "550"
+	  "AttackRate"        "3"
 	  "AttackAnimationPoint"    "0.53"
 	  "AttackAcquisitionRange"  "900"
 	  "AttackRange"       "150"
 	
-	  "BountyGoldMin"       "1000.0"
-	  "BountyGoldMax"       "1000.0"
+	  "BountyGoldMin"       "1000"
+	  "BountyGoldMax"       "1000"
 	  "BountyXP"            "100"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"
@@ -4927,15 +4927,15 @@
 	
 	  "AttackCapabilities"    "DOTA_UNIT_CAP_NO_ATTACK"
 	  "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
-	  "AttackDamageMin"     "0.0"
-	  "AttackDamageMax"     "0.0"
-	  "AttackRate"        "3.0"
+	  "AttackDamageMin"     "0"
+	  "AttackDamageMax"     "0"
+	  "AttackRate"        "3"
 	  "AttackAnimationPoint"    "0.53"
 	  "AttackAcquisitionRange"  "900"
 	  "AttackRange"       "150"
 	
-	  "BountyGoldMin"       "0.0"
-	  "BountyGoldMax"       "0.0"
+	  "BountyGoldMin"       "0"
+	  "BountyGoldMax"       "0"
 	  "BountyXP"            "0"  
 	
 	  "BoundsHullName"      "DOTA_HULL_SIZE_SMALL"

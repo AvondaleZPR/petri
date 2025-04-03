@@ -125,6 +125,10 @@ require('internal/modifier_tribune')
 
 function GameMode:PostLoadPrecache()
   DebugPrint("[BAREBONES] Performing Post-Load precache")
+
+  SpawnEntityFromTableAsynchronous("logic_script", {
+          vscripts = "postloadprecache.lua"
+      }, {}, {})
 end
 
 function GameMode:OnFirstPlayerLoaded()
@@ -926,7 +930,7 @@ function GameMode:OnGameInProgress()
     Timers:CreateTimer(3.0,
         function()
 		    Rating:SetPlayerProfiles()
-            GameRules:SendCustomMessage("#feedback_reminder", 0, 0)
+            --GameRules:SendCustomMessage("#feedback_reminder", 0, 0)
 			--fixPause()
 			
 			if GetMapName() == "petri_0_frostivus" then
@@ -1608,7 +1612,7 @@ function GameMode:SetupCustomSkin(hero, steamID, key)
       return true
     end
   end
-  local localization = GameMode.PETRI_LANG_LIST[hero:GetPlayerID()]
+  local localization = "english"
 
   if localization and GameMode.CustomSkinsKVs[key][localization] then
     for k2,v2 in pairs(GameMode.CustomSkinsKVs[key][localization]) do

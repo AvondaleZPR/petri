@@ -530,6 +530,11 @@
 	background-image: url( "file://{images}/custom_game/comp/rewards/10000.png");
 }
 
+.compcompcomp
+{
+	background-image: url( "file://{images}/custom_game/timeofday/border.png");
+}
+
 .feedheadtext
 {
 	font-family: "Arial";

@@ -1189,8 +1189,8 @@ end
 function GameMode:OnPlayerSay( event )
   local pID = event.userid - 1
   local text = event.text
-  local player = PlayerResource:GetPlayer(pID)
-  local hero = player:GetAssignedHero()
+  --local player = PlayerResource:GetPlayer(pID)
+  --local hero = player:GetAssignedHero()
   
   print(text)
   

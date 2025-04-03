@@ -56,98 +56,45 @@
 	    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 	    "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 	    
-	    "AbilitySpecial"
+	    "AbilityValues"
 	    {
-	        "01"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "bonus_strength"                                    "10"
-	        }
-	        "02"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "bonus_agility"                                     "26"
-	        }
-	        "03"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "bonus_intelligence"                                "10"
-	        }
-	        "04"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "bonus_attack_speed"                                "15"
-	        }
-	        "05"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "bonus_movement_speed_percentage"                   "200"
-	        }
-	        "06"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "images_count"                                      "2"  //This value is currently hardcoded in item_manta.lua.
-	        }
-	        "07"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_duration"                                 "20"
-	        }
-	        "08"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_outgoing_melee"            "-67"
-	        }
-	        "09"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_outgoing_melee_tooltip"    "33"
-	        }   
-	        "10"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_incoming_melee"            "250"
-	        }
-	        "11"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_incoming_melee_tooltip"    "350"
-	        }           
-	        "12"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_outgoing_ranged"           "-72"
-	        }
-	        "13"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_outgoing_ranged_tooltip"   "28"
-	        }
-	        "14"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_incoming_ranged"           "300"
-	        }
-	        "15"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_incoming_ranged_tooltip"   "400"
-	        }
-	        "16"
-	        {
-	            "var_type"                                          "FIELD_FLOAT"
+
 	            "cooldown_melee"                                    "35.0"  //The cooldown for a ranged caster is the AbilityCooldown value.
-	        }
-	        "17"
-	        {
-	            "var_type"                                          "FIELD_FLOAT"
+
 	            "invulnerability_duration"                          "0.1"
-	        }
-	        "18"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "vision_radius"                                     "1000"
-	        }
+	        
 	    }
 	    
 	    "OnSpellStart"
@@ -256,13 +203,11 @@
 	    "particle"  "particles/econ/events/ti7/mjollnir_shield_ti7.vpcf"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "buff_duration"     "10"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -352,23 +297,15 @@
 		"particle"  "particles/items_fx/aegis_timer_k.vpcf"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "attack_percentage_bonus"     "90"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "radius"     "800"
-	    }
-	    "03"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "duration"     "15"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -627,7 +564,7 @@
 	"item_petri_book_of_experience1"
 	{
 	  "BaseClass"                 "item_datadriven"
-	  "ID"              "1131"
+	  "ID"              "113122"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -661,7 +598,7 @@
 	"item_petri_book_of_experience2"
 	{
 	  "BaseClass"                 "item_datadriven"
-	  "ID"              "1132"
+	  "ID"              "113222"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -695,7 +632,7 @@
 	"item_petri_book_of_experience3"
 	{
 	  "BaseClass"                 "item_datadriven"
-	  "ID"              "1133"
+	  "ID"              "113322"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -836,23 +773,15 @@
 	    "particle"          "particles/units/heroes/hero_puck/puck_phase_shift.vpcf"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_movespeed"    "100"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "duration"      "2"
-	    }
-	    "03"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "magical_resist"      "65"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -938,7 +867,7 @@
 	"item_petri_tourmaline_patch"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1120"
+	  "ID"              "112022"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -952,18 +881,13 @@
 	  "ItemQuality"         "component"
 	  "ItemAliases"         "bracer"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_all_stats"    "20"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "invu_duration"   "6"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -1023,7 +947,7 @@
 	"item_petri_jade_amulet"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1121"
+	  "ID"              "112122"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -1037,18 +961,13 @@
 	  "ItemQuality"         "component"
 	  "ItemAliases"         "bracer"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_all_stats"    "50"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "invu_duration"   "7"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -1108,7 +1027,7 @@
 	"item_recipe_petri_jade_amulet"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1122"
+	  "ID"              "112222"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -1126,7 +1045,7 @@
 	"item_petri_bracer"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1123"
+	  "ID"              "112322"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -1140,18 +1059,13 @@
 	  "ItemQuality"         "component"
 	  "ItemAliases"         "bracer"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_all_stats"    "100"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "invu_duration"   "8"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -1212,7 +1126,7 @@
 	"item_recipe_petri_bracer"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1521"
+	  "ID"              "152122"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -1229,7 +1143,7 @@
 	"item_petri_butt"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1502"
+	  "ID"              "150222"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -1243,23 +1157,15 @@
 	  "ItemQuality"         "component"
 	  "ItemAliases"         "butt"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_health"      "60"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "buff_duration"     "5"
-	    }
-	    "03"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "health_per_second"   "15"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -1305,7 +1211,7 @@
 	"item_petri_butt2"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1197"
+	  "ID"              "119722"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -1319,23 +1225,15 @@
 	  "ItemQuality"         "component"
 	  "ItemAliases"         "butt"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_health"      "250"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "buff_duration"     "10"
-	    }
-	    "03"
-	    {
-	      "var_type"        "FIELD_FLOAT"
+
 	      "health_per_second"   "30"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -1381,7 +1279,7 @@
 	"item_recipe_petri_butt2"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1198"
+	  "ID"              "119822"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -1399,7 +1297,7 @@
 	"item_petri_butt3"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1199"
+	  "ID"              "119922"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -1413,23 +1311,15 @@
 	  "ItemQuality"         "component"
 	  "ItemAliases"         "butt"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_health"      "750"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "buff_duration"     "12"
-	    }
-	    "03"
-	    {
-	      "var_type"        "FIELD_FLOAT"
+
 	      "health_per_second"   "75"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -1475,7 +1365,7 @@
 	"item_recipe_petri_butt3"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1200"
+	  "ID"              "120022"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -2117,25 +2007,15 @@
 	    "soundfile"  "soundevents/voscripts/game_sounds_vo_crystalmaiden.vsndevts"
 	  }
 	  
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "blink_range"     "500"
-	    }
-	    
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "min_blink_range"   "200"
-	    }
-	
-	    "03"
-	    {
-	      "var_type"                      "FIELD_INTEGER"
+
 	      "blink_damage_cooldown"         "5"
-	    }
+	  
 	  }
 	
 	  "OnSpellStart"
@@ -2630,13 +2510,11 @@
 	    "particle"  "particles/econ/items/lifestealer/lifestealer_immortal_backbone/lifestealer_immortal_backbone_rage.vpcf"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "buff_duration"     "12"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -2736,73 +2614,35 @@
 	
 	  "SideShop" "1"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	        "var_type"              "FIELD_INTEGER"
+
 	        "travel_distance"       "1600"
-	    }
-	    "02"
-	    {
-	        "var_type"              "FIELD_INTEGER"
+
 	        "travel_speed"          "1000"
-	    }
-	    "03"
-	    {
-	        "var_type"              "FIELD_INTEGER"
+
 	        "area_of_effect"        "200"
-	    }
-	    "04"
-	    {
-	        "var_type"              "FIELD_INTEGER"
+
 	        "vision_distance"       "600"
-	    }
-	    "05"
-	    {
-	        "var_type"              "FIELD_FLOAT"
+
 	        "end_vision_duration"   "1.75"
-	    }
-	    "06"
-	    {
-	        "var_type"              "FIELD_FLOAT"
+
 	        "lift_duration"         "2.5"
-	    }
-	    "07"
-	    {
-	        "var_type"              "FIELD_FLOAT"
+
 	        "base_damage"           "70"
-	    }
-	    "08"
-	    {
-	        "var_type"              "FIELD_FLOAT"
+
 	        "wex_damage"            "315"
-	    }
-	    "09"
-	    {
-	        "var_type"                  "FIELD_INTEGER"
+
 	        "cyclone_min_height"        "300"
-	    }
-	    "10"
-	    {
-	        "var_type"                  "FIELD_INTEGER"
+
 	        "cyclone_initial_height"    "350"
-	    }
-	    "11"
-	    {
-	        "var_type"                  "FIELD_INTEGER"
+
 	        "cyclone_max_height"        "400"
-	    }
-	    "12"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "dodge_chance"     "30"
-	    }
-	    "13"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "duration"     "7"
-	    }
+	   
 	  }
 	
 	  "precache"
@@ -2885,7 +2725,7 @@
 	}
 	"item_petri_give_permission_to_build"
 	{
-	  "ID"              "1504"
+	  "ID"              "150422"
 	  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	  "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	  "AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
@@ -2899,18 +2739,13 @@
 	  "ItemSellable"                  "0"
 	  "ItemDroppable"         "0"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "max"    "2"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_FLOAT"
+
 	      "damage_reducer"    "-50"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -2956,7 +2791,7 @@
 	
 	"item_petri_give_permission_to_build2"
 	{
-	  "ID"              "1601"
+	  "ID"              "160122"
 	  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	  "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	  "AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
@@ -2970,18 +2805,11 @@
 	  "ItemSellable"                  "0"
 	  "ItemDroppable"         "0"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "max"    "3"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_FLOAT"
 	      "damage_reducer"    "-66.7"
-	    }
 	  }
 	
 	  "OnSpellStart"
@@ -3028,7 +2856,7 @@
 	
 	"item_petri_give_permission_to_build3"
 	{
-	  "ID"              "1602"
+	  "ID"              "160222"
 	  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	  "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	  "AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
@@ -3042,18 +2870,13 @@
 	  "ItemSellable"                  "0"
 	  "ItemDroppable"         "0"
 	  
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "max"    "4"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_FLOAT"
+
 	      "damage_reducer"    "-75"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -3124,13 +2947,11 @@
 	  "ItemRequiresCharges" "1"
 	  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"          "FIELD_INTEGER"
+
 	      "gold"              "15"
-	    }
+	   
 	  }
 	
 	  "OnSpellStart"
@@ -3146,7 +2967,7 @@
 	}
 	"item_petri_gold_bag"
 	{
-	  "ID"              "1108"
+	  "ID"              "110822"
 	  "BaseClass"                 "item_datadriven"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
@@ -3177,7 +2998,7 @@
 	
 	"item_petri_gold_bag2"
 	{
-	  "ID"              "1109"
+	  "ID"              "110922"
 	  "BaseClass"                 "item_datadriven"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
@@ -3208,7 +3029,7 @@
 	
 	"item_petri_gold_bag3"
 	{
-	  "ID"              "1110"
+	  "ID"              "111022"
 	  "BaseClass"                 "item_datadriven"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
@@ -3240,7 +3061,7 @@
 	
 	"item_petri_gold_bag4"
 	{
-	  "ID"              "1111"
+	  "ID"              "111122"
 	  "BaseClass"                 "item_datadriven"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
@@ -3297,13 +3118,11 @@
 	  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
 	  "ItemCastOnPickup"    "1"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"          "FIELD_INTEGER"
+
 	      "gold_modifier"              "6"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -3347,23 +3166,15 @@
 	  "ItemStockTime" "1200"
 	  "ItemStockInitial" "0"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"          "FIELD_INTEGER"
+
 	      "armor_reducing"    "-900"
-	    }
-	    "02"
-	    {
-	      "var_type"          "FIELD_INTEGER"
+
 	      "corruption_duration"    "1"
-	    }
-	    "03"
-	    {
-	      "var_type"          "FIELD_INTEGER"
+
 	      "duration"    "75"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -3433,29 +3244,18 @@
 	  "ItemShopTags"          "health_pool"
 	  "ItemQuality"         "component"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_health"      "17000"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_regen"      "17"
 	
-	    }
-	    "03"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "buff_duration"     "3"
-	    }
-	    "04"
-	    {
-	      "var_type"        "FIELD_FLOAT"
+
 	      "health_per_second"   "22222"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -3502,7 +3302,7 @@
 	"item_recipe_petri_chicken"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1201"
+	  "ID"              "120122"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -3533,28 +3333,17 @@
 	  "ItemShopTags"          "health_pool"
 	  "ItemQuality"         "component"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_health"      "60000"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_regen"      "60"
-	    }
-	    "03"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "buff_duration"     "3"
-	    }
-	    "04"
-	    {
-	      "var_type"        "FIELD_FLOAT"
+
 	      "health_per_second"   "66666"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -3635,28 +3424,17 @@
 	  "ItemShopTags"          "health_pool"
 	  "ItemQuality"         "component"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_health"      "120000"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_regen"      "200"
-	    }
-	    "03"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "buff_duration"     "3"
-	    }
-	    "04"
-	    {
-	      "var_type"        "FIELD_FLOAT"
+
 	      "health_per_second"   "222222"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -3735,33 +3513,19 @@
 	  "ItemShopTags"          "health_pool"
 	  "ItemQuality"         "component"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_health"      "500000"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_regen"      "500"
-	    }
-	    "03"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "buff_duration"     "3"
-	    }
-	    "04"
-	    {
-	      "var_type"        "FIELD_FLOAT"
+
 	      "health_per_second"   "666666"
-	    }
-	    "05"
-	    {
-	      "var_type"        "FIELD_FLOAT"
+
 	      "bonus_evasion"   "10"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -3836,7 +3600,7 @@
 	"item_petri_helmet"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1505"
+	  "ID"              "150522"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -3849,18 +3613,11 @@
 	  
 	  "ItemSellFullPrice" "1"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
 	      "bonus_armor"      "2"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
 	      "full_price"      "5"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -3901,13 +3658,13 @@
 	  
 	  "ScriptFile"					"items/hook.lua"	
 	  
-	"precache"
-	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
-		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook_chain.vpcf"
-		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook_impact.vpcf"
-		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook.vpcf"
-	}
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+			"particle"			"particles/units/heroes/hero_pudge/pudge_meathook_chain.vpcf"
+			"particle"			"particles/units/heroes/hero_pudge/pudge_meathook_impact.vpcf"
+			"particle"			"particles/units/heroes/hero_pudge/pudge_meathook.vpcf"
+		}
 	  
 	  "AbilityCastRange"        "5000"
 	  "AbilityCastPoint"        "0.0"
@@ -3916,44 +3673,24 @@
 	
 	  "AbilityDamage"                 "1"
 	
-	"AbilitySpecial"
-	{
-		"01"
+		"AbilityValues"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"hook_speed"			"2000.0"
+
+				"hook_speed"			"2000.0"
+
+				"hook_width"		"110"
+
+				"hook_distance"		"5000"
+
+				"vision_radius"		"500"
+
+				"vision_duration"	"4.0"
+
+				"hook_followthrough_constant"			"0.65"
+
+				"hook_damage"		"1"
+			
 		}
-		"02"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"hook_width"		"110"
-		}
-		"03"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"hook_distance"		"5000"
-		}
-		"04"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"vision_radius"		"500"
-		}
-		"05"
-		{
-			"var_type"			"FIELD_FLOAT"
-			"vision_duration"	"4.0"
-		}
-		"06"
-		{
-			"var_type"			"FIELD_FLOAT"
-			"hook_followthrough_constant"			"0.65"
-		}
-		"07"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"hook_damage"		"1"
-		}
-	}
 	}
 	"item_petri_hp_fix"
 	{
@@ -3992,7 +3729,7 @@
 	"item_petri_janitor"
 	{
 	  "BaseClass"                 "item_datadriven"
-	  "ID"              "1666"
+	  "ID"              "166666"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -4048,58 +3785,29 @@
 	    "particle"  "particles/items3_fx/lotus_orb_shield.vpcf"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"                    "FIELD_INTEGER"
+
 	      "lifesteal_percent"           "150"
-	    }
-	    "02"
-	    {
-	      "var_type"                    "FIELD_INTEGER"
+
 	      "lifesteal_percent_building"   "13"
-	    }
-	    "03"
-	    {
-	      "var_type"                    "FIELD_INTEGER"
+
 	      "bonus_all_stats"             "475"
-	    }
-	    "04"
-	    {
-	      "var_type"                    "FIELD_INTEGER"
+
 	      "armor"                       "20"
-	    }
-	    "05"
-	    {
-	      "var_type"                    "FIELD_INTEGER"
+
 	      "invu_duration"               "18"
-	    }
-	    "06"
-	    {
-	      "var_type"                    "FIELD_INTEGER"
+
 	      "grease_duration"             "45"
-	    }
-	    "07"
-	    {
-	      "var_type"                    "FIELD_INTEGER"
+
 	      "armor_reducing"              "-6000"
-	    }
-	    "08"
-	    {
-	      "var_type"                    "FIELD_INTEGER"
+
 	      "corruption_duration"         "1"
-	    }
-	    "09"
-	    {
-	      "var_type"                    "FIELD_INTEGER"
+
 	      "bonus_gold_from_wall"        "100"
-	    }
-	    "10"
-	    {
-	      "var_type"                    "FIELD_INTEGER"
+
 	      "bonus_exp_from_wall"         "10"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -4566,25 +4274,15 @@
 	  
 	  "AbilityManaCost"       "0"
 	  
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "blink_range"     "99999"
-	    }
-	    
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "min_blink_range"   "1000"
-	    }
-	
-	    "03"
-	    {
-	      "var_type"                      "FIELD_INTEGER"
+
 	      "blink_damage_cooldown"         "5"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -4666,19 +4364,13 @@
 	  
 	  "AbilityManaCost"       "0"
 	  
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "blink_range"     "2250"
-	    }
-	    
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "min_blink_range"   "200"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -4745,19 +4437,13 @@
 	  
 	  "AbilityManaCost"       "0"
 	  
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "blink_range"     "50000"
-	    }
-	    
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "min_blink_range"   "200"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -4785,7 +4471,7 @@
 	"item_petri_kvn_medal"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1507"
+	  "ID"              "150722"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -4823,7 +4509,7 @@
 	"item_petri_locker"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1605"
+	  "ID"              "160522"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -4831,7 +4517,7 @@
 	"item_petri_mask_of_laugh"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1508"
+	  "ID"              "150822"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -4842,25 +4528,15 @@
 	  "ItemQuality"         "component"
 	  "ItemAliases"         "mask of laugh"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "lifesteal_percent"   "5"
-	    }
-	
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "lifesteal_percent_building"   "10"
-	    }
-	
-	    "03"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_gold_from_wall"   "1"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -4920,7 +4596,7 @@
 	"item_petri_megahammer"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1510"
+	  "ID"              "151022"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -4933,18 +4609,13 @@
 	
 	  "ItemSellFullPrice" "1"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_damage"      "1"
-	    }   
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "full_price"      "1"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -4975,7 +4646,7 @@
 	"item_petri_mega_sith"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1509"
+	  "ID"              "150922"
 	  "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	  "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	  "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -5000,28 +4671,17 @@
 	  "ItemQuality"         "unique"
 	  "ItemAliases"         "mega sith"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_strength"    "75"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_armor"      "30"
-	    }
-	    "03"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_mana"    "3000"
-	    }
-	    "04"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "dodge_chance"    "35"
-	    }
+	    
 	  }
 	
 	  "precache"
@@ -5107,7 +4767,7 @@
 	"item_recipe_petri_mega_sith"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1520"
+	  "ID"              "152022"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -5150,13 +4810,11 @@
 	  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
 	  "ItemCastOnPickup"    "1"
 	  
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"          "FIELD_INTEGER"
+
 	      "wood_modifier"              "195"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -5204,18 +4862,13 @@
 	      "particle"          "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"          "FIELD_FLOAT"
+
 	      "damage"              "102.5"
-	    }
-	    "02"
-	    {
-	      "var_type"          "FIELD_FLOAT"
+
 	      "chance"              "40"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -5359,18 +5012,13 @@
 	      "particle"          "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"          "FIELD_FLOAT"
+
 	      "damage"              "100"
-	    }
-	    "02"
-	    {
-	      "var_type"          "FIELD_FLOAT"
+
 	      "chance"              "0"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -5531,18 +5179,13 @@
 	      "particle"          "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"          "FIELD_FLOAT"
+
 	      "damage"              "100"
-	    }
-	    "02"
-	    {
-	      "var_type"          "FIELD_FLOAT"
+
 	      "chance"              "0"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -5704,18 +5347,13 @@
 	      "particle"          "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"          "FIELD_FLOAT"
+
 	      "damage"              "100"
-	    }
-	    "02"
-	    {
-	      "var_type"          "FIELD_FLOAT"
+
 	      "chance"              "0"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -5827,7 +5465,7 @@
 	{
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1228"
+	  "ID"              "122822"
 	  "AbilityTextureName"      "custom/exit"
 	
 	  "SideShop" "1"
@@ -5840,13 +5478,11 @@
 	  "ItemSellable"        "0"
 	  "ItemPermanent"       "0"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    { 
-	        "var_type"  "FIELD_INTEGER"
+
 	        "lumber_cost" "99999"
-	    }
+	    
 	  }
 	
 	  // BuildingHelper info
@@ -5885,7 +5521,7 @@
 	//"item_recipe_petri_pocketexit"
 	// {
 	//   "BaseClass"           "item_datadriven"
-	//   "ID"              "1229"
+	//   "ID"              "122922"
 	//   "Model" "models/props_gameplay/recipe.mdl"
 	//   "AbilityTextureName"      "item_recipe"
 	
@@ -5904,7 +5540,7 @@
 	// "item_petri_miracle3_piece"
 	// {
 	//   "BaseClass"           "item_datadriven"
-	//   "ID"              "1230"
+	//   "ID"              "123022"
 	//   "Model" "models/props_gameplay/recipe.mdl"
 	//   "AbilityTextureName"      "item_petri_miracle3_piece"
 	
@@ -5918,7 +5554,7 @@
 	{
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1112"
+	  "ID"              "111222"
 	  "AbilityTextureName"      "custom/petri_miracle1"
 	
 	  "SideShop" "1"
@@ -5931,13 +5567,11 @@
 	  "ItemSellable"        "0"
 	  "ItemPermanent"       "0"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    { 
-	        "var_type"  "FIELD_INTEGER"
+
 	        "lumber_cost" "10"
-	    }
+	    
 	  }
 	
 	  // BuildingHelper info
@@ -5976,7 +5610,7 @@
 	{
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1113"
+	  "ID"              "111322"
 	  "AbilityTextureName"      "custom/petri_miracle2"
 	
 	  "SideShop" "1"
@@ -5989,13 +5623,11 @@
 	  "ItemSellable"        "0"
 	  "ItemPermanent"       "0"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    { 
-	        "var_type"  "FIELD_INTEGER"
+
 	        "lumber_cost" "10"
-	    }
+	    
 	  }
 	
 	  // BuildingHelper info
@@ -6034,7 +5666,7 @@
 	{
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1114"
+	  "ID"              "111422"
 	  "AbilityTextureName"      "custom/petri_miracle3"
 	
 	  "SideShop" "1"
@@ -6047,13 +5679,11 @@
 	  "ItemSellable"        "0"
 	  "ItemPermanent"       "0"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    { 
-	        "var_type"  "FIELD_INTEGER"
+
 	        "lumber_cost" "10"
-	    }
+	    
 	  }
 	
 	  // BuildingHelper info
@@ -6091,7 +5721,7 @@
 	// "item_recipe_petri_pocketmiracle3"
 	// {
 	//   "BaseClass"           "item_datadriven"
-	//   "ID"              "1115"
+	//   "ID"              "111522"
 	//   "Model" "models/props_gameplay/recipe.mdl"
 	//   "AbilityTextureName"      "item_recipe"
 	
@@ -6109,7 +5739,7 @@
 	"item_petri_shield_of_hell"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1551"
+	  "ID"              "155122"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -6122,18 +5752,13 @@
 	  
 	  "ItemSellFullPrice" "1"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_armor"      "300"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_0,INTEGER"
+
 	      "full_price"      "5000"
-	    }
+	    
 	  }
 	
 	  "Modifiers"
@@ -6155,7 +5780,7 @@
 	"item_recipe_petri_shield_of_hell"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1552"
+	  "ID"              "155222"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -6173,7 +5798,7 @@
 	"item_petri_shield_of_heaven"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1553"
+	  "ID"              "155322"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -6186,18 +5811,13 @@
 	  
 	  "ItemSellFullPrice" "1"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_armor"      "750"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_0,INTEGER"
+
 	      "full_price"      "15000"
-	    }
+	    
 	  }
 	
 	  "Modifiers"
@@ -6219,7 +5839,7 @@
 	"item_recipe_petri_shield_of_heaven"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1554"
+	  "ID"              "155422"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -6237,7 +5857,7 @@
 	"item_petri_best_shield"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1555"
+	  "ID"              "155522"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -6250,18 +5870,13 @@
 	  
 	  "ItemSellFullPrice" "1"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_armor"      "2000"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_damage"      "50000"
-	    }
+	    
 	  }
 	
 	  "Modifiers"
@@ -6303,7 +5918,7 @@
 	"item_recipe_petri_best_shield"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1556"
+	  "ID"              "155622"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -6321,7 +5936,7 @@
 	"item_petri_crysis_armor"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1549"
+	  "ID"              "154922"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -6332,18 +5947,13 @@
 	  "ItemQuality"         "unique"
 	  "ItemAliases"         "best shield"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_armor"      "5000"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_damage"      "175000"
-	    }
+	    
 	  }
 	
 	  "Modifiers"
@@ -6385,7 +5995,7 @@
 	"item_recipe_petri_crysis_armor"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1550"
+	  "ID"              "155022"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -6416,18 +6026,13 @@
 	  "ItemQuality"         "unique"
 	  "ItemAliases"         "pizda rezat"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_armor"      "15000"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_damage"      "1025000"
-	    }
+	    
 	  }
 	  
 	  	// Stats		
@@ -6485,7 +6090,7 @@
 	"item_recipe_petri_pizdorezka"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "2550"
+	  "ID"              "255022"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -6502,7 +6107,7 @@
 	"item_petri_stone_of_power"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1514"
+	  "ID"              "151422"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -6513,13 +6118,11 @@
 	  "ItemQuality"         "component"
 	  "ItemAliases"         "stone of power"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_strength"    "35"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -6540,7 +6143,7 @@
 	"item_petri_simple_sword"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1513"
+	  "ID"              "151322"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -6555,18 +6158,13 @@
 	
 	  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_damage"      "6"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "full_price"      "10"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -6588,7 +6186,7 @@
 	"item_recipe_petri_simple_sword"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1519"
+	  "ID"              "151922"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -6607,7 +6205,7 @@
 	"item_petri_hyperubersword"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1506"
+	  "ID"              "150622"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -6622,18 +6220,13 @@
 	
 	  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_damage"      "25"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "full_price"      "50"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -6655,7 +6248,7 @@
 	"item_recipe_petri_hyperubersword"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1511"
+	  "ID"              "151122"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -6673,7 +6266,7 @@
 	"item_petri_kladenets_sword"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1533"
+	  "ID"              "153322"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -6688,18 +6281,13 @@
 	
 	  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_damage"      "100"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "full_price"      "250"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -6722,7 +6310,7 @@
 	"item_recipe_petri_kladenets_sword"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1534"
+	  "ID"              "153422"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -6740,7 +6328,7 @@
 	"item_petri_perfect_sword"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1537"
+	  "ID"              "153722"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -6755,18 +6343,13 @@
 	
 	  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_damage"      "500"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "full_price"      "1250"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -6789,7 +6372,7 @@
 	"item_recipe_petri_perfect_sword"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1538"
+	  "ID"              "153822"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -6807,7 +6390,7 @@
 	"item_petri_titan_sword"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1539"
+	  "ID"              "153922"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -6822,18 +6405,13 @@
 	  
 	  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_damage"      "2000"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "full_price"      "5000"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -6856,7 +6434,7 @@
 	"item_recipe_petri_titan_sword"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1540"
+	  "ID"              "154022"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -6874,7 +6452,7 @@
 	"item_petri_magic_axe"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1541"
+	  "ID"              "154122"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -6889,18 +6467,13 @@
 	  
 	  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_damage"      "5000"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "full_price"      "12500"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -6923,7 +6496,7 @@
 	"item_recipe_petri_magic_axe"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1542"
+	  "ID"              "154222"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -6941,7 +6514,7 @@
 	"item_petri_grond"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1543"
+	  "ID"              "154322"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -6956,18 +6529,13 @@
 	  
 	  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_damage"      "20000"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "full_price"      "50000"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -6990,7 +6558,7 @@
 	"item_recipe_petri_grond"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1544"
+	  "ID"              "154422"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -7008,7 +6576,7 @@
 	"item_petri_thunder"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1545"
+	  "ID"              "154522"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -7021,13 +6589,11 @@
 	
 	  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_damage"      "80000"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -7051,7 +6617,7 @@
 	"item_petri_trident"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1547"
+	  "ID"              "154722"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -7064,13 +6630,11 @@
 	  
 	  "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
 	  
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_damage"      "500000"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -7093,7 +6657,7 @@
 	"item_recipe_petri_trident"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1548"
+	  "ID"              "154822"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -7159,7 +6723,7 @@
 	"item_petri_uber_mask_of_laugh"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1515"
+	  "ID"              "151522"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -7173,38 +6737,21 @@
 	  "ItemQuality"         "epic"
 	  "ItemAliases"         "uber mask of laugh"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "lifesteal_percent"   "10"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "invu_duration"   "10"
-	    }
-	    "03"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_all_stats"   "250"
-	    }
-	    "04"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "lifesteal_percent_building"   "13"
-	    }
-	    "05"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_gold_from_wall"   "2"
-	    }
-	    "06"
-	    {
-	      "var_type"                    "FIELD_INTEGER"
+
 	      "bonus_exp_from_wall"         "1"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -7321,7 +6868,7 @@
 	"item_recipe_petri_uber_mask_of_laugh"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1512"
+	  "ID"              "151222"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -7353,38 +6900,21 @@
 	  "ItemQuality"         "epic"
 	  "ItemAliases"         "uber mask of laugh"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "lifesteal_percent"   "25"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "invu_duration"   "12"
-	    }
-	    "03"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_all_stats"   "300"
-	    }
-	    "04"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "lifesteal_percent_building"   "13"
-	    }
-	    "05"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_gold_from_wall"   "4"
-	    }
-	    "06"
-	    {
-	      "var_type"                    "FIELD_INTEGER"
+
 	      "bonus_exp_from_wall"         "3"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -7501,7 +7031,7 @@
 	"item_recipe_petri_uber_mask_of_laugh_level2"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1897"
+	  "ID"              "189722"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -7533,38 +7063,21 @@
 	  "ItemQuality"         "epic"
 	  "ItemAliases"         "uber mask of laugh"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "lifesteal_percent"   "50"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "invu_duration"   "14"
-	    }
-	    "03"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_all_stats"   "350"
-	    }
-	    "04"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "lifesteal_percent_building"   "13"
-	    }
-	    "05"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_gold_from_wall"   "5"
-	    }
-	    "06"
-	    {
-	      "var_type"                    "FIELD_INTEGER"
+
 	      "bonus_exp_from_wall"         "4"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -7714,38 +7227,21 @@
 	  "ItemQuality"         "epic"
 	  "ItemAliases"         "uber mask of laugh"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "lifesteal_percent"   "100"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "invu_duration"   "16"
-	    }
-	    "03"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_all_stats"   "425"
-	    }
-	    "04"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "lifesteal_percent_building"   "13"
-	    }
-	    "05"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_gold_from_wall"   "30"
-	    }
-	    "06"
-	    {
-	      "var_type"                    "FIELD_INTEGER"
+
 	      "bonus_exp_from_wall"         "10"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -7880,7 +7376,7 @@
 	"item_petri_vest"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1516"
+	  "ID"              "151622"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -7893,18 +7389,13 @@
 	  
 	  "ItemSellFullPrice" "1"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_armor"      "7"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "full_price"      "15"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -7956,18 +7447,13 @@
 	  
 	  "ItemSellFullPrice" "1"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_armor"      "20"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_0,INTEGER"
+
 	      "full_price"      "100"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -8019,18 +7505,13 @@
 	  
 	  "ItemSellFullPrice" "1"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_armor"      "50"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_0,INTEGER"
+
 	      "full_price"      "500"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -8069,7 +7550,7 @@
 	"item_petri_superthing"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1530"
+	  "ID"              "153022"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -8082,18 +7563,13 @@
 	  
 	  "ItemSellFullPrice" "1"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_armor"      "125"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_0,INTEGER"
+
 	      "full_price"      "2000"
-	    }
+	    
 	  }
 	  
 	  "Modifiers"
@@ -8114,7 +7590,7 @@
 	"item_recipe_petri_superthing"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1531"
+	  "ID"              "153122"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -8163,28 +7639,17 @@
 	    "soundfile" "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "damage"                    "70"
-	    }
-	    "02"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "movement_speed_reduction"                    "-100"
-	    }
-	    "03"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "attack_speed_reduction"                    "-40"
-	    }
-	    "04"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "bonus_hp"    "500"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -8276,7 +7741,7 @@
 	"item_petri_vip_puntsygma"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1301"
+	  "ID"              "130122"
 	  "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	  "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
 	  "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
@@ -8303,18 +7768,13 @@
 	    "soundfile" "soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "damage"                    "0"
-	    }
-	    "02"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "hp"                        "1"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -8389,28 +7849,17 @@
 	    "soundfile" "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "damage"                    "70"
-	    }
-	    "02"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "movement_speed_reduction"                    "-100"
-	    }
-	    "03"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "attack_speed_reduction"                    "-40"
-	    }
-	    "04"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "bonus_hp"    "500"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -8509,28 +7958,17 @@
 	    "particle"  "particles/units/heroes/hero_bristleback/bristleback_viscous_nasal_goo_debuff.vpcf"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "damage"                    "70"
-	    }
-	    "02"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "movement_speed_reduction"                    "-100"
-	    }
-	    "03"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "attack_speed_reduction"                    "-40"
-	    }
-	    "04"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "bonus_hp"    "500"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -8624,13 +8062,11 @@
 	    "soundfile" "sounds/weapons/hero/lion/finger_of_death_impact.vsnd"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "damage"                    "500"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -8740,13 +8176,11 @@
 	    "soundfile" "sounds/weapons/hero/lion/finger_of_death_impact.vsnd"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "damage"                    "20000"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -8890,98 +8324,44 @@
 	    "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 	    "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 	    
-	    "AbilitySpecial"
+	    "AbilityValues"
 	    {
-	        "01"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
 	            "bonus_strength"                                    "10"
-	        }
-	        "02"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "bonus_agility"                                     "500"
-	        }
-	        "03"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "bonus_intelligence"                                "10"
-	        }
-	        "04"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "bonus_attack_speed"                                "15"
-	        }
-	        "05"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "bonus_movement_speed_percentage"                   "200"
-	        }
-	        "06"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "images_count"                                      "2"  //This value is currently hardcoded in vip_manta.lua.
-	        }
-	        "07"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_duration"                                 "20"
-	        }
-	        "08"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_outgoing_melee"            "29000"
-	        }
-	        "09"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_outgoing_melee_tooltip"    "30000"
-	        }   
-	        "10"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_incoming_melee"            "1"
-	        }
-	        "11"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_incoming_melee_tooltip"    "100"
-	        }           
-	        "12"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_outgoing_ranged"           "-72"
-	        }
-	        "13"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_outgoing_ranged_tooltip"   "28"
-	        }
-	        "14"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_incoming_ranged"           "300"
-	        }
-	        "15"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "illusion_damage_percent_incoming_ranged_tooltip"   "400"
-	        }
-	        "16"
-	        {
-	            "var_type"                                          "FIELD_FLOAT"
+
 	            "cooldown_melee"                                    "0.0"  //The cooldown for a ranged caster is the AbilityCooldown value.
-	        }
-	        "17"
-	        {
-	            "var_type"                                          "FIELD_FLOAT"
+
 	            "invulnerability_duration"                          "0.1"
-	        }
-	        "18"
-	        {
-	            "var_type"                                          "FIELD_INTEGER"
+
 	            "vision_radius"                                     "1000"
-	        }
+	        
 	    }
 	    
 	    "OnSpellStart"
@@ -9096,28 +8476,17 @@
 	    "particle"  "particles/units/heroes/hero_terrorblade/terrorblade_sunder.vpcf"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "damage"                    "70"
-	    }
-	    "02"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "movement_speed_reduction"                    "-100"
-	    }
-	    "03"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "attack_speed_reduction"                    "-40"
-	    }
-	    "04"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "bonus_hp"    "500"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -9215,28 +8584,17 @@
 	    "particle"  "particles/econ/items/zeus/arcana_chariot/zeus_ambient_arcana_eyes.vpcf"
 	  }
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "damage"                    "70"
-	    }
-	    "02"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "movement_speed_reduction"                    "-100"
-	    }
-	    "03"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "attack_speed_reduction"                    "-40"
-	    }
-	    "04"
-	    {
-	      "var_type"                  "FIELD_INTEGER"
+
 	      "bonus_hp"    "500"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -9323,7 +8681,7 @@
 	"item_petri_ward"
 	{
 	  "BaseClass"                 "item_datadriven"
-	  "ID"              "1020"
+	  "ID"              "102022"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -9371,7 +8729,7 @@
 	"item_petri_zirconia_armor"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1517"
+	  "ID"              "151722"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -9385,18 +8743,13 @@
 	  "ItemQuality"         "component"
 	  "ItemAliases"         "bracer"
 	
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "bonus_all_stats"    "200"
-	    }
-	    "02"
-	    {
-	      "var_type"        "FIELD_INTEGER"
+
 	      "invu_duration"   "9"
-	    }
+	    
 	  }
 	  
 	  "OnSpellStart"
@@ -9456,7 +8809,7 @@
 	"item_recipe_petri_zirconia_armor"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1521"
+	  "ID"              "152122"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -9537,13 +8890,11 @@
 	    "ItemPurchasable"           "0"
 	    "ItemSellable"              "0"
 		
-		"AbilitySpecial"
+		"AbilityValues"
 	    {
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
+
 			"armor_reduction"		"-0"
-		}
+		
 	    }
 			"Modifiers"
 	{
@@ -9591,13 +8942,11 @@
 	  
 	  "AbilityManaCost"       "0"
 	  
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"     "FIELD_INTEGER"
+
 	      "duration"     "2"
-	    }
+	    
 	  }
 	
 	  "OnSpellStart"
@@ -9732,13 +9081,11 @@
 	  "ItemCost"              "200"
 	  "SideShop"              "1"
 	  
-	  "AbilitySpecial"
+	  "AbilityValues"
 	  {
-	    "01"
-	    {
-	      "var_type"     "FIELD_INTEGER"
+
 	      "radius"     "100"
-	    }
+	    
 	  }
 	  "OnSpellStart"
 	  {
@@ -9799,7 +9146,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"item_datadriven"
-	"ID"							"9065" 
+	"ID"							"906522" 
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
@@ -9899,18 +9246,13 @@
 	"ItemPurchasable"               "1"
 	"ItemDroppable"                 "1"	
 	
-	"AbilitySpecial"
+	"AbilityValues"
 	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
+
 			"phase_duration"			"10.0"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
+
 			"phase_movement_speed"  	"9999"
-		}
+		
 	}
 	
 	"OnSpellStart"

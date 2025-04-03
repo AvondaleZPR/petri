@@ -2,18 +2,13 @@
 {
 	maps = 
 	[
-		"turbo",
 		"seasons",
 		"journey",
-		"old",
 	]
 	TeamCount = 2
 	IsPlayable = 1
 	map_options = 
 	[
-		{
-			map = "turbo"
-		},
 		{
 			MaxPlayers = 12
 			map = "seasons"
@@ -22,15 +17,11 @@
 			MaxPlayers = 12
 			map = "journey"
 		},
-		{
-			map = "old"
-			MaxPlayers = 12
-		},
 	]
 	HideInTools = false
 	IsTemplate = false
 	CheckAFKPlayers = false
-	DefaultMap = ""
+	DefaultMap = "seasons"
 	Default_Keys = [  ]
 	DisableIK = false
 	EnablePickRules = false

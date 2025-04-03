@@ -10,12 +10,14 @@
         <Button hittest="true" id="ClassBtn" onactivate="ToggleClassPanel()">
             <Label class="classText" text="#classes"/>
         </Button>
+		<!--
 		<Button hittest="true" id="HTPBtn" onactivate="ToggleHTPPanel()">
             <Label class="classText" text="#howtoplay"/>
         </Button>
 		<Button hittest="true" id="BPBtn" onactivate="ToggleBPPanel()">
             <Label class="classText" text="#bp_btn"/>
         </Button>
+		-->
 		
 	    <Panel id="BPPanel" hittest="false" class="Hide">
 			<Panel id="BPTop">

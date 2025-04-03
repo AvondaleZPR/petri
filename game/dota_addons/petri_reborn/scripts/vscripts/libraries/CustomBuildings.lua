@@ -9,9 +9,10 @@ function SetCustomBuildingModel(building, steamID, level)
 
 	local defaultScale = ParseCustomBuldingKVs(GameMode.CustomBuildingsKVs["default"][name], building, level)
 
-	if not GameMode.CustomBuildingsKVs[key] or not GameMode.CustomBuildingsKVs[key][name] then return defaultScale end
+	return defaultScale
 
-	return ParseCustomBuldingKVs(GameMode.CustomBuildingsKVs[key][name], building, level)
+	--if not GameMode.CustomBuildingsKVs[key] or not GameMode.CustomBuildingsKVs[key][name] then return defaultScale end
+	--return ParseCustomBuldingKVs(GameMode.CustomBuildingsKVs[key][name], building, level)
 end
 
 function ParseCustomBuldingKVs(entry, building, level)

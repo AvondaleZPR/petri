@@ -7,12 +7,14 @@ require('gamemode')
 function Precache( context )
   -- SendToServerConsole( "dota_combine_models 0" )
   -- SendToConsole( "dota_combine_models 0" )
+
+  GameMode.CustomBuildingsKVs = LoadKeyValues("scripts/kv/custom_buildings.kv")
   
   -- ITEMS
   --PrecacheResource("model", "models/props_gameplay/red_box.vmdl", context)
   
   --PrecacheUnitByNameSync("npc_dota_hero_storm_spirit", context)
-  --PrecacheUnitByNameSync("npc_petri_mini_actor", context)
+  PrecacheUnitByNameSync("npc_petri_mini_actor", context)
 
   -- UNITS
  -- PrecacheResource("model", "models/creeps/neutral_creeps/n_creep_ghost_a/n_creep_ghost_a.vmdl", context)
@@ -63,30 +65,30 @@ function Precache( context )
 
   -- BUILDINGS
   -- idol
-  --PrecacheUnitByNameSync("npc_petri_idol", context)
+  PrecacheUnitByNameSync("npc_petri_idol", context)
 
   -- exit
-  --PrecacheUnitByNameSync("npc_petri_exit", context)
+  PrecacheUnitByNameSync("npc_petri_exit", context)
 
   -- towers
-  --PrecacheResource("model", "models/props_structures/tower_good.vmdl", context)
-  --PrecacheResource("model", "models/items/invoker/forge_spirit/arsenal_magus_forged_spirit/arsenal_magus_forged_spirit.vmdl", context)
-  --PrecacheResource("model", "models/heroes/ancient_apparition/ancient_apparition.vmdl", context)
-  --PrecacheResource("model", "models/heroes/undying/undying_tower.vmdl", context)
+  PrecacheResource("model", "models/props_structures/tower_good.vmdl", context)
+  PrecacheResource("model", "models/items/invoker/forge_spirit/arsenal_magus_forged_spirit/arsenal_magus_forged_spirit.vmdl", context)
+  PrecacheResource("model", "models/heroes/ancient_apparition/ancient_apparition.vmdl", context)
+  PrecacheResource("model", "models/heroes/undying/undying_tower.vmdl", context)
 
-  --PrecacheResource("model", "models/items/undying/idol_of_ruination/idol_tower.vmdl", context)
-  --PrecacheResource("model", "models/items/undying/idol_of_ruination/idol_tower_gold.vmdl", context)
+  PrecacheResource("model", "models/items/undying/idol_of_ruination/idol_tower.vmdl", context)
+  PrecacheResource("model", "models/items/undying/idol_of_ruination/idol_tower_gold.vmdl", context)
 
   PrecacheUnitByNameSync("npc_petri_tower_of_evil", context)
   --PrecacheUnitByNameSync("npc_petri_exploration_tree", context)
   
   -- wall
-  --PrecacheResource("model", "models/items/rattletrap/warmachine_cog_dc/warmachine_cog_dc.vmdl", context)
-  --PrecacheResource("model", "models/props_debris/merchant_debris_chest002.vmdl", context)
-  --PrecacheResource("model", "models/props_rock/riveredge_rock008a.vmdl", context)
-  --PrecacheResource("model", "models/heroes/oracle/crystal_ball.vmdl", context)
-  --PrecacheResource("model", "models/props_items/bloodstone.vmdl", context)
-  --PrecacheResource("model", "models/props_magic/bad_crystals002.vmdl", context)
+  PrecacheResource("model", "models/items/rattletrap/warmachine_cog_dc/warmachine_cog_dc.vmdl", context)
+  PrecacheResource("model", "models/props_debris/merchant_debris_chest002.vmdl", context)
+  PrecacheResource("model", "models/props_rock/riveredge_rock008a.vmdl", context)
+  PrecacheResource("model", "models/heroes/oracle/crystal_ball.vmdl", context)
+  PrecacheResource("model", "models/props_items/bloodstone.vmdl", context)
+  PrecacheResource("model", "models/props_magic/bad_crystals002.vmdl", context)
   PrecacheResource("model", "models/heroes/undying/undying_flesh_golem.vmdl", context)
   PrecacheResource("model", "models/creeps/neutral_creeps/n_creep_golem_a/neutral_creep_golem_a.vmdl", context)
   PrecacheResource("model", "models/items/terrorblade/dotapit_s3_fallen_light_metamorphosis/dotapit_s3_fallen_light_metamorphosis.vmdl", context)
@@ -117,43 +119,51 @@ function Precache( context )
   PrecacheResource("model", "models/items/storm_spirit/raikage_ares_armor/raikage_ares_armor.vmdl", context)
   PrecacheResource("model", "models/items/storm_spirit/raikage_ares_arms/raikage_ares_arms.vmdl", context)
   PrecacheResource("model", "models/items/storm_spirit/raikage_ares_head/raikage_ares_head.vmdl", context)
-  
-  -- for k,v in pairs(LoadKeyValues("scripts/kv/custom_skins.kv")) do
-  --   for _,m in pairs(v) do
-  --     for __,g in pairs(m) do
-  --       if string.match(__, "vmdl") then
-  --         print(__)
-  --         PrecacheResource("model", __, context)
-  --       end
-  --     end
-  --   end
-  -- end
 
-  -- for k,v in pairs(LoadKeyValues("scripts/kv/custom_buildings.kv")) do
-  --   for _,m in pairs(v) do
-  --     if type(m) == "table" then
-  --       for __,g in pairs(m) do
-  --         if g == "model" then
-  --           print(__)
-  --           PrecacheResource("model", __, context)
-  --         end
-  --       end
-  --     else
-  --       PrecacheResource("model", m, context)
-  --     end
-  --   end
-  -- end
+  for _,m in pairs(GameMode.CustomBuildingsKVs["default"]) do
+     if type(m) == "table" then
+       for __,g in pairs(m) do
+         if g == "model" then
+           print(__)
+           PrecacheResource("model", __, context)
+         end
+       end
+     else
+       PrecacheResource("model", m, context)
+     end
+  end
+
+  for k,v in pairs(LoadKeyValues("scripts/kv/walls.kv")) do
+    for _,m in pairs(v) do
+       if type(m) == "table" then
+         for __,g in pairs(m["model"]) do
+           if g == "model" then
+             print(__)
+             PrecacheResource("model", __, context)
+           end
+         end
+       else
+         PrecacheResource("model", m, context)
+       end
+    end  
+  end
   
   -- sawmill
-  --PrecacheResource("model", "models/props_structures/bad_barracks001_ranged.vmdl", context)
-  --PrecacheResource("model", "models/props_structures/good_barracks_ranged002_lvl2.vmdl", context)
-  --PrecacheResource("model", "models/props_structures/good_ancient001.vmdl", context)
+  PrecacheResource("model", "models/props_structures/bad_barracks001_ranged.vmdl", context)
+  PrecacheResource("model", "models/props_structures/good_barracks_ranged002_lvl2.vmdl", context)
+  PrecacheResource("model", "models/props_structures/good_ancient001.vmdl", context)
 
-  --PrecacheResource("model", "models/props_structures/radiant_tower001.vmdl", context)
+  PrecacheResource("model", "models/props_gameplay/shopkeeper_fountain/shopkeeper_fountain.vmdl", context)
+  PrecacheResource("model", "models/items/wards/eyeofforesight/eyeofforesight.vmdl", context)
+  PrecacheResource("model", "models/props_structures/good_barracks_melee001.vmdl", context)
+  PrecacheResource("model", "models/courier/f2p_courier/f2p_courier.vmdl", context)
+  PrecacheResource("model", "models/heroes/shopkeeper/shopkeeper.vmdl", context)
 
-  --PrecacheResource("model", "models/props_structures/tent_dk_small.vmdl", context)
-  --PrecacheResource("model", "models/props_structures/tent_dk_med.vmdl", context)
-  --PrecacheResource("model", "models/props_structures/tent_dk_large.vmdl", context)
+  PrecacheResource("model", "models/props_structures/radiant_tower001.vmdl", context)
+
+  PrecacheResource("model", "models/props_structures/tent_dk_small.vmdl", context)
+  PrecacheResource("model", "models/props_structures/tent_dk_med.vmdl", context)
+  PrecacheResource("model", "models/props_structures/tent_dk_large.vmdl", context)
 
   PrecacheUnitByNameSync("npc_petri_sawmill", context)
   PrecacheUnitByNameSync("npc_petri_tower_basic", context)
@@ -168,11 +178,16 @@ function Precache( context )
   
   PrecacheResource("particle", "particles/buildinghelper/ghost_model.vpcf", context)
   PrecacheResource("particle", "particles/buildinghelper/square_sprite.vpcf", context)
+  PrecacheResource("particle", "particles/units/heroes/hero_sandking/sandking_sandstorm.vpcf", context)
+  PrecacheResource("particle", "particles/units/heroes/hero_lina/lina_base_attack.vpcf", context)
   
   PrecacheResource("particle", "particles/econ/events/nexon_hero_compendium_2014/teleport_end_ground_flash_nexon_hero_cp_2014.vpcf", context)
   PrecacheResource("particle", "particles/units/heroes/hero_mirana/mirana_base_attack.vpcf", context)
 
   PrecacheResource("particle", "particles/items_fx/dust_of_appearance.vpcf", context)
+
+  PrecacheResource("particle", "particles/units/heroes/hero_shadow_demon/shadow_demon_shadow_poison_stackui02.vpcf", context)
+  PrecacheResource("particle", "particles/units/heroes/hero_shadow_demon/shadow_demon_shadow_poison_stackui.vpcf", context)
 
   PrecacheResource("particle", "particles/units/heroes/hero_jakiro/jakiro_base_attack_fire.vpcf", context)
   PrecacheResource("particle", "particles/units/heroes/hero_jakiro/jakiro_liquid_fire_ready.vpcf", context)
@@ -219,6 +234,9 @@ function Precache( context )
   PrecacheUnitByNameSync("npc_petri_trap", context)
 
   PrecacheUnitByNameSync("npc_petri_earth_wall", context)
+  PrecacheUnitByNameSync("npc_petri_miracle1", context)
+  PrecacheUnitByNameSync("npc_petri_miracle2", context)
+  PrecacheUnitByNameSync("npc_petri_miracle3", context)
 
   GameRules.pc = context
   GameMode().pc = context

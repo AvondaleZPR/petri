@@ -334,6 +334,8 @@ function build( keys )
 		end
 	end)
 	keys:OnConstructionCompleted(function(unit)
+		print(unit:GetUnitName())
+
 		InitAbilities(unit)
 
 		AddEntryToDependenciesTable(pID, ability_name, 1)

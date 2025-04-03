@@ -18,13 +18,13 @@ function Upgrade (event)
 		caster:FindAbilityByName("petri_wall_glyph"):UpgradeAbility(false) 
 	end
 
+
 	if wall_level == 1 then
 		caster:AddAbility("petri_wall_glyph")
 		InitAbilities(caster)
 	elseif wall_level == 8 then
 		GameMode.FIRST_ZOMBIE = GameMode.FIRST_ZOMBIE or math.floor(GameMode.PETRI_TRUE_TIME)
 	end
-	
 	StartAnimation(caster, {duration=-1, activity=ACT_DOTA_IDLE , rate=1.5})
 	
 	if wallScoreArr[caster:GetPlayerOwnerID()+1][wall_level] == 0 then

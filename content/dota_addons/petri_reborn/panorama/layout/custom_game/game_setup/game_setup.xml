@@ -1,7 +1,6 @@
 <root>
 	<styles>
-		<include src="file://{resources}/styles/dotastyles.css" />
-		<include src="file://{resources}/styles/play.css" />
+	
 		<include src="file://{resources}/styles/custom_game/material_design.css" />		
 		<include src="file://{resources}/styles/custom_game/game_setup.css" />
 	</styles>
@@ -44,7 +43,7 @@
 		<Panel hittest="false" id="TeamSelectContainer">
 
 			<Panel hittest="false" class="DarkTheme Primary500 z-index3" id="AppBar">
-				<Label id="GameModeNameLabel" text="#addon_game_name" />
+				<Label id="GameModeNameLabel" class="statText" text="#addon_game_name" />
 				<Label id="MapInfoLabel" text="#LoadingScreenMapInfo" />
 					
 				<Panel id="StartGameCountdownTimer">

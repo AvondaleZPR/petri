@@ -26,66 +26,76 @@ function GameMode:_OnGameRulesStateChange(keys)
   elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
     GameMode:OnGameInProgress()
 
-    self.spawnQueueID = -1
+    GameMode.spawnQueueID = -1
 
     self.spawnDelay = 2.25
 
     EasyTimers:CreateTimer(function()
-      if not self.heroesSpawned then
+      if not GameMode.heroesSpawned then
         PauseGame(true)
-        return 0.03
+        return 0.1
       else
-        PauseGame(true)
+        PauseGame(false)
 		
-		Timers:CreateTimer({
-			useGameTime = false,
-			endTime = 2,
-			callback = function()
-				PauseGame(false)
-			end
-		})
+        return nil
       end
     end, 'auto_pause', 0.03)
 
-    EasyTimers:CreateTimer(function()
+    Timers:CreateTimer({
+    useGameTime = false,
+    endTime = 2,
+    callback = function()
       PauseGame(true)
+
       self.playerQueue = function ()
-          self.spawnQueueID = self.spawnQueueID + 1
+          GameMode.spawnQueueID = GameMode.spawnQueueID + 1
 
           -- Update queue info
-          CustomGameEventManager:Send_ServerToAllClients("petri_spawning_queue", {queue = self.spawnQueueID})
+          CustomGameEventManager:Send_ServerToAllClients("petri_spawning_queue", {queue = GameMode.spawnQueueID})
 
           -- End pause if every player is checked
-          if self.spawnQueueID > 24 then
-              self.spawnQueueID = nil
-              self.heroesSpawned = true
-              return
+          if GameMode.spawnQueueID > 24 then
+              GameMode.spawnQueueID = nil
+              GameMode.heroesSpawned = true
+
+              Timers:CreateTimer({
+              useGameTime = false,
+              endTime = 2,
+              callback = function()
+                  PauseGame(false)
+              end})
+
+              return nil
           end
 
-          if PlayerResource:GetConnectionState(self.spawnQueueID) < 1 then
+          if PlayerResource:GetConnectionState(GameMode.spawnQueueID) < 1 then
             self.playerQueue()
-            return
+            return nil
           end
 
           -- Keep spawning
-          EasyTimers:CreateTimer(function()
+          Timers:CreateTimer({
+          useGameTime = false,
+          endTime = 2,
+          callback = function()
             -- Skip disconnected players
-            if PlayerResource:GetConnectionState(self.spawnQueueID) < 1 then
+            if PlayerResource:GetConnectionState(GameMode.spawnQueueID) < 1 then
                 self.playerQueue()
                 return
             else
-                local color = PLAYER_COLORS[self.spawnQueueID]
+                local color = PLAYER_COLORS[GameMode.spawnQueueID]
                 if color then
-                  PlayerResource:SetCustomPlayerColor(self.spawnQueueID, color[1], color[2], color[3])
+                  PlayerResource:SetCustomPlayerColor(GameMode.spawnQueueID, color[1], color[2], color[3])
                 end
-                GameMode:CreateHero(self.spawnQueueID, self.playerQueue)
+                print("HUETA4")
+                GameMode:CreateHero(GameMode.spawnQueueID, self.playerQueue)
                 return
             end
-          end, DoUniqueString('spawning'), self.spawnDelay)
+          end})
       end
 
       self.playerQueue()
-    end, 'spawning_start', 2.0)
+    end})
   end
 end
 

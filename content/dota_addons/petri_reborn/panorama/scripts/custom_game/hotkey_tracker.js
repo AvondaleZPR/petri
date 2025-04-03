@@ -2,10 +2,13 @@
 var contextPanel = $.GetContextPanel();
 
 function GetKeyBind(name) {
-  contextPanel.BCreateChildren('<DOTAHotkey keybind="' + name + '" />');
-  var keyElement = contextPanel.GetChild(contextPanel.GetChildCount() - 1);
-  keyElement.DeleteAsync(0);
-  return keyElement.GetChild(0).text;
+	$.CreatePanelWithProperties('DOTAHotkey', contextPanel, "", {
+		keybind: name,
+	});
+
+	var keyElement = contextPanel.GetChild(contextPanel.GetChildCount() - 1);
+	keyElement.DeleteAsync(0);
+	return keyElement.GetChild(0).text;
 }
 
 function RegisterKeyBindHandler(name, callback) {

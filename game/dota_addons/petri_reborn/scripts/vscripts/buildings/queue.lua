@@ -78,6 +78,8 @@ end
 -- Destroys an item on the buildings inventory, refunding full cost of purchasing and reordering the queue
 -- If its the first slot, the channeling ability is also set to not channel, refunding the full price.
 function DequeueUnit( event )
+	print("DEQUEUE1")
+
 	local caster = event.caster
 	local item = event.ability
 	local player = caster:GetPlayerOwner():GetPlayerID()
@@ -92,13 +94,11 @@ function DequeueUnit( event )
 	
 	local hero = GameMode.assignedPlayerHeroes[caster:GetPlayerOwnerID()]
 
-	if Debug_Queue then
-		print("Start dequeue")
-	end
-
+	print("DEQUEUE2")
 	for itemSlot = 0, 5, 1 do
        	local item = caster:GetItemInSlot( itemSlot )
         if item ~= nil then
+        	print("DEQUEUE3")
         	local current_item = EntIndexToHScript(item:GetEntityIndex())
 
         	if current_item == item_ability then
@@ -114,6 +114,8 @@ function DequeueUnit( event )
 
 	            caster:RemoveItem(item)
 	            
+	            print("DEQUEUE4")
+
 	            -- Refund ability cost
 	            ReturnCustomGold( player, gold_cost )
 
@@ -130,6 +132,8 @@ function DequeueUnit( event )
 	            if Debug_Queue then
 					print("Refund ",gold_cost)
 				end
+
+				print("DEQUEUE5")
 
 				-- Set not channeling if the cancelled item was the first **current** slot
 				if itemSlot == 0 then
@@ -148,6 +152,7 @@ function DequeueUnit( event )
 			end
         end
     end
+    print("DEQUEUE6")
 end
 
 -- Auxiliar function, takes all items and puts them 1 slot back

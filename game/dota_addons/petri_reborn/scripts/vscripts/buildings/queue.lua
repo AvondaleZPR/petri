@@ -78,6 +78,8 @@ end
 -- Destroys an item on the buildings inventory, refunding full cost of purchasing and reordering the queue
 -- If its the first slot, the channeling ability is also set to not channel, refunding the full price.
 function DequeueUnit( event )
+	if true then return false end
+
 	print("DEQUEUE1")
 
 	local caster = event.caster

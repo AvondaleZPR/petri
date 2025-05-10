@@ -237,6 +237,8 @@ function Precache( context )
   PrecacheUnitByNameSync("npc_petri_miracle1", context)
   PrecacheUnitByNameSync("npc_petri_miracle2", context)
   PrecacheUnitByNameSync("npc_petri_miracle3", context)
+  
+  PrecacheUnitByNameSync("npc_petri_kosh_egg", context)
 
   GameRules.pc = context
   GameMode().pc = context

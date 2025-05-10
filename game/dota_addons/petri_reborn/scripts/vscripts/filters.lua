@@ -417,6 +417,8 @@ end
 function GameMode:DamageFilter( filter_table )
     local victim = EntIndexToHScript(filter_table["entindex_victim_const"])
 
+    print("attack")
+
     local attacker
     if not filter_table["entindex_attacker_const"] then
         attacker = victim
@@ -428,57 +430,34 @@ function GameMode:DamageFilter( filter_table )
 	if attacker:GetTeam() == DOTA_TEAM_GOODGUYS and victim:GetTeam() == DOTA_TEAM_NEUTRALS then
 		return false
 	end
-	
-  print("att:"..attacker:GetUnitName())
 
-    local damage = filter_table["damage"]
-    local damage_type = filter_table["damagetype_const"]
+  local damage_type = filter_table["damagetype_const"]
 
-    if damage_type ~= DAMAGE_TYPE_PHYSICAL then
-	  damage_type = DAMAGE_TYPE_PURE
-    end
+  if damage_type ~= DAMAGE_TYPE_PHYSICAL then
+  damage_type = DAMAGE_TYPE_PURE
+  end
 	
 	if damage_type == DAMAGE_TYPE_PHYSICAL then
 	  local armor = victim:GetPhysicalArmorValue(false)
 	  if armor ~= 0 then
-	  local damage = attacker:GetAverageTrueAttackDamage(attacker)
-	  local damagemultiplier = 1 - 0.05 * armor / (1 + (0.05 * math.abs(armor)))
-	  print('damagemultiplier:')
-	  print(damagemultiplier)
-	  print(armor)
-	  print(damage)
-	  print(damage * damagemultiplier)
-	  filter_table["damage"] = damage * damagemultiplier
-	  end
-	  
-	  if armor > 224 then
-	        if victim:IsBuilding() == false then
-			    if not string.match(victim:GetUnitName(), "wall") then
-	            print('heal')
-			--if attacker:HasModifier("modifier_item_petri_mask_of_laugh_datadriven_lifesteal") then
-				local healpercent = 0
-				if attacker:HasItemInInventory("item_petri_mask_of_laugh") then
-                    healpercent = 5
-                elseif attacker:HasItemInInventory("item_petri_uber_mask_of_laugh") then
-				    healpercent = 10
-				elseif attacker:HasItemInInventory("item_petri_uber_mask_of_laugh_level2") then
-				    healpercent = 25
-				elseif attacker:HasItemInInventory("item_petri_uber_mask_of_laugh_level3") then
-				    healpercent = 50
-				elseif attacker:HasItemInInventory("item_petri_uber_mask_of_laugh_level4") then
-				    healpercent = 100
-				elseif attacker:HasItemInInventory("item_petri_jedi") then
-				    healpercent = 150
-				end
-				if healpercent ~= 0 then
-				    local heal = filter_table["damage"] * healpercent
-					attacker:Heal(heal, attacker)
-				end
-			--end
-			    end
-			end
+  	  local damage = attacker:GetAverageTrueAttackDamage(attacker)
+  	  local damagemultiplier = 1 - 0.05 * armor / (1 + (0.05 * math.abs(armor)))
+  	  filter_table["damage"] = damage * damagemultiplier
 	  end
 	end
+
+  if victim:IsBuilding() == false and not string.match(victim:GetUnitName(), "wall") then
+    for _, mod in pairs(attacker:FindAllModifiers()) do
+      if mod and mod:GetAbility() then
+        local healpercent = mod:GetAbility():GetSpecialValueFor("lifesteal_percent")
+        if healpercent ~= nil and healpercent > 0 then
+          local heal = filter_table["damage"] * healpercent
+          print("VAMP attacker for "..heal)
+          attacker:Heal(heal, attacker)
+        end
+      end
+    end
+  end
 
 	if victim:GetUnitName() == "npc_petri_creep_kivin" then
 		local damage = attacker:GetAverageTrueAttackDamage(attacker)
@@ -498,42 +477,27 @@ function GameMode:DamageFilter( filter_table )
 		end
 		
 		return false
-	else
-	if attacker:GetTeam() == DOTA_TEAM_BADGUYS then
+	elseif attacker:GetTeam() == DOTA_TEAM_BADGUYS then
 	    if string.match(victim:GetUnitName (), "npc_petri_creep_") then
-		    --if victim:GetUnitName() ~= "npc_petri_creep_kivin" then
-	        if GameMode:isdaydumb() == false then
-			    print('noch nelzya farmitb')
-                attacker:CastAbilityNoTarget(attacker:FindAbilityByName("petri_petrosyan_return"), attacker:GetPlayerOwnerID())
-                Notifications:Bottom(attacker:GetPlayerOwnerID(), {text="#no_farm_tonight", duration=5, style={color="red", ["font-size"]="45px"}})
-                Timers:CreateTimer(0.04,
-                function()
-                    MoveCamera(attacker:GetPlayerOwnerID(), attacker)
-                end)
-            end
-			--end
-		end
-	end
+        if GameMode:isdaydumb() == false then
+		    print('noch nelzya farmitb')
+              attacker:CastAbilityNoTarget(attacker:FindAbilityByName("petri_petrosyan_return"), attacker:GetPlayerOwnerID())
+              Notifications:Bottom(attacker:GetPlayerOwnerID(), {text="#no_farm_tonight", duration=5, style={color="red", ["font-size"]="45px"}})
+              Timers:CreateTimer(0.04,
+              function()
+                  MoveCamera(attacker:GetPlayerOwnerID(), attacker)
+              end)
+          end
+		  end
 	end
 	
-    if DAMAGE_FILTERS[victim:GetUnitName()] then
-      if damage < DAMAGE_FILTERS[victim:GetUnitName()] then
-        return false
-      end
+  if DAMAGE_FILTERS[victim:GetUnitName()] then
+    if filter_table["damage"] < DAMAGE_FILTERS[victim:GetUnitName()] then
+      return false
     end
-	
-	if victim:GetUnitName() == "npc_petri_sawmill" and damage >= victim:GetHealth() then
-	    for j = 0, 6 do
-	    for i = 0, 6 do
-		    local item = victim:GetItemInSlot(i)
-			if item then
-			    item:CastAbility()
-			end
-		end
-		end
-	end
+  end
 
-    return true
+  return true
 end
 
 function GameMode:ModifyExperienceFilter(filterTable)

@@ -4,7 +4,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"45"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"450001"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 		
@@ -30,7 +30,7 @@
 	    // General
 	    //-------------------------------------------------------------------------------------------------------------
 	    "BaseClass"                     "item_datadriven"
-	    "ID"                            "4147"  //Valve's version of this item uses the ID "147".
+	    "ID"                            "4147009"  //Valve's version of this item uses the ID "147".
 	  "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	  "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
 	  "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
@@ -172,7 +172,7 @@
 	"item_petri_alcohol"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1994"
+	  "ID"              "1994080"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_ALL"
@@ -266,7 +266,7 @@
 	"item_petri_attack_scroll"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1980"
+	  "ID"              "198007"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "Model"             "models/props_gameplay/recipe.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -362,7 +362,7 @@
 	"item_petri_book_of_laugh"
 	{
 	  "BaseClass"                 "item_datadriven"
-	  "ID"              "1903"
+	  "ID"              "190304"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -396,7 +396,7 @@
 	"item_petri_comedy_story"
 	{
 	  "BaseClass"                 "item_datadriven"
-	  "ID"              "1904"
+	  "ID"              "190404"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -430,7 +430,7 @@
 	"item_petri_comedy_book"
 	{
 	  "BaseClass"                 "item_datadriven"
-	  "ID"              "1905"
+	  "ID"              "190507"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -460,7 +460,7 @@
 	"item_petri_agility_book"
 	{
 	  "BaseClass"                 "item_datadriven"
-	  "ID"              "1968"
+	  "ID"              "196808"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -510,7 +510,7 @@
 	"item_petri_health_book"
 	{
 	  "BaseClass"                 "item_datadriven"
-	  "ID"              "1967"
+	  "ID"              "196708"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -666,7 +666,7 @@
 	"item_petri_snares_1"
 	{
 	  "BaseClass"                 "item_datadriven"
-	  "ID"              "1976"
+	  "ID"              "197609"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -709,7 +709,7 @@
 	"item_petri_snares_2"
 	{
 	  "BaseClass"                 "item_datadriven"
-	  "ID"              "1975"
+	  "ID"              "197506"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -752,7 +752,7 @@
 	"item_petri_boots"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1993"
+	  "ID"              "199305"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -884,7 +884,7 @@
 	  "AbilityValues"
 	  {
 
-	      "bonus_all_stats"    "20"
+	      "bonus_all_stats"    "16"
 
 	      "invu_duration"   "6"
 	    
@@ -964,7 +964,7 @@
 	  "AbilityValues"
 	  {
 
-	      "bonus_all_stats"    "50"
+	      "bonus_all_stats"    "40"
 
 	      "invu_duration"   "7"
 	    
@@ -1062,7 +1062,7 @@
 	  "AbilityValues"
 	  {
 
-	      "bonus_all_stats"    "100"
+	      "bonus_all_stats"    "80"
 
 	      "invu_duration"   "8"
 	    
@@ -1429,7 +1429,7 @@
 	"item_petri_candy_1_kvn"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "1701"
+	  "ID"                      "170105"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_ALL"
@@ -1537,7 +1537,7 @@
 	"item_petri_candy_2_kvn"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "1702"
+	  "ID"                      "170206"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"                   "models/props_gameplay/halloween_candy.vmdl" 
 	  "Effect"                  "particles/generic_gameplay/dropped_item.vpcf"
@@ -1612,7 +1612,7 @@
 	"item_petri_candy_3_kvn"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "1703"
+	  "ID"                      "170307"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO"
@@ -1741,7 +1741,7 @@
 	"item_petri_candy_4_kvn"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "1704"
+	  "ID"                      "170405"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO"
@@ -1834,7 +1834,7 @@
 	"item_petri_candy_5_kvn"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "1705"
+	  "ID"                      "170504"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO"
@@ -1967,7 +1967,7 @@
 	"item_petri_candy_1_petri"
 	{
 	  "BaseClass"       "item_datadriven"
-	  "ID"              "1706"
+	  "ID"              "170603"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	  "AbilityTextureName"      "custom/candy_1"
 	  "Model"                   "models/props_gameplay/halloween_candy.vmdl" 
@@ -2073,7 +2073,7 @@
 	"item_petri_candy_2_petri"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "1707"
+	  "ID"                      "170704"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"                   "models/props_gameplay/halloween_candy.vmdl" 
 	  "Effect"                  "particles/generic_gameplay/dropped_item.vpcf"
@@ -2147,7 +2147,7 @@
 	"item_petri_candy_3_petri"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "1708"
+	  "ID"                      "170807"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO"
@@ -2252,7 +2252,7 @@
 	"item_petri_candy_4_petri"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "1709"
+	  "ID"                      "170909"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 	  "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_YES"
@@ -2354,7 +2354,7 @@
 	"item_petri_candy_5_petri"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "1710"
+	  "ID"                      "171007"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
 	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO"
@@ -2486,7 +2486,7 @@
 	"item_petri_cola"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1503"
+	  "ID"              "150305"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -2513,8 +2513,9 @@
 	  "AbilityValues"
 	  {
 
-	      "buff_duration"     "12"
-	    
+	      "buff_duration"     "13"
+		  
+		  "as_bonus"			"15"
 	  }
 	
 	  "OnSpellStart"
@@ -2560,6 +2561,11 @@
 	        "MODIFIER_STATE_ATTACK_IMMUNE"           "MODIFIER_STATE_VALUE_ENABLED"
 	        "MODIFIER_STATE_MAGIC_IMMUNE"           "MODIFIER_STATE_VALUE_ENABLED"
 	      }
+		  
+		  "Properties"
+		  {
+			"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%as_bonus"
+		  }
 	    }
 	    "modifier_item_petri_cola_default"
 	    {
@@ -2588,7 +2594,7 @@
 	"item_petri_evasion_scroll"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1995"
+	  "ID"              "199505"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT"
 	  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_ALL"
@@ -2922,7 +2928,7 @@
 	"item_petri_goldthing"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "3455"
+	  "ID"                      "345508"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "Model"                   "models/props_gameplay/red_box.vmdl" 
 	  "Effect"                  "particles/generic_gameplay/dropped_item.vpcf"
@@ -3092,7 +3098,7 @@
 	"item_petri_gold_coin"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "1978"
+	  "ID"                      "197807"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "Model"                   "models/props_gameplay/gold_coin001.vmdl" 
 	  "Effect"                  "particles/generic_gameplay/dropped_item.vpcf"
@@ -3140,7 +3146,7 @@
 	"item_petri_grease"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "1979"
+	  "ID"                      "197909"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "Model"                   "models/props_gameplay/red_box.vmdl" 
 	  "Effect"                  "particles/generic_gameplay/dropped_item.vpcf"
@@ -3231,7 +3237,7 @@
 	"item_petri_chicken"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1966"
+	  "ID"              "196606"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -3320,7 +3326,7 @@
 	"item_petri_cow"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1965"
+	  "ID"              "196050"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -3390,7 +3396,7 @@
 	"item_recipe_petri_cow"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1963"
+	  "ID"              "196307"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -3411,7 +3417,7 @@
 	"item_petri_dragon"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1964"
+	  "ID"              "196407"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -3481,7 +3487,7 @@
 	"item_recipe_petri_dragon"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1962"
+	  "ID"              "196200"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -3500,7 +3506,7 @@
 	"item_petri_kvn_heart"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1959"
+	  "ID"              "195900"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -3583,7 +3589,7 @@
 	"item_recipe_petri_kvn_heart"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1956"
+	  "ID"              "195600"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -3637,7 +3643,7 @@
 	"item_petri_hook"
 	{
 	  "BaseClass"       "item_lua"
-	  "ID"              "1801"
+	  "ID"              "180100"
 	
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	  "AbilityUnitDamageType"         "DAMAGE_TYPE_PURE" 
@@ -3694,7 +3700,7 @@
 	}
 	"item_petri_hp_fix"
 	{
-	  "ID"              "6543"
+	  "ID"              "654300"
 	  "BaseClass"                 "item_datadriven"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
@@ -3759,7 +3765,7 @@
 	"item_petri_jedi"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1958"
+	  "ID"              "195808"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -4008,7 +4014,7 @@
 	"item_recipe_petri_jedi"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1957"
+	  "ID"              "1957000"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -4024,7 +4030,7 @@
 	}
 	"item_petri_kvn_bag_1"
 	{
-	  "ID"              "3222"
+	  "ID"              "3222000"
 	  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	
 	  "BaseClass"           "item_datadriven"
@@ -4046,7 +4052,7 @@
 	
 	"item_petri_kvn_bag_2"
 	{
-	  "ID"              "3223"
+	  "ID"              "322300"
 	  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	
 	  "BaseClass"           "item_datadriven"
@@ -4068,7 +4074,7 @@
 	
 	"item_petri_kvn_bag_3"
 	{
-	  "ID"              "3224"
+	  "ID"              "322400"
 	  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	
 	  "BaseClass"           "item_datadriven"
@@ -4090,7 +4096,7 @@
 	
 	"item_petri_kvn_bag_4"
 	{
-	  "ID"              "3225"
+	  "ID"              "322500"
 	  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	
 	  "BaseClass"           "item_datadriven"
@@ -4112,7 +4118,7 @@
 	
 	"item_petri_kvn_bag_vip"
 	{
-	  "ID"              "3226"
+	  "ID"              "322600"
 	  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	
 	  "BaseClass"           "item_datadriven"
@@ -4136,7 +4142,7 @@
 	
 	"item_petri_kvn_bag_donate4in1"
 	{
-	  "ID"              "3227"
+	  "ID"              "322700"
 	  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	
 	  "BaseClass"           "item_datadriven"
@@ -4159,7 +4165,7 @@
 	
 	"item_petri_kvn_bag_donate1"
 	{
-	  "ID"              "3228"
+	  "ID"              "322800"
 	  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	
 	  "BaseClass"           "item_datadriven"
@@ -4182,7 +4188,7 @@
 	
 	"item_petri_kvn_bag_donate2"
 	{
-	  "ID"              "3229"
+	  "ID"              "322900"
 	  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	
 	  "BaseClass"           "item_datadriven"
@@ -4205,7 +4211,7 @@
 	
 	"item_petri_kvn_bag_donate3"
 	{
-	  "ID"              "3230"
+	  "ID"              "323000"
 	  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	
 	  "BaseClass"           "item_datadriven"
@@ -4228,7 +4234,7 @@
 	
 	"item_petri_kvn_bag_donate4"
 	{
-	  "ID"              "3231"
+	  "ID"              "323100"
 	  "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	
 	  "BaseClass"           "item_datadriven"
@@ -4250,7 +4256,7 @@
 	"item_petri_kvn_fan_blink"
 	{
 	  "BaseClass"       "item_datadriven"
-	  "ID"              "1989"
+	  "ID"              "198900"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	  "AbilityTextureName"      "custom/petri_kvn_fan_blink"
 	
@@ -4343,7 +4349,7 @@
 	"item_petri_kvn_fan_cool_blink"
 	{
 	  "BaseClass"       "item_datadriven"
-	  "ID"              "1991"
+	  "ID"              "199100"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	  "AbilityTextureName"      "custom/petri_kvn_fan_cool_blink"
 	
@@ -4399,7 +4405,7 @@
 	"item_recipe_petri_kvn_fan_cool_blink"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1988"
+	  "ID"              "198800"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -4419,7 +4425,7 @@
 	"item_petri_kvn_fan_cool_blink2"
 	{
 	  "BaseClass"       "item_datadriven"
-	  "ID"              "4423"
+	  "ID"              "442300"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	  "AbilityTextureName"      "custom/petri_kvn_fan_cool_blink"
 	
@@ -4784,7 +4790,7 @@
 	"item_petri_pile_of_wood"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "1977"
+	  "ID"                      "197700"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "Model"                   "models/props_tree/olive/tree_oldolive_stump.vmdl" 
 	  "Effect"                  "particles/generic_gameplay/dropped_item.vpcf"
@@ -4831,7 +4837,7 @@
 	"item_petri_pill"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "3456"
+	  "ID"                      "345600"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "Model"                   "models/props_gameplay/red_box.vmdl" 
 	  "Effect"                  "particles/generic_gameplay/dropped_item.vpcf"
@@ -4981,7 +4987,7 @@
 	"item_petri_pill_legion"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "3457"
+	  "ID"                      "345700"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "Model"                   "models/props_gameplay/red_box.vmdl" 
 	  "Effect"                  "particles/generic_gameplay/dropped_item.vpcf"
@@ -5148,7 +5154,7 @@
 	"item_petri_pill_sf"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "3458"
+	  "ID"                      "345800"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "Model"                   "models/props_gameplay/red_box.vmdl" 
 	  "Effect"                  "particles/generic_gameplay/dropped_item.vpcf"
@@ -5316,7 +5322,7 @@
 	"item_petri_pill_slark"
 	{
 	  "BaseClass"               "item_datadriven"
-	  "ID"                      "3459"
+	  "ID"                      "345900"
 	  "AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	  "Model"                   "models/props_gameplay/red_box.vmdl" 
 	  "Effect"                  "particles/generic_gameplay/dropped_item.vpcf"
@@ -6744,7 +6750,7 @@
 
 	      "invu_duration"   "10"
 
-	      "bonus_all_stats"   "250"
+	      "bonus_all_stats"   "210"
 
 	      "lifesteal_percent_building"   "13"
 
@@ -6907,7 +6913,7 @@
 
 	      "invu_duration"   "12"
 
-	      "bonus_all_stats"   "300"
+	      "bonus_all_stats"   "275"
 
 	      "lifesteal_percent_building"   "13"
 
@@ -7070,7 +7076,7 @@
 
 	      "invu_duration"   "14"
 
-	      "bonus_all_stats"   "350"
+	      "bonus_all_stats"   "325"
 
 	      "lifesteal_percent_building"   "13"
 
@@ -7195,7 +7201,7 @@
 	"item_recipe_petri_uber_mask_of_laugh_level3"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1895"
+	  "ID"              "189500"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -7213,7 +7219,7 @@
 	"item_petri_uber_mask_of_laugh_level4"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1894"
+	  "ID"              "189400"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -7234,7 +7240,7 @@
 
 	      "invu_duration"   "16"
 
-	      "bonus_all_stats"   "425"
+	      "bonus_all_stats"   "400"
 
 	      "lifesteal_percent_building"   "13"
 
@@ -7359,7 +7365,7 @@
 	"item_recipe_petri_uber_mask_of_laugh_level4"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1893"
+	  "ID"              "189300"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -7416,7 +7422,7 @@
 	"item_recipe_petri_vest"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1899"
+	  "ID"              "189900"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -7434,7 +7440,7 @@
 	"item_petri_supervest"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1900"
+	  "ID"              "190000"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -7474,7 +7480,7 @@
 	"item_recipe_petri_supervest"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1892"
+	  "ID"              "189209"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -7492,7 +7498,7 @@
 	"item_petri_supermegavest"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1901"
+	  "ID"              "190109"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -7532,7 +7538,7 @@
 	"item_recipe_petri_supermegavest"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1891"
+	  "ID"              "189108"
 	  "Model" "models/props_gameplay/recipe.mdl"
 	  "AbilityTextureName"      "item_recipe"
 	
@@ -7550,7 +7556,7 @@
 	"item_petri_superthing"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "153022"
+	  "ID"              "15302207"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -7607,7 +7613,7 @@
 	"item_petri_vip_frostbite"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "5956"
+	  "ID"              "595606"
 	  "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	  "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
 	  "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
@@ -7821,7 +7827,7 @@
 	"item_petri_vip_furion"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1961"
+	  "ID"              "196105"
 	  "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	  "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
 	  "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
@@ -7928,7 +7934,7 @@
 	"item_petri_vip_greenkzn"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "5957"
+	  "ID"              "595704"
 	  "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	  "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
 	  "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
@@ -8034,7 +8040,7 @@
 	"item_petri_vip_laguna"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1971"
+	  "ID"              "197105"
 	  "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
 	  "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	  "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -8145,7 +8151,7 @@
 	"item_void"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1972"
+	  "ID"              "197206"
 	  "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
 	  "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	  "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -8298,7 +8304,7 @@
 	    // General
 	    //-------------------------------------------------------------------------------------------------------------
 	    "BaseClass"                     "item_datadriven"
-	    "ID"                            "4147"  //Valve's version of this item uses the ID "147".
+	    "ID"                            "414706"  //Valve's version of this item uses the ID "147".
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
 	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
@@ -8449,7 +8455,7 @@
 	"item_petri_vip_terror"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1960"
+	  "ID"              "196004"
 	  "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	  "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
 	  "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
@@ -8555,7 +8561,7 @@
 	"item_petri_vip_zeus"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "1955"
+	  "ID"              "195505"
 	  "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_ITEM | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	  "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
 	  "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
@@ -8681,7 +8687,7 @@
 	"item_petri_ward"
 	{
 	  "BaseClass"                 "item_datadriven"
-	  "ID"              "102022"
+	  "ID"              "10202206"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -8729,7 +8735,7 @@
 	"item_petri_zirconia_armor"
 	{
 	  "BaseClass"           "item_datadriven"
-	  "ID"              "151722"
+	  "ID"              "15172208"
 	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	  "Model"             "models/props_gameplay/red_box.vmdl" 
 	  "Effect"            "particles/generic_gameplay/dropped_item.vpcf"
@@ -8746,7 +8752,7 @@
 	  "AbilityValues"
 	  {
 
-	      "bonus_all_stats"    "200"
+	      "bonus_all_stats"    "175"
 
 	      "invu_duration"   "9"
 	    
@@ -9188,7 +9194,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"item_datadriven"
-	"ID"							"9066" 
+	"ID"							"906609" 
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
@@ -9223,7 +9229,7 @@
 	// General
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"item_datadriven"
-	"ID"							"9111"  //Valve's version of this item uses the ID "50".
+	"ID"							"911199"  //Valve's version of this item uses the ID "50".
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"Model"							"models/props_gameplay/red_box.vmdl" 
 	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"

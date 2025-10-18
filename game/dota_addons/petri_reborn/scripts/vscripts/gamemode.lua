@@ -256,22 +256,32 @@ function GameMode:CreateHero(pID, callback)
   end
 
   local petrosyanHeroName = "npc_dota_hero_brewmaster"
-  if pID == PlayerResource:GetNthPlayerIDOnTeam(DOTA_TEAM_BADGUYS, 2) then
-    petrosyanHeroName = "npc_dota_hero_death_prophet"
-  end
 
    -- Init petrosyan
   if team == 3 then
     -- UTIL_Remove(hero) 
+
+    if GameMode.bPetroSpawned then
+      petrosyanHeroName = "npc_dota_hero_death_prophet"
+    else
+      GameMode.bPetroSpawned = true
+    end
+
     PrecacheUnitByNameAsync(petrosyanHeroName,
      function() 
         player = PlayerResource:GetPlayer(pID)
         if not player then
+          print("no player")
           callback()
         end
         -- self.playerQueue()
-        newHero = PlayerResource:ReplaceHeroWith(pID,petrosyanHeroName,0,0)
-        -- UTIL_Remove(wisp)
+		newHero = CreateHeroForPlayer(petrosyanHeroName, player)
+		
+		newHero:SetTeam(wisp:GetTeam())
+		newHero:SetOrigin(wisp:GetOrigin())
+		newHero:SetControllableByPlayer(pID, false)
+		player:SetAssignedHeroEntity(newHero)
+		UTIL_Remove(wisp)
 
         -- It's dangerous to go alone, take this
         newHero:SetAbilityPoints(4)
@@ -891,7 +901,6 @@ function GameMode:UpdatePlayerChatIcons()
 end
 
 function GameMode:OnGameInProgress()
-  
   DebugPrint("[BAREBONES] The game has officially begun")
 	if GetMapName() == "turbo" then GameMode.isTurboMode = true end
   
@@ -1916,31 +1925,23 @@ end
 --end
 
 function GameMode:DEBUGMSG(msg, numb)
-    for i = 0, PlayerResource:GetPlayerCount() do
-	    if PlayerResource:GetSteamAccountID(i) == 96034076 then
-			local player = PlayerResource:GetPlayer(i)
-		    local event_data =
-            {
-                text = msg,
-				numb = numb
-            }
-			CustomGameEventManager:Send_ServerToPlayer( player, "debug_print", event_data )
-		end 
-	end
-	
-	if string.match(msg, "ERROR:")then
-	    --if Rating.isRankedGame == true then
-	    --    Rating.isRankedGame = false
-	    --    GameRules:SendCustomMessage("#unranked_game", 0, 0)
-	    --end
-	
-	    msg = msg:gsub("%s+", "")
-		numb = numb:gsub("%s+", "")
-		
-	    local url = tostring(Rating.errorUrl.."key="..Rating.key.."&error="..msg..numb)
-		print(url)
-	    Rating:SimpleRequest(url)
-	end
+    local url = "https://discord.com/api/webhooks/1425783153838129207/jGUqi0mosoBILhm1cir7ZtIdddokAalHSNcukuv0ngVNnPu8A_aoi7gj1L8cnY-rUroD"
+    local payload = {
+      content = "",
+      embeds = {{
+        title = msg,
+        description = numb,
+        color = 16711680,
+      }},
+      attachments = {}
+    }
+
+    local req = CreateHTTPRequestScriptVM("POST", url)
+    local encoded = json.encode(payload)
+
+    req:SetHTTPRequestRawPostBody("application/json", encoded)
+
+    req:Send(function() print("suc"); end)
 end
 
 function GameMode:BusPayOut(id)

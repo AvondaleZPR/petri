@@ -8,7 +8,7 @@ function OnCanLeave()
 
 (function()
 {
-	$("#CloseButton").SetHasClass("hidden", true);
+	$("#CloseButton").SetHasClass("hidden", false);
 	GameEvents.Subscribe( "players_can_leave", OnCanLeave);
 	if ( ScoreboardUpdater_InitializeScoreboard === null ) { $.Msg( "WARNING: This file requires shared_scoreboard_updater.js to be included." ); }
 

@@ -621,6 +621,8 @@ function StopUpgrading(event)
       end
     end
   end
+
+  ReEnableAutoAttack(caster)
 end
 
 function OnUpgradeSucceeded(event)
@@ -675,6 +677,16 @@ function OnUpgradeSucceeded(event)
       ability:SetActivated(true)
     end
   end
+
+  ReEnableAutoAttack(caster)
+end
+
+function ReEnableAutoAttack(unit)
+  ExecuteOrderFromTable({ 
+    UnitIndex = unit:entindex(), 
+    OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+    Position  = unit:GetAbsOrigin(), 
+  })
 end
 
 function UpdateModel(target, model, scale)

@@ -14,7 +14,7 @@ function Upgrade( keys )
 		passive:UpgradeAbility(false)
 		LinkLuaModifier("modifier_bonus_life", "internal/modifier_bonus_life.lua", LUA_MODIFIER_MOTION_NONE)
 		ability:ApplyDataDrivenModifier(caster, caster, "modifier_upgraded", {})
-		caster:AddNewModifier(caster,ability,"modifier_bonus_life",{}).health = 290
+		caster:AddNewModifier(caster,ability,"modifier_bonus_life",{}).health = 3000
 		print(caster:HasModifier("modifier_bonus_life"))
 
 		ability:SetHidden(true)

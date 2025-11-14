@@ -178,7 +178,7 @@ end
 
 function LandMinesPlant( keys )
 	local caster = keys.caster
-	local target_point = keys.target_points[1]
+	local target_point = keys.ability:GetCursorPosition()
 	local ability = keys.ability
 	local ability_level = ability:GetLevel() - 1
 
@@ -412,7 +412,7 @@ end
 function LaunchArrow( keys )
 	local caster = keys.caster
 	local caster_location = caster:GetAbsOrigin()
-	local target_point = keys.target_points[1]
+	local target_point = keys.ability:GetCursorPosition()
 	local ability = keys.ability
 	local ability_level = ability:GetLevel() - 1
 

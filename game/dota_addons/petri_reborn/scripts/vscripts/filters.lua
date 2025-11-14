@@ -318,6 +318,8 @@ function GameMode:FilterExecuteOrder( filterTable )
 
         return false
       end
+    elseif order_type == DOTA_UNIT_ORDER_SET_ITEM_MARK_FOR_SELL then
+      return false
     end
 	
 	if order_type ~= DOTA_UNIT_ORDER_CAST_NO_TARGET then

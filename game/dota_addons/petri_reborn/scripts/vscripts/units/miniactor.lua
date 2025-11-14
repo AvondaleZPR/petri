@@ -165,7 +165,7 @@ function PullEyes( event )
 	local duration = ability:GetChannelTime()
 
 	local particleName = "particles/items_fx/dust_of_appearance.vpcf"
-	local target = event.target_points[1]
+	local target = event.ability:GetCursorPosition()
 
 	ability.target = target
 

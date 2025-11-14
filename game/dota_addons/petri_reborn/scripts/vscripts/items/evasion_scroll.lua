@@ -41,7 +41,7 @@ function EvasionTornado(keys)
         fExpireTime = GameRules:GetGameTime() + 20.0,
     }
 
-    local target_point = keys.target_points[1]
+    local target_point = keys.ability:GetCursorPosition()
     target_point.z = 0
     local caster_point = keys.caster:GetAbsOrigin()
     caster_point.z = 0

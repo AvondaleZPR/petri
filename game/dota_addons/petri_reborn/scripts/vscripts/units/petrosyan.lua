@@ -66,7 +66,7 @@ function FarSight( event )
 	if tonumber(lvls[caster:GetPlayerOwnerID()]) >= 125000 then
 	    particleName = "particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf"
 	end
-	local target = event.target_points[1]
+	local target = event.ability:GetCursorPosition()
 
 	EmitSoundOnLocationForAllies(target, "DOTA_Item.DustOfAppearance.Activate", caster)
 
@@ -205,7 +205,7 @@ function Return( keys )
 end
 
 function SpawnWard(keys)
-	local point = keys.target_points[1]
+	local point = keys.ability:GetCursorPosition()
 	local caster = keys.caster
 
 	local ward = CreateUnitByName("npc_petri_ward", point,  true, nil, caster, DOTA_TEAM_BADGUYS)

@@ -17,7 +17,7 @@ function Spawn( event )
 end
 
 function SpawnTrap(keys)
-	local point = keys.target_points[1]
+	local point = keys.ability:GetCursorPosition()
 	local caster = keys.caster
 
 	if not IsInsideEntityBounds(Entities:FindByName(nil, "blocking_trigger_b"), point) then
@@ -222,19 +222,17 @@ function Deny(keys)
 	local caster = keys.caster
 	local target = keys.target
 
-	local damageTable = {
-		victim = target,
-		attacker = caster,
-		damage = target:GetMaxHealth(),
-		damage_type = DAMAGE_TYPE_PURE,
-	}
- 
 	if target:HasAbility("petri_building") == true and target:GetPlayerOwnerID() == caster:GetPlayerOwnerID() and target:HasAbility("petri_exit") ~= true and target:HasAbility("petri_cop_trap") ~= true then
-		if not string.match(target:GetUnitName(), "npc_petri_bus") and not (string.match(target:GetUnitName(), "npc_petri_tent") and target:GetHealth() ~= target:GetMaxHealth()) then
+		if not string.match(target:GetUnitName(), "npc_petri_bus") and not (string.match(target:GetUnitName(), "npc_petri_tent") and target:GetHealth() < target:GetMaxHealth()) then
 		if caster:HasModifier("modifier_hunger") == true then
 			caster:RemoveModifierByName("modifier_hunger")
 		end
-		ApplyDamage(damageTable)
+		ApplyDamage({
+			victim = target,
+			attacker = caster,
+			damage = target:GetMaxHealth()*2,
+			damage_type = DAMAGE_TYPE_PURE,
+		})
 		target:EmitSound("Hero_Techies.Suicide")
 		end
 	end

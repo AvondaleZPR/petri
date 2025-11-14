@@ -1,5 +1,5 @@
 function Blink(keys)
-	local point = keys.target_points[1]
+	local point = keys.ability:GetCursorPosition()
 	local caster = keys.caster
 	local casterPos = caster:GetAbsOrigin()
 	local difference = point - casterPos

@@ -296,7 +296,7 @@
 	
 	  "vscripts"     "units/cop.lua"
 	
-	  "AbilityLayout"    "6"
+	  "AbilityLayout"    "2"
 	  "Ability1"         "petri_gold_bag_blink"
 	  "Ability2"         "build_petri_cop_trap"
 	  "Ability3"         "petri_empty1"
@@ -3916,7 +3916,7 @@
 	"npc_petri_tower_basic"
 	{
 	  "BaseClass"         "npc_dota_base_additive"  
-	  "Model"           "models/items/world/towers/radiant_tower_2021/radiant_tower_2021_right.vmdl"  
+	  "Model"           "models/props_structures/tower001.vmdl"  
 	  "ModelScale"                "0.45"
 	  "SoundSet"          "Creep_Good_Range"          
 	  "Level"           "0"

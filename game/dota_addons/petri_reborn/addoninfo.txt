@@ -3,19 +3,14 @@
 	maps = 
 	[
 		"seasons",
-		"journey",
 	]
 	TeamCount = 2
 	IsPlayable = 1
 	map_options = 
 	[
 		{
-			MaxPlayers = 12
+			MaxPlayers = 15
 			map = "seasons"
-		},
-		{
-			MaxPlayers = 12
-			map = "journey"
 		},
 	]
 	HideInTools = false
@@ -33,6 +28,6 @@
 	ForceDefaultGuide = false
 	MinimalPrecache = false
 	MinPlayers = 1
-	MaxPlayers = 12
+	MaxPlayers = 15
 	PenaltiesEnabled = false
 }

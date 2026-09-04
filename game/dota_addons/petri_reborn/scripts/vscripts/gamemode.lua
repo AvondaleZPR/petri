@@ -1355,7 +1355,7 @@ function GameMode:InitGameMode()
   
   GameMode.busData = {{true, nil},{true, nil},{true, nil},{true, nil}}
   
-  GameMode.busPO = {3, 10, 1, 5}
+  GameMode.busPO = {3, 10, 1, 10}
   
   --armorfix
     --ListenToGameEvent('dota_inventory_item_added', Dynamic_Wrap(GameMode, 'OnInventoryChanged'), self)

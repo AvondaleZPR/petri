@@ -463,14 +463,14 @@ function GameMode:DamageFilter( filter_table )
 
 	if victim:GetUnitName() == "npc_petri_creep_kivin" then
 		local damage = attacker:GetAverageTrueAttackDamage(attacker)
-		if (not GameMode.isTurboMode and GameRules:GetDOTATime(false, false) < 2880) or (GameMode.isTurboMode and GameRules:GetDOTATime(false, false) < 1440) then
+		if not GameMode.allowkivin then
 		    attacker:CastAbilityNoTarget(attacker:FindAbilityByName("petri_petrosyan_return"), attacker:GetPlayerOwnerID())
             Notifications:Bottom(attacker:GetPlayerOwnerID(), {text="#too_early_kivin", duration=5, style={color="red", ["font-size"]="45px"}})
             Timers:CreateTimer(0.04,
             function()
                 MoveCamera(attacker:GetPlayerOwnerID(), attacker)
             end)
-	    elseif damage > 605000 then
+    elseif damage > 605000 then
 		    local playerid = attacker:GetPlayerOwnerID()
 			AddCustomGold( playerid, 3500)
 			attacker:AddExperience(500000, DOTA_ModifyXP_CreepKill, false, false)

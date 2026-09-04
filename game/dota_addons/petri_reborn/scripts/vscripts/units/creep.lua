@@ -203,10 +203,15 @@ function KivinGoldTick(keys)
     local target = keys.target
     local ability = keys.ability
 
-    if GameMode.isday == false and target:IsRealHero() == true and target:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-        AddCustomGold( target:GetPlayerOwnerID(), GetGoldTickModifier() )
-        target:AddExperience(GetExpTickModifier(), 0, false, true)
-        --PopupParticle(GetGoldTickModifier(), Vector(244,201,23), 2.0, target)
+    if GameMode:isdaydumb() == false then
+        if target:IsRealHero() == true and target:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+            AddCustomGold( target:GetPlayerOwnerID(), GetGoldTickModifier() )
+            target:AddExperience(GetExpTickModifier(), 0, false, true)
+            PopupParticle(GetGoldTickModifier(), Vector(244,201,23), 2.0, target)
+        elseif target:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+            AddCustomGold( target:GetPlayerOwnerID(), 1 )
+            PopupParticle( 1, Vector(244,201,23), 2.0, target)
+        end
     end
 end
 
@@ -218,7 +223,7 @@ function CreateProjectiles( keys )
         AddFOWViewer(caster:GetTeam(),caster:GetAbsOrigin(),2000,2.0,false)
     end
 
-    if GameRules:IsDaytime() == false then
+    if GameMode:isdaydumb() == false then
         ability:ApplyDataDrivenModifier(caster, caster, "modifier_tick_projectile", {})
     end
 end

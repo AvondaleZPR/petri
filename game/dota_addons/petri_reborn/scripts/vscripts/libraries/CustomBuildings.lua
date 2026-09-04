@@ -20,7 +20,7 @@ function ParseCustomBuldingKVs(entry, building, level)
 	
 	local yaw = building:GetAngles()[2]
 
-	local attack_speed = building:GetBaseAttackTime()
+	local attack_speed = building:GetBaseAttackTime(true)
 
 	local v = entry
 	if not v then return scale end

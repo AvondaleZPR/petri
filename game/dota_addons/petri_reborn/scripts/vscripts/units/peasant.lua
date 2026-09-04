@@ -427,7 +427,7 @@ function RepairBy1Percent( event )
 				healAmount = healAmount + healAmount
 			end
 
-			if caster:IsHero() == true and GetModifierCountByName(target,target,"modifier_being_repaired") <= 1 then
+			if caster:IsHero() == true then
 				ability:ApplyDataDrivenModifier(target, target, "modifier_being_repaired", {})
 				healAmount = healAmount + healAmount*2
 			end

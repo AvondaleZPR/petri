@@ -6429,7 +6429,7 @@
 	 //4.0 6.0 7.0 8.5 10.0 15.0 20.0 30.0 50.0 80.0 95.0 170.0 170.0 170.0 170.0 1.70
 	
 	  "AbilityChannelTime"      "7.0 8.5 30.0 50.0 80.0 95.0 170.0 170.0 170.0 170.0 60.0"
-	  "AbilityGoldCost"       "%20 %40 %750 %1250 %1980 %3870 %6120 %11250 %16380 %20250 %26130"
+	  "AbilityGoldCost"       "%20 %40 %750 %1250 %1980 %3870 %6120 %11250 %16000 %20000 %26130"
 	
 	  "precache"
 	  {
@@ -6438,11 +6438,11 @@
 	
 	"AbilityValues"
 	{
-	      "lumber_cost"         "3500 7500 40000 60000 99000 135000 450000 900000 1125000 1350000 1800000"
-	      "health_points"       "550 600 1200 1350 1500 2000 5087 22000 50000 80000 120000"
+	      "lumber_cost"         "3500 7500 40000 60000 99000 135000 450000 900000 1100000 1250000 1800000"
+	      "health_points"       "550 600 1200 1350 1500 2000 5087 22000 44000 88000 120000"
 	      "hit_stacks"         "0"
 	      "hit_stacks_regen"          "1 2 3 3 3 5 10 20 30 52 75"
-	      "armor"               "300 600 900 1800 3000 7800 9000 15500 19750 22550 25000"
+	      "armor"               "300 600 900 1800 3000 7800 9000 15500 18750 21550 25000"
 	}
 	
 	  "OnSpellStart"
@@ -7113,7 +7113,7 @@
 	  {
 	        "lumber_cost" "25000"
 	        
-	        "payout" "5"
+	        "payout" "10"
 	  }
 	
 	  // BuildingHelper info
@@ -7670,7 +7670,7 @@
 
 		"SpawnUnit"
 		{
-			"UnitName"			"npc_dota_beastmaster_hawk_1"
+			"UnitName"			"npc_dota_beastmaster_hawk"
 			"Target"
 			{
 				"Center"				"CASTER"
@@ -7716,6 +7716,7 @@
 			"States"
 			{
 			    "MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+			    "MODIFIER_STATE_FLYING" "MODIFIER_STATE_VALUE_ENABLED"
 			}
 			
 			"Properties"
@@ -8341,7 +8342,7 @@
 	"AbilityValues"
 	{
 			"kill_chance"					"10"
-			"gold"							"500"	
+			"gold"							"350"	
 	}
 
 	"OnSpellStart"
